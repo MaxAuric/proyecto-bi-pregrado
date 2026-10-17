@@ -1,0 +1,18 @@
+id_geografia,region_codigo_subdere,region_nombre_estandar,region_numero_romano,zona_geografica,orden_geografico
+-1,-1,Sin Dato / Desconocido,N/A,Sin Dato,99
+1,15,Región de Arica y Parinacota,XV,Norte Grande,1
+2,01,Región de Tarapacá,I,Norte Grande,2
+3,02,Región de Antofagasta,II,Norte Grande,3
+4,03,Región de Atacama,III,Norte Chico,4
+5,04,Región de Coquimbo,IV,Norte Chico,5
+6,05,Región de Valparaíso,V,Centro,6
+7,13,Región Metropolitana de Santiago,RM,Centro,7
+8,06,Región del Libertador Gral. Bernardo O'Higgins,VI,Centro,8
+9,07,Región del Maule,VII,Centro,9
+10,16,Región de Ñuble,XVI,Centro,10
+11,08,Región del Biobío,VIII,Centro,11
+12,09,Región de La Araucanía,IX,Sur,12
+13,14,Región de Los Ríos,XIV,Sur,13
+14,10,Región de Los Lagos,X,Sur,14
+15,11,Región de Aysén del Gral. Carlos Ibáñez del Campo,XI,Austral,15
+16,12,Región de Magallanes y de la Antártica Chilena,XII,Austral,16
