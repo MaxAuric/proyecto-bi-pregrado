@@ -1,0 +1,37 @@
+{
+    "status": "APROBADO_CON_EXCELENCIA",
+    "cuadre_filas": {
+        "fuente_original": 158211,
+        "datamart_cargado": 158211,
+        "diferencia": 0,
+        "cumple": true
+    },
+    "cuadre_metricas": {
+        "matricula_primer_ano_fuente": 5186123,
+        "matricula_primer_ano_datamart": 5186123,
+        "matricula_total_fuente": 17696782,
+        "matricula_total_datamart": 17696782,
+        "vacantes_fuente": 5914165,
+        "vacantes_datamart": 5914165,
+        "zero_data_loss": true
+    },
+    "conteo_dimensiones": {
+        "dim_tiempo": 15,
+        "dim_geografia": 16,
+        "dim_sede": 114,
+        "dim_institucion": 259,
+        "dim_programa": 8867,
+        "dim_institucion_calidad_anual": 1994,
+        "fact_poblacion_regional": 240
+    },
+    "integridad_referencial": {
+        "total_huerfanos": 0,
+        "huerfanos_por_dimension": {
+            "tiempo": 0,
+            "geografia": 0,
+            "sede": 0,
+            "institucion": 0,
+            "programa": 0
+        }
+    }
+}
