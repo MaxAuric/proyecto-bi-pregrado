@@ -1,0 +1,371 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% Paleta ejecutiva (misma del informe de la Persona 1)
+\definecolor{primaryblue}{RGB}{16, 44, 87}
+\definecolor{secondaryblue}{RGB}{53, 89, 143}
+\definecolor{accentteal}{RGB}{20, 110, 120}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+
+\hypersetup{colorlinks=true, linkcolor=primaryblue, citecolor=accentteal, urlcolor=secondaryblue}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{\small Proyecto BI - Hito 1 | Persona 2: Analista de Negocios y Datos Externos}}
+\lhead{\textcolor{darkgray}{\small Propuesta de Valor, Canvas BI y Fuentes Externas}}
+\cfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondaryblue}}{\thesubsection.}{0.4em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{accentteal}}{\thesubsubsection.}{0.3em}{}
+
+\lstset{basicstyle=\ttfamily\footnotesize, backgroundcolor=\color{lightbg}, frame=single,
+  rulecolor=\color{secondaryblue!30}, breaklines=true, showstringspaces=false}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{document}
+
+% -------------------------------------------------------------
+% PORTADA
+% -------------------------------------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Huge \bfseries \color{primaryblue} PROPUESTA DE VALOR, CANVAS BI Y FUENTES EXTERNAS\par}
+    \vspace{0.4cm}
+    {\LARGE \color{secondaryblue} Demanda, capacidad y equidad territorial de la educaci\'on superior chilena (2012--2026)\par}
+    \vspace{1cm}
+
+    \begin{tcolorbox}[colback=lightbg, colframe=primaryblue, width=\textwidth, arc=3mm]
+        \centering
+        \large \textbf{Entrega Hito 1: Propuesta, ETL y Fuentes}\\[2mm]
+        \normalsize Asignatura: \textbf{Business Intelligence} | Carrera: \textbf{Ingenier\'ia en Negocios}\\[1mm]
+        Fecha de Entrega: \textbf{21 de Octubre de 2026}
+    \end{tcolorbox}
+
+    \vspace{2cm}
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Autor Principal (Rol Evaluado):}\\
+        \textbf{\color{primaryblue}Persona 2: Analista de Negocios y Datos Externos}\\
+        Responsable del enfoque estrat\'egico, el Canvas BI y la normalizaci\'on y cruce de fuentes externas
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Equipo de Trabajo BI:}\\
+        $\bullet$ Persona 1: Ingeniero de Datos\\
+        $\bullet$ Persona 3: Arquitecto de Datos\\
+        $\bullet$ Persona 4: Desarrollador BI\\
+        $\bullet$ Persona 5: Gestor y Documentador
+    \end{minipage}
+
+    \vfill
+    {\small \color{darkgray} Santiago de Chile, 2026}\par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% -------------------------------------------------------------
+\section{Resumen Ejecutivo}
+Este documento re\'une los entregables del \textbf{Analista de Negocios y Datos Externos (Persona 2)} para el Hito~1: (i)~la Propuesta de Valor, (ii)~el Canvas BI y (iii)~la integraci\'on de \textbf{dos fuentes externas oficiales} con su llave de cruce hacia la base consolidada 2012--2026 entregada por la Persona~1 (158.211 registros).
+
+\begin{tcolorbox}[colback=white, colframe=accentteal, title=\textbf{Cuadro Resumen del Hito 1 (Persona 2)}]
+\begin{itemize}
+    \item \textbf{Enfoque:} apoyar a una direcci\'on de admisi\'on o planificaci\'on universitaria a decidir su oferta (vacantes) seg\'un la demanda, la presi\'on competitiva y la equidad territorial.
+    \item \textbf{3 preguntas de negocio} con indicadores y visualizaci\'on prevista (secci\'on~\ref{sec:preguntas}).
+    \item \textbf{Fuente externa 1 (INE):} poblaci\'on regional 2002--2035, cruce por regi\'on (\textbf{100\%} de los registros).
+    \item \textbf{Fuente externa 2 (SIES/MINEDUC):} listados anuales de IES vigentes con c\'odigo de instituci\'on, autonom\'ia y acreditaci\'on, cruce por instituci\'on (\textbf{98,39\%} de los registros y \textbf{99,00\%} de la matr\'icula de primer a\~no).
+    \item \textbf{Reproducibilidad:} cuatro scripts numerados (05--07) con manifiesto de descargas (URL, fecha y hash SHA-256).
+\end{itemize}
+\end{tcolorbox}
+
+% -------------------------------------------------------------
+\section{Propuesta de Valor}
+\subsection{Cliente y problema}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.4cm}Y@{}}
+\toprule
+A qui\'en sirve & Direcci\'on de Admisi\'on y Planificaci\'on Estrat\'egica de una instituci\'on de educaci\'on superior (universidad, IP o CFT); como usuarios secundarios, la Subsecretar\'ia de Educaci\'on Superior y equipos regionales de pol\'itica p\'ublica. \\
+Problema & La oferta de vacantes se decide con informaci\'on parcial: no se observa en un mismo lugar la evoluci\'on de la matr\'icula, el uso de las vacantes, la calidad (acreditaci\'on) de la competencia y el tama\~no de la poblaci\'on que cada regi\'on puede aportar. \\
+Propuesta de valor & Un panel \'unico, conectado al DataMart, que traduce 15 a\~nos de datos oficiales en decisiones de oferta: d\'onde crece o cae la demanda, qu\'e tan bien se ocupan las vacantes y en qu\'e territorios la oferta es escasa en relaci\'on con la poblaci\'on. \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Preguntas de negocio e indicadores}\label{sec:preguntas}
+La pauta exige al menos tres preguntas que el panel responder\'a. Cada una usa un indicador de la base CNED y, al menos, una fuente externa.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}p{0.7cm}Y Y Y@{}}
+\toprule
+\textbf{N$^\circ$} & \textbf{Pregunta de negocio} & \textbf{Indicadores} & \textbf{Visualizaci\'on prevista} \\
+\midrule
+P1 & \textbf{Equidad territorial.} \textquestiondown En qu\'e regiones la oferta de ingreso es baja respecto de su poblaci\'on, y c\'omo ha cambiado desde 2018? &
+Matr\'icula de primer a\~no por cada 1.000 habitantes de 15--64 a\~nos (INE); variaci\'on 2018--2026. &
+Mapa coropl\'etico de regiones y barras ordenadas con filtro de a\~no. \\
+P2 & \textbf{Uso de la capacidad.} \textquestiondown Cu\'anto de la oferta de vacantes se ocupa realmente y en qu\'e tipos de instituci\'on y regi\'on se concentra la sobre u subocupaci\'on? &
+Tasa de ocupaci\'on = matr\'icula de primer a\~no / vacantes (solo registros con vacantes declaradas); matr\'icula total y de primer a\~no. &
+Serie temporal por a\~no, matriz instituci\'on $\times$ regi\'on y tarjetas KPI. \\
+P3 & \textbf{Calidad y competencia.} \textquestiondown Qu\'e proporci\'on de la matr\'icula de primer a\~no se concentra en instituciones acreditadas, y c\'omo se relaciona con los a\~nos de acreditaci\'on? &
+\% de matr\'icula de primer a\~no por estado de acreditaci\'on; a\~nos de acreditaci\'on promedio ponderado por matr\'icula (SIES). &
+Barras 100\% apiladas por a\~no y dispersi\'on a\~nos de acreditaci\'on vs matr\'icula. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{tcolorbox}[colback=lightbg, colframe=secondaryblue, title=\textbf{Condici\'on de uso de los indicadores}]
+\begin{itemize}
+    \item La matr\'icula de la base est\'a asociada a la \textbf{regi\'on de la sede}, no al domicilio del estudiante. P1 mide, por tanto, \emph{capacidad de oferta regional por habitante}, no la tasa de participaci\'on de los residentes. Esto debe quedar explicito en el panel y en las conclusiones.
+    \item Las medidas de matr\'icula y vacantes son \textbf{aditivas}; los puntajes son promedios y no se suman (criterio de la Persona~3 en el Hito~2).
+    \item La tasa de ocupaci\'on excluye registros sin vacantes declaradas para no simular cierres de programa (regla de la Persona~1).
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Validaci\'on preliminar con datos reales}
+Con la base consolidada y los cruces del Hito~1 se calcularon cifras preliminares (script \texttt{07\_preview\_kpis.py}). No reemplazan al panel, pero muestran que cada pregunta tiene se\~nal anal\'itica suficiente.
+
+\begin{center}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Indicador} & \textbf{2012} & \textbf{2020} & \textbf{2022} & \textbf{2026} \\
+\midrule
+Matr\'icula de primer a\~no (nacional) & 314.858 & 313.344 & 333.237 & 399.015 \\
+Tasa de ocupaci\'on de vacantes (\%) & 84,2 & 82,1 & 80,2 & 84,4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{P1:} en 2026, la Regi\'on Metropolitana (35,5) y el Biob\'io (32,5) lideran la matr\'icula de primer a\~no por 1.000 habitantes de 15--64 a\~nos, mientras O'Higgins (14,1), Ays\'en (15,2) y Atacama (17,2) son las m\'as bajas. La Metropolitana pas\'o de 29,0 (2018) a 35,5 (2026), ampliando la brecha.
+    \item \textbf{P2:} la ocupaci\'on se mantiene entre 80\% y 91\% en toda la serie, con m\'inimo en 2022 (80,2\%) y m\'aximo en 2014 (91,1\%).
+    \item \textbf{P3:} la proporci\'on de matr\'icula de primer a\~no en instituciones \emph{no acreditadas} cae de 9,52\% (2018) a 0,16\% (2026); en paralelo aparece la categor\'ia \emph{acreditaci\'on extendida} (6,94\% en 2026) y \emph{bajo tutela} (2,37\%).
+\end{itemize}
+
+% -------------------------------------------------------------
+\section{Canvas BI}
+El Canvas ordena el proyecto en diez bloques, de la necesidad de negocio hasta la visualizaci\'on y los riesgos.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{|>{\columncolor{lightbg}}p{2.7cm}|Y|>{\columncolor{lightbg}}p{2.7cm}|Y|}
+\hline
+\textbf{\color{primaryblue}1. Usuarios} & Direcci\'on de Admisi\'on y Planificaci\'on; equipos de pol\'itica p\'ublica regional. &
+\textbf{\color{primaryblue}6. Fuentes de datos} & Base CNED/INDICES 2012--2026 (interna); INE proyecciones de poblaci\'on; SIES listado de IES vigentes (externas). \\
+\hline
+\textbf{\color{primaryblue}2. Problema u oportunidad} & Decisiones de oferta con informaci\'on fragmentada: demanda, ocupaci\'on, calidad y territorio. &
+\textbf{\color{primaryblue}7. Dimensiones de an\'alisis} & Tiempo, Instituci\'on, Sede/Regi\'on, Programa/Carrera, \'Area de conocimiento, Acreditaci\'on (SIES), Poblaci\'on regional (INE). \\
+\hline
+\textbf{\color{primaryblue}3. Decisiones que apoya} & Abrir, mantener o reducir vacantes por regi\'on y \'area; priorizar territorios con baja oferta; monitorear competidores acreditados. &
+\textbf{\color{primaryblue}8. Medidas (aditividad)} & Matr\'icula y vacantes: aditivas. Poblaci\'on: aditiva entre regiones, no en el tiempo. Puntajes y a\~nos de acreditaci\'on: promedios, no sumables. \\
+\hline
+\textbf{\color{primaryblue}4. Preguntas de negocio} & P1 equidad territorial; P2 uso de la capacidad; P3 calidad y competencia. &
+\textbf{\color{primaryblue}9. Visualizaci\'on} & Mapa regional, serie temporal, matriz instituci\'on $\times$ regi\'on, barras apiladas; filtros por a\~no, instituci\'on y regi\'on; al menos una medida DAX. \\
+\hline
+\textbf{\color{primaryblue}5. Indicadores (KPI)} & Matr\'icula 1er a\~no por 1.000 hab. 15--64; tasa de ocupaci\'on; \% matr\'icula en IES acreditadas; a\~nos de acreditaci\'on ponderados. &
+\textbf{\color{primaryblue}10. Riesgos y restricciones} & Matr\'icula por regi\'on de sede; sin acreditaci\'on antes de 2018; instituciones sin c\'odigo; nombres que cambian entre per\'iodos; quiebre PSU/PDT/PAES. \\
+\hline
+\end{tabularx}
+\end{center}
+
+% -------------------------------------------------------------
+\section{Fuentes Externas}
+La base no trae c\'odigos de instituci\'on ni de programa, solo nombres. Por eso se eligieron dos niveles de cruce de dificultad \emph{baja} (regi\'on) y \emph{media} (instituci\'on), seg\'un la pauta.
+
+\subsection{Ficha de cada fuente}
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3cm}YY@{}}
+\toprule
+ & \textbf{Fuente 1: INE} & \textbf{Fuente 2: SIES / MINEDUC} \\
+\midrule
+Nombre & Estimaciones y proyecciones de poblaci\'on de Chile 2002--2035, base Censo 2017: totales regionales, poblaci\'on urbana y rural & Listado de Instituciones de Educaci\'on Superior vigentes (c\'odigo, tipo, autonom\'ia, acreditaci\'on y a\~nos) \\
+URL de la p\'agina & \url{https://www.ine.gob.cl/estadisticas/sociales/demografia-y-vitales/proyecciones-de-poblacion} & \url{https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/} \\
+Archivos & 1 libro Excel (hoja por regi\'on) & 9 listados: 31 dic.\ 2018 a 2025 y 30 sep.\ 2026 \\
+Fecha de descarga & 15 de octubre de 2026 & 15 de octubre de 2026 \\
+Grano & Regi\'on $\times$ a\~no & Instituci\'on $\times$ corte anual \\
+Llave de cruce & \texttt{region\_codigo\_subdere} + \texttt{ano} & \texttt{nombre\_institucion} $\rightarrow$ \texttt{codigo\_ies}; luego \texttt{codigo\_ies} + \texttt{ano} \\
+Tabla puente & \texttt{puente\_region.csv} (16 filas) & \texttt{puente\_institucion.csv} (259 filas) \\
+Dificultad & Baja & Media \\
+Pregunta que responde & P1 (y P2 por regi\'on) & P3 (y P2 por tipo de instituci\'on) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+Las URL exactas de cada archivo, su tama\~no y su hash SHA-256 quedan registrados en \texttt{data\_external/manifiesto\_descargas.json}, generado por \texttt{05\_download\_external.py}.
+
+\subsection{Fuente 1: INE (cruce por regi\'on)}
+\begin{itemize}
+    \item \textbf{Estructura:} una hoja por regi\'on con a\~nos 2002--2035 en columnas. Se extraen poblaci\'on total, hombres, mujeres y tres grandes grupos de edad (0--14, 15--64, 65 y m\'as).
+    \item \textbf{Llave:} el c\'odigo SUBDERE que la Persona~1 ya incorpor\'o a la base (\texttt{region\_codigo\_subdere}). Se evita cruzar por texto.
+    \item \textbf{Regi\'on de \~Nuble:} el INE (base 2017) la publica como regi\'on separada en toda la serie y la base consolidada tambi\'en la separa. El cruce no pierde registros; el flag \texttt{flag\_quiebre\_nuble} conserva la trazabilidad del cambio administrativo de 2018.
+    \item \textbf{Cobertura temporal:} 2012--2026 queda cubierto. Son proyecciones basadas en el Censo 2017; el INE ha publicado bases posteriores, por lo que se declara como limitaci\'on y se sugiere reemplazar la serie si el equipo decide usar la base m\'as nueva.
+    \item \textbf{Resultado del cruce:} 158.211 de 158.211 registros (\textbf{100\%}), 16 de 16 regiones, 0 registros sin cruzar.
+\end{itemize}
+
+\begin{center}
+\small
+\begin{tabular}{@{}rll@{}}
+\toprule
+\textbf{C\'od.\ SUBDERE} & \textbf{Nombre en la base CNED} & \textbf{Hoja INE} \\
+\midrule
+15 & Regi\'on de Arica y Parinacota & Arica y Parinacota \\
+1 & Regi\'on de Tarapac\'a & Tarapac\'a \\
+2 & Regi\'on de Antofagasta & Antofagasta \\
+3 & Regi\'on de Atacama & Atacama \\
+4 & Regi\'on de Coquimbo & Coquimbo \\
+5 & Regi\'on de Valpara\'iso & Valpara\'iso \\
+13 & Regi\'on Metropolitana & Metropolitana \\
+6 & Regi\'on del Gral.\ B.\ O`Higgins & O'Higgins \\
+7 & Regi\'on del Maule & Maule \\
+16 & Regi\'on de \~Nuble & \~Nuble \\
+8 & Regi\'on del B\'io-B\'io & Biob\'io \\
+9 & Regi\'on de La Araucan\'ia & La Araucan\'ia \\
+14 & Regi\'on de los R\'ios & Los R\'ios \\
+10 & Regi\'on de Los Lagos & Los Lagos \\
+11 & Regi\'on de Ays\'en & Ays\'en \\
+12 & Regi\'on de Magallanes & Magallanes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Fuente 2: SIES (cruce por instituci\'on)}
+\begin{itemize}
+    \item \textbf{Estructura:} cada listado trae el c\'odigo de instituci\'on, tipo, nombre, autonom\'ia (desde 2023), estado de acreditaci\'on, vigencia y a\~nos de acreditaci\'on. Los nombres de columnas cambian entre a\~nos; el script los mapea por prefijo.
+    \item \textbf{Serie hist\'orica:} se descargaron los cortes de diciembre 2018 a 2025 y septiembre 2026, para que cada a\~no de la base se cruce con \emph{su propio} estado de acreditaci\'on. Esto habilita la decisi\'on de modelar el cambio en el tiempo en el Hito~2.
+    \item \textbf{Armonizaci\'on:} las categor\'ias se normalizan en \texttt{acreditacion\_norm}: \emph{Acreditada}, \emph{Acreditaci\'on extendida}, \emph{Bajo tutela} y \emph{No acreditada}. Las variantes de may\'usculas y los asteriscos se unifican.
+    \item \textbf{Problema detectado:} la base escribe una misma instituci\'on distinto seg\'un el per\'iodo (por ejemplo \texttt{I.P. INACAP} hasta 2022 y \texttt{IP INACAP} desde 2023). El puente asigna ambas variantes al mismo c\'odigo.
+\end{itemize}
+
+\subsubsection{M\'etodo del puente de instituci\'on}
+Los nombres se normalizan (may\'usculas, sin tildes ni puntuaci\'on) y se expanden las siglas (\texttt{U.} $\rightarrow$ Universidad, \texttt{I.P./IP} $\rightarrow$ Instituto Profesional, \texttt{C.F.T.} $\rightarrow$ Centro de Formaci\'on T\'ecnica). Luego se prueba, en orden:
+\begin{enumerate}
+    \item \textbf{Coincidencia exacta normalizada} (168 instituciones).
+    \item \textbf{Coincidencia manual verificada} contra el cat\'alogo SIES (47 variantes), como los CFT Estatales (\texttt{C.F.T. ESTATAL DE X} y \texttt{CFTE DE X}), los IP con cambio de nombre y las escuelas de las Fuerzas Armadas.
+    \item \textbf{Coincidencia aproximada} con similitud $\geq 0{,}92$, \emph{revisada una a una} (25 instituciones). Siete coincidencias aproximadas se rechazaron por corresponder a instituciones distintas (por ejemplo CFT Ceponal $\neq$ CFT ICEL, CFT Los Leones $\neq$ CFT Los Lagos).
+    \item \textbf{Sin coincidencia} (19 nombres): se documenta y trata como se indica abajo.
+\end{enumerate}
+
+\subsubsection{Tasa de coincidencia}
+\begin{center}
+\begin{tabular}{@{}lr@{}}
+\toprule
+\textbf{M\'etrica} & \textbf{Valor} \\
+\midrule
+Instituciones distintas en la base (nombres) & 259 \\
+Instituciones con c\'odigo SIES & 240 (92,66\%) \\
+Registros de la base con c\'odigo SIES & 98,39\% \\
+Matr\'icula de primer a\~no con c\'odigo SIES & 99,00\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Cobertura de acreditaci\'on por a\~no (porcentaje de registros que cruzan con el corte SIES de ese a\~no):
+
+\begin{center}
+\small
+\begin{tabular}{@{}lcccccccccc@{}}
+\toprule
+\textbf{A\~no} & 2012--17 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 & 2026 \\
+\midrule
+\textbf{\%} & 0,0 & 98,8 & 97,4 & 98,6 & 98,5 & 98,3 & 97,9 & 98,5 & 98,4 & 99,0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{Tratamiento de los registros que no cruzaron}
+\begin{itemize}
+    \item De los 19 nombres sin c\'odigo, \textbf{15} desaparecen de la base CNED antes de 2018 (CFT Cepa, Ceponal, Crecic, Crownliet, Diego Portales, Inceni, Esperanza Joven, Fontanar, Insec, Jorge \'Alvarez, La Araucana, Los Leones, Magnos, Sim\'on Bol\'ivar y U.\ La Araucana). El primer listado SIES es de 2018, por lo que no hay donde cruzarlos. Es una ausencia estructural, no un error de normalizaci\'on.
+    \item \textbf{4} nombres siguen activos despu\'es de 2018 (\texttt{CFT ICCE} en dos grafias y \texttt{IP IPEGE} en dos grafias). No se pudo establecer su c\'odigo con certeza y quedan \textbf{pendientes de verificaci\'on manual}. Representan la mayor parte del 1\% de matr\'icula sin c\'odigo.
+    \item \textbf{No se eliminan registros.} Se conservan con \texttt{codigo\_ies = NULL} y se asignan al miembro desconocido (``Sin dato de acreditaci\'on'') de la dimensi\'on, de modo que la suma de matr\'icula cuadre con la base.
+    \item \textbf{2012--2017:} no existe listado SIES comparable. La acreditaci\'on queda \texttt{NULL}, nunca se imputa con el valor de 2018. Las visualizaciones de P3 se limitan a 2018--2026.
+\end{itemize}
+
+% -------------------------------------------------------------
+\section{Uso de las Fuentes en el Panel}
+La pauta exige que cada fuente aparezca en al menos una visualizaci\'on que responda una pregunta de negocio.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}llYY@{}}
+\toprule
+\textbf{Fuente} & \textbf{Pregunta} & \textbf{Visualizaci\'on} & \textbf{Campo externo usado} \\
+\midrule
+INE & P1 & Mapa y barras de matr\'icula por 1.000 hab. de 15--64 a\~nos & \texttt{poblacion\_15\_64} \\
+SIES & P3 & Barras 100\% apiladas de matr\'icula por estado de acreditaci\'on & \texttt{acreditacion\_norm}, \texttt{anos\_acreditacion} \\
+SIES & P2 & Tasa de ocupaci\'on segmentada por tipo de instituci\'on y autonom\'ia & \texttt{tipo\_institucion}, \texttt{autonomia} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+% -------------------------------------------------------------
+\section{Coordinaci\'on con el Equipo}
+\begin{itemize}
+    \item \textbf{Persona 1:} los cruces usan sus campos \texttt{region\_codigo\_subdere} y \texttt{nombre\_institucion}. Cualquier cambio en esas columnas obliga a regenerar los puentes.
+    \item \textbf{Persona 3:} la tabla \texttt{ext\_sies\_acreditacion\_ies\_ano} es el insumo para decidir c\'omo modelar Acreditaci\'on y Autonom\'ia (atributo del hecho, mini-dimensi\'on o SCD tipo~2); trae un registro por instituci\'on y a\~no. Los puentes pueden cargarse como tablas de dimensi\'on.
+    \item \textbf{Persona 4:} las tres preguntas de la secci\'on~\ref{sec:preguntas} se pueden graficar con los campos listados arriba; la medida DAX natural es la tasa de ocupaci\'on y la matr\'icula por 1.000 habitantes.
+    \item \textbf{Persona 5:} el diccionario de las tablas externas y las tablas puente est\'a en \texttt{docs/diccionario\_fuentes\_externas.md}, listo para incorporar como anexo.
+\end{itemize}
+
+\subsection{Compromisos de Persona 2 en los hitos siguientes}
+\begin{itemize}
+    \item \textbf{Hito 2 (4 de noviembre):} validar que las dimensiones creadas contengan los datos externos suficientes para responder P1--P3.
+    \item \textbf{Entrega final (18 de noviembre):} redactar hallazgos y conclusiones de negocio a partir del panel y conectarlos con este Canvas.
+\end{itemize}
+
+% -------------------------------------------------------------
+\section{Limitaciones y Riesgos}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.2cm}Y@{}}
+\toprule
+Matr\'icula por sede & Los indicadores regionales reflejan la oferta ubicada en la regi\'on, no el origen del estudiante. \\
+Proyecciones INE & Son estimaciones del Censo 2017, no poblaci\'on observada; para 2023--2026 son proyecci\'on oficial, no dato censal. \\
+Acreditaci\'on & Corte de fin de a\~no; una acreditaci\'on obtenida o perdida durante el a\~no se refleja con rezago. No hay datos 2012--2017. \\
+Puente de instituci\'on & Cuatro nombres activos sin c\'odigo verificado; el puente depende de la grafia de la base. \\
+Alcance & Cruce a nivel instituci\'on y regi\'on. No se cruz\'o a nivel programa, que la pauta califica como de dificultad alta. \\
+\bottomrule
+\end{tabularx}
+
+% -------------------------------------------------------------
+\appendix
+\section{Reproducibilidad}
+\begin{lstlisting}
+python P2_Hito1/scripts/05_download_external.py     # descarga + manifiesto (URL, fecha, SHA-256)
+python P2_Hito1/scripts/06_build_external_bridges.py # tablas externas, puentes y tasas de cruce
+python P2_Hito1/scripts/07_preview_kpis.py           # cifras preliminares de P1-P3
+\end{lstlisting}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+\textbf{Archivo (carpeta \texttt{data\_processed/})} & \textbf{Contenido} \\
+\midrule
+\texttt{ext\_ine\_poblacion\_region\_ano.csv} & Poblaci\'on por regi\'on y a\~no (16 $\times$ 34 filas) \\
+\texttt{ext\_sies\_acreditacion\_ies\_ano.csv} & Instituci\'on $\times$ corte anual con acreditaci\'on armonizada \\
+\texttt{puente\_region.csv} & C\'odigo SUBDERE, nombre CNED y hoja INE \\
+\texttt{puente\_institucion.csv} & Nombre CNED, c\'odigo SIES, m\'etodo y similitud \\
+\texttt{cruce\_resumen.json} & Tasas de coincidencia \\
+\texttt{cruce\_no\_coincidentes\_institucion.csv} & Los 19 nombres sin c\'odigo \\
+\texttt{kpi\_preview\_*.csv} & Cifras preliminares P1--P3 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\end{document}

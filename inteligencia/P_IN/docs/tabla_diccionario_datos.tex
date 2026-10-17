@@ -1,0 +1,62 @@
+{\small
+\begin{longtable}{|p{3.2cm}|p{2.2cm}|p{2.0cm}|p{1.8cm}|p{5.8cm}|}
+\hline
+\textbf{Campo Final} & \textbf{Orig. 12-22} & \textbf{Orig. 23-26} & \textbf{Tipo} & \textbf{Regla ETL y Tratamiento de Nulos} \\
+\hline\endfirsthead
+\hline \textbf{Campo Final} & \textbf{Orig. 12-22} & \textbf{Orig. 23-26} & \textbf{Tipo} & \textbf{Regla ETL y Tratamiento de Nulos} \\ \hline \endhead
+\texttt{\footnotesize ano} & Año & Año & \texttt{\footnotesize INTEGER} & Conversión a entero estándar de 4 dígitos [2012-2026]. \newline \textit{\footnotesize 0\% nulos. Clave temporal obligatoria.} \\
+\hline
+\texttt{\footnotesize nombre\_institucion} & Nombre Institución & Nombre Institución & \texttt{\footnotesize VARCHAR(150)} & Normalización de espacios y estandarización a mayúsculas consistentes. \newline \textit{\footnotesize 0\% nulos. Clave de entidad institucional.} \\
+\hline
+\texttt{\footnotesize tipo\_institucion} & Tipo Institución & Tipo Institución & \texttt{\footnotesize VARCHAR(50)} & Limpieza de caracteres especiales y recorte de espacios. \newline \textit{\footnotesize 0\% nulos. Clasificación estructural del sistema de educación superior.} \\
+\hline
+\texttt{\footnotesize clasificacion2} & Clasificación2 & Clasificación2 & \texttt{\footnotesize VARCHAR(100)} & Mapeo directo y limpieza de prefijos alfanuméricos. \newline \textit{\footnotesize Preservación de nulos si no aplica subclasificación.} \\
+\hline
+\texttt{\footnotesize acreditacion} & Acreditación & Clasificación3 & \texttt{\footnotesize VARCHAR(50)} & Mapeo de 'Clasificación3' del CNED 2023-2026 a 'acreditacion'. \newline \textit{\footnotesize Preservación del estado para modelar cambios en el tiempo (SCD Tipo 2).} \\
+\hline
+\texttt{\footnotesize autonomia} & Autonomía & Clasificación4 & \texttt{\footnotesize VARCHAR(50)} & Mapeo de 'Clasificación4' del CNED 2023-2026 a 'autonomia'. \newline \textit{\footnotesize Preservación del estado institucional.} \\
+\hline
+\texttt{\footnotesize gratuidad} & Gratuidad & Clasificación5 & \texttt{\footnotesize VARCHAR(50)} & Mapeo de 'Clasificación5' del CNED 2023-2026 a 'gratuidad'. \newline \textit{\footnotesize Nulos antes de 2016 reflejan inexistencia legal previa de la política.} \\
+\hline
+\texttt{\footnotesize nombre\_sede} & Nombre de la Sede & Nombre de la Sede & \texttt{\footnotesize VARCHAR(100)} & Normalización de textos y remoción de espacios redundantes. \newline \textit{\footnotesize 0\% nulos.} \\
+\hline
+\texttt{\footnotesize nombre\_region} & Nombre Region & Nombre Region & \texttt{\footnotesize VARCHAR(80)} & Normalización ortográfica y compatibilización con estándares SUBDERE/INE. \newline \textit{\footnotesize 0\% nulos.} \\
+\hline
+\texttt{\footnotesize region\_codigo\_subdere} & (Calculado) & (Calculado) & \texttt{\footnotesize VARCHAR(2)} & Mapeo determinista basado en nombre de región. \newline \textit{\footnotesize 0\% nulos. Llave canónica para cruces externos (INE, Casen).} \\
+\hline
+\texttt{\footnotesize flag\_quiebre\_nuble} & (Calculado) & (Calculado) & \texttt{\footnotesize INTEGER (0/1)} & 1 si codigo='16' y ano < 2018; 0 en otro caso. \newline \textit{\footnotesize 0\% nulos.} \\
+\hline
+\texttt{\footnotesize carrera\_generica} & Carrera Genérica & Carrera Genérica & \texttt{\footnotesize VARCHAR(120)} & Limpieza de tildes, caracteres especiales y mayúsculas. \newline \textit{\footnotesize 0\% nulos. Llave para cruce con mifuturo.cl.} \\
+\hline
+\texttt{\footnotesize nombre\_programa} & Nombre Programa & Nombre Programa & \texttt{\footnotesize VARCHAR(200)} & Limpieza de textos y normalización de mayúsculas. \newline \textit{\footnotesize 0\% nulos.} \\
+\hline
+\texttt{\footnotesize horario} & Horario & Horario & \texttt{\footnotesize VARCHAR(30)} & Recorte de espacios y tipificación uniforme. \newline \textit{\footnotesize 0\% nulos.} \\
+\hline
+\texttt{\footnotesize tipo\_programa} & Tipo Programa & Tipo Programa & \texttt{\footnotesize VARCHAR(50)} & Normalización de texto. \newline \textit{\footnotesize 0\% nulos.} \\
+\hline
+\texttt{\footnotesize area\_conocimiento} & Area Conocimiento & Area Conocimiento & \texttt{\footnotesize VARCHAR(80)} & Limpieza de caracteres especiales. \newline \textit{\footnotesize 0\% nulos.} \\
+\hline
+\texttt{\footnotesize tipo\_prueba\_admision} & (Calculado) & (Calculado) & \texttt{\footnotesize VARCHAR(10)} & Mapeo condicional por año cronológico. \newline \textit{\footnotesize 0\% nulos. Esencial para segmentar análisis psicométrico.} \\
+\hline
+\texttt{\footnotesize puntaje\_promedio\_original} & Promedio Puntaje & Promedio Puntaje & \texttt{\footnotesize DECIMAL(6,2)} & Casting numérico. Escala [150-850] en PSU/PDT y [100-1000] en PAES. \newline \textit{\footnotesize 80.5\% nulos justificados (CFT/IP). Preservados como NULL.} \\
+\hline
+\texttt{\footnotesize puntaje\_promedio\_norm\_0\_100} & (Calculado) & (Calculado) & \texttt{\footnotesize DECIMAL(5,2)} & PSU/PDT: (Score-150)/700*100; PAES: (Score-100)/900*100. \newline \textit{\footnotesize Preservado como NULL para instituciones sin requisito de prueba.} \\
+\hline
+\texttt{\footnotesize puntaje\_promedio\_equiv\_paes} & (Calculado) & (Calculado) & \texttt{\footnotesize DECIMAL(6,2)} & PSU/PDT: 100 + (Score-150)/700*900; PAES: Score nativo. \newline \textit{\footnotesize Preservado como NULL.} \\
+\hline
+\texttt{\footnotesize puntaje\_promedio\_zscore\_anual} & (Calculado) & (Calculado) & \texttt{\footnotesize DECIMAL(5,3)} & (Score - Media\_Anual) / Desv\_Anual. \newline \textit{\footnotesize Preservado como NULL.} \\
+\hline
+\texttt{\footnotesize flag\_exige\_prueba\_admision} & (Calculado) & (Calculado) & \texttt{\footnotesize INTEGER (0/1)} & 1 si puntaje no es nulo; 0 en caso contrario. \newline \textit{\footnotesize 0\% nulos. Filtro indispensable para Power BI.} \\
+\hline
+\texttt{\footnotesize vacantes} & Vacantes & Vacantes & \texttt{\footnotesize INTEGER} & Casting numérico a entero. \newline \textit{\footnotesize 25.4\% nulos en programas con admisión abierta. Preservados como NULL.} \\
+\hline
+\texttt{\footnotesize flag\_vacantes\_declaradas} & (Calculado) & (Calculado) & \texttt{\footnotesize INTEGER (0/1)} & 1 si vacantes > 0; 0 si es nulo o no informado. \newline \textit{\footnotesize 0\% nulos. Asegura cálculo correcto de tasas de ocupación.} \\
+\hline
+\texttt{\footnotesize matricula\_primer\_ano\_total} & Matrícula 1er Año & Matrícula 1er Año & \texttt{\footnotesize INTEGER} & Casting numérico entero. Imputación de nulos a 0. \newline \textit{\footnotesize 0\% nulos (medida aditiva).} \\
+\hline
+\texttt{\footnotesize matricula\_total} & Matrícula Total & Matrícula Total & \texttt{\footnotesize INTEGER} & Casting numérico entero. Imputación de nulos a 0. \newline \textit{\footnotesize 0\% nulos (medida aditiva).} \\
+\hline
+\texttt{\footnotesize tasa\_ocupacion\_primer\_ano} & (Calculado) & (Calculado) & \texttt{\footnotesize DECIMAL(6,2)} & (Matricula Primer Año / Vacantes) * 100. \newline \textit{\footnotesize Calculado solo cuando flag\_vacantes\_declaradas=1.} \\
+\hline
+\end{longtable}
+}

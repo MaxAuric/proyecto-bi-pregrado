@@ -1,0 +1,245 @@
+{
+  "resumen_filas": {
+    "base_entregada_2012_2022": 114265,
+    "cned_pregrado_2023_2026": 43946,
+    "total_integrado_esperado": 158211
+  },
+  "quiebre_puntajes": {
+    "PSU_2012_2020": {
+      "n": 18364,
+      "min": 266.0,
+      "max": 817.0,
+      "mean": 557.2621977782618,
+      "std": 57.37992157896613,
+      "median": 550.0
+    },
+    "PDT_2021_2022": {
+      "n": 3927,
+      "min": 360.0,
+      "max": 786.0,
+      "mean": 549.5541125541125,
+      "std": 53.84136491040837,
+      "median": 542.0
+    },
+    "PAES_2023_2026": {
+      "n": 8264,
+      "min": 285.0,
+      "max": 961.0,
+      "mean": 645.3725798644724,
+      "std": 84.007422194318,
+      "median": 628.0
+    }
+  },
+  "reporte_nulos_base_entregada": {
+    "Año": {
+      "clean_name": "ano",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Nombre Institución": {
+      "clean_name": "nombre_institucion",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Tipo Institución": {
+      "clean_name": "tipo_institucion",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Clasificación2": {
+      "clean_name": "clasificacion2",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Acreditación": {
+      "clean_name": "acreditacion",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Autonomía": {
+      "clean_name": "autonomia",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Gratuidad": {
+      "clean_name": "gratuidad",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Nombre de la Sede": {
+      "clean_name": "nombre_de_la_sede",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Nombre Region": {
+      "clean_name": "nombre_region",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Carrera Genérica": {
+      "clean_name": "carrera_generica",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Nombre Programa": {
+      "clean_name": "nombre_programa",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Horario": {
+      "clean_name": "horario",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Tipo Programa": {
+      "clean_name": "tipo_programa",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Area Conocimiento": {
+      "clean_name": "area_conocimiento",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Tipo Carrera": {
+      "clean_name": "tipo_carrera",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "IngresoDirecto": {
+      "clean_name": "ingresodirecto",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "str"
+    },
+    "Año Inicio Actividades": {
+      "clean_name": "ano_inicio_actividades",
+      "null_count": 6,
+      "null_pct": 0.01,
+      "dtype": "float64"
+    },
+    "Duración (en semestres)": {
+      "clean_name": "duracion_en_semestres",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Título": {
+      "clean_name": "titulo",
+      "null_count": 1671,
+      "null_pct": 1.46,
+      "dtype": "str"
+    },
+    "Grado Académico": {
+      "clean_name": "grado_academico",
+      "null_count": 78354,
+      "null_pct": 68.57,
+      "dtype": "str"
+    },
+    "Máximo Puntaje (promedio matemáticas y lenguaje)": {
+      "clean_name": "maximo_puntaje_promedio_matematicas_y_lenguaje",
+      "null_count": 91955,
+      "null_pct": 80.48,
+      "dtype": "float64"
+    },
+    "Promedio Puntaje (promedio matemáticas y lenguaje)": {
+      "clean_name": "promedio_puntaje_promedio_matematicas_y_lenguaje",
+      "null_count": 91974,
+      "null_pct": 80.49,
+      "dtype": "float64"
+    },
+    "Mínimo Puntaje (promedio matemáticas y lenguaje)": {
+      "clean_name": "minimo_puntaje_promedio_matematicas_y_lenguaje",
+      "null_count": 91962,
+      "null_pct": 80.48,
+      "dtype": "float64"
+    },
+    "Puntaje de corte (primer seleccionado)": {
+      "clean_name": "puntaje_de_corte_primer_seleccionado",
+      "null_count": 93351,
+      "null_pct": 81.7,
+      "dtype": "float64"
+    },
+    "Puntaje de corte (promedio de la carrera)": {
+      "clean_name": "puntaje_de_corte_promedio_de_la_carrera",
+      "null_count": 93352,
+      "null_pct": 81.7,
+      "dtype": "float64"
+    },
+    "Puntaje de corte (último seleccionado)": {
+      "clean_name": "puntaje_de_corte_ultimo_seleccionado",
+      "null_count": 93325,
+      "null_pct": 81.67,
+      "dtype": "float64"
+    },
+    "Vacantes": {
+      "clean_name": "vacantes",
+      "null_count": 28971,
+      "null_pct": 25.35,
+      "dtype": "float64"
+    },
+    "Matrícula primer año hombres": {
+      "clean_name": "matricula_primer_ano_hombres",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Matrícula primer año mujeres": {
+      "clean_name": "matricula_primer_ano_mujeres",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Matrícula primer año extranjeros": {
+      "clean_name": "matricula_primer_ano_extranjeros",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Matrícula Primer Año": {
+      "clean_name": "matricula_primer_ano",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Matrícula total hombres": {
+      "clean_name": "matricula_total_hombres",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Matrícula total mujeres": {
+      "clean_name": "matricula_total_mujeres",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Matrícula total extranjeros": {
+      "clean_name": "matricula_total_extranjeros",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    },
+    "Matrícula Total": {
+      "clean_name": "matricula_total",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "dtype": "int64"
+    }
+  }
+}
