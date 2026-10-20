@@ -1,0 +1,36 @@
+# ==========================================
+# GITIGNORE - PROYECTO BUSINESS INTELLIGENCE
+# ==========================================
+
+# 1. Ignorar carpetas de material externo e información original pesada
+info_proy/
+Material_extra/
+
+# 2. Ignorar archivos brutos pesados en data_raw (se descargan automáticamente por script)
+P_IN/data_raw/*.xlsx
+P_IN/data_raw/*.zip
+
+# 3. Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.venv/
+env/
+venv/
+.env
+
+# 4. Archivos auxiliares de compilación LaTeX (manteniendo el PDF final)
+P_IN/docs/*.aux
+P_IN/docs/*.log
+P_IN/docs/*.out
+P_IN/docs/*.toc
+P_IN/docs/*.fls
+P_IN/docs/*.fdb_latexmk
+P_IN/docs/*.synctex.gz
+
+# 5. Archivos del sistema y del IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
