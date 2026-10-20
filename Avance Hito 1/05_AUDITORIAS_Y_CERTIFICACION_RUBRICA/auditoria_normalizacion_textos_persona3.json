@@ -1,0 +1,26 @@
+{
+    "geografia": {
+        "total_regiones": 16,
+        "cobertura_registros_pct": 100.0,
+        "nulos": 0,
+        "flag_quiebre_nuble_registros": 1599
+    },
+    "institucion": {
+        "grafias_totales": 259,
+        "grafias_con_codigo_sies": 240,
+        "cobertura_filas_pct": 98.39,
+        "cobertura_matricula_pct": 99.0,
+        "metodos_cruce": {
+            "exacto_normalizado": 168,
+            "manual": 47,
+            "aproximado_>=0.92": 25,
+            "sin_coincidencia": 19
+        }
+    },
+    "carreras_y_programas": {
+        "carreras_genericas_unicas": 284,
+        "programas_unicos": 3209,
+        "areas_conocimiento": 11,
+        "limpieza_espacios_pct": 100.0
+    }
+}

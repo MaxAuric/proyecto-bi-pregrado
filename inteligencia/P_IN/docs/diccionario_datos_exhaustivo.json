@@ -5,9 +5,9 @@
     "nombre_orig_2023_2026": "Año",
     "tipo_dato": "INTEGER",
     "categoria": "Dimensión Temporal",
-    "descripcion": "Año académico de referencia del registro de matrícula.",
+    "descripcion": "Año académico de referencia del registro de matrícula universitaria.",
     "regla_transformacion": "Conversión a entero estándar de 4 dígitos [2012-2026].",
-    "tratamiento_nulos": "0% nulos. Clave temporal obligatoria."
+    "tratamiento_nulos": "0% nulos (0/158.211). Clave de particionamiento temporal y trazabilidad histórica."
   },
   {
     "nombre_final": "nombre_institucion",
@@ -15,9 +15,9 @@
     "nombre_orig_2023_2026": "Nombre Institución",
     "tipo_dato": "VARCHAR(150)",
     "categoria": "Dimensión Institución",
-    "descripcion": "Nombre oficial de la casa de estudios superiores.",
-    "regla_transformacion": "Normalización de espacios y estandarización a mayúsculas consistentes.",
-    "tratamiento_nulos": "0% nulos. Clave de entidad institucional."
+    "descripcion": "Razón social o denominación oficial de la casa de estudios superiores.",
+    "regla_transformacion": "Normalización de espacios (strip), mayúsculas consistentes y homofonía para enlace con tabla puente SIES.",
+    "tratamiento_nulos": "0% nulos. Clave de entidad institucional (259 grafías normalizadas)."
   },
   {
     "nombre_final": "tipo_institucion",
@@ -25,9 +25,9 @@
     "nombre_orig_2023_2026": "Tipo Institución",
     "tipo_dato": "VARCHAR(50)",
     "categoria": "Dimensión Institución",
-    "descripcion": "Tipo de institución: Universidad (Univ.), Instituto Profesional (I.P.) o Centro de Formación Técnica (C.F.T.).",
+    "descripcion": "Naturaleza jurídica y académica: Universidad (Univ.), Instituto Profesional (I.P.) o Centro de Formación Técnica (C.F.T.).",
     "regla_transformacion": "Limpieza de caracteres especiales y recorte de espacios.",
-    "tratamiento_nulos": "0% nulos. Clasificación estructural del sistema de educación superior."
+    "tratamiento_nulos": "0% nulos. Clasificación estructural del sistema terciario."
   },
   {
     "nombre_final": "clasificacion2",
@@ -36,8 +36,8 @@
     "tipo_dato": "VARCHAR(100)",
     "categoria": "Dimensión Institución",
     "descripcion": "Subclasificación institucional detallada (ej. Univ. Estatales CRUCH, Privadas CRUCH, Privadas no CRUCH).",
-    "regla_transformacion": "Mapeo directo y limpieza de prefijos alfanuméricos.",
-    "tratamiento_nulos": "Preservación de nulos si no aplica subclasificación."
+    "regla_transformacion": "Mapeo directo y homogeneización de cadenas alfanuméricas.",
+    "tratamiento_nulos": "Preservación de nulos en tipologías sin régimen secundario aplicable."
   },
   {
     "nombre_final": "acreditacion",
@@ -45,9 +45,9 @@
     "nombre_orig_2023_2026": "Clasificación3",
     "tipo_dato": "VARCHAR(50)",
     "categoria": "Dimensión Institución",
-    "descripcion": "Estado de acreditación institucional según la CNA.",
-    "regla_transformacion": "Mapeo de 'Clasificación3' del CNED 2023-2026 a 'acreditacion'.",
-    "tratamiento_nulos": "Preservación del estado para modelar cambios en el tiempo (SCD Tipo 2)."
+    "descripcion": "Estado de acreditación institucional registrado en CNED (Acreditada, No Acreditada).",
+    "regla_transformacion": "Mapeo estructural de 'Clasificación3' del CNED 2023-2026 a la variable histórica 'acreditacion'.",
+    "tratamiento_nulos": "0% nulos. En Hito 2 se modela formalmente su variación temporal (SCD Tipo 2)."
   },
   {
     "nombre_final": "autonomia",
@@ -55,9 +55,9 @@
     "nombre_orig_2023_2026": "Clasificación4",
     "tipo_dato": "VARCHAR(50)",
     "categoria": "Dimensión Institución",
-    "descripcion": "Condición de autonomía institucional otorgada por el CNED.",
+    "descripcion": "Condición legal de autonomía institucional otorgada por el Consejo Nacional de Educación.",
     "regla_transformacion": "Mapeo de 'Clasificación4' del CNED 2023-2026 a 'autonomia'.",
-    "tratamiento_nulos": "Preservación del estado institucional."
+    "tratamiento_nulos": "0% nulos. Estado legal continuo."
   },
   {
     "nombre_final": "gratuidad",
@@ -65,9 +65,9 @@
     "nombre_orig_2023_2026": "Clasificación5",
     "tipo_dato": "VARCHAR(50)",
     "categoria": "Dimensión Institución",
-    "descripcion": "Adscripción a Gratuidad Universitaria (Ley 21.091).",
+    "descripcion": "Adscripción de la institución a la política pública de Gratuidad Universitaria (Ley 21.091).",
     "regla_transformacion": "Mapeo de 'Clasificación5' del CNED 2023-2026 a 'gratuidad'.",
-    "tratamiento_nulos": "Nulos antes de 2016 reflejan inexistencia legal previa de la política."
+    "tratamiento_nulos": "Nulos previos a 2016 reflejan la inexistencia legal de la ley. No se imputa para respetar la verdad histórica."
   },
   {
     "nombre_final": "nombre_sede",
@@ -75,8 +75,8 @@
     "nombre_orig_2023_2026": "Nombre de la Sede",
     "tipo_dato": "VARCHAR(100)",
     "categoria": "Dimensión Sede",
-    "descripcion": "Nombre del campus o sede física donde se imparte el programa.",
-    "regla_transformacion": "Normalización de textos y remoción de espacios redundantes.",
+    "descripcion": "Nombre del campus o sede física donde se dicta el programa académico.",
+    "regla_transformacion": "Normalización de cadenas de texto y remoción de espacios redundantes.",
     "tratamiento_nulos": "0% nulos."
   },
   {
@@ -85,8 +85,8 @@
     "nombre_orig_2023_2026": "Nombre Region",
     "tipo_dato": "VARCHAR(80)",
     "categoria": "Dimensión Geográfica",
-    "descripcion": "Nombre de la región político-administrativa de Chile.",
-    "regla_transformacion": "Normalización ortográfica y compatibilización con estándares SUBDERE/INE.",
+    "descripcion": "Nombre de la región político-administrativa según registro CNED.",
+    "regla_transformacion": "Normalización ortográfica y compatibilización con estándares territoriales SUBDERE e INE.",
     "tratamiento_nulos": "0% nulos."
   },
   {
@@ -96,8 +96,38 @@
     "tipo_dato": "VARCHAR(2)",
     "categoria": "Dimensión Geográfica",
     "descripcion": "Código oficial de dos dígitos (01-16) según división territorial SUBDERE.",
-    "regla_transformacion": "Mapeo determinista basado en nombre de región.",
-    "tratamiento_nulos": "0% nulos. Llave canónica para cruces externos (INE, Casen)."
+    "regla_transformacion": "Mapeo determinista por diccionario regional oficial a partir de 'nombre_region'.",
+    "tratamiento_nulos": "0% nulos. Llave canónica de interoperabilidad externa (INE, Casen)."
+  },
+  {
+    "nombre_final": "region_numero_romano",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "VARCHAR(5)",
+    "categoria": "Dimensión Geográfica",
+    "descripcion": "Identificación de la región en nomenclatura clásica de números romanos (I a XVI, RM).",
+    "regla_transformacion": "Mapeo determinista derivado del código SUBDERE.",
+    "tratamiento_nulos": "0% nulos."
+  },
+  {
+    "nombre_final": "region_nombre_estandar",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "VARCHAR(100)",
+    "categoria": "Dimensión Geográfica",
+    "descripcion": "Nombre protocolar completo de la región política (ej. 'Región de Valparaíso').",
+    "regla_transformacion": "Estandarización léxica oficial según norma SUBDERE.",
+    "tratamiento_nulos": "0% nulos."
+  },
+  {
+    "nombre_final": "region_orden_geografico",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "INTEGER",
+    "categoria": "Dimensión Geográfica",
+    "descripcion": "Índice de ordenamiento geográfico de norte a sur (1 a 16).",
+    "regla_transformacion": "Mapeo numérico secuencial para garantizar orden visual correcto en paneles Power BI.",
+    "tratamiento_nulos": "0% nulos."
   },
   {
     "nombre_final": "flag_quiebre_nuble",
@@ -105,9 +135,9 @@
     "nombre_orig_2023_2026": "(Calculado)",
     "tipo_dato": "INTEGER (0/1)",
     "categoria": "Dimensión Geográfica",
-    "descripcion": "Flag indicador de trazabilidad para la Región de Ñuble (Ley 21.033, creada en 2018).",
-    "regla_transformacion": "1 si codigo='16' y ano < 2018; 0 en otro caso.",
-    "tratamiento_nulos": "0% nulos."
+    "descripcion": "Flag de trazabilidad territorial para la Región de Ñuble (creada por Ley 21.033 en 2018).",
+    "regla_transformacion": "1 si region_codigo_subdere == '16' y ano < 2018; 0 en otro caso.",
+    "tratamiento_nulos": "0% nulos. Gobierna 1.599 registros históricos previos a la vigencia institucional de la región."
   },
   {
     "nombre_final": "carrera_generica",
@@ -115,9 +145,9 @@
     "nombre_orig_2023_2026": "Carrera Genérica",
     "tipo_dato": "VARCHAR(120)",
     "categoria": "Dimensión Carrera",
-    "descripcion": "Agrupación nacional de la carrera según taxonomía SIES.",
-    "regla_transformacion": "Limpieza de tildes, caracteres especiales y mayúsculas.",
-    "tratamiento_nulos": "0% nulos. Llave para cruce con mifuturo.cl."
+    "descripcion": "Agrupación taxonómica nacional de la carrera según estándar SIES (284 carreras genéricas).",
+    "regla_transformacion": "Limpieza de tildes, caracteres redundantes y mayúsculas. Llave para cruces con mifuturo.cl.",
+    "tratamiento_nulos": "0% nulos."
   },
   {
     "nombre_final": "nombre_programa",
@@ -125,8 +155,8 @@
     "nombre_orig_2023_2026": "Nombre Programa",
     "tipo_dato": "VARCHAR(200)",
     "categoria": "Dimensión Programa",
-    "descripcion": "Nombre académico específico del programa ofrecido.",
-    "regla_transformacion": "Limpieza de textos y normalización de mayúsculas.",
+    "descripcion": "Nombre curricular específico del programa académico ofrecido por la casa de estudios.",
+    "regla_transformacion": "Limpieza de texto, unificación de espacios y normalización a mayúsculas.",
     "tratamiento_nulos": "0% nulos."
   },
   {
@@ -135,8 +165,8 @@
     "nombre_orig_2023_2026": "Horario",
     "tipo_dato": "VARCHAR(30)",
     "categoria": "Dimensión Programa",
-    "descripcion": "Jornada: Diurno, Vespertino o A Distancia/Semipresencial.",
-    "regla_transformacion": "Recorte de espacios y tipificación uniforme.",
+    "descripcion": "Régimen horario: Diurno, Vespertino o A Distancia / Semipresencial.",
+    "regla_transformacion": "Tipificación uniforme y eliminación de caracteres no imprimibles.",
     "tratamiento_nulos": "0% nulos."
   },
   {
@@ -145,8 +175,8 @@
     "nombre_orig_2023_2026": "Tipo Programa",
     "tipo_dato": "VARCHAR(50)",
     "categoria": "Dimensión Programa",
-    "descripcion": "Nivel: Profesional con/sin Licenciatura, Técnico Nivel Superior.",
-    "regla_transformacion": "Normalización de texto.",
+    "descripcion": "Nivel formativo: Profesional con Licenciatura, Profesional sin Licenciatura, Técnico Nivel Superior.",
+    "regla_transformacion": "Normalización de texto y concordancia de categorías.",
     "tratamiento_nulos": "0% nulos."
   },
   {
@@ -155,9 +185,69 @@
     "nombre_orig_2023_2026": "Area Conocimiento",
     "tipo_dato": "VARCHAR(80)",
     "categoria": "Dimensión Programa",
-    "descripcion": "Área de conocimiento según clasificación OCDE/SIES.",
-    "regla_transformacion": "Limpieza de caracteres especiales.",
+    "descripcion": "Área del saber disciplinar según clasificación OCDE/SIES (11 áreas de conocimiento).",
+    "regla_transformacion": "Limpieza de caracteres especiales y acentos ortográficos.",
     "tratamiento_nulos": "0% nulos."
+  },
+  {
+    "nombre_final": "tipo_carrera",
+    "nombre_orig_2012_2022": "Tipo Carrera",
+    "nombre_orig_2023_2026": "Tipo Carrera",
+    "tipo_dato": "VARCHAR(50)",
+    "categoria": "Dimensión Carrera",
+    "descripcion": "Modalidad curricular del plan (Carrera Regular, Continuidad de Estudios, Plan Trabajador).",
+    "regla_transformacion": "Recorte de espacios y tipificación uniforme.",
+    "tratamiento_nulos": "0% nulos."
+  },
+  {
+    "nombre_final": "ingreso_directo",
+    "nombre_orig_2012_2022": "IngresoDirecto",
+    "nombre_orig_2023_2026": "IngresoDirecto",
+    "tipo_dato": "VARCHAR(10)",
+    "categoria": "Dimensión Carrera",
+    "descripcion": "Indica si la carrera opera bajo régimen de admisión directa (SI/NO).",
+    "regla_transformacion": "Estandarización a valores booleanos/texto homogéneo SI/NO.",
+    "tratamiento_nulos": "0% nulos."
+  },
+  {
+    "nombre_final": "ano_inicio_actividades",
+    "nombre_orig_2012_2022": "Año Inicio Actividades",
+    "nombre_orig_2023_2026": "Año Inicio Actividades",
+    "tipo_dato": "INTEGER",
+    "categoria": "Dimensión Programa",
+    "descripcion": "Año cronológico de inicio de dictación del programa en la sede.",
+    "regla_transformacion": "Conversión a entero estándar. Preservación de 6 casos nulos de origen (0,01%).",
+    "tratamiento_nulos": "0.01% nulos justificados por omisión en registro original del CNED."
+  },
+  {
+    "nombre_final": "duracion_semestres",
+    "nombre_orig_2012_2022": "Duración (en semestres)",
+    "nombre_orig_2023_2026": "Duración (en semestres)",
+    "tipo_dato": "INTEGER",
+    "categoria": "Dimensión Programa",
+    "descripcion": "Extensión curricular oficial expresada en cantidad de semestres lectivos.",
+    "regla_transformacion": "Casting numérico a entero int64.",
+    "tratamiento_nulos": "0% nulos."
+  },
+  {
+    "nombre_final": "titulo",
+    "nombre_orig_2012_2022": "Título",
+    "nombre_orig_2023_2026": "Título",
+    "tipo_dato": "VARCHAR(200)",
+    "categoria": "Dimensión Programa",
+    "descripcion": "Nombre formal del título profesional o técnico que confiere el programa.",
+    "regla_transformacion": "Limpieza tipográfica. Preservación de nulos en planes que conducen únicamente a grado académico.",
+    "tratamiento_nulos": "1.46% nulos legítimos correspondientes a planes de licenciatura académica sin titulación profesional directa."
+  },
+  {
+    "nombre_final": "grado_academico",
+    "nombre_orig_2012_2022": "Grado Académico",
+    "nombre_orig_2023_2026": "Grado Académico",
+    "tipo_dato": "VARCHAR(100)",
+    "categoria": "Dimensión Programa",
+    "descripcion": "Grado académico que confiere el plan (Licenciado, Bachiller).",
+    "regla_transformacion": "Limpieza tipográfica. Preservación estricta de nulos.",
+    "tratamiento_nulos": "68.57% nulos legítimos: las carreras técnicas de CFT y carreras de IP por ley no otorgan grado académico."
   },
   {
     "nombre_final": "tipo_prueba_admision",
@@ -165,38 +255,48 @@
     "nombre_orig_2023_2026": "(Calculado)",
     "tipo_dato": "VARCHAR(10)",
     "categoria": "Atributo de Hecho",
-    "descripcion": "Instrumento oficial: PSU (<=2020), PDT (2021-2022), PAES (>=2023).",
-    "regla_transformacion": "Mapeo condicional por año cronológico.",
-    "tratamiento_nulos": "0% nulos. Esencial para segmentar análisis psicométrico."
+    "descripcion": "Instrumento psicométrico nacional vigente: PSU (<=2020), PDT (2021-2022), PAES (>=2023).",
+    "regla_transformacion": "Mapeo condicional por año cronológico de ingreso.",
+    "tratamiento_nulos": "0% nulos. Esencial para segmentar auditorías psicométricas."
+  },
+  {
+    "nombre_final": "flag_exige_prueba_admision",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "INTEGER (0/1)",
+    "categoria": "Atributo Dim. / Hecho",
+    "descripcion": "Indica si la carrera requiere formalmente prueba de selección centralizada para el ingreso.",
+    "regla_transformacion": "1 si puntaje_promedio_original no es nulo; 0 en caso contrario.",
+    "tratamiento_nulos": "0% nulos. Filtro indispensable en Power BI para aislar carreras con prueba de aquellas de admisión abierta."
   },
   {
     "nombre_final": "puntaje_promedio_original",
     "nombre_orig_2012_2022": "Promedio Puntaje",
     "nombre_orig_2023_2026": "Promedio Puntaje",
     "tipo_dato": "DECIMAL(6,2)",
-    "categoria": "Hecho / Medida",
-    "descripcion": "Puntaje promedio obtenido en la prueba en su escala nativa.",
-    "regla_transformacion": "Casting numérico. Escala [150-850] en PSU/PDT y [100-1000] en PAES.",
-    "tratamiento_nulos": "80.5% nulos justificados (CFT/IP). Preservados como NULL."
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje promedio obtenido por los seleccionados en la escala nativa de su época.",
+    "regla_transformacion": "Casting numérico float. Escalas: PSU/PDT [150-850], PAES [100-1000].",
+    "tratamiento_nulos": "80.49% nulos explicados matemáticamente por cobertura: CFT 0.2%, IP 0.1%, Univ 47.4%. Preservados como NULL. Prohibido reemplazar por cero."
   },
   {
     "nombre_final": "puntaje_promedio_norm_0_100",
     "nombre_orig_2012_2022": "(Calculado)",
     "nombre_orig_2023_2026": "(Calculado)",
     "tipo_dato": "DECIMAL(5,2)",
-    "categoria": "Hecho / Medida",
-    "descripcion": "Puntaje promedio normalizado en escala estándar 0 a 100.",
-    "regla_transformacion": "PSU/PDT: (Score-150)/700*100; PAES: (Score-100)/900*100.",
-    "tratamiento_nulos": "Preservado como NULL para instituciones sin requisito de prueba."
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje promedio reescalado linealmente a escala continua universal de 0 a 100 puntos.",
+    "regla_transformacion": "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    "tratamiento_nulos": "Preservado como NULL para programas sin requisito de prueba centralizada."
   },
   {
     "nombre_final": "puntaje_promedio_equiv_paes",
     "nombre_orig_2012_2022": "(Calculado)",
     "nombre_orig_2023_2026": "(Calculado)",
     "tipo_dato": "DECIMAL(6,2)",
-    "categoria": "Hecho / Medida",
-    "descripcion": "Puntaje proyectado a escala moderna PAES [100-1000].",
-    "regla_transformacion": "PSU/PDT: 100 + (Score-150)/700*900; PAES: Score nativo.",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje promedio homologado a escala contemporánea PAES [100-1000].",
+    "regla_transformacion": "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
     "tratamiento_nulos": "Preservado como NULL."
   },
   {
@@ -204,69 +304,289 @@
     "nombre_orig_2012_2022": "(Calculado)",
     "nombre_orig_2023_2026": "(Calculado)",
     "tipo_dato": "DECIMAL(5,3)",
-    "categoria": "Hecho / Medida",
-    "descripcion": "Puntaje estandarizado Z-Score relativo a la cohorte anual (media=0, desv=1).",
-    "regla_transformacion": "(Score - Media_Anual) / Desv_Anual.",
+    "categoria": "Hecho / Medida Estandarizada",
+    "descripcion": "Puntaje promedio estandarizado Z-Score relativo a la cohorte anual (media=0, desv=1).",
+    "regla_transformacion": "(score - media_anual) / desv_anual.",
     "tratamiento_nulos": "Preservado como NULL."
   },
   {
-    "nombre_final": "flag_exige_prueba_admision",
+    "nombre_final": "puntaje_maximo_original",
+    "nombre_orig_2012_2022": "Máximo Puntaje",
+    "nombre_orig_2023_2026": "Máximo Puntaje",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje máximo de selección obtenido en el programa en escala nativa.",
+    "regla_transformacion": "Casting numérico float. Preservación estricta de nulos.",
+    "tratamiento_nulos": "80.48% nulos justificados por cobertura institucional. Preservados como NULL."
+  },
+  {
+    "nombre_final": "puntaje_maximo_norm_0_100",
     "nombre_orig_2012_2022": "(Calculado)",
     "nombre_orig_2023_2026": "(Calculado)",
-    "tipo_dato": "INTEGER (0/1)",
-    "categoria": "Atributo Dim.",
-    "descripcion": "Indica si la carrera exige prueba centralizada de admisión.",
-    "regla_transformacion": "1 si puntaje no es nulo; 0 en caso contrario.",
-    "tratamiento_nulos": "0% nulos. Filtro indispensable para Power BI."
+    "tipo_dato": "DECIMAL(5,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje máximo normalizado en escala 0 a 100 puntos.",
+    "regla_transformacion": "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_maximo_equiv_paes",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje máximo proyectado a escala PAES [100-1000].",
+    "regla_transformacion": "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_minimo_original",
+    "nombre_orig_2012_2022": "Mínimo Puntaje",
+    "nombre_orig_2023_2026": "Mínimo Puntaje",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje mínimo de selección registrado en escala nativa.",
+    "regla_transformacion": "Casting numérico float. Preservación de nulos.",
+    "tratamiento_nulos": "80.48% nulos justificados. Preservados como NULL."
+  },
+  {
+    "nombre_final": "puntaje_minimo_norm_0_100",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(5,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje mínimo reescalado linealmente a 0-100 puntos.",
+    "regla_transformacion": "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_minimo_equiv_paes",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje mínimo proyectado a escala PAES [100-1000].",
+    "regla_transformacion": "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_corte_primer_original",
+    "nombre_orig_2012_2022": "Puntaje de corte (primer seleccionado)",
+    "nombre_orig_2023_2026": "Puntaje de corte (primer seleccionado)",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje ponderado del primer postulante seleccionado en escala nativa.",
+    "regla_transformacion": "Casting numérico float.",
+    "tratamiento_nulos": "81.70% nulos justificados por programas sin proceso de selección centralizado."
+  },
+  {
+    "nombre_final": "puntaje_corte_primer_norm_0_100",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(5,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje primer seleccionado normalizado a escala 0 a 100 puntos.",
+    "regla_transformacion": "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_corte_primer_equiv_paes",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje primer seleccionado proyectado a escala PAES [100-1000].",
+    "regla_transformacion": "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_corte_promedio_original",
+    "nombre_orig_2012_2022": "Puntaje de corte (promedio de la carrera)",
+    "nombre_orig_2023_2026": "Puntaje de corte (promedio de la carrera)",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje ponderado promedio de los seleccionados de la carrera.",
+    "regla_transformacion": "Casting numérico float.",
+    "tratamiento_nulos": "81.70% nulos justificados. Preservados como NULL."
+  },
+  {
+    "nombre_final": "puntaje_corte_promedio_norm_0_100",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(5,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje corte promedio normalizado a escala 0 a 100 puntos.",
+    "regla_transformacion": "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_corte_promedio_equiv_paes",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje corte promedio homologado a escala PAES [100-1000].",
+    "regla_transformacion": "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_corte_ultimo_original",
+    "nombre_orig_2012_2022": "Puntaje de corte (último seleccionado)",
+    "nombre_orig_2023_2026": "Puntaje de corte (último seleccionado)",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva (Corte de Carrera)",
+    "descripcion": "Puntaje de corte del último matriculado por vía regular en escala nativa.",
+    "regla_transformacion": "Casting numérico float.",
+    "tratamiento_nulos": "81.67% nulos justificados. Preservados como NULL."
+  },
+  {
+    "nombre_final": "puntaje_corte_ultimo_norm_0_100",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(5,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje de corte último seleccionado normalizado a escala 0 a 100 puntos.",
+    "regla_transformacion": "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    "tratamiento_nulos": "Preservado como NULL."
+  },
+  {
+    "nombre_final": "puntaje_corte_ultimo_equiv_paes",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(6,2)",
+    "categoria": "Hecho / Medida No Aditiva",
+    "descripcion": "Puntaje de corte último seleccionado homologado a escala PAES [100-1000].",
+    "regla_transformacion": "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    "tratamiento_nulos": "Preservado como NULL."
   },
   {
     "nombre_final": "vacantes",
     "nombre_orig_2012_2022": "Vacantes",
     "nombre_orig_2023_2026": "Vacantes",
     "tipo_dato": "INTEGER",
-    "categoria": "Hecho / Medida",
-    "descripcion": "Número total de vacantes de primer año declaradas.",
-    "regla_transformacion": "Casting numérico a entero.",
-    "tratamiento_nulos": "25.4% nulos en programas con admisión abierta. Preservados como NULL."
+    "categoria": "Hecho / Medida Aditiva",
+    "descripcion": "Número total de cupos o vacantes de primer año formalmente declarados.",
+    "regla_transformacion": "Casting numérico a entero int64.",
+    "tratamiento_nulos": "25.35% nulos en carreras con matrícula abierta, vespertinas o sin límite predefinido de cupo. Preservados como NULL. Reemplazar por cero falsearía el cierre de la oferta y provocaría divisiones por cero."
   },
   {
     "nombre_final": "flag_vacantes_declaradas",
     "nombre_orig_2012_2022": "(Calculado)",
     "nombre_orig_2023_2026": "(Calculado)",
     "tipo_dato": "INTEGER (0/1)",
-    "categoria": "Atributo Dim.",
-    "descripcion": "Indica si la carrera declaró vacantes finitas mayores a cero.",
+    "categoria": "Atributo Dim. / Hecho",
+    "descripcion": "Indica si el programa declaró vacantes numéricas finitas mayores a cero.",
     "regla_transformacion": "1 si vacantes > 0; 0 si es nulo o no informado.",
-    "tratamiento_nulos": "0% nulos. Asegura cálculo correcto de tasas de ocupación."
+    "tratamiento_nulos": "0% nulos. Filtro de gobernanza que garantiza la estabilidad matemática de los indicadores de ocupación."
+  },
+  {
+    "nombre_final": "matricula_primer_ano_hombres",
+    "nombre_orig_2012_2022": "Matrícula primer año hombres",
+    "nombre_orig_2023_2026": "Matrícula primer año hombres",
+    "tipo_dato": "INTEGER",
+    "categoria": "Hecho / Medida Aditiva",
+    "descripcion": "Cantidad de estudiantes masculinos matriculados en primer año.",
+    "regla_transformacion": "Conversión numérica a entero. Imputación de nulos a 0 (ausencia de inscritos del segmento).",
+    "tratamiento_nulos": "0% nulos. Medida totalmente aditiva."
+  },
+  {
+    "nombre_final": "matricula_primer_ano_mujeres",
+    "nombre_orig_2012_2022": "Matrícula primer año mujeres",
+    "nombre_orig_2023_2026": "Matrícula primer año mujeres",
+    "tipo_dato": "INTEGER",
+    "categoria": "Hecho / Medida Aditiva",
+    "descripcion": "Cantidad de estudiantes femeninas matriculadas en primer año.",
+    "regla_transformacion": "Conversión numérica a entero. Imputación de nulos a 0.",
+    "tratamiento_nulos": "0% nulos. Medida totalmente aditiva."
+  },
+  {
+    "nombre_final": "matricula_primer_ano_extranjeros",
+    "nombre_orig_2012_2022": "Matrícula primer año extranjeros",
+    "nombre_orig_2023_2026": "Matrícula primer año extranjeros",
+    "tipo_dato": "INTEGER",
+    "categoria": "Hecho / Medida Aditiva",
+    "descripcion": "Cantidad de estudiantes extranjeros matriculados en primer año.",
+    "regla_transformacion": "Conversión numérica a entero. Imputación de nulos a 0.",
+    "tratamiento_nulos": "0% nulos. Medida totalmente aditiva."
   },
   {
     "nombre_final": "matricula_primer_ano_total",
-    "nombre_orig_2012_2022": "Matrícula 1er Año",
-    "nombre_orig_2023_2026": "Matrícula 1er Año",
+    "nombre_orig_2012_2022": "Matrícula Primer Año",
+    "nombre_orig_2023_2026": "Matrícula Primer Año",
     "tipo_dato": "INTEGER",
-    "categoria": "Hecho / Medida",
-    "descripcion": "Estudiantes matriculados en primer año.",
-    "regla_transformacion": "Casting numérico entero. Imputación de nulos a 0.",
-    "tratamiento_nulos": "0% nulos (medida aditiva)."
+    "categoria": "Hecho / Medida Aditiva Principal",
+    "descripcion": "Total general de alumnos que ingresan formalmente a primer año de la carrera.",
+    "regla_transformacion": "Conversión numérica a entero. Imputación de nulos a 0.",
+    "tratamiento_nulos": "0% nulos. Medida aditiva en tiempo, espacio, institución y programa."
+  },
+  {
+    "nombre_final": "matricula_total_hombres",
+    "nombre_orig_2012_2022": "Matrícula total hombres",
+    "nombre_orig_2023_2026": "Matrícula total hombres",
+    "tipo_dato": "INTEGER",
+    "categoria": "Hecho / Medida Aditiva",
+    "descripcion": "Total acumulado de estudiantes masculinos en todos los años lectivos.",
+    "regla_transformacion": "Conversión numérica a entero. Imputación de nulos a 0.",
+    "tratamiento_nulos": "0% nulos."
+  },
+  {
+    "nombre_final": "matricula_total_mujeres",
+    "nombre_orig_2012_2022": "Matrícula total mujeres",
+    "nombre_orig_2023_2026": "Matrícula total mujeres",
+    "tipo_dato": "INTEGER",
+    "categoria": "Hecho / Medida Aditiva",
+    "descripcion": "Total acumulado de estudiantes femeninas en todos los años lectivos.",
+    "regla_transformacion": "Conversión numérica a entero. Imputación de nulos a 0.",
+    "tratamiento_nulos": "0% nulos."
+  },
+  {
+    "nombre_final": "matricula_total_extranjeros",
+    "nombre_orig_2012_2022": "Matrícula total extranjeros",
+    "nombre_orig_2023_2026": "Matrícula total extranjeros",
+    "tipo_dato": "INTEGER",
+    "categoria": "Hecho / Medida Aditiva",
+    "descripcion": "Total acumulado de estudiantes extranjeros en todos los niveles cursados.",
+    "regla_transformacion": "Conversión numérica a entero. Imputación de nulos a 0.",
+    "tratamiento_nulos": "0% nulos."
   },
   {
     "nombre_final": "matricula_total",
     "nombre_orig_2012_2022": "Matrícula Total",
     "nombre_orig_2023_2026": "Matrícula Total",
     "tipo_dato": "INTEGER",
-    "categoria": "Hecho / Medida",
-    "descripcion": "Total de estudiantes matriculados en todos los niveles.",
-    "regla_transformacion": "Casting numérico entero. Imputación de nulos a 0.",
-    "tratamiento_nulos": "0% nulos (medida aditiva)."
+    "categoria": "Hecho / Medida Aditiva Principal",
+    "descripcion": "Volumen global de matrícula de la institución/sede/programa en el año de corte.",
+    "regla_transformacion": "Conversión numérica a entero. Imputación de nulos a 0.",
+    "tratamiento_nulos": "0% nulos. Medida aditiva central."
   },
   {
     "nombre_final": "tasa_ocupacion_primer_ano",
     "nombre_orig_2012_2022": "(Calculado)",
     "nombre_orig_2023_2026": "(Calculado)",
     "tipo_dato": "DECIMAL(6,2)",
-    "categoria": "Métrica Analítica",
+    "categoria": "Métrica Analítica / Ratio Intensivo",
     "descripcion": "Porcentaje de ocupación de las vacantes declaradas en primer año.",
-    "regla_transformacion": "(Matricula Primer Año / Vacantes) * 100.",
-    "tratamiento_nulos": "Calculado solo cuando flag_vacantes_declaradas=1."
+    "regla_transformacion": "((matricula_primer_ano_total / vacantes) * 100). Calculado solo cuando flag_vacantes_declaradas = 1.",
+    "tratamiento_nulos": "Preservado como NULL cuando no hay vacantes declaradas para no sesgar medias."
+  },
+  {
+    "nombre_final": "ratio_mujeres_primer_ano",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(5,2)",
+    "categoria": "Métrica Analítica / Ratio Intensivo",
+    "descripcion": "Proporción porcentual de mujeres sobre la matrícula total de primer año.",
+    "regla_transformacion": "((matricula_primer_ano_mujeres / matricula_primer_ano_total) * 100).",
+    "tratamiento_nulos": "Preservado como NULL si matricula_primer_ano_total == 0."
+  },
+  {
+    "nombre_final": "ratio_extranjeros_total",
+    "nombre_orig_2012_2022": "(Calculado)",
+    "nombre_orig_2023_2026": "(Calculado)",
+    "tipo_dato": "DECIMAL(5,2)",
+    "categoria": "Métrica Analítica / Ratio Intensivo",
+    "descripcion": "Proporción porcentual de estudiantes de nacionalidad extranjera sobre la matrícula total.",
+    "regla_transformacion": "((matricula_total_extranjeros / matricula_total) * 100).",
+    "tratamiento_nulos": "Preservado como NULL si matricula_total == 0."
   }
 ]

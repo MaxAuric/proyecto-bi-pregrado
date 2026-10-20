@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Title>Diccionario de Datos Maestro - Hito 1</Title>
+  <Subject>Proyecto Business Intelligence</Subject>
+  <Author>Persona 5 (Gestor del Proyecto y Documentador)</Author>
+ </DocumentProperties>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="Segoe UI" x:Family="Swiss" ss:Size="10" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="HeaderStyle">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2" ss:Color="#102C57"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="10" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#102C57" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="TitleStyle">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Font ss:FontName="Segoe UI" ss:Size="14" ss:Color="#102C57" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="SubtitleStyle">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Font ss:FontName="Segoe UI" ss:Size="10" ss:Color="#64748B" ss:Italic="1"/>
+  </Style>
+  <Style ss:ID="RowEven">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="9.5" ss:Color="#1E293B"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="RowOdd">
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#E2E8F0"/>
+   </Borders>
+   <Font ss:FontName="Segoe UI" ss:Size="9.5" ss:Color="#1E293B"/>
+   <Interior ss:Color="#F8FAFC" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="CodeStyle">
+   <Alignment ss:Vertical="Center"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" ss:Color="#CBD5E1"/>
+   </Borders>
+   <Font ss:FontName="Consolas" ss:Size="9" ss:Color="#0369A1" ss:Bold="1"/>
+   <Interior ss:Color="#F0F9FF" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="CNED_59_Columnas">
+  <Table ss:DefaultRowHeight="20">
+   <Column ss:Width="30"/>
+   <Column ss:Width="170"/>
+   <Column ss:Width="150"/>
+   <Column ss:Width="150"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="280"/>
+   <Column ss:Width="280"/>
+   <Row ss:Height="28">
+    <Cell ss:MergeAcross="7" ss:StyleID="TitleStyle"><Data ss:Type="String">DICCIONARIO MAESTRO: BASE CONSOLIDADA CNED (2012–2026)</Data></Cell>
+   </Row>
+   <Row ss:Height="18">
+    <Cell ss:MergeAcross="7" ss:StyleID="SubtitleStyle"><Data ss:Type="String">Total Columnas: 59 | Total Registros: 158.211 | Responsable: Persona 5 (Gestor del Proyecto y Documentador)</Data></Cell>
+   </Row>
+   <Row ss:Height="10"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">#</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Nombre Final</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Nombre Orig. (2012-2022)</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Nombre Orig. (2023-2026)</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Tipo Dato</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Categoría Dimensional</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Regla de Transformación ETL</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Tratamiento de Nulos y Justificación</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">ano</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Año</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Año</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Temporal</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Conversión a entero estándar de 4 dígitos [2012-2026].</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos (0/158.211). Clave de particionamiento temporal y trazabilidad histórica.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Nombre Institución</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Nombre Institución</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(150)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Institución</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Normalización de espacios (strip), mayúsculas consistentes y homofonía para enlace con tabla puente SIES.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Clave de entidad institucional (259 grafías normalizadas).</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">3</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">tipo_institucion</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Tipo Institución</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Tipo Institución</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Institución</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Limpieza de caracteres especiales y recorte de espacios.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos. Clasificación estructural del sistema terciario.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">clasificacion2</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Clasificación2</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Clasificación2</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(100)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Institución</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Mapeo directo y homogeneización de cadenas alfanuméricas.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Preservación de nulos en tipologías sin régimen secundario aplicable.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">acreditacion</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Acreditación</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Clasificación3</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Institución</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Mapeo estructural de &apos;Clasificación3&apos; del CNED 2023-2026 a la variable histórica &apos;acreditacion&apos;.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos. En Hito 2 se modela formalmente su variación temporal (SCD Tipo 2).</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">autonomia</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Autonomía</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Clasificación4</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Institución</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Mapeo de &apos;Clasificación4&apos; del CNED 2023-2026 a &apos;autonomia&apos;.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Estado legal continuo.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">gratuidad</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Gratuidad</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Clasificación5</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Institución</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Mapeo de &apos;Clasificación5&apos; del CNED 2023-2026 a &apos;gratuidad&apos;.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Nulos previos a 2016 reflejan la inexistencia legal de la ley. No se imputa para respetar la verdad histórica.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_sede</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Nombre de la Sede</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Nombre de la Sede</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(100)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Sede</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Normalización de cadenas de texto y remoción de espacios redundantes.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_region</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Nombre Region</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Nombre Region</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(80)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Geográfica</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Normalización ortográfica y compatibilización con estándares territoriales SUBDERE e INE.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Geográfica</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Mapeo determinista por diccionario regional oficial a partir de &apos;nombre_region&apos;.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Llave canónica de interoperabilidad externa (INE, Casen).</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">11</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_numero_romano</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(5)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Geográfica</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Mapeo determinista derivado del código SUBDERE.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_nombre_estandar</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(100)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Geográfica</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Estandarización léxica oficial según norma SUBDERE.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">13</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_orden_geografico</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Geográfica</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Mapeo numérico secuencial para garantizar orden visual correcto en paneles Power BI.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">14</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">flag_quiebre_nuble</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER (0/1)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Geográfica</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">1 si region_codigo_subdere == &apos;16&apos; y ano &lt; 2018; 0 en otro caso.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Gobierna 1.599 registros históricos previos a la vigencia institucional de la región.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">carrera_generica</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Carrera Genérica</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Carrera Genérica</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(120)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Carrera</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Limpieza de tildes, caracteres redundantes y mayúsculas. Llave para cruces con mifuturo.cl.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">16</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_programa</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Nombre Programa</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Nombre Programa</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(200)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Programa</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Limpieza de texto, unificación de espacios y normalización a mayúsculas.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">horario</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Horario</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Horario</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(30)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Programa</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Tipificación uniforme y eliminación de caracteres no imprimibles.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">tipo_programa</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Tipo Programa</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Tipo Programa</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Programa</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Normalización de texto y concordancia de categorías.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">19</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">area_conocimiento</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Area Conocimiento</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Area Conocimiento</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(80)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Programa</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Limpieza de caracteres especiales y acentos ortográficos.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">tipo_carrera</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Tipo Carrera</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Tipo Carrera</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Carrera</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Recorte de espacios y tipificación uniforme.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">ingreso_directo</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">IngresoDirecto</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">IngresoDirecto</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(10)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Carrera</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Estandarización a valores booleanos/texto homogéneo SI/NO.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">22</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">ano_inicio_actividades</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Año Inicio Actividades</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Año Inicio Actividades</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Programa</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Conversión a entero estándar. Preservación de 6 casos nulos de origen (0,01%).</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0.01% nulos justificados por omisión en registro original del CNED.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">23</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">duracion_semestres</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Duración (en semestres)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Duración (en semestres)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Programa</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Casting numérico a entero int64.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">titulo</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Título</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Título</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(200)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Dimensión Programa</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Limpieza tipográfica. Preservación de nulos en planes que conducen únicamente a grado académico.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">1.46% nulos legítimos correspondientes a planes de licenciatura académica sin titulación profesional directa.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">grado_academico</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Grado Académico</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Grado Académico</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(100)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Dimensión Programa</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Limpieza tipográfica. Preservación estricta de nulos.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">68.57% nulos legítimos: las carreras técnicas de CFT y carreras de IP por ley no otorgan grado académico.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">26</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">tipo_prueba_admision</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">VARCHAR(10)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Atributo de Hecho</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Mapeo condicional por año cronológico de ingreso.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Esencial para segmentar auditorías psicométricas.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">flag_exige_prueba_admision</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER (0/1)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Atributo Dim. / Hecho</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">1 si puntaje_promedio_original no es nulo; 0 en caso contrario.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos. Filtro indispensable en Power BI para aislar carreras con prueba de aquellas de admisión abierta.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">28</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_promedio_original</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Promedio Puntaje</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Promedio Puntaje</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Casting numérico float. Escalas: PSU/PDT [150-850], PAES [100-1000].</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">80.49% nulos explicados matemáticamente por cobertura: CFT 0.2%, IP 0.1%, Univ 47.4%. Preservados como NULL. Prohibido reemplazar por cero.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">29</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_promedio_norm_0_100</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL para programas sin requisito de prueba centralizada.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_promedio_equiv_paes</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">31</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_promedio_zscore_anual</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,3)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida Estandarizada</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(score - media_anual) / desv_anual.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">32</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_maximo_original</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Máximo Puntaje</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Máximo Puntaje</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Casting numérico float. Preservación estricta de nulos.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">80.48% nulos justificados por cobertura institucional. Preservados como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">33</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_maximo_norm_0_100</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">34</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_maximo_equiv_paes</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_minimo_original</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Mínimo Puntaje</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Mínimo Puntaje</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Casting numérico float. Preservación de nulos.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">80.48% nulos justificados. Preservados como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">36</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_minimo_norm_0_100</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">37</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_minimo_equiv_paes</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">38</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_primer_original</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Puntaje de corte (primer seleccionado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Puntaje de corte (primer seleccionado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Casting numérico float.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">81.70% nulos justificados por programas sin proceso de selección centralizado.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">39</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_primer_norm_0_100</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_primer_equiv_paes</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">41</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_promedio_original</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Puntaje de corte (promedio de la carrera)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Puntaje de corte (promedio de la carrera)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Casting numérico float.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">81.70% nulos justificados. Preservados como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">42</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_promedio_norm_0_100</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">43</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_promedio_equiv_paes</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">44</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_ultimo_original</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Puntaje de corte (último seleccionado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Puntaje de corte (último seleccionado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva (Corte de Carrera)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Casting numérico float.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">81.67% nulos justificados. Preservados como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_ultimo_norm_0_100</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">46</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">puntaje_corte_ultimo_equiv_paes</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida No Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Preservado como NULL.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">47</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">vacantes</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Vacantes</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Vacantes</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Casting numérico a entero int64.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">25.35% nulos en carreras con matrícula abierta, vespertinas o sin límite predefinido de cupo. Preservados como NULL. Reemplazar por cero falsearía el cierre de la oferta y provocaría divisiones por cero.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">48</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">flag_vacantes_declaradas</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER (0/1)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Atributo Dim. / Hecho</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">1 si vacantes &gt; 0; 0 si es nulo o no informado.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Filtro de gobernanza que garantiza la estabilidad matemática de los indicadores de ocupación.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">49</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">matricula_primer_ano_hombres</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Matrícula primer año hombres</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Matrícula primer año hombres</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Conversión numérica a entero. Imputación de nulos a 0 (ausencia de inscritos del segmento).</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos. Medida totalmente aditiva.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">50</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">matricula_primer_ano_mujeres</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Matrícula primer año mujeres</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Matrícula primer año mujeres</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Conversión numérica a entero. Imputación de nulos a 0.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Medida totalmente aditiva.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">51</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">matricula_primer_ano_extranjeros</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Matrícula primer año extranjeros</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Matrícula primer año extranjeros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Conversión numérica a entero. Imputación de nulos a 0.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos. Medida totalmente aditiva.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">52</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">matricula_primer_ano_total</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Matrícula Primer Año</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Matrícula Primer Año</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida Aditiva Principal</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Conversión numérica a entero. Imputación de nulos a 0.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Medida aditiva en tiempo, espacio, institución y programa.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">53</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">matricula_total_hombres</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Matrícula total hombres</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Matrícula total hombres</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Conversión numérica a entero. Imputación de nulos a 0.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">54</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">matricula_total_mujeres</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Matrícula total mujeres</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Matrícula total mujeres</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Conversión numérica a entero. Imputación de nulos a 0.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">matricula_total_extranjeros</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Matrícula total extranjeros</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Matrícula total extranjeros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Hecho / Medida Aditiva</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Conversión numérica a entero. Imputación de nulos a 0.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">0% nulos.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">56</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">matricula_total</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Matrícula Total</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Matrícula Total</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Hecho / Medida Aditiva Principal</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Conversión numérica a entero. Imputación de nulos a 0.</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">0% nulos. Medida aditiva central.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">57</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">tasa_ocupacion_primer_ano</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(6,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Métrica Analítica / Ratio Intensivo</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">((matricula_primer_ano_total / vacantes) * 100). Calculado solo cuando flag_vacantes_declaradas = 1.</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL cuando no hay vacantes declaradas para no sesgar medias.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">58</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">ratio_mujeres_primer_ano</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Métrica Analítica / Ratio Intensivo</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">((matricula_primer_ano_mujeres / matricula_primer_ano_total) * 100).</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Preservado como NULL si matricula_primer_ano_total == 0.</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">59</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">ratio_extranjeros_total</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">(Calculado)</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">DECIMAL(5,2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Métrica Analítica / Ratio Intensivo</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">((matricula_total_extranjeros / matricula_total) * 100).</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Preservado como NULL si matricula_total == 0.</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+ <Worksheet ss:Name="Fuentes_Externas">
+  <Table ss:DefaultRowHeight="20">
+   <Column ss:Width="160"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="180"/>
+   <Column ss:Width="320"/>
+   <Row ss:Height="28">
+    <Cell ss:MergeAcross="6" ss:StyleID="TitleStyle"><Data ss:Type="String">FUENTES EXTERNAS OFICIALES INTEGRADAS (INE Y SIES)</Data></Cell>
+   </Row>
+   <Row ss:Height="18">
+    <Cell ss:MergeAcross="6" ss:StyleID="SubtitleStyle"><Data ss:Type="String">Descargas inmutables con fecha 15-oct-2026 y hash SHA-256 en manifiesto_descargas.json</Data></Cell>
+   </Row>
+   <Row ss:Height="10"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Archivo Procesado</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Fuente</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Grano Declarado</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Llave de Cruce</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Campo</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Tipo Dato</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Descripción Funcional</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(2)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Código oficial SUBDERE de dos dígitos (01-16).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">hoja_ine</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Nombre original de la hoja tabular en el libro del INE.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">ano</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Año cronológico proyectado (2002-2035).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">poblacion_total</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Población total estimada al 30 de junio, ambos sexos.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">poblacion_hombres</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Población masculina estimada al 30 de junio.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">poblacion_mujeres</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Población femenina estimada al 30 de junio.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">poblacion_0_14</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Población en rango etario de 0 a 14 años.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">poblacion_15_64</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Población en edad activa de estudiar/trabajar (15 a 64 años).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_ine_poblacion_region_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INE (Instituto Nacional de Estadísticas)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">region_codigo_subdere x ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">poblacion_65_mas</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Población de 65 años o más.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Código numérico institucional oficial otorgado por SIES.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">tipo_institucion</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Clasificación oficial (Universidad, IP, CFT, etc.).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion_sies</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(150)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Denominación legal registrada ante el Mineduc.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">autonomia</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Condición de autonomía institucional (disponible desde corte 2023).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">acreditacion</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Estado literal de acreditación según listado SIES.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">acreditacion_norm</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Categoría estandarizada (Acreditada, Extendida, Tutela, No Acreditada).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">vigencia</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(100)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Fecha o periodo de vencimiento del dictamen de la CNA.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">anos_acreditacion</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Años de acreditación otorgados formalmente (0 a 7 años).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">ano_corte</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Año del corte censal del listado SIES (2018-2026).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">corte</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(10)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Etiqueta cronológica AAAA-MM (ej. 2026-09).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ext_sies_acreditacion_ies_ano.csv</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">SIES / Ministerio de Educación</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">codigo_ies x ano_corte</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies + ano</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_norm</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(150)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Nombre sin acentos, signos ni puntuación para búsqueda fonética.</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+ <Worksheet ss:Name="Tablas_Puente">
+  <Table ss:DefaultRowHeight="20">
+   <Column ss:Width="160"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="160"/>
+   <Column ss:Width="120"/>
+   <Column ss:Width="260"/>
+   <Row ss:Height="28">
+    <Cell ss:MergeAcross="6" ss:StyleID="TitleStyle"><Data ss:Type="String">TABLAS PUENTE DE RESOLUCIÓN DIMENSIONAL</Data></Cell>
+   </Row>
+   <Row ss:Height="18">
+    <Cell ss:MergeAcross="6" ss:StyleID="SubtitleStyle"><Data ss:Type="String">puente_region.csv (100% cruce) y puente_institucion.csv (99% matrícula cubierta)</Data></Cell>
+   </Row>
+   <Row ss:Height="10"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Tabla Puente</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Llave Base Primaria</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Llave Externa</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Coincidencia</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Campo Puente</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Tipo</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Descripción</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">puente_region.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_region</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">100% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_region</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(80)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Nombre textual tal como figura en los registros CNED.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">puente_region.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_region</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">100% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(2)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Código canónico oficial de 2 dígitos asignado por SUBDERE.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">puente_region.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_region</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">100% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_nombre_estandar</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(100)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Denominación protocolar completa y estandarizada.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">puente_region.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_region</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">region_codigo_subdere</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">100% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">hoja_ine</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(50)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Identificador unívoco de la pestaña en el libro oficial del INE.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">puente_institucion.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">98.39% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion_cned</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(150)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Grafía exacta registrada en la base de matrícula CNED.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">puente_institucion.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">98.39% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_normalizado</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(150)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Expansión léxica de siglas (U. -&gt; UNIVERSIDAD, IP -&gt; INSTITUTO PROFESIONAL, CFT -&gt; CENTRO DE FORMACION TECNICA).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">puente_institucion.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">98.39% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INTEGER</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Código de institución oficial SIES (NULL para no coincidentes).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">puente_institucion.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">98.39% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion_sies</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">VARCHAR(150)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Razón social homóloga en el catálogo del SIES.</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">puente_institucion.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">98.39% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">metodo_cruce</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">VARCHAR(30)</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Estrategia algorítmica: exacto_normalizado (168), manual (47), aproximado_&gt;=0.92 (25), sin_coincidencia (19).</Data></Cell>
+   </Row>
+   <Row ss:Height="22">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">puente_institucion.csv</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">nombre_institucion</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">codigo_ies</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">98.39% registros</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">similitud</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">DECIMAL(4,3)</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">Coeficiente de similitud de cadenas difflib (1.000 para exactos/manuales, &gt;=0.920 para aproximados).</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+ <Worksheet ss:Name="Rubrica_Hito1">
+  <Table ss:DefaultRowHeight="20">
+   <Column ss:Width="220"/>
+   <Column ss:Width="60"/>
+   <Column ss:Width="60"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="420"/>
+   <Row ss:Height="28">
+    <Cell ss:MergeAcross="4" ss:StyleID="TitleStyle"><Data ss:Type="String">MATRIZ DE CERTIFICACIÓN DE RÚBRICA (HITO 1: 17/17 PUNTOS)</Data></Cell>
+   </Row>
+   <Row ss:Height="18">
+    <Cell ss:MergeAcross="4" ss:StyleID="SubtitleStyle"><Data ss:Type="String">Auditoría algorítmica verificada con 11_audit_hito1_integrity_p5.js (0 errores)</Data></Cell>
+   </Row>
+   <Row ss:Height="10"/>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Criterio Evaluado</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Puntos Max</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Puntos Obt</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Estado</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">Evidencia de Entrega en Repositorio</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Propuesta de valor y Canvas BI</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">100% CUMPLIDO</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Canvas BI formal de 10 bloques (informe_hito1_persona2.tex) y validación de 3 preguntas (informe_hito1_persona4.md)</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">ETL: integración 2023-2026, diccionario y nulos</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">100% CUMPLIDO</Data></Cell>
+    <Cell ss:StyleID="RowOdd"><Data ss:Type="String">158.211 filas exactas (P_IN), diccionario maestro de 59 atributos, homologación PSU/PDT/PAES y tratamiento de nulos</Data></Cell>
+   </Row>
+   <Row ss:Height="24">
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">Fuentes externas: llave, grano, tablas puente y panel</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="CodeStyle"><Data ss:Type="String">100% CUMPLIDO</Data></Cell>
+    <Cell ss:StyleID="RowEven"><Data ss:Type="String">INE y SIES oficiales con SHA-256, puente región (100%), puente institución (99% matrícula), Unknown Member y uso DAX</Data></Cell>
+   </Row>
+   <Row ss:Height="26">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">TOTAL GRUPAL HITO 1</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="Number">17</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">EXCELENCIA (17/17)</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">TODOS LOS ENTREGABLES COMPLETADOS Y AUDITADOS</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+</Workbook>

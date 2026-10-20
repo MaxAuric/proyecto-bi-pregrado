@@ -1,0 +1,92 @@
+{
+  "INE_proyecciones_2017_region_area.xlsx": {
+    "fuente": "INE - Estimaciones y proyecciones de poblacion 2002-2035, base Censo 2017 (totales regionales)",
+    "pagina": "https://www.ine.gob.cl/estadisticas/sociales/demografia-y-vitales/proyecciones-de-poblacion",
+    "url": "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/base-2017/ine_estimaciones-y-proyecciones-2002-2035_base-2017_region_area_tabulados.xlsx?sfvrsn=e9bd6edf_6",
+    "archivo": "INE_proyecciones_2017_region_area.xlsx",
+    "bytes": 294061,
+    "sha256": "06c87c120154fe0b5df1ab3fb6e39f6fc6d75b005d6d249d516bdc94041a7d01",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2018-12.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2018-12)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2019/03/2_listado_instituciones_vigentes_31diciembre_2018-3.xlsx",
+    "archivo": "SIES_IES_vigentes_2018-12.xlsx",
+    "bytes": 26258,
+    "sha256": "9f8a95e116e936352cf1fa9c080909d53ebe0d59e1ce984298191caf24b185be",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2019-12.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2019-12)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2020/01/listado_instituciones_vigentes_31_diciembre_2019.xlsx",
+    "archivo": "SIES_IES_vigentes_2019-12.xlsx",
+    "bytes": 39406,
+    "sha256": "d2e403d28c3e73557807e5e80f6c83ae3e6b3ed4d36bb324596a83dda575317b",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2020-12.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2020-12)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2020/12/listado_instituciones_vigentes_31_diciembre_2020.xlsx",
+    "archivo": "SIES_IES_vigentes_2020-12.xlsx",
+    "bytes": 25287,
+    "sha256": "8638204d1aa082d95884e45dc268461e4b708bc61d210468c71968ba64b132fd",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2021-12.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2021-12)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2022/01/listado_instituciones_vigentes_31_diciembre_2021.xlsx",
+    "archivo": "SIES_IES_vigentes_2021-12.xlsx",
+    "bytes": 23610,
+    "sha256": "d019ce31a560987f2eadbe462a877e9973714cd90c7ee5283c474315a58852a0",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2022-12.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2022-12)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2023/01/Listado_IES_vigentes_31_diciembre_2022.xlsx",
+    "archivo": "SIES_IES_vigentes_2022-12.xlsx",
+    "bytes": 25033,
+    "sha256": "5373559d23467a2a7636afcc1a5d3acbf75b6575148361c03150efe227481b80",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2023-12.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2023-12)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2024/01/Listado_IES_vigentes_al_31_de_diciembre_2023.xlsx",
+    "archivo": "SIES_IES_vigentes_2023-12.xlsx",
+    "bytes": 32454,
+    "sha256": "0dbbd2ebb01df31fa7caeeef685224835a5091af1bc0e813d0661c2ed1d41792",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2024-12.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2024-12)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2025/01/Listado_IES_vigentes_31_diciembre_2024_SIES.xlsx",
+    "archivo": "SIES_IES_vigentes_2024-12.xlsx",
+    "bytes": 61516,
+    "sha256": "31e1ebd9ae4359e18198185c5a71cdad30dcc8279a65097361fefedc33671ce1",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2025-12.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2025-12)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2026/01/Listado_IES_vigentes_31_diciembre_2025_SIES.xlsx",
+    "archivo": "SIES_IES_vigentes_2025-12.xlsx",
+    "bytes": 48658,
+    "sha256": "5b6e3f42abe91b1006b5101d9e6b048d480dc8d57ca6a4a4934125c8d05e5862",
+    "fecha_descarga": "2026-10-15"
+  },
+  "SIES_IES_vigentes_2026-09.xlsx": {
+    "fuente": "SIES/MINEDUC - Listado de IES vigentes (2026-09)",
+    "pagina": "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    "url": "https://www.mifuturo.cl/wp-content/uploads/2026/10/Listado_IES_vigentes_30_septiembre_2026_SIES.xlsx",
+    "archivo": "SIES_IES_vigentes_2026-09.xlsx",
+    "bytes": 50322,
+    "sha256": "3cec64f0eec1c4b09e83c644c7d3eda0c1933e3c1c56238b4ac63f1a6ddae574",
+    "fecha_descarga": "2026-10-15"
+  }
+}

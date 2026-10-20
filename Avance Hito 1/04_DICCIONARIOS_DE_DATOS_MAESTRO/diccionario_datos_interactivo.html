@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diccionario de Datos Interactivo - Hito 1 | Business Intelligence</title>
+<style>
+  :root {
+    --primary: #102C57;
+    --primary-light: #1e3a8a;
+    --secondary: #35598F;
+    --accent: #146E78;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --text: #0f172a;
+    --text-muted: #64748b;
+  }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: var(--primary);
+    color: white;
+    padding: 24px 32px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  }
+  .header-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  h1 { margin: 0; font-size: 20pt; font-weight: 800; }
+  .subtitle { margin-top: 4px; color: #94a3b8; font-size: 10.5pt; }
+  .stats-bar {
+    display: flex;
+    gap: 16px;
+  }
+  .stat-pill {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 9pt;
+    font-weight: 600;
+  }
+  .main-container {
+    max-width: 1300px;
+    margin: 24px auto;
+    padding: 0 20px;
+  }
+  .tabs {
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .tab-btn:hover { color: var(--primary); }
+  .tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+  }
+  .search-box {
+    margin-bottom: 18px;
+    display: flex;
+    gap: 12px;
+  }
+  .search-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 10pt;
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+  .search-input:focus { border-color: var(--accent); }
+  .filter-select {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 9.5pt;
+    background: white;
+  }
+  .table-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9pt;
+    text-align: left;
+  }
+  th {
+    background: #f1f5f9;
+    color: #334155;
+    padding: 12px 14px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border);
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+  tr:hover { background: #f8fafc; }
+  .code {
+    font-family: 'Consolas', monospace;
+    font-size: 8.5pt;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .tag-dim { background: #ede9fe; color: #6d28d9; }
+  .tag-fact { background: #fef3c7; color: #b45309; }
+  .tag-calc { background: #dcfce7; color: #15803d; }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <div>
+      <h1>Diccionario de Datos Maestro (Hito 1)</h1>
+      <div class="subtitle">Proyecto Final Business Intelligence | Ingeniería en Negocios | Persona 5 (Documentador)</div>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-pill">📊 158.211 Filas</div>
+      <div class="stat-pill">📋 59 Atributos CNED</div>
+      <div class="stat-pill">🔗 2 Fuentes Externas (INE/SIES)</div>
+      <div class="stat-pill">⭐ 17/17 Pts Rúbrica</div>
+    </div>
+  </div>
+</header>
+
+<div class="main-container">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('tab-cned')">Base CNED (59 Columnas)</button>
+    <button class="tab-btn" onclick="switchTab('tab-ext')">Fuentes Externas (INE y SIES)</button>
+    <button class="tab-btn" onclick="switchTab('tab-bridge')">Tablas Puente</button>
+  </div>
+
+  <!-- TAB CNED -->
+  <div id="tab-cned" class="tab-pane active">
+    <div class="search-box">
+      <input type="text" id="cnedSearch" class="search-input" placeholder="Buscar por nombre, categoría, regla ETL o nulos..." onkeyup="filterCnedTable()">
+      <select id="cnedCategoryFilter" class="filter-select" onchange="filterCnedTable()">
+        <option value="">Todas las categorías</option>
+        <option value="Temporal">Dimensión Temporal</option>
+        <option value="Institución">Dimensión Institución</option>
+        <option value="Geográfica">Dimensión Geográfica</option>
+        <option value="Programa">Dimensión Programa</option>
+        <option value="Carrera">Dimensión Carrera</option>
+        <option value="Hecho">Hecho / Medida</option>
+        <option value="Métrica">Métrica Analítica</option>
+      </select>
+    </div>
+
+    <div class="table-card">
+      <table id="cnedTable">
+        <thead>
+          <tr>
+            <th style="width: 40px;">#</th>
+            <th style="width: 170px;">Nombre Final</th>
+            <th style="width: 150px;">Nombre Orig. (12-22)</th>
+            <th style="width: 150px;">Nombre Orig. (23-26)</th>
+            <th style="width: 90px;">Tipo</th>
+            <th style="width: 140px;">Categoría</th>
+            <th>Regla de Transformación ETL</th>
+            <th>Tratamiento de Nulos y Justificación</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>1</td>
+            <td><span class="code">ano</span></td>
+            <td>Año</td>
+            <td>Año</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-dim">Dimensión Temporal</span></td>
+            <td>Conversión a entero estándar de 4 dígitos [2012-2026].</td>
+            <td><em>0% nulos (0/158.211). Clave de particionamiento temporal y trazabilidad histórica.</em></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><span class="code">nombre_institucion</span></td>
+            <td>Nombre Institución</td>
+            <td>Nombre Institución</td>
+            <td><span class="code">VARCHAR(150)</span></td>
+            <td><span class="tag tag-dim">Dimensión Institución</span></td>
+            <td>Normalización de espacios (strip), mayúsculas consistentes y homofonía para enlace con tabla puente SIES.</td>
+            <td><em>0% nulos. Clave de entidad institucional (259 grafías normalizadas).</em></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><span class="code">tipo_institucion</span></td>
+            <td>Tipo Institución</td>
+            <td>Tipo Institución</td>
+            <td><span class="code">VARCHAR(50)</span></td>
+            <td><span class="tag tag-dim">Dimensión Institución</span></td>
+            <td>Limpieza de caracteres especiales y recorte de espacios.</td>
+            <td><em>0% nulos. Clasificación estructural del sistema terciario.</em></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><span class="code">clasificacion2</span></td>
+            <td>Clasificación2</td>
+            <td>Clasificación2</td>
+            <td><span class="code">VARCHAR(100)</span></td>
+            <td><span class="tag tag-dim">Dimensión Institución</span></td>
+            <td>Mapeo directo y homogeneización de cadenas alfanuméricas.</td>
+            <td><em>Preservación de nulos en tipologías sin régimen secundario aplicable.</em></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><span class="code">acreditacion</span></td>
+            <td>Acreditación</td>
+            <td>Clasificación3</td>
+            <td><span class="code">VARCHAR(50)</span></td>
+            <td><span class="tag tag-dim">Dimensión Institución</span></td>
+            <td>Mapeo estructural de &apos;Clasificación3&apos; del CNED 2023-2026 a la variable histórica &apos;acreditacion&apos;.</td>
+            <td><em>0% nulos. En Hito 2 se modela formalmente su variación temporal (SCD Tipo 2).</em></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><span class="code">autonomia</span></td>
+            <td>Autonomía</td>
+            <td>Clasificación4</td>
+            <td><span class="code">VARCHAR(50)</span></td>
+            <td><span class="tag tag-dim">Dimensión Institución</span></td>
+            <td>Mapeo de &apos;Clasificación4&apos; del CNED 2023-2026 a &apos;autonomia&apos;.</td>
+            <td><em>0% nulos. Estado legal continuo.</em></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><span class="code">gratuidad</span></td>
+            <td>Gratuidad</td>
+            <td>Clasificación5</td>
+            <td><span class="code">VARCHAR(50)</span></td>
+            <td><span class="tag tag-dim">Dimensión Institución</span></td>
+            <td>Mapeo de &apos;Clasificación5&apos; del CNED 2023-2026 a &apos;gratuidad&apos;.</td>
+            <td><em>Nulos previos a 2016 reflejan la inexistencia legal de la ley. No se imputa para respetar la verdad histórica.</em></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><span class="code">nombre_sede</span></td>
+            <td>Nombre de la Sede</td>
+            <td>Nombre de la Sede</td>
+            <td><span class="code">VARCHAR(100)</span></td>
+            <td><span class="tag tag-dim">Dimensión Sede</span></td>
+            <td>Normalización de cadenas de texto y remoción de espacios redundantes.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><span class="code">nombre_region</span></td>
+            <td>Nombre Region</td>
+            <td>Nombre Region</td>
+            <td><span class="code">VARCHAR(80)</span></td>
+            <td><span class="tag tag-dim">Dimensión Geográfica</span></td>
+            <td>Normalización ortográfica y compatibilización con estándares territoriales SUBDERE e INE.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><span class="code">region_codigo_subdere</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">VARCHAR(2)</span></td>
+            <td><span class="tag tag-dim">Dimensión Geográfica</span></td>
+            <td>Mapeo determinista por diccionario regional oficial a partir de &apos;nombre_region&apos;.</td>
+            <td><em>0% nulos. Llave canónica de interoperabilidad externa (INE, Casen).</em></td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><span class="code">region_numero_romano</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">VARCHAR(5)</span></td>
+            <td><span class="tag tag-dim">Dimensión Geográfica</span></td>
+            <td>Mapeo determinista derivado del código SUBDERE.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><span class="code">region_nombre_estandar</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">VARCHAR(100)</span></td>
+            <td><span class="tag tag-dim">Dimensión Geográfica</span></td>
+            <td>Estandarización léxica oficial según norma SUBDERE.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><span class="code">region_orden_geografico</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-dim">Dimensión Geográfica</span></td>
+            <td>Mapeo numérico secuencial para garantizar orden visual correcto en paneles Power BI.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td><span class="code">flag_quiebre_nuble</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">INTEGER (0/1)</span></td>
+            <td><span class="tag tag-dim">Dimensión Geográfica</span></td>
+            <td>1 si region_codigo_subdere == &apos;16&apos; y ano &lt; 2018; 0 en otro caso.</td>
+            <td><em>0% nulos. Gobierna 1.599 registros históricos previos a la vigencia institucional de la región.</em></td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td><span class="code">carrera_generica</span></td>
+            <td>Carrera Genérica</td>
+            <td>Carrera Genérica</td>
+            <td><span class="code">VARCHAR(120)</span></td>
+            <td><span class="tag tag-dim">Dimensión Carrera</span></td>
+            <td>Limpieza de tildes, caracteres redundantes y mayúsculas. Llave para cruces con mifuturo.cl.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td><span class="code">nombre_programa</span></td>
+            <td>Nombre Programa</td>
+            <td>Nombre Programa</td>
+            <td><span class="code">VARCHAR(200)</span></td>
+            <td><span class="tag tag-dim">Dimensión Programa</span></td>
+            <td>Limpieza de texto, unificación de espacios y normalización a mayúsculas.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td><span class="code">horario</span></td>
+            <td>Horario</td>
+            <td>Horario</td>
+            <td><span class="code">VARCHAR(30)</span></td>
+            <td><span class="tag tag-dim">Dimensión Programa</span></td>
+            <td>Tipificación uniforme y eliminación de caracteres no imprimibles.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td><span class="code">tipo_programa</span></td>
+            <td>Tipo Programa</td>
+            <td>Tipo Programa</td>
+            <td><span class="code">VARCHAR(50)</span></td>
+            <td><span class="tag tag-dim">Dimensión Programa</span></td>
+            <td>Normalización de texto y concordancia de categorías.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td><span class="code">area_conocimiento</span></td>
+            <td>Area Conocimiento</td>
+            <td>Area Conocimiento</td>
+            <td><span class="code">VARCHAR(80)</span></td>
+            <td><span class="tag tag-dim">Dimensión Programa</span></td>
+            <td>Limpieza de caracteres especiales y acentos ortográficos.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td><span class="code">tipo_carrera</span></td>
+            <td>Tipo Carrera</td>
+            <td>Tipo Carrera</td>
+            <td><span class="code">VARCHAR(50)</span></td>
+            <td><span class="tag tag-dim">Dimensión Carrera</span></td>
+            <td>Recorte de espacios y tipificación uniforme.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>21</td>
+            <td><span class="code">ingreso_directo</span></td>
+            <td>IngresoDirecto</td>
+            <td>IngresoDirecto</td>
+            <td><span class="code">VARCHAR(10)</span></td>
+            <td><span class="tag tag-dim">Dimensión Carrera</span></td>
+            <td>Estandarización a valores booleanos/texto homogéneo SI/NO.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>22</td>
+            <td><span class="code">ano_inicio_actividades</span></td>
+            <td>Año Inicio Actividades</td>
+            <td>Año Inicio Actividades</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-dim">Dimensión Programa</span></td>
+            <td>Conversión a entero estándar. Preservación de 6 casos nulos de origen (0,01%).</td>
+            <td><em>0.01% nulos justificados por omisión en registro original del CNED.</em></td>
+          </tr>
+          <tr>
+            <td>23</td>
+            <td><span class="code">duracion_semestres</span></td>
+            <td>Duración (en semestres)</td>
+            <td>Duración (en semestres)</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-dim">Dimensión Programa</span></td>
+            <td>Casting numérico a entero int64.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td><span class="code">titulo</span></td>
+            <td>Título</td>
+            <td>Título</td>
+            <td><span class="code">VARCHAR(200)</span></td>
+            <td><span class="tag tag-dim">Dimensión Programa</span></td>
+            <td>Limpieza tipográfica. Preservación de nulos en planes que conducen únicamente a grado académico.</td>
+            <td><em>1.46% nulos legítimos correspondientes a planes de licenciatura académica sin titulación profesional directa.</em></td>
+          </tr>
+          <tr>
+            <td>25</td>
+            <td><span class="code">grado_academico</span></td>
+            <td>Grado Académico</td>
+            <td>Grado Académico</td>
+            <td><span class="code">VARCHAR(100)</span></td>
+            <td><span class="tag tag-dim">Dimensión Programa</span></td>
+            <td>Limpieza tipográfica. Preservación estricta de nulos.</td>
+            <td><em>68.57% nulos legítimos: las carreras técnicas de CFT y carreras de IP por ley no otorgan grado académico.</em></td>
+          </tr>
+          <tr>
+            <td>26</td>
+            <td><span class="code">tipo_prueba_admision</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">VARCHAR(10)</span></td>
+            <td><span class="tag tag-fact">Atributo de Hecho</span></td>
+            <td>Mapeo condicional por año cronológico de ingreso.</td>
+            <td><em>0% nulos. Esencial para segmentar auditorías psicométricas.</em></td>
+          </tr>
+          <tr>
+            <td>27</td>
+            <td><span class="code">flag_exige_prueba_admision</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">INTEGER (0/1)</span></td>
+            <td><span class="tag tag-fact">Atributo Dim. / Hecho</span></td>
+            <td>1 si puntaje_promedio_original no es nulo; 0 en caso contrario.</td>
+            <td><em>0% nulos. Filtro indispensable en Power BI para aislar carreras con prueba de aquellas de admisión abierta.</em></td>
+          </tr>
+          <tr>
+            <td>28</td>
+            <td><span class="code">puntaje_promedio_original</span></td>
+            <td>Promedio Puntaje</td>
+            <td>Promedio Puntaje</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>Casting numérico float. Escalas: PSU/PDT [150-850], PAES [100-1000].</td>
+            <td><em>80.49% nulos explicados matemáticamente por cobertura: CFT 0.2%, IP 0.1%, Univ 47.4%. Preservados como NULL. Prohibido reemplazar por cero.</em></td>
+          </tr>
+          <tr>
+            <td>29</td>
+            <td><span class="code">puntaje_promedio_norm_0_100</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</td>
+            <td><em>Preservado como NULL para programas sin requisito de prueba centralizada.</em></td>
+          </tr>
+          <tr>
+            <td>30</td>
+            <td><span class="code">puntaje_promedio_equiv_paes</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>31</td>
+            <td><span class="code">puntaje_promedio_zscore_anual</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,3)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Estandarizada</span></td>
+            <td>(score - media_anual) / desv_anual.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>32</td>
+            <td><span class="code">puntaje_maximo_original</span></td>
+            <td>Máximo Puntaje</td>
+            <td>Máximo Puntaje</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>Casting numérico float. Preservación estricta de nulos.</td>
+            <td><em>80.48% nulos justificados por cobertura institucional. Preservados como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>33</td>
+            <td><span class="code">puntaje_maximo_norm_0_100</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>34</td>
+            <td><span class="code">puntaje_maximo_equiv_paes</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>35</td>
+            <td><span class="code">puntaje_minimo_original</span></td>
+            <td>Mínimo Puntaje</td>
+            <td>Mínimo Puntaje</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>Casting numérico float. Preservación de nulos.</td>
+            <td><em>80.48% nulos justificados. Preservados como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>36</td>
+            <td><span class="code">puntaje_minimo_norm_0_100</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>37</td>
+            <td><span class="code">puntaje_minimo_equiv_paes</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>38</td>
+            <td><span class="code">puntaje_corte_primer_original</span></td>
+            <td>Puntaje de corte (primer seleccionado)</td>
+            <td>Puntaje de corte (primer seleccionado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>Casting numérico float.</td>
+            <td><em>81.70% nulos justificados por programas sin proceso de selección centralizado.</em></td>
+          </tr>
+          <tr>
+            <td>39</td>
+            <td><span class="code">puntaje_corte_primer_norm_0_100</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>40</td>
+            <td><span class="code">puntaje_corte_primer_equiv_paes</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>41</td>
+            <td><span class="code">puntaje_corte_promedio_original</span></td>
+            <td>Puntaje de corte (promedio de la carrera)</td>
+            <td>Puntaje de corte (promedio de la carrera)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>Casting numérico float.</td>
+            <td><em>81.70% nulos justificados. Preservados como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>42</td>
+            <td><span class="code">puntaje_corte_promedio_norm_0_100</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>43</td>
+            <td><span class="code">puntaje_corte_promedio_equiv_paes</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>44</td>
+            <td><span class="code">puntaje_corte_ultimo_original</span></td>
+            <td>Puntaje de corte (último seleccionado)</td>
+            <td>Puntaje de corte (último seleccionado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva (Corte de Carrera)</span></td>
+            <td>Casting numérico float.</td>
+            <td><em>81.67% nulos justificados. Preservados como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>45</td>
+            <td><span class="code">puntaje_corte_ultimo_norm_0_100</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>46</td>
+            <td><span class="code">puntaje_corte_ultimo_equiv_paes</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida No Aditiva</span></td>
+            <td>PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.</td>
+            <td><em>Preservado como NULL.</em></td>
+          </tr>
+          <tr>
+            <td>47</td>
+            <td><span class="code">vacantes</span></td>
+            <td>Vacantes</td>
+            <td>Vacantes</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva</span></td>
+            <td>Casting numérico a entero int64.</td>
+            <td><em>25.35% nulos en carreras con matrícula abierta, vespertinas o sin límite predefinido de cupo. Preservados como NULL. Reemplazar por cero falsearía el cierre de la oferta y provocaría divisiones por cero.</em></td>
+          </tr>
+          <tr>
+            <td>48</td>
+            <td><span class="code">flag_vacantes_declaradas</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">INTEGER (0/1)</span></td>
+            <td><span class="tag tag-fact">Atributo Dim. / Hecho</span></td>
+            <td>1 si vacantes &gt; 0; 0 si es nulo o no informado.</td>
+            <td><em>0% nulos. Filtro de gobernanza que garantiza la estabilidad matemática de los indicadores de ocupación.</em></td>
+          </tr>
+          <tr>
+            <td>49</td>
+            <td><span class="code">matricula_primer_ano_hombres</span></td>
+            <td>Matrícula primer año hombres</td>
+            <td>Matrícula primer año hombres</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva</span></td>
+            <td>Conversión numérica a entero. Imputación de nulos a 0 (ausencia de inscritos del segmento).</td>
+            <td><em>0% nulos. Medida totalmente aditiva.</em></td>
+          </tr>
+          <tr>
+            <td>50</td>
+            <td><span class="code">matricula_primer_ano_mujeres</span></td>
+            <td>Matrícula primer año mujeres</td>
+            <td>Matrícula primer año mujeres</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva</span></td>
+            <td>Conversión numérica a entero. Imputación de nulos a 0.</td>
+            <td><em>0% nulos. Medida totalmente aditiva.</em></td>
+          </tr>
+          <tr>
+            <td>51</td>
+            <td><span class="code">matricula_primer_ano_extranjeros</span></td>
+            <td>Matrícula primer año extranjeros</td>
+            <td>Matrícula primer año extranjeros</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva</span></td>
+            <td>Conversión numérica a entero. Imputación de nulos a 0.</td>
+            <td><em>0% nulos. Medida totalmente aditiva.</em></td>
+          </tr>
+          <tr>
+            <td>52</td>
+            <td><span class="code">matricula_primer_ano_total</span></td>
+            <td>Matrícula Primer Año</td>
+            <td>Matrícula Primer Año</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva Principal</span></td>
+            <td>Conversión numérica a entero. Imputación de nulos a 0.</td>
+            <td><em>0% nulos. Medida aditiva en tiempo, espacio, institución y programa.</em></td>
+          </tr>
+          <tr>
+            <td>53</td>
+            <td><span class="code">matricula_total_hombres</span></td>
+            <td>Matrícula total hombres</td>
+            <td>Matrícula total hombres</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva</span></td>
+            <td>Conversión numérica a entero. Imputación de nulos a 0.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>54</td>
+            <td><span class="code">matricula_total_mujeres</span></td>
+            <td>Matrícula total mujeres</td>
+            <td>Matrícula total mujeres</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva</span></td>
+            <td>Conversión numérica a entero. Imputación de nulos a 0.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>55</td>
+            <td><span class="code">matricula_total_extranjeros</span></td>
+            <td>Matrícula total extranjeros</td>
+            <td>Matrícula total extranjeros</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva</span></td>
+            <td>Conversión numérica a entero. Imputación de nulos a 0.</td>
+            <td><em>0% nulos.</em></td>
+          </tr>
+          <tr>
+            <td>56</td>
+            <td><span class="code">matricula_total</span></td>
+            <td>Matrícula Total</td>
+            <td>Matrícula Total</td>
+            <td><span class="code">INTEGER</span></td>
+            <td><span class="tag tag-fact">Hecho / Medida Aditiva Principal</span></td>
+            <td>Conversión numérica a entero. Imputación de nulos a 0.</td>
+            <td><em>0% nulos. Medida aditiva central.</em></td>
+          </tr>
+          <tr>
+            <td>57</td>
+            <td><span class="code">tasa_ocupacion_primer_ano</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(6,2)</span></td>
+            <td><span class="tag tag-calc">Métrica Analítica / Ratio Intensivo</span></td>
+            <td>((matricula_primer_ano_total / vacantes) * 100). Calculado solo cuando flag_vacantes_declaradas = 1.</td>
+            <td><em>Preservado como NULL cuando no hay vacantes declaradas para no sesgar medias.</em></td>
+          </tr>
+          <tr>
+            <td>58</td>
+            <td><span class="code">ratio_mujeres_primer_ano</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,2)</span></td>
+            <td><span class="tag tag-calc">Métrica Analítica / Ratio Intensivo</span></td>
+            <td>((matricula_primer_ano_mujeres / matricula_primer_ano_total) * 100).</td>
+            <td><em>Preservado como NULL si matricula_primer_ano_total == 0.</em></td>
+          </tr>
+          <tr>
+            <td>59</td>
+            <td><span class="code">ratio_extranjeros_total</span></td>
+            <td>(Calculado)</td>
+            <td>(Calculado)</td>
+            <td><span class="code">DECIMAL(5,2)</span></td>
+            <td><span class="tag tag-calc">Métrica Analítica / Ratio Intensivo</span></td>
+            <td>((matricula_total_extranjeros / matricula_total) * 100).</td>
+            <td><em>Preservado como NULL si matricula_total == 0.</em></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB EXTERNAS -->
+  <div id="tab-ext" class="tab-pane">
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Fuente y Archivo</th>
+            <th>Grano Declarado</th>
+            <th>Llave de Cruce</th>
+            <th>Campo</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">region_codigo_subdere</span></td>
+            <td>VARCHAR(2)</td>
+            <td>Código oficial SUBDERE de dos dígitos (01-16).</td>
+          </tr>
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">hoja_ine</span></td>
+            <td>VARCHAR(50)</td>
+            <td>Nombre original de la hoja tabular en el libro del INE.</td>
+          </tr>
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">ano</span></td>
+            <td>INTEGER</td>
+            <td>Año cronológico proyectado (2002-2035).</td>
+          </tr>
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">poblacion_total</span></td>
+            <td>INTEGER</td>
+            <td>Población total estimada al 30 de junio, ambos sexos.</td>
+          </tr>
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">poblacion_hombres</span></td>
+            <td>INTEGER</td>
+            <td>Población masculina estimada al 30 de junio.</td>
+          </tr>
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">poblacion_mujeres</span></td>
+            <td>INTEGER</td>
+            <td>Población femenina estimada al 30 de junio.</td>
+          </tr>
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">poblacion_0_14</span></td>
+            <td>INTEGER</td>
+            <td>Población en rango etario de 0 a 14 años.</td>
+          </tr>
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">poblacion_15_64</span></td>
+            <td>INTEGER</td>
+            <td>Población en edad activa de estudiar/trabajar (15 a 64 años).</td>
+          </tr>
+          <tr>
+            <td><strong>INE (Instituto Nacional de Estadísticas)</strong><br><small style="color:var(--text-muted);">ext_ine_poblacion_region_ano.csv</small></td>
+            <td>region_codigo_subdere x ano</td>
+            <td><span class="code">region_codigo_subdere + ano</span></td>
+            <td><span class="code">poblacion_65_mas</span></td>
+            <td>INTEGER</td>
+            <td>Población de 65 años o más.</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">codigo_ies</span></td>
+            <td>INTEGER</td>
+            <td>Código numérico institucional oficial otorgado por SIES.</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">tipo_institucion</span></td>
+            <td>VARCHAR(50)</td>
+            <td>Clasificación oficial (Universidad, IP, CFT, etc.).</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">nombre_institucion_sies</span></td>
+            <td>VARCHAR(150)</td>
+            <td>Denominación legal registrada ante el Mineduc.</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">autonomia</span></td>
+            <td>VARCHAR(50)</td>
+            <td>Condición de autonomía institucional (disponible desde corte 2023).</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">acreditacion</span></td>
+            <td>VARCHAR(50)</td>
+            <td>Estado literal de acreditación según listado SIES.</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">acreditacion_norm</span></td>
+            <td>VARCHAR(50)</td>
+            <td>Categoría estandarizada (Acreditada, Extendida, Tutela, No Acreditada).</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">vigencia</span></td>
+            <td>VARCHAR(100)</td>
+            <td>Fecha o periodo de vencimiento del dictamen de la CNA.</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">anos_acreditacion</span></td>
+            <td>INTEGER</td>
+            <td>Años de acreditación otorgados formalmente (0 a 7 años).</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">ano_corte</span></td>
+            <td>INTEGER</td>
+            <td>Año del corte censal del listado SIES (2018-2026).</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">corte</span></td>
+            <td>VARCHAR(10)</td>
+            <td>Etiqueta cronológica AAAA-MM (ej. 2026-09).</td>
+          </tr>
+          <tr>
+            <td><strong>SIES / Ministerio de Educación</strong><br><small style="color:var(--text-muted);">ext_sies_acreditacion_ies_ano.csv</small></td>
+            <td>codigo_ies x ano_corte</td>
+            <td><span class="code">codigo_ies + ano</span></td>
+            <td><span class="code">nombre_norm</span></td>
+            <td>VARCHAR(150)</td>
+            <td>Nombre sin acentos, signos ni puntuación para búsqueda fonética.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB TABLAS PUENTE -->
+  <div id="tab-bridge" class="tab-pane">
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Tabla Puente</th>
+            <th>Llave Base Primaria</th>
+            <th>Llave Externa</th>
+            <th>Tasa de Coincidencia</th>
+            <th>Campo Puente</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td><strong>puente_region.csv</strong></td>
+            <td><span class="code">nombre_region</span></td>
+            <td><span class="code">region_codigo_subdere</span></td>
+            <td><strong style="color:#15803d;">100%</strong></td>
+            <td><span class="code">nombre_region</span></td>
+            <td>VARCHAR(80)</td>
+            <td>Nombre textual tal como figura en los registros CNED.</td>
+          </tr>
+          <tr>
+            <td><strong>puente_region.csv</strong></td>
+            <td><span class="code">nombre_region</span></td>
+            <td><span class="code">region_codigo_subdere</span></td>
+            <td><strong style="color:#15803d;">100%</strong></td>
+            <td><span class="code">region_codigo_subdere</span></td>
+            <td>VARCHAR(2)</td>
+            <td>Código canónico oficial de 2 dígitos asignado por SUBDERE.</td>
+          </tr>
+          <tr>
+            <td><strong>puente_region.csv</strong></td>
+            <td><span class="code">nombre_region</span></td>
+            <td><span class="code">region_codigo_subdere</span></td>
+            <td><strong style="color:#15803d;">100%</strong></td>
+            <td><span class="code">region_nombre_estandar</span></td>
+            <td>VARCHAR(100)</td>
+            <td>Denominación protocolar completa y estandarizada.</td>
+          </tr>
+          <tr>
+            <td><strong>puente_region.csv</strong></td>
+            <td><span class="code">nombre_region</span></td>
+            <td><span class="code">region_codigo_subdere</span></td>
+            <td><strong style="color:#15803d;">100%</strong></td>
+            <td><span class="code">hoja_ine</span></td>
+            <td>VARCHAR(50)</td>
+            <td>Identificador unívoco de la pestaña en el libro oficial del INE.</td>
+          </tr>
+          <tr>
+            <td><strong>puente_institucion.csv</strong></td>
+            <td><span class="code">nombre_institucion</span></td>
+            <td><span class="code">codigo_ies</span></td>
+            <td><strong style="color:#15803d;">98.39%</strong></td>
+            <td><span class="code">nombre_institucion_cned</span></td>
+            <td>VARCHAR(150)</td>
+            <td>Grafía exacta registrada en la base de matrícula CNED.</td>
+          </tr>
+          <tr>
+            <td><strong>puente_institucion.csv</strong></td>
+            <td><span class="code">nombre_institucion</span></td>
+            <td><span class="code">codigo_ies</span></td>
+            <td><strong style="color:#15803d;">98.39%</strong></td>
+            <td><span class="code">nombre_normalizado</span></td>
+            <td>VARCHAR(150)</td>
+            <td>Expansión léxica de siglas (U. -&gt; UNIVERSIDAD, IP -&gt; INSTITUTO PROFESIONAL, CFT -&gt; CENTRO DE FORMACION TECNICA).</td>
+          </tr>
+          <tr>
+            <td><strong>puente_institucion.csv</strong></td>
+            <td><span class="code">nombre_institucion</span></td>
+            <td><span class="code">codigo_ies</span></td>
+            <td><strong style="color:#15803d;">98.39%</strong></td>
+            <td><span class="code">codigo_ies</span></td>
+            <td>INTEGER</td>
+            <td>Código de institución oficial SIES (NULL para no coincidentes).</td>
+          </tr>
+          <tr>
+            <td><strong>puente_institucion.csv</strong></td>
+            <td><span class="code">nombre_institucion</span></td>
+            <td><span class="code">codigo_ies</span></td>
+            <td><strong style="color:#15803d;">98.39%</strong></td>
+            <td><span class="code">nombre_institucion_sies</span></td>
+            <td>VARCHAR(150)</td>
+            <td>Razón social homóloga en el catálogo del SIES.</td>
+          </tr>
+          <tr>
+            <td><strong>puente_institucion.csv</strong></td>
+            <td><span class="code">nombre_institucion</span></td>
+            <td><span class="code">codigo_ies</span></td>
+            <td><strong style="color:#15803d;">98.39%</strong></td>
+            <td><span class="code">metodo_cruce</span></td>
+            <td>VARCHAR(30)</td>
+            <td>Estrategia algorítmica: exacto_normalizado (168), manual (47), aproximado_&gt;=0.92 (25), sin_coincidencia (19).</td>
+          </tr>
+          <tr>
+            <td><strong>puente_institucion.csv</strong></td>
+            <td><span class="code">nombre_institucion</span></td>
+            <td><span class="code">codigo_ies</span></td>
+            <td><strong style="color:#15803d;">98.39%</strong></td>
+            <td><span class="code">similitud</span></td>
+            <td>DECIMAL(4,3)</td>
+            <td>Coeficiente de similitud de cadenas difflib (1.000 para exactos/manuales, &gt;=0.920 para aproximados).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function filterCnedTable() {
+  const query = document.getElementById('cnedSearch').value.toLowerCase();
+  const cat = document.getElementById('cnedCategoryFilter').value.toLowerCase();
+  const rows = document.querySelectorAll('#cnedTable tbody tr');
+  rows.forEach(row => {
+    const text = row.innerText.toLowerCase();
+    const matchesQuery = !query || text.includes(query);
+    const matchesCat = !cat || text.includes(cat);
+    row.style.display = (matchesQuery && matchesCat) ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>

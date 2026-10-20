@@ -1,0 +1,804 @@
+/**
+ * Script Maestro de Generación de Diccionarios y Gobernanza de Datos (Hito 1)
+ * Autor: Persona 5 (Gestor del Proyecto y Documentador)
+ * Proyecto: Business Intelligence - Análisis Estratégico Educación Superior
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const P5_DOCS_DIR = path.join(__dirname, '..', 'docs');
+const PIN_DOCS_DIR = path.join(__dirname, '..', '..', 'P_IN', 'docs');
+const P5_AUDIT_DIR = path.join(__dirname, '..', 'auditoria');
+
+[P5_DOCS_DIR, PIN_DOCS_DIR, P5_AUDIT_DIR].forEach(dir => {
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+});
+
+// Definición exhaustiva de las 59 columnas de la base consolidada CNED (2012-2026)
+const MASTER_CNED_COLUMNS = [
+  // 1. Temporal
+  {
+    nombre_final: "ano",
+    nombre_orig_2012_2022: "Año",
+    nombre_orig_2023_2026: "Año",
+    tipo_dato: "INTEGER",
+    categoria: "Dimensión Temporal",
+    descripcion: "Año académico de referencia del registro de matrícula universitaria.",
+    regla_transformacion: "Conversión a entero estándar de 4 dígitos [2012-2026].",
+    tratamiento_nulos: "0% nulos (0/158.211). Clave de particionamiento temporal y trazabilidad histórica."
+  },
+  // 2. Institucional
+  {
+    nombre_final: "nombre_institucion",
+    nombre_orig_2012_2022: "Nombre Institución",
+    nombre_orig_2023_2026: "Nombre Institución",
+    tipo_dato: "VARCHAR(150)",
+    categoria: "Dimensión Institución",
+    descripcion: "Razón social o denominación oficial de la casa de estudios superiores.",
+    regla_transformacion: "Normalización de espacios (strip), mayúsculas consistentes y homofonía para enlace con tabla puente SIES.",
+    tratamiento_nulos: "0% nulos. Clave de entidad institucional (259 grafías normalizadas)."
+  },
+  {
+    nombre_final: "tipo_institucion",
+    nombre_orig_2012_2022: "Tipo Institución",
+    nombre_orig_2023_2026: "Tipo Institución",
+    tipo_dato: "VARCHAR(50)",
+    categoria: "Dimensión Institución",
+    descripcion: "Naturaleza jurídica y académica: Universidad (Univ.), Instituto Profesional (I.P.) o Centro de Formación Técnica (C.F.T.).",
+    regla_transformacion: "Limpieza de caracteres especiales y recorte de espacios.",
+    tratamiento_nulos: "0% nulos. Clasificación estructural del sistema terciario."
+  },
+  {
+    nombre_final: "clasificacion2",
+    nombre_orig_2012_2022: "Clasificación2",
+    nombre_orig_2023_2026: "Clasificación2",
+    tipo_dato: "VARCHAR(100)",
+    categoria: "Dimensión Institución",
+    descripcion: "Subclasificación institucional detallada (ej. Univ. Estatales CRUCH, Privadas CRUCH, Privadas no CRUCH).",
+    regla_transformacion: "Mapeo directo y homogeneización de cadenas alfanuméricas.",
+    tratamiento_nulos: "Preservación de nulos en tipologías sin régimen secundario aplicable."
+  },
+  {
+    nombre_final: "acreditacion",
+    nombre_orig_2012_2022: "Acreditación",
+    nombre_orig_2023_2026: "Clasificación3",
+    tipo_dato: "VARCHAR(50)",
+    categoria: "Dimensión Institución",
+    descripcion: "Estado de acreditación institucional registrado en CNED (Acreditada, No Acreditada).",
+    regla_transformacion: "Mapeo estructural de 'Clasificación3' del CNED 2023-2026 a la variable histórica 'acreditacion'.",
+    tratamiento_nulos: "0% nulos. En Hito 2 se modela formalmente su variación temporal (SCD Tipo 2)."
+  },
+  {
+    nombre_final: "autonomia",
+    nombre_orig_2012_2022: "Autonomía",
+    nombre_orig_2023_2026: "Clasificación4",
+    tipo_dato: "VARCHAR(50)",
+    categoria: "Dimensión Institución",
+    descripcion: "Condición legal de autonomía institucional otorgada por el Consejo Nacional de Educación.",
+    regla_transformacion: "Mapeo de 'Clasificación4' del CNED 2023-2026 a 'autonomia'.",
+    tratamiento_nulos: "0% nulos. Estado legal continuo."
+  },
+  {
+    nombre_final: "gratuidad",
+    nombre_orig_2012_2022: "Gratuidad",
+    nombre_orig_2023_2026: "Clasificación5",
+    tipo_dato: "VARCHAR(50)",
+    categoria: "Dimensión Institución",
+    descripcion: "Adscripción de la institución a la política pública de Gratuidad Universitaria (Ley 21.091).",
+    regla_transformacion: "Mapeo de 'Clasificación5' del CNED 2023-2026 a 'gratuidad'.",
+    tratamiento_nulos: "Nulos previos a 2016 reflejan la inexistencia legal de la ley. No se imputa para respetar la verdad histórica."
+  },
+  // 3. Geográfica y Sede
+  {
+    nombre_final: "nombre_sede",
+    nombre_orig_2012_2022: "Nombre de la Sede",
+    nombre_orig_2023_2026: "Nombre de la Sede",
+    tipo_dato: "VARCHAR(100)",
+    categoria: "Dimensión Sede",
+    descripcion: "Nombre del campus o sede física donde se dicta el programa académico.",
+    regla_transformacion: "Normalización de cadenas de texto y remoción de espacios redundantes.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "nombre_region",
+    nombre_orig_2012_2022: "Nombre Region",
+    nombre_orig_2023_2026: "Nombre Region",
+    tipo_dato: "VARCHAR(80)",
+    categoria: "Dimensión Geográfica",
+    descripcion: "Nombre de la región político-administrativa según registro CNED.",
+    regla_transformacion: "Normalización ortográfica y compatibilización con estándares territoriales SUBDERE e INE.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "region_codigo_subdere",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "VARCHAR(2)",
+    categoria: "Dimensión Geográfica",
+    descripcion: "Código oficial de dos dígitos (01-16) según división territorial SUBDERE.",
+    regla_transformacion: "Mapeo determinista por diccionario regional oficial a partir de 'nombre_region'.",
+    tratamiento_nulos: "0% nulos. Llave canónica de interoperabilidad externa (INE, Casen)."
+  },
+  {
+    nombre_final: "region_numero_romano",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "VARCHAR(5)",
+    categoria: "Dimensión Geográfica",
+    descripcion: "Identificación de la región en nomenclatura clásica de números romanos (I a XVI, RM).",
+    regla_transformacion: "Mapeo determinista derivado del código SUBDERE.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "region_nombre_estandar",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "VARCHAR(100)",
+    categoria: "Dimensión Geográfica",
+    descripcion: "Nombre protocolar completo de la región política (ej. 'Región de Valparaíso').",
+    regla_transformacion: "Estandarización léxica oficial según norma SUBDERE.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "region_orden_geografico",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "INTEGER",
+    categoria: "Dimensión Geográfica",
+    descripcion: "Índice de ordenamiento geográfico de norte a sur (1 a 16).",
+    regla_transformacion: "Mapeo numérico secuencial para garantizar orden visual correcto en paneles Power BI.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "flag_quiebre_nuble",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "INTEGER (0/1)",
+    categoria: "Dimensión Geográfica",
+    descripcion: "Flag de trazabilidad territorial para la Región de Ñuble (creada por Ley 21.033 en 2018).",
+    regla_transformacion: "1 si region_codigo_subdere == '16' y ano < 2018; 0 en otro caso.",
+    tratamiento_nulos: "0% nulos. Gobierna 1.599 registros históricos previos a la vigencia institucional de la región."
+  },
+  // 4. Programa y Carrera
+  {
+    nombre_final: "carrera_generica",
+    nombre_orig_2012_2022: "Carrera Genérica",
+    nombre_orig_2023_2026: "Carrera Genérica",
+    tipo_dato: "VARCHAR(120)",
+    categoria: "Dimensión Carrera",
+    descripcion: "Agrupación taxonómica nacional de la carrera según estándar SIES (284 carreras genéricas).",
+    regla_transformacion: "Limpieza de tildes, caracteres redundantes y mayúsculas. Llave para cruces con mifuturo.cl.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "nombre_programa",
+    nombre_orig_2012_2022: "Nombre Programa",
+    nombre_orig_2023_2026: "Nombre Programa",
+    tipo_dato: "VARCHAR(200)",
+    categoria: "Dimensión Programa",
+    descripcion: "Nombre curricular específico del programa académico ofrecido por la casa de estudios.",
+    regla_transformacion: "Limpieza de texto, unificación de espacios y normalización a mayúsculas.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "horario",
+    nombre_orig_2012_2022: "Horario",
+    nombre_orig_2023_2026: "Horario",
+    tipo_dato: "VARCHAR(30)",
+    categoria: "Dimensión Programa",
+    descripcion: "Régimen horario: Diurno, Vespertino o A Distancia / Semipresencial.",
+    regla_transformacion: "Tipificación uniforme y eliminación de caracteres no imprimibles.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "tipo_programa",
+    nombre_orig_2012_2022: "Tipo Programa",
+    nombre_orig_2023_2026: "Tipo Programa",
+    tipo_dato: "VARCHAR(50)",
+    categoria: "Dimensión Programa",
+    descripcion: "Nivel formativo: Profesional con Licenciatura, Profesional sin Licenciatura, Técnico Nivel Superior.",
+    regla_transformacion: "Normalización de texto y concordancia de categorías.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "area_conocimiento",
+    nombre_orig_2012_2022: "Area Conocimiento",
+    nombre_orig_2023_2026: "Area Conocimiento",
+    tipo_dato: "VARCHAR(80)",
+    categoria: "Dimensión Programa",
+    descripcion: "Área del saber disciplinar según clasificación OCDE/SIES (11 áreas de conocimiento).",
+    regla_transformacion: "Limpieza de caracteres especiales y acentos ortográficos.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "tipo_carrera",
+    nombre_orig_2012_2022: "Tipo Carrera",
+    nombre_orig_2023_2026: "Tipo Carrera",
+    tipo_dato: "VARCHAR(50)",
+    categoria: "Dimensión Carrera",
+    descripcion: "Modalidad curricular del plan (Carrera Regular, Continuidad de Estudios, Plan Trabajador).",
+    regla_transformacion: "Recorte de espacios y tipificación uniforme.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "ingreso_directo",
+    nombre_orig_2012_2022: "IngresoDirecto",
+    nombre_orig_2023_2026: "IngresoDirecto",
+    tipo_dato: "VARCHAR(10)",
+    categoria: "Dimensión Carrera",
+    descripcion: "Indica si la carrera opera bajo régimen de admisión directa (SI/NO).",
+    regla_transformacion: "Estandarización a valores booleanos/texto homogéneo SI/NO.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "ano_inicio_actividades",
+    nombre_orig_2012_2022: "Año Inicio Actividades",
+    nombre_orig_2023_2026: "Año Inicio Actividades",
+    tipo_dato: "INTEGER",
+    categoria: "Dimensión Programa",
+    descripcion: "Año cronológico de inicio de dictación del programa en la sede.",
+    regla_transformacion: "Conversión a entero estándar. Preservación de 6 casos nulos de origen (0,01%).",
+    tratamiento_nulos: "0.01% nulos justificados por omisión en registro original del CNED."
+  },
+  {
+    nombre_final: "duracion_semestres",
+    nombre_orig_2012_2022: "Duración (en semestres)",
+    nombre_orig_2023_2026: "Duración (en semestres)",
+    tipo_dato: "INTEGER",
+    categoria: "Dimensión Programa",
+    descripcion: "Extensión curricular oficial expresada en cantidad de semestres lectivos.",
+    regla_transformacion: "Casting numérico a entero int64.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "titulo",
+    nombre_orig_2012_2022: "Título",
+    nombre_orig_2023_2026: "Título",
+    tipo_dato: "VARCHAR(200)",
+    categoria: "Dimensión Programa",
+    descripcion: "Nombre formal del título profesional o técnico que confiere el programa.",
+    regla_transformacion: "Limpieza tipográfica. Preservación de nulos en planes que conducen únicamente a grado académico.",
+    tratamiento_nulos: "1.46% nulos legítimos correspondientes a planes de licenciatura académica sin titulación profesional directa."
+  },
+  {
+    nombre_final: "grado_academico",
+    nombre_orig_2012_2022: "Grado Académico",
+    nombre_orig_2023_2026: "Grado Académico",
+    tipo_dato: "VARCHAR(100)",
+    categoria: "Dimensión Programa",
+    descripcion: "Grado académico que confiere el plan (Licenciado, Bachiller).",
+    regla_transformacion: "Limpieza tipográfica. Preservación estricta de nulos.",
+    tratamiento_nulos: "68.57% nulos legítimos: las carreras técnicas de CFT y carreras de IP por ley no otorgan grado académico."
+  },
+  // 5. Puntajes y Homologación Psicométrica
+  {
+    nombre_final: "tipo_prueba_admision",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "VARCHAR(10)",
+    categoria: "Atributo de Hecho",
+    descripcion: "Instrumento psicométrico nacional vigente: PSU (<=2020), PDT (2021-2022), PAES (>=2023).",
+    regla_transformacion: "Mapeo condicional por año cronológico de ingreso.",
+    tratamiento_nulos: "0% nulos. Esencial para segmentar auditorías psicométricas."
+  },
+  {
+    nombre_final: "flag_exige_prueba_admision",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "INTEGER (0/1)",
+    categoria: "Atributo Dim. / Hecho",
+    descripcion: "Indica si la carrera requiere formalmente prueba de selección centralizada para el ingreso.",
+    regla_transformacion: "1 si puntaje_promedio_original no es nulo; 0 en caso contrario.",
+    tratamiento_nulos: "0% nulos. Filtro indispensable en Power BI para aislar carreras con prueba de aquellas de admisión abierta."
+  },
+  {
+    nombre_final: "puntaje_promedio_original",
+    nombre_orig_2012_2022: "Promedio Puntaje",
+    nombre_orig_2023_2026: "Promedio Puntaje",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje promedio obtenido por los seleccionados en la escala nativa de su época.",
+    regla_transformacion: "Casting numérico float. Escalas: PSU/PDT [150-850], PAES [100-1000].",
+    tratamiento_nulos: "80.49% nulos explicados matemáticamente por cobertura: CFT 0.2%, IP 0.1%, Univ 47.4%. Preservados como NULL. Prohibido reemplazar por cero."
+  },
+  {
+    nombre_final: "puntaje_promedio_norm_0_100",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje promedio reescalado linealmente a escala continua universal de 0 a 100 puntos.",
+    regla_transformacion: "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    tratamiento_nulos: "Preservado como NULL para programas sin requisito de prueba centralizada."
+  },
+  {
+    nombre_final: "puntaje_promedio_equiv_paes",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje promedio homologado a escala contemporánea PAES [100-1000].",
+    regla_transformacion: "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_promedio_zscore_anual",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,3)",
+    categoria: "Hecho / Medida Estandarizada",
+    descripcion: "Puntaje promedio estandarizado Z-Score relativo a la cohorte anual (media=0, desv=1).",
+    regla_transformacion: "(score - media_anual) / desv_anual.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_maximo_original",
+    nombre_orig_2012_2022: "Máximo Puntaje",
+    nombre_orig_2023_2026: "Máximo Puntaje",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje máximo de selección obtenido en el programa en escala nativa.",
+    regla_transformacion: "Casting numérico float. Preservación estricta de nulos.",
+    tratamiento_nulos: "80.48% nulos justificados por cobertura institucional. Preservados como NULL."
+  },
+  {
+    nombre_final: "puntaje_maximo_norm_0_100",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje máximo normalizado en escala 0 a 100 puntos.",
+    regla_transformacion: "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_maximo_equiv_paes",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje máximo proyectado a escala PAES [100-1000].",
+    regla_transformacion: "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_minimo_original",
+    nombre_orig_2012_2022: "Mínimo Puntaje",
+    nombre_orig_2023_2026: "Mínimo Puntaje",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje mínimo de selección registrado en escala nativa.",
+    regla_transformacion: "Casting numérico float. Preservación de nulos.",
+    tratamiento_nulos: "80.48% nulos justificados. Preservados como NULL."
+  },
+  {
+    nombre_final: "puntaje_minimo_norm_0_100",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje mínimo reescalado linealmente a 0-100 puntos.",
+    regla_transformacion: "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_minimo_equiv_paes",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje mínimo proyectado a escala PAES [100-1000].",
+    regla_transformacion: "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_corte_primer_original",
+    nombre_orig_2012_2022: "Puntaje de corte (primer seleccionado)",
+    nombre_orig_2023_2026: "Puntaje de corte (primer seleccionado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje ponderado del primer postulante seleccionado en escala nativa.",
+    regla_transformacion: "Casting numérico float.",
+    tratamiento_nulos: "81.70% nulos justificados por programas sin proceso de selección centralizado."
+  },
+  {
+    nombre_final: "puntaje_corte_primer_norm_0_100",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje primer seleccionado normalizado a escala 0 a 100 puntos.",
+    regla_transformacion: "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_corte_primer_equiv_paes",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje primer seleccionado proyectado a escala PAES [100-1000].",
+    regla_transformacion: "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_corte_promedio_original",
+    nombre_orig_2012_2022: "Puntaje de corte (promedio de la carrera)",
+    nombre_orig_2023_2026: "Puntaje de corte (promedio de la carrera)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje ponderado promedio de los seleccionados de la carrera.",
+    regla_transformacion: "Casting numérico float.",
+    tratamiento_nulos: "81.70% nulos justificados. Preservados como NULL."
+  },
+  {
+    nombre_final: "puntaje_corte_promedio_norm_0_100",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje corte promedio normalizado a escala 0 a 100 puntos.",
+    regla_transformacion: "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_corte_promedio_equiv_paes",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje corte promedio homologado a escala PAES [100-1000].",
+    regla_transformacion: "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_corte_ultimo_original",
+    nombre_orig_2012_2022: "Puntaje de corte (último seleccionado)",
+    nombre_orig_2023_2026: "Puntaje de corte (último seleccionado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva (Corte de Carrera)",
+    descripcion: "Puntaje de corte del último matriculado por vía regular en escala nativa.",
+    regla_transformacion: "Casting numérico float.",
+    tratamiento_nulos: "81.67% nulos justificados. Preservados como NULL."
+  },
+  {
+    nombre_final: "puntaje_corte_ultimo_norm_0_100",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje de corte último seleccionado normalizado a escala 0 a 100 puntos.",
+    regla_transformacion: "PSU/PDT: ((score-150)/700)*100; PAES: ((score-100)/900)*100.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  {
+    nombre_final: "puntaje_corte_ultimo_equiv_paes",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Hecho / Medida No Aditiva",
+    descripcion: "Puntaje de corte último seleccionado homologado a escala PAES [100-1000].",
+    regla_transformacion: "PSU/PDT: 100 + ((score-150)/700)*900; PAES: score nativo.",
+    tratamiento_nulos: "Preservado como NULL."
+  },
+  // 6. Vacantes, Matrículas y Ratios
+  {
+    nombre_final: "vacantes",
+    nombre_orig_2012_2022: "Vacantes",
+    nombre_orig_2023_2026: "Vacantes",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva",
+    descripcion: "Número total de cupos o vacantes de primer año formalmente declarados.",
+    regla_transformacion: "Casting numérico a entero int64.",
+    tratamiento_nulos: "25.35% nulos en carreras con matrícula abierta, vespertinas o sin límite predefinido de cupo. Preservados como NULL. Reemplazar por cero falsearía el cierre de la oferta y provocaría divisiones por cero."
+  },
+  {
+    nombre_final: "flag_vacantes_declaradas",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "INTEGER (0/1)",
+    categoria: "Atributo Dim. / Hecho",
+    descripcion: "Indica si el programa declaró vacantes numéricas finitas mayores a cero.",
+    regla_transformacion: "1 si vacantes > 0; 0 si es nulo o no informado.",
+    tratamiento_nulos: "0% nulos. Filtro de gobernanza que garantiza la estabilidad matemática de los indicadores de ocupación."
+  },
+  {
+    nombre_final: "matricula_primer_ano_hombres",
+    nombre_orig_2012_2022: "Matrícula primer año hombres",
+    nombre_orig_2023_2026: "Matrícula primer año hombres",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva",
+    descripcion: "Cantidad de estudiantes masculinos matriculados en primer año.",
+    regla_transformacion: "Conversión numérica a entero. Imputación de nulos a 0 (ausencia de inscritos del segmento).",
+    tratamiento_nulos: "0% nulos. Medida totalmente aditiva."
+  },
+  {
+    nombre_final: "matricula_primer_ano_mujeres",
+    nombre_orig_2012_2022: "Matrícula primer año mujeres",
+    nombre_orig_2023_2026: "Matrícula primer año mujeres",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva",
+    descripcion: "Cantidad de estudiantes femeninas matriculadas en primer año.",
+    regla_transformacion: "Conversión numérica a entero. Imputación de nulos a 0.",
+    tratamiento_nulos: "0% nulos. Medida totalmente aditiva."
+  },
+  {
+    nombre_final: "matricula_primer_ano_extranjeros",
+    nombre_orig_2012_2022: "Matrícula primer año extranjeros",
+    nombre_orig_2023_2026: "Matrícula primer año extranjeros",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva",
+    descripcion: "Cantidad de estudiantes extranjeros matriculados en primer año.",
+    regla_transformacion: "Conversión numérica a entero. Imputación de nulos a 0.",
+    tratamiento_nulos: "0% nulos. Medida totalmente aditiva."
+  },
+  {
+    nombre_final: "matricula_primer_ano_total",
+    nombre_orig_2012_2022: "Matrícula Primer Año",
+    nombre_orig_2023_2026: "Matrícula Primer Año",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva Principal",
+    descripcion: "Total general de alumnos que ingresan formalmente a primer año de la carrera.",
+    regla_transformacion: "Conversión numérica a entero. Imputación de nulos a 0.",
+    tratamiento_nulos: "0% nulos. Medida aditiva en tiempo, espacio, institución y programa."
+  },
+  {
+    nombre_final: "matricula_total_hombres",
+    nombre_orig_2012_2022: "Matrícula total hombres",
+    nombre_orig_2023_2026: "Matrícula total hombres",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva",
+    descripcion: "Total acumulado de estudiantes masculinos en todos los años lectivos.",
+    regla_transformacion: "Conversión numérica a entero. Imputación de nulos a 0.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "matricula_total_mujeres",
+    nombre_orig_2012_2022: "Matrícula total mujeres",
+    nombre_orig_2023_2026: "Matrícula total mujeres",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva",
+    descripcion: "Total acumulado de estudiantes femeninas en todos los años lectivos.",
+    regla_transformacion: "Conversión numérica a entero. Imputación de nulos a 0.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "matricula_total_extranjeros",
+    nombre_orig_2012_2022: "Matrícula total extranjeros",
+    nombre_orig_2023_2026: "Matrícula total extranjeros",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva",
+    descripcion: "Total acumulado de estudiantes extranjeros en todos los niveles cursados.",
+    regla_transformacion: "Conversión numérica a entero. Imputación de nulos a 0.",
+    tratamiento_nulos: "0% nulos."
+  },
+  {
+    nombre_final: "matricula_total",
+    nombre_orig_2012_2022: "Matrícula Total",
+    nombre_orig_2023_2026: "Matrícula Total",
+    tipo_dato: "INTEGER",
+    categoria: "Hecho / Medida Aditiva Principal",
+    descripcion: "Volumen global de matrícula de la institución/sede/programa en el año de corte.",
+    regla_transformacion: "Conversión numérica a entero. Imputación de nulos a 0.",
+    tratamiento_nulos: "0% nulos. Medida aditiva central."
+  },
+  {
+    nombre_final: "tasa_ocupacion_primer_ano",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(6,2)",
+    categoria: "Métrica Analítica / Ratio Intensivo",
+    descripcion: "Porcentaje de ocupación de las vacantes declaradas en primer año.",
+    regla_transformacion: "((matricula_primer_ano_total / vacantes) * 100). Calculado solo cuando flag_vacantes_declaradas = 1.",
+    tratamiento_nulos: "Preservado como NULL cuando no hay vacantes declaradas para no sesgar medias."
+  },
+  {
+    nombre_final: "ratio_mujeres_primer_ano",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,2)",
+    categoria: "Métrica Analítica / Ratio Intensivo",
+    descripcion: "Proporción porcentual de mujeres sobre la matrícula total de primer año.",
+    regla_transformacion: "((matricula_primer_ano_mujeres / matricula_primer_ano_total) * 100).",
+    tratamiento_nulos: "Preservado como NULL si matricula_primer_ano_total == 0."
+  },
+  {
+    nombre_final: "ratio_extranjeros_total",
+    nombre_orig_2012_2022: "(Calculado)",
+    nombre_orig_2023_2026: "(Calculado)",
+    tipo_dato: "DECIMAL(5,2)",
+    categoria: "Métrica Analítica / Ratio Intensivo",
+    descripcion: "Proporción porcentual de estudiantes de nacionalidad extranjera sobre la matrícula total.",
+    regla_transformacion: "((matricula_total_extranjeros / matricula_total) * 100).",
+    tratamiento_nulos: "Preservado como NULL si matricula_total == 0."
+  }
+];
+
+// Fuentes Externas y Tablas Puente
+const EXTERNAL_TABLES = [
+  {
+    tabla: "ext_ine_poblacion_region_ano.csv",
+    fuente: "INE (Instituto Nacional de Estadísticas)",
+    descripcion: "Estimaciones y proyecciones de población por región y grupos de edad (2002-2035, base Censo 2017).",
+    url: "https://www.ine.gob.cl/docs/default-source/proyecciones-de-poblacion/cuadros-estadisticos/base-2017/ine_estimaciones-y-proyecciones-2002-2035_base-2017_region_area_tabulados.xlsx",
+    fecha_descarga: "2026-10-15",
+    grano: "region_codigo_subdere x ano",
+    llave_cruce: "region_codigo_subdere + ano",
+    columnas: [
+      { nombre: "region_codigo_subdere", tipo: "VARCHAR(2)", descripcion: "Código oficial SUBDERE de dos dígitos (01-16)." },
+      { nombre: "hoja_ine", tipo: "VARCHAR(50)", descripcion: "Nombre original de la hoja tabular en el libro del INE." },
+      { nombre: "ano", tipo: "INTEGER", descripcion: "Año cronológico proyectado (2002-2035)." },
+      { nombre: "poblacion_total", tipo: "INTEGER", descripcion: "Población total estimada al 30 de junio, ambos sexos." },
+      { nombre: "poblacion_hombres", tipo: "INTEGER", descripcion: "Población masculina estimada al 30 de junio." },
+      { nombre: "poblacion_mujeres", tipo: "INTEGER", descripcion: "Población femenina estimada al 30 de junio." },
+      { nombre: "poblacion_0_14", tipo: "INTEGER", descripcion: "Población en rango etario de 0 a 14 años." },
+      { nombre: "poblacion_15_64", tipo: "INTEGER", descripcion: "Población en edad activa de estudiar/trabajar (15 a 64 años)." },
+      { nombre: "poblacion_65_mas", tipo: "INTEGER", descripcion: "Población de 65 años o más." }
+    ]
+  },
+  {
+    tabla: "ext_sies_acreditacion_ies_ano.csv",
+    fuente: "SIES / Ministerio de Educación",
+    descripcion: "Listados oficiales de Instituciones de Educación Superior vigentes con acreditación y autonomía (2018-2026).",
+    url: "https://www.mifuturo.cl/instituciones-de-educacion-superior-en-chile/",
+    fecha_descarga: "2026-10-15",
+    grano: "codigo_ies x ano_corte",
+    llave_cruce: "codigo_ies + ano",
+    columnas: [
+      { nombre: "codigo_ies", tipo: "INTEGER", descripcion: "Código numérico institucional oficial otorgado por SIES." },
+      { nombre: "tipo_institucion", tipo: "VARCHAR(50)", descripcion: "Clasificación oficial (Universidad, IP, CFT, etc.)." },
+      { nombre: "nombre_institucion_sies", tipo: "VARCHAR(150)", descripcion: "Denominación legal registrada ante el Mineduc." },
+      { nombre: "autonomia", tipo: "VARCHAR(50)", descripcion: "Condición de autonomía institucional (disponible desde corte 2023)." },
+      { nombre: "acreditacion", tipo: "VARCHAR(50)", descripcion: "Estado literal de acreditación según listado SIES." },
+      { nombre: "acreditacion_norm", tipo: "VARCHAR(50)", descripcion: "Categoría estandarizada (Acreditada, Extendida, Tutela, No Acreditada)." },
+      { nombre: "vigencia", tipo: "VARCHAR(100)", descripcion: "Fecha o periodo de vencimiento del dictamen de la CNA." },
+      { nombre: "anos_acreditacion", tipo: "INTEGER", descripcion: "Años de acreditación otorgados formalmente (0 a 7 años)." },
+      { nombre: "ano_corte", tipo: "INTEGER", descripcion: "Año del corte censal del listado SIES (2018-2026)." },
+      { nombre: "corte", tipo: "VARCHAR(10)", descripcion: "Etiqueta cronológica AAAA-MM (ej. 2026-09)." },
+      { nombre: "nombre_norm", tipo: "VARCHAR(150)", descripcion: "Nombre sin acentos, signos ni puntuación para búsqueda fonética." }
+    ]
+  }
+];
+
+const BRIDGE_TABLES = [
+  {
+    tabla: "puente_region.csv",
+    descripcion: "Tabla puente determinista para resolución geográfica de sedes y vinculación con proyecciones INE.",
+    grano: "nombre_region (16 regiones)",
+    llave_base: "nombre_region",
+    llave_externa: "region_codigo_subdere",
+    tasa_coincidencia_registros: 100.0,
+    registros_no_cruzados: 0,
+    columnas: [
+      { nombre: "nombre_region", tipo: "VARCHAR(80)", descripcion: "Nombre textual tal como figura en los registros CNED." },
+      { nombre: "region_codigo_subdere", tipo: "VARCHAR(2)", descripcion: "Código canónico oficial de 2 dígitos asignado por SUBDERE." },
+      { nombre: "region_nombre_estandar", tipo: "VARCHAR(100)", descripcion: "Denominación protocolar completa y estandarizada." },
+      { nombre: "hoja_ine", tipo: "VARCHAR(50)", descripcion: "Identificador unívoco de la pestaña en el libro oficial del INE." }
+    ]
+  },
+  {
+    tabla: "puente_institucion.csv",
+    descripcion: "Tabla puente institucional para enlace de nombres abreviados del CNED con el código oficial SIES.",
+    grano: "nombre_institucion_cned (259 grafías)",
+    llave_base: "nombre_institucion",
+    llave_externa: "codigo_ies",
+    tasa_coincidencia_instituciones: 92.66, // 240 de 259
+    tasa_coincidencia_registros: 98.39,    // 155.670 de 158.211
+    tasa_coincidencia_matricula_1er_ano: 99.00,
+    columnas: [
+      { nombre: "nombre_institucion_cned", tipo: "VARCHAR(150)", descripcion: "Grafía exacta registrada en la base de matrícula CNED." },
+      { nombre: "nombre_normalizado", tipo: "VARCHAR(150)", descripcion: "Expansión léxica de siglas (U. -> UNIVERSIDAD, IP -> INSTITUTO PROFESIONAL, CFT -> CENTRO DE FORMACION TECNICA)." },
+      { nombre: "codigo_ies", tipo: "INTEGER", descripcion: "Código de institución oficial SIES (NULL para no coincidentes)." },
+      { nombre: "nombre_institucion_sies", tipo: "VARCHAR(150)", descripcion: "Razón social homóloga en el catálogo del SIES." },
+      { nombre: "metodo_cruce", tipo: "VARCHAR(30)", descripcion: "Estrategia algorítmica: exacto_normalizado (168), manual (47), aproximado_>=0.92 (25), sin_coincidencia (19)." },
+      { nombre: "similitud", tipo: "DECIMAL(4,3)", descripcion: "Coeficiente de similitud de cadenas difflib (1.000 para exactos/manuales, >=0.920 para aproximados)." }
+    ]
+  }
+];
+
+function generateArtifacts() {
+  console.log("=== INICIANDO CONSTRUCCIÓN DEL DICCIONARIO MAESTRO Y ARTEFACTOS P5 ===");
+
+  // 1. JSON Maestro
+  const fullJson = {
+    metadata: {
+      proyecto: "Proyecto Práctico Final - Business Intelligence",
+      hito: "Hito 1: Propuesta, ETL y Fuentes",
+      fecha_publicacion: "2026-10-21",
+      responsable: "Persona 5: Gestor del Proyecto y Documentador",
+      total_columnas_cned: MASTER_CNED_COLUMNS.length,
+      total_registros_consolidados: 158211
+    },
+    columnas_cned_consolidada: MASTER_CNED_COLUMNS,
+    fuentes_externas: EXTERNAL_TABLES,
+    tablas_puente: BRIDGE_TABLES
+  };
+
+  const jsonP5Path = path.join(P5_DOCS_DIR, "diccionario_datos_exhaustivo_maestro.json");
+  const jsonPinPath = path.join(PIN_DOCS_DIR, "diccionario_datos_exhaustivo.json");
+  fs.writeFileSync(jsonP5Path, JSON.stringify(fullJson, null, 2), "utf-8");
+  fs.writeFileSync(jsonPinPath, JSON.stringify(MASTER_CNED_COLUMNS, null, 2), "utf-8");
+  console.log("  [OK] JSON Maestro generado en P5_Hito1 y actualizado en P_IN/docs.");
+
+  // 2. Markdown Maestro
+  let md = `# Diccionario de Datos Exhaustivo Maestro - Hito 1\n`;
+  md += `## Proyecto Práctico Final de Business Intelligence - Ingeniería en Negocios\n\n`;
+  md += `**Documentador y Gestor:** Persona 5  \n`;
+  md += `**Fecha de Entrega:** 21 de Octubre de 2026  \n`;
+  md += `**Cobertura Temporal:** 2012–2026 (158.211 registros consolidados)  \n\n`;
+  md += `---\n\n`;
+
+  md += `### 1. Resumen Estructural de Columnas (Base CNED Consolidada 2012–2026)\n\n`;
+  md += `La base consolidada integra las 35 variables originales requeridas en la pauta (2012–2022) con las descargas oficiales del repositorio CNED (2023–2026) y 24 atributos técnicos calculados, totalizando **59 columnas gobernadas** sin pérdida de información.\n\n`;
+  
+  md += `| # | Nombre Final | Nombre Orig. (12-22) | Nombre Orig. (23-26) | Tipo de Dato | Categoría / Rol Dimensional | Regla de Transformación ETL | Tratamiento de Nulos y Justificación |\n`;
+  md += `| :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n`;
+  MASTER_CNED_COLUMNS.forEach((col, idx) => {
+    md += `| ${idx + 1} | \`${col.nombre_final}\` | ${col.nombre_orig_2012_2022} | ${col.nombre_orig_2023_2026} | \`${col.tipo_dato}\` | ${col.categoria} | ${col.regla_transformacion} | ${col.tratamiento_nulos} |\n`;
+  });
+
+  md += `\n---\n\n`;
+  md += `### 2. Diccionario de Fuentes Externas Integradas\n\n`;
+  EXTERNAL_TABLES.forEach(ext => {
+    md += `#### ${ext.tabla} (${ext.fuente})\n`;
+    md += `- **Descripción:** ${ext.descripcion}\n`;
+    md += `- **URL Oficial:** [Descarga Oficial](${ext.url})\n`;
+    md += `- **Fecha de Descarga:** ${ext.fecha_descarga}\n`;
+    md += `- **Grano Declarado:** \`${ext.grano}\`\n`;
+    md += `- **Llave de Cruce:** \`${ext.llave_cruce}\`\n\n`;
+    md += `| Columna | Tipo de Dato | Descripción y Regla de Negocio |\n`;
+    md += `| :--- | :--- | :--- |\n`;
+    ext.columnas.forEach(c => {
+      md += `| \`${c.nombre}\` | \`${c.tipo}\` | ${c.descripcion} |\n`;
+    });
+    md += `\n`;
+  });
+
+  md += `---\n\n`;
+  md += `### 3. Documentación Formal de Tablas Puente de Homologación\n\n`;
+  BRIDGE_TABLES.forEach(b => {
+    md += `#### Tabla Puente: \`${b.tabla}\`\n`;
+    md += `- **Propósito:** ${b.descripcion}\n`;
+    md += `- **Granularidad:** \`${b.grano}\`\n`;
+    md += `- **Llave en Base Primaria:** \`${b.llave_base}\` | **Llave en Dimensión:** \`${b.llave_externa}\`\n`;
+    if (b.tasa_coincidencia_registros) md += `- **Tasa de Coincidencia de Registros:** **${b.tasa_coincidencia_registros}%** (No cruzados: ${b.registros_no_cruzados})\n`;
+    if (b.tasa_coincidencia_instituciones) md += `- **Cobertura Institucional:** ${b.tasa_coincidencia_instituciones}% entidades con código oficial SIES (${b.tasa_coincidencia_matricula_1er_ano}% de matrícula 1er año)\n`;
+    md += `\n| Campo Puente | Tipo | Descripción de la Homologación |\n`;
+    md += `| :--- | :--- | :--- |\n`;
+    b.columnas.forEach(c => {
+      md += `| \`${c.nombre}\` | \`${c.tipo}\` | ${c.descripcion} |\n`;
+    });
+    md += `\n`;
+  });
+
+  const mdP5Path = path.join(P5_DOCS_DIR, "diccionario_datos_exhaustivo_maestro.md");
+  const mdPinPath = path.join(PIN_DOCS_DIR, "diccionario_datos_exhaustivo.md");
+  fs.writeFileSync(mdP5Path, md, "utf-8");
+  fs.writeFileSync(mdPinPath, md, "utf-8");
+  console.log("  [OK] Markdown Maestro generado en P5_Hito1 y actualizado en P_IN/docs.");
+
+  // 3. LaTeX Table
+  let tex = `{\\small\n\\begin{longtable}{|p{3.0cm}|p{2.0cm}|p{2.0cm}|p{1.6cm}|p{6.4cm}|}\n\\hline\n`;
+  tex += `\\textbf{Campo Final} & \\textbf{Orig. 12-22} & \\textbf{Orig. 23-26} & \\textbf{Tipo} & \\textbf{Regla ETL y Tratamiento de Nulos} \\\\\n\\hline\\endfirsthead\n`;
+  tex += `\\hline \\textbf{Campo Final} & \\textbf{Orig. 12-22} & \\textbf{Orig. 23-26} & \\textbf{Tipo} & \\textbf{Regla ETL y Tratamiento de Nulos} \\\\ \\hline \\endhead\n`;
+
+  MASTER_CNED_COLUMNS.forEach(col => {
+    const cf = col.nombre_final.replace(/_/g, '\\_');
+    const o1 = col.nombre_orig_2012_2022.replace(/_/g, '\\_').replace(/%/g, '\\%').replace(/&/g, '\\&');
+    const o2 = col.nombre_orig_2023_2026.replace(/_/g, '\\_').replace(/%/g, '\\%').replace(/&/g, '\\&');
+    const tp = col.tipo_dato.replace(/_/g, '\\_');
+    const rg = col.regla_transformacion.replace(/_/g, '\\_').replace(/%/g, '\\%').replace(/&/g, '\\&');
+    const nl = col.tratamiento_nulos.replace(/_/g, '\\_').replace(/%/g, '\\%').replace(/&/g, '\\&');
+    tex += `\\texttt{\\footnotesize ${cf}} & ${o1} & ${o2} & \\texttt{\\footnotesize ${tp}} & ${rg} \\newline \\textit{\\footnotesize ${nl}} \\\\\n\\hline\n`;
+  });
+  tex += `\\end{longtable}\n}\n`;
+
+  const texP5Path = path.join(P5_DOCS_DIR, "tabla_diccionario_maestro.tex");
+  const texPinPath = path.join(PIN_DOCS_DIR, "tabla_diccionario_datos.tex");
+  fs.writeFileSync(texP5Path, tex, "utf-8");
+  fs.writeFileSync(texPinPath, tex, "utf-8");
+  console.log("  [OK] Tabla LaTeX Maestra exportada con éxito.");
+}
+
+generateArtifacts();
