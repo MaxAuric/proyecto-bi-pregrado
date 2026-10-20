@@ -10,7 +10,7 @@ Aquí tienes todo lo que necesitas para conectar Power BI en 5 minutos y empezar
 
 Tienes dos formas de conectarte (elige la que te sea más cómoda):
 
-#### 👉 Opción A (La más rápida y recomendada - Cero configuración):
+#### Opcion A (La mas rapida y recomendada - Cero configuracion):
 En la carpeta:
 `inteligencia/P3_Hito2/data/tablas_csv_powerbi/`
 Tienes las 8 tablas relacionales del DataMart exportadas en formato CSV de alto rendimiento:
@@ -27,7 +27,7 @@ Tienes las 8 tablas relacionales del DataMart exportadas en formato CSV de alto 
 1. Clic en **Obtener datos** $\rightarrow$ **Texto o CSV** (o **Obtener datos** $\rightarrow$ **Más...** $\rightarrow$ **Carpeta** y seleccionas la ruta `inteligencia/P3_Hito2/data/tablas_csv_powerbi/`).
 2. Cargas las tablas en tu modelo.
 
-#### 👉 Opción B (Base de datos SQLite nativa):
+#### Opcion B (Base de datos SQLite nativa):
 El archivo de la base de datos relacional está en:
 `inteligencia/P3_Hito2/data/datamart_educacion_superior.db`
 Puedes conectarte usando el **Controlador ODBC de SQLite** o ejecutando un script de Python de 3 líneas en Power BI (**Obtener datos** $\rightarrow$ **Script de Python**):
