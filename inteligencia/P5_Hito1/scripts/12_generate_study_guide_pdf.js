@@ -1,0 +1,770 @@
+/**
+ * Generador de la Guía Maestra de Estudio y Defensa de Avance (Hito 1) en PDF
+ * Autor: Persona 5 (Gestor del Proyecto y Documentador)
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+const OUTPUT_HTML = path.join(__dirname, '..', 'docs', 'Guia_Estudio_Defensa_Hito1_BI.html');
+const OUTPUT_PDF_P5 = path.join(__dirname, '..', 'docs', 'Guia_Estudio_Defensa_Hito1_BI.pdf');
+const OUTPUT_PDF_ROOT = path.join(__dirname, '..', '..', 'Guia_Estudio_Defensa_Hito1_BI.pdf');
+const OUTPUT_MD = path.join(__dirname, '..', 'docs', 'Guia_Estudio_Defensa_Hito1_BI.md');
+
+const htmlContent = `<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Guía Maestra de Estudio y Defensa de Avance - Hito 1</title>
+<style>
+  @page {
+    size: A4;
+    margin: 15mm 14mm 15mm 14mm;
+  }
+  
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.45;
+    font-size: 9.2pt;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cover {
+    page-break-after: always;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 25px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 5px 14px;
+    background: #e0e7ff;
+    color: #3730a3;
+    font-size: 8.5pt;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+  }
+
+  h1.cover-title {
+    color: #102C57;
+    font-size: 23pt;
+    line-height: 1.2;
+    margin: 0 0 10px 0;
+    font-weight: 800;
+  }
+
+  h2.cover-subtitle {
+    color: #35598F;
+    font-size: 12pt;
+    font-weight: 500;
+    line-height: 1.4;
+    max-width: 650px;
+    margin: 0 auto 25px auto;
+  }
+
+  .cover-box {
+    background: #f8fafc;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 14px 22px;
+    max-width: 580px;
+    margin: 0 auto 25px auto;
+    text-align: left;
+  }
+
+  .cover-box p {
+    margin: 4px 0;
+    font-size: 8.8pt;
+  }
+
+  .cover-box strong {
+    color: #0f172a;
+  }
+
+  .cover-team {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .team-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #146E78;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+
+  .team-card .role {
+    font-weight: 700;
+    color: #102C57;
+    font-size: 8.5pt;
+  }
+
+  .team-card .desc {
+    color: #64748b;
+    font-size: 7.5pt;
+    margin-top: 2px;
+  }
+
+  /* HEADINGS */
+  h1, h2, h3, h4 {
+    color: #102C57;
+    page-break-after: avoid;
+  }
+
+  h1 {
+    font-size: 14pt;
+    border-bottom: 2px solid #102C57;
+    padding-bottom: 4px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 11.5pt;
+    color: #35598F;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 3px;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+
+  h3 {
+    font-size: 9.8pt;
+    color: #146E78;
+    margin-top: 10px;
+    margin-bottom: 4px;
+  }
+
+  p {
+    margin: 0 0 6px 0;
+    text-align: justify;
+  }
+
+  /* CALLOUTS */
+  .callout {
+    padding: 9px 13px;
+    border-radius: 6px;
+    margin: 10px 0;
+    font-size: 8.6pt;
+    page-break-inside: avoid;
+  }
+
+  .callout-blue {
+    background: #f0f7ff;
+    border-left: 4px solid #0284c7;
+    color: #0369a1;
+  }
+
+  .callout-green {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    color: #15803d;
+  }
+
+  .callout-amber {
+    background: #fffbeb;
+    border-left: 4px solid #d97706;
+    color: #b45309;
+  }
+
+  .callout-purple {
+    background: #faf5ff;
+    border-left: 4px solid #9333ea;
+    color: #7e22ce;
+  }
+
+  .callout strong {
+    font-size: 8.9pt;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 8pt;
+    page-break-inside: avoid;
+  }
+
+  th, td {
+    border: 1px solid #cbd5e1;
+    padding: 5px 7px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background: #102C57;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) {
+    background: #f8fafc;
+  }
+
+  /* FORMULA BOX */
+  .formula-box {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'Consolas', monospace;
+    font-size: 8.2pt;
+    margin: 4px 0;
+    color: #0f172a;
+    display: inline-block;
+  }
+
+  /* QA BOXES */
+  .qa-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+
+  .qa-card .q {
+    background: #f1f5f9;
+    padding: 7px 11px;
+    font-weight: 700;
+    color: #1e293b;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 8.6pt;
+  }
+
+  .qa-card .a {
+    padding: 7px 11px;
+    color: #334155;
+    font-size: 8.2pt;
+    line-height: 1.4;
+  }
+
+  .qa-card .a strong {
+    color: #0f172a;
+  }
+
+  .role-tag {
+    display: inline-block;
+    padding: 2px 6px;
+    background: #102C57;
+    color: white;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-right: 5px;
+  }
+
+  ul, ol {
+    margin: 0 0 6px 0;
+    padding-left: 16px;
+  }
+
+  li {
+    margin-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ========================================================= -->
+<!-- PORTADA -->
+<!-- ========================================================= -->
+<div class="cover">
+  <span class="badge">Guía Oficial de Preparación y Exposición Oral</span>
+  <h1 class="cover-title">GUÍA MAESTRA DE ESTUDIO Y DEFENSA DE AVANCE</h1>
+  <h2 class="cover-subtitle">Proyecto Práctico Final de Business Intelligence: Análisis de Demanda, Capacidad y Calidad de la Educación Superior Chilena (2012–2026)</h2>
+
+  <div class="cover-box">
+    <p><strong>Hito Evaluado:</strong> Hito 1 (Propuesta de Valor, Canvas BI, ETL y Fuentes Externas)</p>
+    <p><strong>Puntaje en Juego:</strong> 17 Puntos Grupales (de 70 grupales / 100 totales)</p>
+    <p><strong>Modalidad de Evaluación:</strong> Exposición de avance grupal con interrogación individual obligatoria</p>
+    <p><strong>Propósito de esta Guía:</strong> Proporcionar a cada integrante el dominio técnico absoluto de su propio rol y del trabajo de sus compañeros para responder cualquier pregunta del profesor con seguridad, rigor metodológico y fundamentos matemáticos.</p>
+  </div>
+
+  <div class="cover-team">
+    <div class="team-card">
+      <div class="role"><span class="role-tag">P1</span> Ingeniero de Datos (ETL)</div>
+      <div class="desc">Consolidación CNED 2012-2026, quiebres PSU/PDT/PAES y nulos.</div>
+    </div>
+    <div class="team-card">
+      <div class="role"><span class="role-tag">P2</span> Negocios y Fuentes Externas</div>
+      <div class="desc">Propuesta de Valor, Canvas BI y descargas INE/SIES oficiales.</div>
+    </div>
+    <div class="team-card">
+      <div class="role"><span class="role-tag">P3</span> Arquitecto de Bases de Datos</div>
+      <div class="desc">Normalización de textos, auditoría de cruces y gobierno de Ñuble.</div>
+    </div>
+    <div class="team-card">
+      <div class="role"><span class="role-tag">P4</span> Desarrollador BI</div>
+      <div class="desc">Viabilidad visual Power BI, medidas DAX y wireframes de panel.</div>
+    </div>
+    <div class="team-card" style="grid-column: span 2;">
+      <div class="role"><span class="role-tag">P5</span> Gestor de Proyecto y Documentador</div>
+      <div class="desc">Diccionario Maestro de 59 atributos, tablas puente, gobernanza y síntesis ejecutiva.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================= -->
+<!-- PARTE 1: VISIÓN GLOBAL DEL PROYECTO -->
+<!-- ========================================================= -->
+<h1>1. Visión Global del Proyecto: ¿De Qué Trata y Por Qué Existe?</h1>
+
+<div class="callout callout-blue">
+  <strong>El Núcleo del Negocio en 30 Segundos (Lo que debes decir si te preguntan el objetivo):</strong>
+  «Este proyecto construye una solución analítica de Business Intelligence para apoyar a una <strong>Dirección de Admisión y Planificación Institucional</strong> en la toma de decisiones sobre <strong>cuántas vacantes ofrecer, en qué sedes y en qué carreras</strong>. Para eso, unimos la base histórica oficial de educación superior (158.211 registros entre 2012 y 2026) con datos demográficos del <strong>INE</strong> y datos de acreditación del <strong>SIES</strong>, resolviendo quiebres de pruebas de admisión y permitiendo evaluar equidad territorial, ocupación real de capacidad y competencia en calidad».
+</div>
+
+<h2>1.1. El Problema Real que Resolvemos</h2>
+<p>En Chile, las instituciones de educación superior (Universidades, Institutos Profesionales y Centros de Formación Técnica) definen su oferta de carreras y cupos cada año en un entorno altamente complejo y regulado:</p>
+<ul>
+  <li><strong>Desbalance Territorial:</strong> Santiago y las grandes capitales concentran la matrícula, mientras regiones intermedias o extremas sufren de fuga de talentos o escasez de oferta formativa.</li>
+  <li><strong>Incertidumbre en la Ocupación:</strong> Muchas carreras ofrecen cupos que quedan vacíos (capacidad ociosa e ineficiencia financiera), mientras que otras enfrentan sobredemanda.</li>
+  <li><strong>Impacto de la Calidad y Acreditación:</strong> Tras la Ley 21.091 y los criterios de la CNA, las instituciones no acreditadas han sido virtualmente marginadas por los estudiantes y las políticas de Gratuidad.</li>
+</ul>
+
+<h2>1.2. El Reto Técnico de la Base de Datos</h2>
+<p>El profesor entregó una base inicial de índices de pregrado del CNED que cubría únicamente los años <strong>2012 a 2022 (114.265 registros y 35 columnas)</strong>. La exigencia estricta de la pauta fue <strong>completarla con los años oficiales 2023, 2024, 2025 y 2026</strong> descargados del portal oficial de INDICES/CNED, <strong>sin inventar, proyectar ni simular ningún dato</strong>.</p>
+<p>El equipo cumplió esta meta integrando <strong>43.946 registros oficiales nuevos</strong>, alcanzando un universo maestro de <strong>158.211 registros y 59 columnas gobernadas</strong>.</p>
+
+<h2>1.3. Los Tres Hitos del Semestre</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="width:15%;">Hito</th>
+      <th style="width:15%;">Fecha</th>
+      <th style="width:55%;">Entregables Clave</th>
+      <th style="width:15%;">Puntaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Hito 1 (Actual)</strong></td>
+      <td>21 de Octubre</td>
+      <td>Propuesta de Valor, Canvas BI, ETL 2012–2026, tratamiento de nulos y puntajes, Diccionario de Datos y 2 fuentes externas con tablas puente.</td>
+      <td><strong>17 pts grupal</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Hito 2</strong></td>
+      <td>4 de Noviembre</td>
+      <td>Modelo Dimensional (estrella/copo de nieve), grano, medidas aditivas/no aditivas, cambio en el tiempo (SCD) y DataMart implementado en SQL.</td>
+      <td>10 pts grupal</td>
+    </tr>
+    <tr>
+      <td><strong>Entrega Final</strong></td>
+      <td>18 de Noviembre</td>
+      <td>Dashboard interactivo en Power BI Desktop (.pbix), Informe Final Ejecutivo, Presentación de 15 minutos y Defensa Individual oral.</td>
+      <td>43 grupal + 30 indiv.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ========================================================= -->
+<!-- PARTE 2: QUÉ HIZO CADA PERSONA (ROLES Y DEFENSAS) -->
+<!-- ========================================================= -->
+<h1>2. Qué Hizo Cada Integrante (Roles, Tareas y Defensa Individual)</h1>
+<p>En la defensa el profesor elegirá a cualquiera de los cinco integrantes y le hará una pregunta técnica. Aquí está lo que cada uno construyó y cómo debe defenderlo:</p>
+
+<!-- PERSONA 1 -->
+<h2>2.1. Persona 1: Ingeniero de Datos (ETL)</h2>
+<p><strong>Misión:</strong> Extracción, consolidación de la serie temporal (2012–2026), limpieza estructural y tratamiento matemático de puntajes y nulos.</p>
+<ul>
+  <li><strong>Descarga Oficial CNED:</strong> Descargó el libro oficial <code>Base-INDICES-Matricula-2005-2026.xlsx</code> (60.4 MB, corte agosto 2026) directo desde el portal oficial del CNED. Extrajo 43.946 registros de pregrado 2023–2026.</li>
+  <li><strong>Consolidación:</strong> Unió la base entregada (114.265 filas) con los nuevos años, generando la base única de <strong>158.211 registros</strong> (exportada en CSV de 79 MB y Parquet optimizado de 4.2 MB).</li>
+  <li><strong>Homologación de Puntajes:</strong> Identificó que el sistema chileno cambió de instrumento 3 veces: PSU (hasta 2020), PDT (2021-2022) y PAES (desde 2023). En lugar de solo concatenar, aplicó 4 soluciones psicométricas: escala nativa, escala Min-Max [0, 100], proyección a PAES [100, 1000] y Z-score anual.</li>
+  <li><strong>Resolución de Nulos:</strong> Demostró que el ~80,5% de nulos en puntajes es estructural (CFT e IP no exigen prueba). Prohibió ponerles cero y creó el flag <code>flag_exige_prueba_admision</code>. En vacantes (~25,4% nulos), prohibió el cero para no fingir cierre de carreras ni dividir por cero, creando <code>flag_vacantes_declaradas</code>.</li>
+</ul>
+
+<div class="qa-card">
+  <div class="q">Pregunta de Defensa P1: «¿Por qué no reemplazaron los nulos de puntajes por cero?»</div>
+  <div class="a"><strong>Respuesta de P1:</strong> «Porque en Chile los Centros de Formación Técnica y los Institutos Profesionales no exigen prueba de admisión por ley, y en universidades muchos programas son de ingreso especial o vespertino. Un nulo significa <em>'carrera sin requisito de prueba'</em>, no que los alumnos sacaron cero puntos. Si pusiéramos cero, el promedio nacional caería artificialmente de ~560 puntos a ~110 puntos y arruinaríamos todas las métricas de Power BI. Por eso los preservamos como <code>NULL</code> y creamos el flag binario <code>flag_exige_prueba_admision = 1</code>».</div>
+</div>
+
+<!-- PERSONA 2 -->
+<h2>2.2. Persona 2: Analista de Negocios y Datos Externos</h2>
+<p><strong>Misión:</strong> Formulación estratégica, desarrollo del Canvas BI y obtención/perfilamiento de las dos fuentes externas.</p>
+<ul>
+  <li><strong>Propuesta de Valor:</strong> Orientada a una Dirección de Admisión Universitaria para optimizar oferta de vacantes por región y tipología de institución.</li>
+  <li><strong>Canvas BI:</strong> Redactó los 10 bloques estándar de inteligencia de negocios en LaTeX.</li>
+  <li><strong>Tres Preguntas de Negocio:</strong>
+    1. <em>P1 (Equidad Territorial):</em> ¿En qué regiones la oferta es deficitaria respecto a su población juvenil-adulta?
+    2. <em>P2 (Uso de Capacidad):</em> ¿Qué porcentaje de las vacantes se ocupa realmente y dónde hay sobre/subocupación?
+    3. <em>P3 (Calidad y Competencia):</em> ¿Cómo se distribuye la matrícula según años de acreditación CNA de las instituciones?
+  </li>
+  <li><strong>Fuentes Externas Oficiales:</strong> Descargó con hash SHA-256 las proyecciones de población del <strong>INE</strong> (Censo 2017) y 9 cortes censales de acreditación de IES del <strong>SIES</strong> (2018–2026). Construyó las tablas puente preliminares.</li>
+</ul>
+
+<div class="qa-card">
+  <div class="q">Pregunta de Defensa P2: «¿Por qué eligieron al INE y al SIES como fuentes externas y qué llave usan?»</div>
+  <div class="a"><strong>Respuesta de P2:</strong> «Porque responden directamente a nuestra Propuesta de Valor. Para medir si una región tiene suficiente oferta universitaria necesitamos el denominador poblacional, el cual solo provee el INE a nivel de región y año. Para medir calidad institucional, la base CNED solo dice si está acreditada o no, pero el SIES nos entrega los años exactos de acreditación (1 a 7 años) y autonomía. La llave del INE es <code>region_codigo_subdere + ano</code> y la del SIES es <code>codigo_ies + ano</code>».</div>
+</div>
+
+<!-- PERSONA 3 -->
+<h2>2.3. Persona 3: Arquitecto de Bases de Datos</h2>
+<p><strong>Misión:</strong> Normalización lingüística de textos, auditoría técnica de tablas puente y gobernanza territorial de Ñuble.</p>
+<ul>
+  <li><strong>Normalización de Textos:</strong> Estandarizó cadenas removiendo dobles espacios, tildes inconsistentes y caracteres espurios en 16 regiones, 259 instituciones y 284 carreras genéricas.</li>
+  <li><strong>Auditoría de Cruces:</strong> Verificó que el cruce regional con INE es 100% perfecto (16/16 regiones). En instituciones, auditó las 259 grafías del CNED hacia el SIES, certificando que 240 cuentan con código oficial (92,66% de nombres, 98,39% de registros y 99,00% de matrícula).</li>
+  <li><strong>Gobernanza del Quiebre de Ñuble:</strong> La Región de Ñuble fue creada en septiembre de 2018 (Ley 21.033). Identificó que en la base existían 1.599 registros previos a 2018 imputados retrospectivamente a Ñuble y creó el atributo <code>flag_quiebre_nuble = 1</code> para evitar distorsiones históricas al cruzar con bases antiguas.</li>
+</ul>
+
+<div class="qa-card">
+  <div class="q">Pregunta de Defensa P3: «¿Qué hicieron con las 19 instituciones que no cruzaron con el SIES?»</div>
+  <div class="a"><strong>Respuesta de P3:</strong> «Hicimos una auditoría exhaustiva y descubrimos que 15 de esas 19 instituciones corresponden a entidades cerradas antes de 2018 (como la Universidad del Mar o el CFT Simón Bolívar). El listado del SIES comienza en 2018, por lo que su ausencia es un hecho histórico estructural, no un error de cruce. Las otras 4 son entidades bajo planes de cierre o tutela especial (ICCE e IPEGE). Metodológicamente <strong>no eliminamos ningún registro</strong>: los hechos conservan <code>codigo_ies = NULL</code> y se vinculan al <em>Miembro Desconocido (-1)</em> de la dimensión».</div>
+</div>
+
+<!-- PERSONA 4 -->
+<h2>2.4. Persona 4: Desarrollador BI</h2>
+<p><strong>Misión:</strong> Validación visual y analítica en Power BI, formalización de medidas DAX y diseño de wireframes.</p>
+<ul>
+  <li><strong>Auditoría de Graficabilidad:</strong> Verificó algorítmicamente mediante Python y Power BI que las 3 preguntas de negocio se pueden graficar sin errores.</li>
+  <li><strong>Catálogo DAX Crítico:</strong> Diseñó las medidas formales. En particular, resolvió la <strong>semi-aditividad</strong> de la población del INE: la población de una región no se puede sumar a través de los años, por lo que utilizó la función <code>LASTNONBLANK</code> / <code>CALCULATE</code> para evitar sumar censos multianuales.</li>
+  <li><strong>Prototipos Gráficos:</strong> Diseñó los prototipos visuales (Shape Map regional, matrices heatmap de ocupación, gráficos de dispersión de acreditación vs. matrícula) y la arquitectura de 4 páginas del panel con filtros sincronizados.</li>
+</ul>
+
+<div class="qa-card">
+  <div class="q">Pregunta de Defensa P4: «¿Cómo calculas la tasa de ocupación de vacantes en DAX si hay registros con vacantes vacías?»</div>
+  <div class="a"><strong>Respuesta de P4:</strong> «En Power BI usamos la función segura <code>DIVIDE</code> condicionada estrictamente a <code>flag_vacantes_declaradas = 1</code> y <code>vacantes > 0</code> tanto en el numerador como en el denominador. De esta forma, aislamos las carreras de matrícula abierta y calculamos la ocupación real del sistema (84,4% nacional en 2026), evitando divisiones por cero o que una carrera sin vacantes informadas figure con ocupación infinita».</div>
+</div>
+
+<!-- PERSONA 5 -->
+<h2>2.5. Persona 5: Gestor del Proyecto y Documentador</h2>
+<p><strong>Misión:</strong> Construcción del Diccionario de Datos Maestro exhaustivo (59 atributos), documentación formal de tablas puente, trazabilidad global y aseguramiento de la rúbrica.</p>
+<ul>
+  <li><strong>Diccionario de Datos Maestro:</strong> Integró en un documento único las 35 variables originales, las variables del portal CNED 2023–2026 y las 24 variables técnicas calculadas, detallando tipos de datos, grano, reglas de transformación y justificación de nulos en Markdown, JSON y LaTeX.</li>
+  <li><strong>Documentación de Fuentes Externas:</strong> Redactó el informe formal con las URLs, fechas (15 de octubre de 2026), hashes criptográficos SHA-256, grano, llaves foráneas y auditoría de coincidencia de <code>puente_region.csv</code> y <code>puente_institucion.csv</code>.</li>
+  <li><strong>Scripts de Auditoría:</strong> Programó <code>11_audit_hito1_integrity_p5.js</code>, el cual verifica automáticamente que los 24 archivos de todos los integrantes existan, sumen 158.211 filas exactas y cumplan con los 17 puntos de la rúbrica grupal.</li>
+</ul>
+
+<div class="qa-card">
+  <div class="q">Pregunta de Defensa P5: «¿Cuál es el grano de los datos y cómo se integran las tablas puente en el diccionario?»</div>
+  <div class="a"><strong>Respuesta de P5:</strong> «El grano de la base consolidada es <strong>una fila por programa académico, sede, horario y año de matrícula</strong>. Las tablas puente se integran formalmente en el diccionario como anexos metodológicos: <code>puente_region</code> resuelve a nivel de región única (16 filas, 100% cruce) y <code>puente_institucion</code> resuelve a nivel de denominación institucional CNED (259 filas hacia código SIES, 99,00% de matrícula cubierta), garantizando la trazabilidad hacia el futuro DataMart del Hito 2».</div>
+</div>
+
+<!-- ========================================================= -->
+<!-- PARTE 3: LOS TRES REQUISITOS POR ETAPA -->
+<!-- ========================================================= -->
+<h1>3. Desglose Exhaustivo de los Tres Requisitos por Etapa (Hito 1)</h1>
+<p>La pauta divide el Hito 1 en 3 requerimientos obligatorios. A continuación se detalla exactamente qué se hizo en cada uno para que todo el equipo maneje los mismos conceptos:</p>
+
+<!-- REQUISITO 1 -->
+<h2>3.1. Requisito 1: Propuesta de Valor y Canvas BI (4 Puntos)</h2>
+<p>Este bloque define el sentido de negocio del proyecto. Si un panel de Power BI solo muestra números sin responder a un tomador de decisiones, no sirve.</p>
+
+<div class="callout callout-green">
+  <strong>Usuario Objetivo:</strong> Dirección de Admisión, Vicerrectoría Académica y Planificación Estratégica Institucional.
+</div>
+
+<h3>Las Tres Preguntas de Negocio y sus Visualizaciones Previstas:</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width:25%;">Pregunta de Negocio</th>
+      <th style="width:25%;">Indicador Clave (KPI)</th>
+      <th style="width:25%;">Fuentes Involucradas</th>
+      <th style="width:25%;">Visualización en Power BI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>P1: Equidad Territorial</strong><br><em>«¿En qué regiones la oferta de ingreso es baja respecto de su población, y cómo ha cambiado desde 2018?»</em></td>
+      <td><strong>Tasa de Oferta por 1.000 hab.:</strong><br>
+        <span class="formula-box">(Matrícula 1er Año × 1.000) / Población 15–64 años</span>
+      </td>
+      <td>CNED Matrícula + INE Proyecciones Censo 2017</td>
+      <td><strong>Shape Map coroplético</strong> de Chile + <strong>Gráfico de barras horizontales</strong> ordenadas comparando 2018 vs. 2026 contra el promedio nacional (27,6 ‰).</td>
+    </tr>
+    <tr>
+      <td><strong>P2: Uso de Capacidad</strong><br><em>«¿Cuánto de la oferta de vacantes se ocupa realmente y dónde se concentra la sobre o subocupación?»</em></td>
+      <td><strong>Tasa de Ocupación de Vacantes:</strong><br>
+        <span class="formula-box">(Matrícula 1er Año Total / Vacantes) × 100</span>
+      </td>
+      <td>CNED Pregrado (filtrando <code>flag_vacantes_declaradas = 1</code>)</td>
+      <td><strong>Serie temporal (2012–2026)</strong> con bandas de alerta (&lt;75% subocupación, &gt;100% sobrecupo) + <strong>Heatmap</strong> (Tipo IES × Región).</td>
+    </tr>
+    <tr>
+      <td><strong>P3: Calidad y Competencia</strong><br><em>«¿Qué proporción de la matrícula se concentra en IES acreditadas y cómo se relaciona con los años CNA?»</em></td>
+      <td><strong>% Matrícula Acreditada:</strong><br>
+        <span class="formula-box">(Matrícula en IES Acreditadas / Matrícula Total) × 100</span><br>
+        y promedio ponderado de años CNA.
+      </td>
+      <td>CNED Pregrado + SIES Catálogo IES Vigentes</td>
+      <td><strong>Barras 100% apiladas</strong> de evolución anual (Acreditada, Extensión, Tutela, No Acreditada) + <strong>Gráfico de Dispersión</strong> (Años CNA vs. Matrícula).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Los 10 Bloques del Canvas BI Sintetizados:</h3>
+<ol>
+  <li><strong>Problema:</strong> Desconexión entre la oferta de vacantes universitarias, la demografía regional y los estándares de acreditación.</li>
+  <li><strong>Propuesta de Valor:</strong> Panel analítico unificado para optimizar la planificación de vacantes territoriales y mitigar el riesgo de capacidad ociosa.</li>
+  <li><strong>Usuarios Clave:</strong> Directores de admisión, vicerrectores de finanzas, decanos y analistas de educación superior.</li>
+  <li><strong>Decisiones a Soportar:</strong> Apertura/cierre de cupos por sede, expansión a nuevas regiones, acreditación institucional.</li>
+  <li><strong>Fuentes Internas:</strong> Base oficial CNED pregrado consolidada (2012–2026).</li>
+  <li><strong>Fuentes Externas:</strong> INE (demografía por tramos de edad) y SIES (acreditación y autonomía institucional).</li>
+  <li><strong>Granularidad Requerida:</strong> Nivel programa académico, sede física, jornada y año lectivo.</li>
+  <li><strong>Métricas Centrales:</strong> Matrícula 1er año, matrícula total, vacantes, tasa de ocupación, tasa por 1.000 hab., años CNA.</li>
+  <li><strong>Restricciones de Calidad:</strong> Preservación de nulos en carreras sin selección, semi-aditividad poblacional, trazabilidad de Ñuble.</li>
+  <li><strong>Canal de Consumo:</strong> Cuadro de mando interactivo en Power BI Desktop conectado al futuro DataMart.</li>
+</ol>
+
+<!-- REQUISITO 2 -->
+<h2>3.2. Requisito 2: ETL y Limpieza de Datos (8 Puntos)</h2>
+<p>Este bloque garantiza que los datos sean reproducibles, verídicos y matemáticamente coherentes.</p>
+
+<h3>1. Integración Oficial 2012–2026 (Cero Datos Simulados):</h3>
+<p>Se integraron dos universos sin recurrir a proyecciones ficticias:</p>
+<ul>
+  <li>Base entregada por la cátedra (2012 a 2022): <strong>114.265 filas</strong> (35 variables).</li>
+  <li>Extracción directa del repositorio oficial del CNED (2023 a 2026): <strong>43.946 filas</strong> de pregrado.</li>
+  <li><strong>Total exacto consolidado:</strong> <strong>158.211 registros</strong>.</li>
+</ul>
+
+<h3>2. Homologación Psicométrica de Puntajes (PSU, PDT, PAES):</h3>
+<p>La pauta prohíbe explícitamente *«concatenar los años sin tratamiento»*. Los instrumentos aplicados en Chile fueron:</p>
+<ul>
+  <li><strong>PSU (2012–2020):</strong> Escala tradicional de 150 a 850 puntos. Distribución campana de Gauss normal (media aprox. 557 puntos).</li>
+  <li><strong>PDT (2021–2022):</strong> Escala de transición de 150 a 850 puntos (media aprox. 550 puntos).</li>
+  <li><strong>PAES (2023–2026):</strong> Escala basada en Teoría de Respuesta al Ítem (TRI) de 100 a 1.000 puntos (media aprox. 645 puntos).</li>
+</ul>
+<p><strong>Nuestra Solución Cuádruple:</strong> En vez de sobreescribir la base, creamos columnas separadas en la tabla de hechos:</p>
+<ol>
+  <li><code>puntaje_promedio_original</code>: Mantiene la escala nativa histórica para auditoría fáctica.</li>
+  <li><code>puntaje_promedio_norm_0_100</code>: Normalización Min-Max universal a porcentaje:
+    <div class="formula-box">PSU/PDT: ((Score - 150) / 700) × 100 &nbsp;|&nbsp; PAES: ((Score - 100) / 900) × 100</div>
+  </li>
+  <li><code>puntaje_promedio_equiv_paes</code>: Proyección lineal de puntajes antiguos a escala moderna PAES [100–1000]:
+    <div class="formula-box">PSU/PDT → PAES: 100 + ((Score - 150) / 700) × 900</div>
+  </li>
+  <li><code>puntaje_promedio_zscore_anual</code>: Estandarización paramétrica relativa a cada cohorte anual:
+    <div class="formula-box">Z = (Score - Media_Anual) / Desv_Anual</div>
+  </li>
+</ol>
+
+<h3>3. Tratamiento Riguroso de Nulos (Fundamentación Teórica):</h3>
+<div class="callout callout-amber">
+  <strong>Demostración de Nulos Estructurales:</strong>
+  <ul>
+    <li><strong>Puntajes (80,49% de nulos):</strong> No se reemplazan por cero porque <em>los CFT y los IP tienen matrícula abierta y no seleccionan por prueba</em>. En universidades, programas vespertinos o de admisión especial tampoco exigen puntaje. El nulo representa la <strong>ausencia de requisito</strong>, no un puntaje de cero. Se implementó <code>flag_exige_prueba_admision</code> (1 si exige, 0 si no exige).</li>
+    <li><strong>Vacantes (25,35% de nulos):</strong> No se reemplazan por cero porque <em>muchas carreras no tienen un número predeterminado de cupos</em> (admisión abierta o planes trabajadores). Reemplazar por cero indicaría erróneamente que la carrera está clausurada e induciría indeterminaciones matemáticas en la tasa de ocupación. Se implementó <code>flag_vacantes_declaradas</code> (1 si vacantes &gt; 0, 0 en otro caso).</li>
+  </ul>
+</div>
+
+<h3>4. Normalización Textual y Trazabilidad de Ñuble:</h3>
+<ul>
+  <li>Se limpiaron espacios redundantes y tildes en instituciones, regiones y carreras.</li>
+  <li><strong>Quiebre de Ñuble (Ley 21.033):</strong> Se identificaron 1.599 filas previas a 2018 asignadas a la Región 16 (Ñuble). Para evitar fallas en cruces históricos, se gobernaron mediante el flag <code>flag_quiebre_nuble = 1</code>.</li>
+</ul>
+
+<!-- REQUISITO 3 -->
+<h2>3.3. Requisito 3: Fuentes Externas y Tablas Puente (5 Puntos)</h2>
+<p>La pauta exige integrar dos fuentes externas con URL, fecha de descarga, grano, llave de cruce, tabla puente y política de no coincidentes.</p>
+
+<h3>Ficha Comparativa de las Fuentes Externas:</h3>
+<table>
+  <thead>
+    <tr>
+      <th style="width:20%;">Parámetro</th>
+      <th style="width:40%;">Fuente Externa 1: INE Demografía</th>
+      <th style="width:40%;">Fuente Externa 2: SIES Acreditación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Organismo y Datos</strong></td>
+      <td><strong>INE:</strong> Proyecciones de población por región y tramos de edad (2002–2035, base Censo 2017).</td>
+      <td><strong>SIES / Mineduc:</strong> Listados anuales oficiales de IES vigentes con acreditación y autonomía (2018–2026).</td>
+    </tr>
+    <tr>
+      <td><strong>URL Oficial</strong></td>
+      <td><code>ine.gob.cl/.../base-2017/ine_estimaciones-y-proyecciones...tabulados.xlsx</code></td>
+      <td><code>mifuturo.cl/instituciones-de-educacion-superior-en-chile/</code></td>
+    </tr>
+    <tr>
+      <td><strong>Fecha de Descarga</strong></td>
+      <td><strong>15 de Octubre de 2026</strong></td>
+      <td><strong>15 de Octubre de 2026</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Hash SHA-256</strong></td>
+      <td><code>9d0e01ea319a9d20c5da55da08d0e74f85e34747ebafbe85567d1db0e0474665</code></td>
+      <td>Registrado por corte censal anual en <code>manifiesto_descargas.json</code></td>
+    </tr>
+    <tr>
+      <td><strong>Grano Declarado</strong></td>
+      <td><strong>Región político-administrativa × Año calendario</strong></td>
+      <td><strong>Institución de Educación Superior × Año de corte</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Llave de Cruce</strong></td>
+      <td><code>region_codigo_subdere + ano</code></td>
+      <td><code>codigo_ies + ano</code></td>
+    </tr>
+    <tr>
+      <td><strong>Tabla Puente</strong></td>
+      <td><code>puente_region.csv</code></td>
+      <td><code>puente_institucion.csv</code></td>
+    </tr>
+    <tr>
+      <td><strong>Tasa de Coincidencia</strong></td>
+      <td><strong>100,00% de los registros</strong> (16/16 regiones mapeadas).</td>
+      <td><strong>98,39% de los registros</strong> y <strong>99,00% de la matrícula de primer año</strong> (240 de 259 instituciones con código).</td>
+    </tr>
+    <tr>
+      <td><strong>Uso en Power BI</strong></td>
+      <td>Denominador en <strong>P1</strong> (Tasa de matrícula 1er año por 1.000 habitantes de 15 a 64 años).</td>
+      <td>Segmentación en <strong>P3</strong> (Evolución de matrícula en IES acreditadas y dispersión de años CNA).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Estructura y Comportamiento de las Tablas Puente:</h3>
+<ul>
+  <li><strong><code>puente_region.csv</code>:</strong> Mapea los 16 nombres textuales del CNED hacia el código canónico SUBDERE ('01' a '16') y la hoja correspondiente del libro del INE. Coincidencia perfecta del 100%. Cero registros huérfanos.</li>
+  <li><strong><code>puente_institucion.csv</code>:</strong> Mapea las 259 grafías del CNED hacia el código oficial numérico del SIES (<code>codigo_ies</code>). Se aplicaron 4 métodos:
+    1. <em>Exacto normalizado:</em> 168 instituciones (64,9%).
+    2. <em>Manual validado:</em> 47 instituciones (18,1%, resolviendo siglas como PUC, DUOC UC, INACAP).
+    3. <em>Aproximado difflib ≥ 0,92:</em> 25 instituciones (9,7%).
+    4. <em>Sin coincidencia justificada:</em> 19 instituciones (7,3%).
+  </li>
+</ul>
+
+<div class="callout callout-purple">
+  <strong>¿Qué se hizo con los registros que no cruzaron? (Pregunta Obligatoria de Rúbrica):</strong>
+  <p>De los 19 nombres sin coincidencia:</p>
+  <ul>
+    <li><strong>15 corresponden a IES extintas</strong> que cerraron entre 2012 y 2017 (antes de diciembre de 2018, fecha en que inicia la serie externa del SIES). Es una <em>ausencia estructural histórica</em>, no un error técnico.</li>
+    <li><strong>4 corresponden a IES vigentes especiales</strong> (CFT ICCE e IP IPEGE) que no figuran en el catálogo censal SIES por procesos de cierre o tutela del CNED.</li>
+  </ul>
+  <p><strong>Decisión de Gobierno:</strong> Se conservan con <code>codigo_ies = NULL</code> y se vinculan al <strong>Miembro Desconocido (-1)</strong> de la dimensión. <strong>Se preservó el 100% de los registros de matrícula (cero hechos descartados).</strong></p>
+</div>
+
+<!-- ========================================================= -->
+<!-- PARTE 4: SIMULADOR DE INTERROGACIÓN ORAL -->
+<!-- ========================================================= -->
+<h1>4. Simulador de Interrogación Oral: Preguntas Trampa del Profesor</h1>
+<p>Estas son las preguntas más probables que el profesor puede sortear el día de la presentación de avance, con su respuesta técnica exacta:</p>
+
+<div class="qa-card">
+  <div class="q">1. «¿Por qué la población del INE no se puede sumar directamente en Power BI?»</div>
+  <div class="a">«Porque la población es una variable de <strong>stock instantáneo (medida semi-aditiva)</strong> estimada al 30 de junio de cada año. Si en Power BI sumáramos la población regional entre 2018 y 2026, estaríamos acumulando 9 veces a los mismos habitantes de la región, falseando el denominador. Por eso, en DAX se debe controlar el contexto temporal utilizando funciones como <code>LASTNONBLANK</code> o filtrando por un único año seleccionado».</div>
+</div>
+
+<div class="qa-card">
+  <div class="q">2. «¿Cómo aseguran que los datos 2023–2026 sean fidedignos y no simulados?»</div>
+  <div class="a">«Porque el pipeline de descarga de la Persona 1 (<code>01_download_data.py</code>) se conecta directamente al portal oficial de INDICES del CNED y descarga el libro maestro <code>Base-INDICES-Matricula-2005-2026.xlsx</code> publicado en agosto de 2026. Los archivos crudos se encuentran inmutables en la carpeta <code>data_raw/</code> junto con el esquema de registro oficial del CNED en PDF».</div>
+</div>
+
+<div class="qa-card">
+  <div class="q">3. «¿Por qué la PAES tiene una media de ~645 puntos y la PSU de ~557 puntos si miden lo mismo?»</div>
+  <div class="a">«Porque no miden lo mismo psicométricamente. La PSU utilizaba Teoría Clásica de los Tests normalizada en escala 150 a 850 puntos con media forzada en 500 puntos (en seleccionados universitarios la media sube a ~557). La PAES utiliza Teoría de Respuesta al Ítem (TRI) en escala de 100 a 1.000 puntos, lo que expande la varianza y eleva la media de los seleccionados a ~645 puntos. Justamente por esta razón era inaceptable concatenar las notas sin normalizarlas».</div>
+</div>
+
+<div class="qa-card">
+  <div class="q">4. «¿Cuál es la diferencia entre el rol de la Persona 1 y la Persona 5 en el Diccionario de Datos?»</div>
+  <div class="a">«La Persona 1 construyó el pipeline ETL y entregó un borrador preliminar de los campos propios de la base CNED durante la transformación técnica. La Persona 5, como Gestor del Proyecto y Documentador, es quien unificó las <strong>59 columnas definitivas</strong>, integró las variables de las fuentes externas (INE y SIES), incorporó las tablas puente con sus tasas de cuadre y redactó las justificaciones de negocio en formatos interoperables (Markdown, JSON y LaTeX)».</div>
+</div>
+
+<div class="qa-card">
+  <div class="q">5. «¿Por qué en 2026 la tasa de ocupación nacional es de 84,4% y no 100%?»</div>
+  <div class="a">«Porque el sistema de educación superior chileno opera con holgura estructural. Existen carreras e instituciones con sobrecupo (&gt;100% por listas de espera y sobrerrecepción), pero muchas sedes regionales o carreras técnicas no logran llenar sus vacantes ofrecidas. En 2026, las Universidades ocuparon el 86,2% de sus cupos, los IP el 83,1% y los CFT el 81,9%, evidenciando que existe capacidad ociosa susceptible de optimización estratégica».</div>
+</div>
+
+<div class="callout callout-green" style="margin-top: 15px;">
+  <strong>Conclusión y Certificación de Calidad:</strong>
+  El equipo cuenta con una arquitectura de datos sólida, reproducible y gobernada al 100%. Todos los archivos están sincronizados, auditados con 0 errores y respaldados por la matriz de evaluación del Hito 1 con <strong>17/17 puntos asegurados</strong>.
+</div>
+
+</body>
+</html>
+`;
+
+function generatePdf() {
+  console.log("=== COMPILANDO GUÍA MAESTRA EN HTML Y PDF COMPACTO ===");
+  fs.writeFileSync(OUTPUT_HTML, htmlContent, "utf-8");
+  console.log("  [OK] HTML optimizado generado en docs/");
+
+  const mdContent = `# Guía Maestra de Estudio y Defensa de Avance - Hito 1
+## Proyecto Práctico Final de Business Intelligence: Análisis de Demanda, Capacidad y Calidad de la Educación Superior Chilena (2012–2026)
+
+**Hito Evaluado:** Hito 1 (Propuesta de Valor, Canvas BI, ETL y Fuentes Externas)  
+**Puntaje Grupal:** 17 Puntos  
+**Propósito:** Guía pedagógica integral para que cada uno de los 5 integrantes domine tanto su rol particular como la visión completa del proyecto y defienda con éxito la interrogación oral del avance.
+
+---
+
+### Resumen Rápido por Roles:
+- **P1 (ETL):** Consolidó 158.211 filas (114.265 de 12-22 + 43.946 de 23-26), resolvió PSU/PDT/PAES en 4 escalas y justificó nulos en puntajes (80,5%) y vacantes (25,4%) mediante flags.
+- **P2 (Negocios):** Formuló Propuesta de Valor, Canvas BI de 10 bloques, 3 preguntas de negocio y descargó INE (demografía regional) y SIES (acreditación IES) con SHA-256.
+- **P3 (Arquitecto DB):** Normalizó textos (16 regiones, 259 instituciones, 284 carreras), auditó cruces y gobernó la creación de Ñuble (Ley 21.033, 1.599 registros).
+- **P4 (Desarrollador BI):** Certificó graficabilidad en Power BI, modeló medidas DAX con semi-aditividad temporal y diseñó wireframes del panel.
+- **P5 (Gestor y Documentador):** Construyó el Diccionario Maestro de 59 columnas, documentó tablas puente (100% región, 99% matrícula) y redactó el informe ejecutivo.
+
+*(El documento completo en PDF de alta fidelidad con todas las tablas, esquemas y simulador de preguntas trampa se encuentra compilado en:* \`inteligencia/P5_Hito1/docs/Guia_Estudio_Defensa_Hito1_BI.pdf\` *y en la raíz del proyecto).*
+`;
+  fs.writeFileSync(OUTPUT_MD, mdContent, "utf-8");
+  console.log("  [OK] Markdown complementario generado.");
+
+  const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
+  
+  const argsP5 = [
+    '--headless=new',
+    '--disable-gpu',
+    '--run-all-compositor-stages-before-draw',
+    '--no-pdf-header-footer',
+    `--print-to-pdf=${OUTPUT_PDF_P5}`,
+    OUTPUT_HTML
+  ];
+
+  const argsRoot = [
+    '--headless=new',
+    '--disable-gpu',
+    '--run-all-compositor-stages-before-draw',
+    '--no-pdf-header-footer',
+    `--print-to-pdf=${OUTPUT_PDF_ROOT}`,
+    OUTPUT_HTML
+  ];
+
+  console.log("  Ejecutando Edge headless (sin cabeceras espurias)...");
+  const res1 = spawnSync(edgePath, argsP5, { encoding: 'utf-8' });
+  const res2 = spawnSync(edgePath, argsRoot, { encoding: 'utf-8' });
+
+  if (fs.existsSync(OUTPUT_PDF_P5)) {
+    const sizeP5 = fs.statSync(OUTPUT_PDF_P5).size;
+    console.log(`  [OK] PDF P5 generado exitosamente (${(sizeP5 / 1024).toFixed(1)} KB): ${OUTPUT_PDF_P5}`);
+  } else {
+    console.error("  [ERROR] Falló generación en P5:", res1.stderr);
+  }
+
+  if (fs.existsSync(OUTPUT_PDF_ROOT)) {
+    const sizeRoot = fs.statSync(OUTPUT_PDF_ROOT).size;
+    console.log(`  [OK] PDF Raíz generado exitosamente (${(sizeRoot / 1024).toFixed(1)} KB): ${OUTPUT_PDF_ROOT}`);
+  } else {
+    console.error("  [ERROR] Falló generación en Raíz:", res2.stderr);
+  }
+}
+
+generatePdf();

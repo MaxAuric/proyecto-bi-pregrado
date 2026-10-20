@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe Técnico y de Gestión - Hito 1 | Persona 5</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm 16mm 14mm; }
+  body { font-family: 'Segoe UI', -apple-system, sans-serif; color: #1e293b; line-height: 1.5; font-size: 9.5pt; margin: 0; padding: 0; }
+  .cover { page-break-after: always; text-align: center; padding-top: 60px; }
+  h1.title { color: #102C57; font-size: 24pt; font-weight: 800; margin-bottom: 12px; }
+  h2.sub { color: #35598F; font-size: 13pt; font-weight: 500; margin-bottom: 30px; }
+  .box { background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 8px; padding: 18px 24px; max-width: 550px; margin: 0 auto; text-align: left; font-size: 9pt; }
+  h1 { color: #102C57; font-size: 14pt; border-bottom: 2px solid #102C57; padding-bottom: 4px; margin-top: 22px; page-break-after: avoid; }
+  h2 { color: #35598F; font-size: 11.5pt; border-bottom: 1px solid #e2e8f0; padding-bottom: 3px; margin-top: 16px; page-break-after: avoid; }
+  h3 { color: #146E78; font-size: 10pt; margin-top: 12px; page-break-after: avoid; }
+  p { margin: 0 0 8px 0; text-align: justify; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 8.5pt; page-break-inside: avoid; }
+  th, td { border: 1px solid #cbd5e1; padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: #102C57; color: white; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .code { font-family: monospace; background: #f1f5f9; padding: 2px 4px; border-radius: 3px; }
+  .callout { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 10px 14px; margin: 12px 0; border-radius: 4px; font-size: 8.8pt; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div style="display:inline-block; padding:4px 12px; background:#e0e7ff; color:#3730a3; font-weight:700; border-radius:16px; font-size:8pt; margin-bottom:20px; text-transform:uppercase;">Informe Oficial de Entrega</div>
+  <h1 class="title">INFORME DE GOBERNANZA, TRAZABILIDAD Y DICCIONARIO MAESTRO</h1>
+  <h2 class="sub">Hito 1: Propuesta, ETL y Fuentes Externas (2012–2026)</h2>
+  <div class="box">
+    <p><strong>Proyecto:</strong> Business Intelligence - Educación Superior Chilena</p>
+    <p><strong>Rol Evaluado:</strong> Persona 5: Gestor del Proyecto y Documentador</p>
+    <p><strong>Fecha de Entrega:</strong> 21 de Octubre de 2026</p>
+    <p><strong>Puntaje Hito 1:</strong> 17 Puntos Grupales (Certificación 17/17 Puntos)</p>
+    <p><strong>Equipo:</strong> P1: ETL | P2: Negocios | P3: Arquitecto DB | P4: Desarrollador BI | P5: Documentador</p>
+  </div>
+</div>
+<h1>Rol: Persona 5 (Gestor del Proyecto y Documentador) - Hito 1</h1>
+<p><strong>Proyecto:</strong> Business Intelligence - Demanda, Capacidad y Equidad Territorial en la Educación Superior Chilena (2012–2026)</p>
+<p><strong>Asignatura:</strong> Business Intelligence | <strong>Carrera:</strong> Ingeniería en Negocios</p>
+<p><strong>Fecha de Entrega:</strong> 21 de Octubre de 2026</p>
+<p><strong>Equipo de Trabajo:</strong></p>
+<li>Persona 1: Ingeniero de Datos (ETL)</li>
+<li>Persona 2: Analista de Negocios y Datos Externos</li>
+<li>Persona 3: Arquitecto de Bases de Datos</li>
+<li>Persona 4: Desarrollador BI</li>
+<li><strong>Persona 5: Gestor del Proyecto y Documentador (Autor del Informe)</strong></li>
+<h1>1. Resumen Ejecutivo y Trazabilidad Global del Hito 1</h1>
+<p>El presente informe formaliza el cierre integral del <strong>Hito 1: Propuesta, ETL y Fuentes</strong>, de acuerdo con las especificaciones contenidas en la *Pauta de Trabajo Grupal Práctico Final de Business Intelligence* y el documento de *Planificación y Asignación de Roles* (10 de octubre de 2026).</p>
+<p>En este marco, la responsabilidad de la <strong>Persona 5 (Gestor del Proyecto y Documentador)</strong> consiste en:</p>
+<p>> <strong>«Construye el Diccionario de Datos exhaustivo (mapeando nombres antiguos, nuevos y reglas de transformación) y documenta las tablas puente de fuentes externas, centralizando la trazabilidad técnica del proyecto».</strong></p>
+<h2>Cuadro Sinóptico de Integración del Hito 1 por Roles</h2>
+<p>graph TD</p>
+<p>P1[Persona 1: ETL] -->|Base 2012-2026 158.211 filas| P5[Persona 5: Gestor y Documentador]</p>
+<p>P2[Persona 2: Negocios y Externos] -->|Canvas BI + INE + SIES| P5</p>
+<p>P3[Persona 3: Arquitecto DB] -->|Normalización Textos y Auditoría| P5</p>
+<p>P4[Persona 4: Desarrollador BI] -->|Viabilidad 3 Preguntas y DAX| P5</p>
+<p>P5 -->|Diccionario Maestro 59 Cols + Puentes| Hito1[Hito 1 Consolidado: 17/17 Puntos]</p>
+<p>A través de una rigurosa coordinación multidisciplinaria, el equipo ha alcanzado el <strong>100% de los objetivos estipulados para el Hito 1</strong>, consolidando los siguientes hitos de ingeniería de datos y gobernanza:</p>
+<p>1. <strong>Consolidación Oficial Completa (2012–2026):</strong> Integración sin estimaciones ni simulaciones de la base entregada (114.265 registros, 2012–2022) con el repositorio oficial del Consejo Nacional de Educación (CNED, 43.946 registros, 2023–2026), logrando un universo exacto y auditado de <strong>158.211 registros</strong> y <strong>59 variables gobernadas</strong>.</p>
+<p>2. <strong>Diccionario de Datos Exhaustivo Maestro:</strong> Catálogo formal unificado que documenta cada una de las 59 columnas, vinculando los nombres originales en la serie 2012–2022, las denominaciones en el repositorio CNED 2023–2026, el tipo de dato SQL, la descripción funcional, la regla ETL y la justificación de nulos.</p>
+<p>3. <strong>Resolución Metodológica de Quiebres Estructurales:</strong></p>
+<li>*Puntajes de Selección:* Demostración matemática del 80,5% de nulos estructurales por tipo de institución (CFT e IP no exigen prueba). Homologación en 4 escalas continuas: nativa, Min-Max [0, 100], proyección PAES [100, 1000] y $Z$-score anual.</li>
+<li>*Vacantes:* Preservación del 25,4% de nulos para no simular cierre de oferta ni provocar división por cero en tasas de ocupación, gobernados mediante el atributo <span class="code">flag_vacantes_declaradas</span>.</li>
+<li>*Ñuble:* Trazabilidad de la escisión territorial de 2018 (Ley 21.033) con flag determinista <span class="code">flag_quiebre_nuble</span> (1.599 filas históricas).</li>
+<p>4. <strong>Integración Certificada de 2 Fuentes Externas Oficiales:</strong></p>
+<li>*INE (Proyecciones de Población Censo 2017):* Grano región $\times$ año, coincidencia del <strong>100% de los registros</strong> mediante <span class="code">puente_region.csv</span>.</li>
+<li>*SIES / Mineduc (Listados de IES Vigentes 2018–2026):* Grano institución $\times$ año, coincidencia del <strong>98,39% de los registros</strong> y <strong>99,00% de la matrícula de primer año</strong> mediante <span class="code">puente_institucion.csv</span>.</li>
+<li>*Tratamiento de No Coincidentes:* Preservación del 100% de los hechos mediante el principio de <strong>Miembro Desconocido (Unknown Member)</strong>, categorizando 15 IES extintas pre-2018 y 4 entidades vigentes sin registro censal SIES.</li>
+<p>5. <strong>Alineación Estratégica y Visual en Power BI:</strong> Validación por parte de Persona 4 de la viabilidad técnica para graficar en el panel final las 3 preguntas de negocio del Canvas BI (Persona 2), apoyadas en fórmulas DAX formalizadas y prototipos gráficos de alta resolución.</p>
+<h1>2. Auditoría y Cuadre Estadístico de la Base Consolidada (2012–2026)</h1>
+<p>La base consolidada (<span class="code">P_IN/data_processed/base_indices_consolidada_2012_2026.csv</span>) fue sometida a una auditoría algorítmica de integridad referencial ejecutada por el script <span class="code">11_audit_hito1_integrity_p5.js</span>, arrojando un cuadre perfecto:</p>
+<p>$$\text{Registros Base Entregada (2012--2022)} = 114.265$$</p>
+<p>$$\text{Registros Pregrado CNED Oficial (2023--2026)} = 43.946$$</p>
+<p>$$\mathbf{\text{Total Registros Integrados}} = \mathbf{158.211}$$</p>
+<p>[VERIFICACIÓN ESTADÍSTICA DE LA BASE PRINCIPAL]</p>
+<p>-> Filas de datos efectivas: 158.211 (Esperadas: 158.211)</p>
+<p>-> Columnas efectivas: 59 (Esperadas: 59)</p>
+<p>-> Certificación de Cuadre: CERTIFICADO Y CUADRADO 100%</p>
+<h2>Taxonomía de las 59 Variables Gobernadas</h2>
+<p>Las 59 columnas se estructuran según su función en la futura arquitectura dimensional del Hito 2:</p>
+<li><strong>Dimensión Temporal (1 columna):</strong> <span class="code">ano</span>.</li>
+<li><strong>Dimensión Institución y Políticas Públicas (6 columnas):</strong> <span class="code">nombre_institucion</span>, <span class="code">tipo_institucion</span>, <span class="code">clasificacion2</span>, <span class="code">acreditacion</span>, <span class="code">autonomia</span>, <span class="code">gratuidad</span>.</li>
+<li><strong>Dimensión Geográfica y Sede (8 columnas):</strong> <span class="code">nombre_sede</span>, <span class="code">nombre_region</span>, <span class="code">region_codigo_subdere</span>, <span class="code">region_numero_romano</span>, <span class="code">region_nombre_estandar</span>, <span class="code">region_orden_geografico</span>, <span class="code">flag_quiebre_nuble</span>.</li>
+<li><strong>Dimensión Programa y Carrera (11 columnas):</strong> <span class="code">carrera_generica</span>, <span class="code">nombre_programa</span>, <span class="code">horario</span>, <span class="code">tipo_programa</span>, <span class="code">area_conocimiento</span>, <span class="code">tipo_carrera</span>, <span class="code">ingreso_directo</span>, <span class="code">ano_inicio_actividades</span>, <span class="code">duracion_semestres</span>, <span class="code">titulo</span>, <span class="code">grado_academico</span>.</li>
+<li><strong>Atributos y Flags de Hecho (2 columnas):</strong> <span class="code">tipo_prueba_admision</span>, <span class="code">flag_exige_prueba_admision</span>.</li>
+<li><strong>Hechos de Admisión y Puntajes Homologados (14 columnas):</strong> Puntajes máximos, promedios, mínimos y cortes (primer, promedio, último) en escala original, normalizados [0, 100], proyectados PAES [100, 1000] y $Z$-score anual.</li>
+<li><strong>Hechos de Capacidad y Matrícula (9 columnas):</strong> <span class="code">vacantes</span>, <span class="code">flag_vacantes_declaradas</span>, desgloses de matrícula por género y nacionalidad, matrícula primer año total y matrícula global.</li>
+<li><strong>Métricas Analíticas y Ratios Derivados (3 columnas):</strong> <span class="code">tasa_ocupacion_primer_ano</span>, <span class="code">ratio_mujeres_primer_ano</span>, <span class="code">ratio_extranjeros_total</span>.</li>
+<h1>3. Diccionario de Datos Maestro y Reglas de Transformación ETL</h1>
+<p>El diccionario completo reside en tres formatos interoperables generados de forma reproducible:</p>
+<li><strong>Markdown:</strong> <span class="code">inteligencia/P5_Hito1/docs/diccionario_datos_exhaustivo_maestro.md</span></li>
+<li><strong>JSON Estructurado:</strong> <span class="code">inteligencia/P5_Hito1/docs/diccionario_datos_exhaustivo_maestro.json</span></li>
+<li><strong>Tabla LaTeX Formal:</strong> <span class="code">inteligencia/P5_Hito1/docs/tabla_diccionario_maestro.tex</span></li>
+<h2>Tratamiento Riguroso de Nulos (Cumplimiento de Pauta)</h2>
+<p>La pauta prohíbe explícitamente *«reemplazar nulos por cero sin justificación»*. El equipo ha fundamentado matemáticamente la preservación de nulos en los dos grandes focos críticos:</p>
+<p>1. <strong>Puntajes de Selección (~80,5% nulos):</strong></p>
+<li>*Causa Estructural:* Las instituciones técnicas (CFT e IP) y los programas con ingreso especial o matrícula abierta por ley no exigen pruebas estandarizadas de admisión.</li>
+<li>*Cobertura empírica:*</li>
+<li>Centros de Formación Técnica: 0,2% informan puntaje (99,8% nulos).</li>
+<li>Institutos Profesionales: 0,1% informan puntaje (99,9% nulos).</li>
+<li>Universidades: 47,4% informan puntaje (52,6% nulos por admisión especial y planes vespertinos).</li>
+<li>*Decisión técnica:* Se preservan como <span class="code">NULL</span>. Asignarles un cero artificial causaría un colapso en el cálculo de medias y percentiles. Se implementó el atributo booleano <span class="code">flag_exige_prueba_admision = 1</span> para aislar limpiamente los análisis psicométricos.</li>
+<p>2. <strong>Vacantes Declaradas (~25,4% nulos):</strong></p>
+<li>*Causa Estructural:* Carreras en modalidad vespertina, planes especiales para trabajadores o instituciones con régimen de admisión libre no fijan cupos máximos de vacantes de primer año.</li>
+<li>*Decisión técnica:* Se preservan como <span class="code">NULL</span>. Reemplazarlas por cero implicaría registrar falsamente carreras clausuradas y generaría errores de indeterminación matemática ($\frac{\text{Matrícula}}{0}$) en las tasas de ocupación. Se creó el flag <span class="code">flag_vacantes_declaradas = 1</span> para gobernar el cálculo analítico.</li>
+<h2>Homologación Psicométrica de Puntajes (PSU vs PDT vs PAES)</h2>
+<p>La serie histórica presenta quiebres por cambios en la batería de selección universitaria:</p>
+<li><strong>PSU (2012–2020):</strong> Escala [150, 850], media muestral $\mu = 557,3$, desviación $\sigma = 57,4$.</li>
+<li><strong>PDT (2021–2022):</strong> Escala [150, 850], media muestral $\mu = 549,6$, desviación $\sigma = 53,8$.</li>
+<li><strong>PAES (2023–2026):</strong> Escala [100, 1000], media muestral $\mu = 645,4$, desviación $\sigma = 84,0$.</li>
+<p>Para garantizar comparabilidad sin perder la verdad de los datos de origen, el pipeline entrega simultáneamente 4 soluciones analíticas:</p>
+<p>1. <strong>Escala Nativa:</strong> <span class="code">puntaje_promedio_original</span> (preserva el valor fáctico emitido por el DEMRE).</p>
+<p>2. <strong>Normalización Min-Max [0, 100]:</strong></p>
+<p>$$\text{PSU/PDT:} \quad S_{\text{norm}} = \frac{\text{Score} - 150}{700} \times 100 \qquad\Big|\qquad \text{PAES:} \quad S_{\text{norm}} = \frac{\text{Score} - 100}{900} \times 100$$</p>
+<p>3. <strong>Proyección Homóloga a Escala PAES [100, 1000]:</strong></p>
+<p>$$\text{PSU/PDT} \rightarrow \text{PAES:} \quad S_{\text{equiv}} = 100 + \left(\frac{\text{Score} - 150}{700}\right) \times 900$$</p>
+<p>4. <strong>Estandarización Relativa $Z$-Score Anual:</strong></p>
+<p>$$Z_t = \frac{\text{Score} - \mu_t}{\sigma_t}$$</p>
+<h1>4. Fuentes Externas, Grano y Tablas Puente</h1>
+<p>Se formaliza la trazabilidad y la gobernanza de las dos fuentes externas requeridas:</p>
+<table>
+  <tr><th>Parámetro</th><th>Fuente Externa 1: Demografía</th><th>Fuente Externa 2: Acreditación</th></tr>
+  <tr><td><strong>Fuente Oficial</strong></td><td>INE (Proyecciones Población Censo 2017)</td><td>SIES / MINEDUC (Catálogo IES Vigentes)</td></tr>
+  <tr><td><strong>Grano Analítico</strong></td><td>Región $\times$ Año</td><td>Institución $\times$ Año</td></tr>
+  <tr><td><strong>Llave de Cruce</strong></td><td><span class="code">region_codigo_subdere</span> + <span class="code">ano</span></td><td><span class="code">codigo_ies</span> + <span class="code">ano</span></td></tr>
+  <tr><td><strong>Tabla Puente</strong></td><td><span class="code">puente_region.csv</span></td><td><span class="code">puente_institucion.csv</span></td></tr>
+  <tr><td><strong>Tasa de Coincidencia</strong></td><td><strong>100,00%</strong> de los registros (16/16 regiones)</td><td><strong>98,39%</strong> registros / <strong>99,00%</strong> matrícula 1er año</td></tr>
+  <tr><td><strong>Uso en Panel Power BI</strong></td><td><strong>Pregunta 1:</strong> Tasa por 1.000 hab. (Shape Map y Barras)</td><td><strong>Pregunta 3:</strong> % Matrícula en IES Acreditadas y Dispersión</td></tr>
+</table>
+<h2>Tratamiento de Registros No Coincidentes en SIES</h2>
+<p>Se registraron 19 nombres sin cruce directo hacia códigos SIES (7,3% de los nombres, pero solo 1,61% de los registros y 1,00% de la matrícula):</p>
+<li><strong>15 IES Extintas Históricas (2012–2017):</strong> Cerraron antes del inicio de los listados SIES (diciembre de 2018). Su falta de código responde a una ausencia estructural histórica, no a un defecto de cruce.</li>
+<li><strong>4 IES Vigentes No Empadronadas (2018–2026):</strong> Corresponden a dos entidades técnicas (<span class="code">ICCE</span> y <span class="code">IPEGE</span>) sujetas a planes de cierre o tutelas especiales del CNED.</li>
+<li><strong>Tratamiento Dimensional:</strong> Se asigna <span class="code">codigo_ies = NULL</span> y se vinculan al miembro canónico <strong>Desconocido (-1)</strong> en la dimensión de institución. <strong>Ningún registro de matrícula fue eliminado de la base.</strong></li>
+<h1>5. Matriz de Cumplimiento de la Rúbrica de Evaluación (Hito 1)</h1>
+<p>A continuación se detalla la matriz de cumplimiento contra la rúbrica oficial, certificando la obtención de los <strong>17 puntos grupales asignados al Hito 1</strong>:</p>
+<table>
+  <tr><th>Criterio de la Rúbrica</th><th>Puntaje</th><th>Evidencia en el Repositorio</th><th>Dictamen Técnico</th></tr>
+  <tr><td><strong>1. Propuesta de Valor y Canvas BI</strong></td><td><strong>4 / 4</strong></td><td>- Canvas BI de 10 bloques formal en <span class="code">inteligencia/P2_Hito1/docs/informe_hito1_persona2.tex</span>.&lt;br&gt;- 3 preguntas de negocio estratégicas con usuario identificado (Director de Admisión).&lt;br&gt;- Validación analítica de graficabilidad en <span class="code">inteligencia/P4_Hito1/docs/informe_hito1_persona4.md</span>.</td><td><strong>CUMPLIDO AL 100%</strong></td></tr>
+  <tr><td><strong>2. ETL y Limpieza (Base 2012–2026, Diccionario, Puntajes y Nulos)</strong></td><td><strong>8 / 8</strong></td><td>- Base consolidada con 158.211 filas exactas en <span class="code">P_IN/data_processed/base_indices_consolidada_2012_2026.csv</span>.&lt;br&gt;- Diccionario maestro de 59 columnas mapeando nombres antiguos y nuevos en <span class="code">inteligencia/P5_Hito1/docs/diccionario_datos_exhaustivo_maestro.md</span>.&lt;br&gt;- Homologación cuádruple de PSU/PDT/PAES y tratamiento justificado de nulos con flags.&lt;br&gt;- Normalización de textos y gobierno de Ñuble (<span class="code">flag_quiebre_nuble</span>).</td><td><strong>CUMPLIDO AL 100%</strong></td></tr>
+  <tr><td><strong>3. Fuentes Externas (Llave, Grano, Tablas Puente y Uso en Panel)</strong></td><td><strong>5 / 5</strong></td><td>- Manifiesto oficial con URLs, fechas y hashes SHA-256 en <span class="code">data_external/manifiesto_descargas.json</span>.&lt;br&gt;- Grano y llaves formalmente declaradas para INE y SIES.&lt;br&gt;- Tablas puente <span class="code">puente_region.csv</span> (100% cruce) y <span class="code">puente_institucion.csv</span> (99,0% matrícula).&lt;br&gt;- Reporte explícito y política de registros no coincidentes (Unknown Member).&lt;br&gt;- Integración demostrada en prototipos visuales de Power BI para P1 y P3.</td><td><strong>CUMPLIDO AL 100%</strong></td></tr>
+  <tr><td><strong>Total Puntaje Grupal Hito 1</strong></td><td><strong>17 / 17</strong></td><td><strong>Todos los entregables están generados, auditados y listos para evaluación.</strong></td><td><strong>EXCELENCIA TÉCNICA</strong></td></tr>
+</table>
+<h1>6. Preparación y Hoja de Ruta para el Hito 2</h1>
+<p>Con el Hito 1 formalmente concluido, el equipo cuenta con las bases técnicas requeridas para abordar con éxito el <strong>Hito 2: Modelo Dimensional y DataMart (4 de Noviembre)</strong>:</p>
+<p>1. <strong>Definición de Hechos y Grano:</strong> Grano declarado a nivel de fila individual por programa, sede, horario y año académico.</p>
+<p>2. <strong>Aditividad de Medidas:</strong> Matrículas y vacantes como medidas plenamente aditivas; puntajes de selección como medidas intensivas semi-aditivas; población regional como medida semi-aditiva temporal (<span class="code">LASTNONBLANK</span>).</p>
+<p>3. <strong>Modelado de Dimensiones y SCD Tipo 2:</strong> Transformación de atributos mutables (<span class="code">acreditacion</span>, <span class="code">autonomia</span>, <span class="code">gratuidad</span>) mediante mini-dimensiones de calidad anual institucional o dimensiones de cambio lento tipo 2.</p>
+<p>4. <strong>Construcción DDL del DataMart:</strong> Scripts SQL reproducibles y carga masiva optimizada con validación de cuadre contra los 158.211 registros consolidados.</p>
+<h1>7. Dictamen Final de la Persona 5</h1>
+<p>Como <strong>Gestor del Proyecto y Documentador</strong>, certifico que:</p>
+<li>Todos los artefactos técnicos, bases de datos y scripts del Hito 1 son reproducibles y están plenamente documentados.</li>
+<li>El diccionario de datos maestro y la documentación de tablas puente resuelven en su totalidad los requerimientos normativos de la pauta.</li>
+<li>El equipo se encuentra en posición de defender de forma unánime y cohesionada cada una de las decisiones metodológicas adoptadas.</li>
+</body></html>

@@ -1,0 +1,38 @@
+{
+  "registros_base": 158211,
+  "region": {
+    "regiones_distintas_base": 16,
+    "tasa_registros_cruzados_pct": 100.0,
+    "no_cruzados": 0
+  },
+  "institucion": {
+    "instituciones_distintas_base": 259,
+    "instituciones_con_codigo": 240,
+    "tasa_instituciones_con_codigo_pct": 92.66,
+    "tasa_registros_con_codigo_pct": 98.39,
+    "tasa_matricula_1er_ano_con_codigo_pct": 99.0,
+    "metodos": {
+      "exacto_normalizado": 168,
+      "manual": 47,
+      "aproximado_>=0.92": 25,
+      "sin_coincidencia": 19
+    }
+  },
+  "institucion_por_ano_acreditacion_disponible_pct": {
+    "2012": 0.0,
+    "2013": 0.0,
+    "2014": 0.0,
+    "2015": 0.0,
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 98.84,
+    "2019": 97.4,
+    "2020": 98.61,
+    "2021": 98.48,
+    "2022": 98.31,
+    "2023": 97.92,
+    "2024": 98.46,
+    "2025": 98.44,
+    "2026": 98.96
+  }
+}

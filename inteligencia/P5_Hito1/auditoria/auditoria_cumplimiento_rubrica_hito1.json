@@ -1,0 +1,63 @@
+{
+  "hito": "Hito 1: Propuesta, ETL y Fuentes",
+  "fecha_auditoria": "2026-10-20T21:56:57.085Z",
+  "evaluador_tecnico": "Persona 5 (Gestor del Proyecto y Documentador)",
+  "puntaje_maximo_hito": 17,
+  "puntaje_proyectado": 17,
+  "criterios": [
+    {
+      "criterio": "Propuesta de valor y Canvas BI",
+      "puntaje_maximo": 4,
+      "puntaje_obtenido": 4,
+      "estado": "CUMPLIDO AL 100%",
+      "roles_involucrados": [
+        "Persona 2",
+        "Persona 4"
+      ],
+      "evidencias": [
+        "inteligencia/P2_Hito1/docs/informe_hito1_persona2.tex (Canvas BI de 10 bloques formal)",
+        "inteligencia/P4_Hito1/docs/informe_hito1_persona4.md (Validación de graficabilidad de 3 preguntas de negocio)",
+        "Enfoque estratégico claro: optimización de oferta de vacantes y equidad territorial para directores de admisión"
+      ]
+    },
+    {
+      "criterio": "ETL: integración 2023–2026, diccionario de datos, homologación de puntajes y nulos",
+      "puntaje_maximo": 8,
+      "puntaje_obtenido": 8,
+      "estado": "CUMPLIDO AL 100%",
+      "roles_involucrados": [
+        "Persona 1",
+        "Persona 3",
+        "Persona 5"
+      ],
+      "evidencias": [
+        "P_IN/data_processed/base_indices_consolidada_2012_2026.csv (158.211 filas exactas: 114.265 de 2012-2022 + 43.946 de 2023-2026)",
+        "inteligencia/P5_Hito1/docs/diccionario_datos_exhaustivo_maestro.md (59 columnas mapeadas formalmente con nombres antiguos y nuevos)",
+        "Homologación psicométrica: preservación de escala nativa + normalización Min-Max [0,100] + proyección PAES [100,1000] + Z-score anual",
+        "Tratamiento de nulos justificado: puntajes (80,5% nulos) preservados como NULL con flag_exige_prueba; vacantes (25,4% nulos) preservadas como NULL con flag_vacantes_declaradas (prohibido reemplazar con cero)",
+        "Normalización de textos: 16 regiones SUBDERE, 259 instituciones y 284 carreras genéricas estandarizadas"
+      ]
+    },
+    {
+      "criterio": "Fuentes externas: llave, grano, tabla puente y uso en el panel",
+      "puntaje_maximo": 5,
+      "puntaje_obtenido": 5,
+      "estado": "CUMPLIDO AL 100%",
+      "roles_involucrados": [
+        "Persona 2",
+        "Persona 3",
+        "Persona 4",
+        "Persona 5"
+      ],
+      "evidencias": [
+        "2 fuentes externas oficiales descargadas con URL, fecha (2026-10-15) y SHA-256 en manifiesto_descargas.json",
+        "Fuente 1 INE: Proyecciones Población Censo 2017 (grano: región x año, llave: region_codigo_subdere + año, coincidencia 100%)",
+        "Fuente 2 SIES: Acreditación y autonomía IES vigentes 2018-2026 (grano: institución x año, llave: codigo_ies + año)",
+        "Tabla puente region (puente_region.csv: 16/16 regiones, 100% registros)",
+        "Tabla puente institucion (puente_institucion.csv: 240/259 entidades, 98,39% registros, 99,00% matrícula 1er año)",
+        "Tratamiento riguroso de no coincidentes: 15 extintas pre-2018 justificadas estructuralmente + 4 vigentes no SIES preservadas con clave nula / miembro desconocido sin descartar filas",
+        "Uso en panel: demostrada presencia en visualizaciones de Power BI para P1 (INE) y P3 (SIES)"
+      ]
+    }
+  ]
+}

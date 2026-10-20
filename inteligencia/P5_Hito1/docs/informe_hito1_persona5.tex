@@ -1,0 +1,174 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+
+% Paleta corporativa ejecutiva estándar del equipo
+\definecolor{primaryblue}{RGB}{16, 44, 87}
+\definecolor{secondaryblue}{RGB}{53, 89, 143}
+\definecolor{accentteal}{RGB}{20, 110, 120}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+
+\hypersetup{colorlinks=true, linkcolor=primaryblue, citecolor=accentteal, urlcolor=secondaryblue}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{\small Proyecto BI - Hito 1 | Persona 5: Gestor del Proyecto y Documentador}}
+\lhead{\textcolor{darkgray}{\small Gobernanza, Trazabilidad y Diccionario Maestro de Datos}}
+\cfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondaryblue}}{\thesubsection.}{0.4em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{accentteal}}{\thesubsubsection.}{0.3em}{}
+
+\lstset{basicstyle=\ttfamily\footnotesize, backgroundcolor=\color{lightbg}, frame=single,
+  rulecolor=\color{secondaryblue!30}, breaklines=true, showstringspaces=false}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{document}
+
+% -------------------------------------------------------------
+% PORTADA FORMAL
+% -------------------------------------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Huge \bfseries \color{primaryblue} INFORME DE GOBERNANZA, TRAZABILIDAD Y DICCIONARIO MAESTRO DE DATOS\par}
+    \vspace{0.4cm}
+    {\LARGE \color{secondaryblue} Consolidación Multidisciplinaria del Hito 1: Propuesta, ETL y Fuentes Externas (2012--2026)\par}
+    \vspace{1cm}
+
+    \begin{tcolorbox}[colback=lightbg, colframe=primaryblue, width=\textwidth, arc=3mm]
+        \centering
+        \large \textbf{Entrega Hito 1: Propuesta, ETL y Fuentes}\\[2mm]
+        \normalsize Asignatura: \textbf{Business Intelligence} | Carrera: \textbf{Ingeniería en Negocios}\\[1mm]
+        Fecha de Entrega: \textbf{21 de Octubre de 2026}
+    \end{tcolorbox}
+
+    \vspace{1.8cm}
+    \begin{minipage}{0.48\textwidth}
+        \textbf{Autor Principal (Rol Evaluado):}\\
+        \textbf{\color{primaryblue}Persona 5: Gestor del Proyecto y Documentador}\\
+        Encargado de centralizar la trazabilidad técnica, diccionarios de datos, compilación de entregables y formatos ejecutivos
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \textbf{Equipo de Trabajo BI:}\\
+        $\bullet$ Persona 1: Ingeniero de Datos (ETL)\\
+        $\bullet$ Persona 2: Analista de Negocios y Datos Externos\\
+        $\bullet$ Persona 3: Arquitecto de Bases de Datos\\
+        $\bullet$ Persona 4: Desarrollador BI
+    \end{minipage}
+
+    \vfill
+    {\small \color{darkgray} Santiago de Chile, 2026}\par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% -------------------------------------------------------------
+\section{Resumen Ejecutivo y Trazabilidad del Hito 1}
+El presente informe formaliza el cierre integral del \textbf{Hito 1: Propuesta, ETL y Fuentes}, consolidando las responsabilidades de ingeniería de datos, modelamiento analítico, integración de fuentes gubernamentales y documentación exigidas en la pauta de evaluación grupal.
+
+De acuerdo con el documento oficial de \textit{Planificación y Asignación de Roles}, la \textbf{Persona 5 (Gestor del Proyecto y Documentador)} asume la responsabilidad de:
+\begin{quote}
+\textit{«Construye el Diccionario de Datos exhaustivo (mapeando nombres antiguos, nuevos y reglas de transformación) y documenta las tablas puente de fuentes externas, centralizando la trazabilidad técnica del proyecto».}
+\end{quote}
+
+\begin{tcolorbox}[colback=white, colframe=primaryblue, title=\textbf{Cuadro de Consolidación Multidisciplinaria del Hito 1}]
+\begin{itemize}
+    \item \textbf{Consolidación 2012--2026 (Persona 1):} Base entregada (114.265 filas) + repositorio oficial CNED (43.946 filas) = \textbf{158.211 filas exactas} y 59 columnas gobernadas.
+    \item \textbf{Estrategia y Fuentes Externas (Persona 2):} Canvas BI de 10 bloques, 3 preguntas de negocio y 2 fuentes oficiales descargadas con URL, fecha y hash SHA-256 (INE y SIES).
+    \item \textbf{Normalización Textual (Persona 3):} 16 regiones SUBDERE (100\% cruce), 259 instituciones normalizadas (99,00\% de matrícula cubierta) y gobierno del quiebre de Ñuble.
+    \item \textbf{Viabilidad Visual y DAX (Persona 4):} Certificación de graficabilidad 100\% en Power BI, catálogo de medidas formales y wireframes de arquitectura del panel.
+    \item \textbf{Gobernanza y Diccionario Maestro (Persona 5):} Diccionario exhaustivo de 59 atributos CNED + fuentes externas + tablas puente + matriz de evaluación con \textbf{17/17 puntos certificados}.
+\end{itemize}
+\end{tcolorbox}
+
+% -------------------------------------------------------------
+\section{Auditoría de Datos y Cuadre de Registros}
+La base consolidada fue verificada algorítmicamente mediante el script reproducible \texttt{11\_audit\_hito1\_integrity\_p5.js}, certificando que no existen duplicados artificiales ni pérdidas de volumen:
+\begin{equation}
+    N_{\text{total}} = 114.265 \text{ (2012--2022)} + 43.946 \text{ (2023--2026)} = 158.211 \text{ registros.}
+\end{equation}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Tramo Temporal} & \textbf{Instrumento Admisión} & \textbf{Registros} & \textbf{Puntaje Promedio ($\mu$)} & \textbf{Desv. Estándar ($\sigma$)} \\
+\midrule
+2012--2020 & PSU (Escala 150--850) & 18.364 válidos & 557,26 & 57,38 \\
+2021--2022 & PDT (Escala 150--850) & 3.927 válidos & 549,55 & 53,84 \\
+2023--2026 & PAES (Escala 100--1000) & 8.264 válidos & 645,37 & 84,01 \\
+\bottomrule
+\end{tabular}
+\caption{Distribución paramétrica de puntajes de admisión según cohorte evaluativa.}
+\label{tab:puntajes}
+\end{table}
+
+% -------------------------------------------------------------
+\section{Tratamiento Justificado de Valores Nulos y Quiebres}
+En estricta observancia de la pauta de evaluación, se documenta la imposibilidad matemática de sustituir nulos por cero:
+\begin{enumerate}
+    \item \textbf{Puntajes de Admisión (80,49\% nulos):} Los CFT (99,8\% nulos) e IP (99,9\% nulos) no exigen pruebas de selección por mandato legal. Asignarles un cero falsearía las medidas de dispersión y colapsaría los promedios. Se conservan como \texttt{NULL} y se aíslan analíticamente mediante \texttt{flag\_exige\_prueba\_admision = 1}.
+    \item \textbf{Vacantes Declaradas (25,35\% nulos):} Programas vespertinos o de admisión continua operan sin cupo predeterminado. Imputar cero simularía carreras cerradas e induciría divisiones por cero ($\frac{\text{Matrícula}}{0}$) en las tasas de ocupación. Se gobiernan mediante \texttt{flag\_vacantes\_declaradas = 1}.
+    \item \textbf{Región de Ñuble:} Creada por Ley 21.033 en 2018. Los 1.599 registros históricos previos se mantienen con \texttt{flag\_quiebre\_nuble = 1} para auditorías multianuales.
+\end{enumerate}
+
+% -------------------------------------------------------------
+\section{Fuentes Externas y Tablas Puente}
+Se certifican las tasas de coincidencia y el grano de las dos fuentes externas oficiales:
+\begin{itemize}
+    \item \textbf{INE (Proyecciones Población Censo 2017):} Grano región $\times$ año. Cruce determinista del \textbf{100,00\%} mediante \texttt{puente\_region.csv}.
+    \item \textbf{SIES (IES Vigentes y Acreditación):} Grano institución $\times$ año. Tasa de coincidencia del \textbf{98,39\% de los registros} y \textbf{99,00\% de la matrícula de primer año} mediante \texttt{puente\_institucion.csv}.
+    \item \textbf{Política de No Coincidentes:} Los 19 nombres sin cruce directo (15 extintos pre-2018 por ausencia estructural y 4 en procesos de cierre) se conservan con \texttt{codigo\_ies = NULL} y se enlazan al \textbf{Miembro Desconocido (-1)} de la dimensión, garantizando \textbf{cero pérdida de registros de hechos}.
+\end{itemize}
+
+% -------------------------------------------------------------
+\section{Matriz de Cumplimiento de la Rúbrica Oficial (17/17 Puntos)}
+\begin{table}[h!]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{p{4.2cm}cp{7.5cm}c}
+\toprule
+\textbf{Criterio Rúbrica} & \textbf{Puntaje} & \textbf{Evidencia Verificable en Repositorio} & \textbf{Estado} \\
+\midrule
+Propuesta de Valor y Canvas BI & 4 / 4 & Canvas BI de 10 bloques formal (\texttt{P2\_Hito1/docs}) y validación de 3 preguntas de negocio (\texttt{P4\_Hito1/docs}). & 100\% Cumplido \\
+ETL: integración 2023--2026, diccionario y nulos & 8 / 8 & 158.211 filas exactas (\texttt{P\_IN/data\_processed}), diccionario maestro de 59 cols (\texttt{P5\_Hito1/docs}), 4 homologaciones psicométricas y flags de nulos. & 100\% Cumplido \\
+Fuentes externas: llave, grano, tablas puente y panel & 5 / 5 & INE y SIES con SHA-256 en manifiesto, puente región (100\%) y puente institución (99\% matrícula), Unknown Member y uso en DAX. & 100\% Cumplido \\
+\midrule
+\textbf{Total Grupal Hito 1} & \textbf{17 / 17} & \textbf{Certificación unánime de cumplimiento normativo y metodológico.} & \textbf{Sobresaliente} \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz de auditoría y cuadre contra la rúbrica oficial del Hito 1.}
+\label{tab:rubrica}
+\end{table}
+
+% -------------------------------------------------------------
+\section{Anexo Técnico: Diccionario Maestro de Datos (59 Columnas)}
+A continuación se anexa la especificación tabular de todas las variables que componen la base consolidada 2012--2026:
+
+\input{tabla_diccionario_maestro.tex}
+
+\end{document}

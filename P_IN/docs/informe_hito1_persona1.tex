@@ -1,0 +1,338 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+
+% Configuracion de colores ejecutivos
+\definecolor{primaryblue}{RGB}{16, 44, 87}
+\definecolor{secondaryblue}{RGB}{53, 89, 143}
+\definecolor{accentteal}{RGB}{20, 110, 120}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    citecolor=accentteal,
+    urlcolor=secondaryblue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{\small Proyecto BI - Hito 1 | Persona 1: Ingeniero de Datos}}
+\lhead{\textcolor{darkgray}{\small Informe Técnico ETL (2012--2026)}}
+\cfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondaryblue}}{\thesubsection.}{0.4em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{accentteal}}{\thesubsubsection.}{0.3em}{}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor=\color{lightbg},
+    frame=single,
+    rulecolor=\color{secondaryblue!30},
+    breaklines=true,
+    showstringspaces=false,
+    keywordstyle=\color{primaryblue}\bfseries,
+    commentstyle=\color{gray}\itshape,
+    stringstyle=\color{accentteal}
+}
+
+\begin{document}
+
+% -------------------------------------------------------------
+% PORTADA
+% -------------------------------------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Huge \bfseries \color{primaryblue} INGENIERÍA DE DATOS Y PIPELINE ETL (2012--2026)\par}
+    \vspace{0.4cm}
+    {\LARGE \color{secondaryblue} Consolidación Oficial CNED, Homologación Psicométrica de Puntajes y Tratamiento Matemático de Nulos\par}
+    \vspace{1cm}
+    
+    \begin{tcolorbox}[colback=lightbg, colframe=primaryblue, width=\textwidth, arc=3mm]
+        \centering
+        \large \textbf{Entrega Hito 1: Propuesta, ETL y Fuentes}\\[2mm]
+        \normalsize Asignatura: \textbf{Business Intelligence} | Carrera: \textbf{Ingeniería en Negocios}\\[1mm]
+        Fecha de Entrega: \textbf{21 de Octubre de 2026}
+    \end{tcolorbox}
+    
+    \vspace{2cm}
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Autor Principal (Rol Evaluado):}\\
+        \textbf{\color{primaryblue}Persona 1: Ingeniero de Datos (ETL)}\\
+        Responsable de Extracción, Calidad,\\
+        Homologación y Normalización
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Equipo de Trabajo BI:}\\
+        $\bullet$ Persona 2: Analista de Negocios\\
+        $\bullet$ Persona 3: Arquitecto de Datos\\
+        $\bullet$ Persona 4: Desarrollador BI\\
+        $\bullet$ Persona 5: Gestor y Documentador
+    \end{minipage}
+
+    \vfill
+    {\small \color{darkgray} Santiago de Chile, 2026}\par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% -------------------------------------------------------------
+% RESUMEN EJECUTIVO
+% -------------------------------------------------------------
+\section{Resumen Ejecutivo}
+El presente documento constituye el informe técnico y metodológico desarrollado por el \textbf{Ingeniero de Datos (Persona 1)} para el Hito 1 del Proyecto Final de Business Intelligence. El objetivo central consiste en construir un pipeline ETL modular, reproducible y automatizado en Python que extraiga los datos oficiales del Consejo Nacional de Educación (CNED), consolide la serie histórica desde 2012 hasta 2026, resuelva los quiebres estructurales del sistema de admisión chileno y garantice la pureza analítica del repositorio antes de su modelamiento en el DataMart (Hito 2).
+
+\begin{tcolorbox}[colback=white, colframe=accentteal, title=\textbf{Cuadro Resumen de Logros Técnicos (Hito 1)}]
+\begin{itemize}
+    \item \textbf{Consolidación Temporal Total:} Se integró la base entregada (2012--2022, 114.265 registros) con las descargas oficiales del CNED (2023--2026, 43.946 registros de pregrado), alcanzando un universo consolidado de \textbf{158.211 registros} y 59 atributos estructurados.
+    \item \textbf{Tratamiento del Quiebre PSU/PDT/PAES:} Se implementó una estrategia matemática dual que preserva la escala nativa e introduce la normalización continua en escala estándar $[0, 100]$, la proyección a escala PAES $[100, 1000]$ y el $Z$-Score estandarizado anual.
+    \item \textbf{Resolución de Nulos:} Se demostró empírica y matemáticamente la causa del 80.5\% de nulos en puntajes (CFTs e IPs no exigen prueba) y del 25.4\% en vacantes, preservando los valores \texttt{NULL} y creando flags de aplicabilidad (\texttt{flag\_exige\_prueba\_admision}, \texttt{flag\_vacantes\_declaradas}) para evitar distorsiones en medidas agregadas.
+    \item \textbf{Normalización Geográfica e Institucional:} Mapeo determinista de las 16 regiones con códigos SUBDERE, trazabilidad del quiebre de la Región de Ñuble (creada en 2018) y estandarización de nombres de instituciones y carreras para cruces externos.
+\end{itemize}
+\end{tcolorbox}
+
+% -------------------------------------------------------------
+% SECCION 1: FUENTES Y DESCARGA OFICIAL
+% -------------------------------------------------------------
+\section{Extracción y Verificación de Fuentes Oficiales (CNED)}
+En estricto cumplimiento con la rúbrica oficial (prohibición explícita de datos simulados o proyectados), los datos de los años 2023, 2024, 2025 y 2026 fueron extraídos directamente desde el repositorio maestro de estadísticas públicas del \textbf{Consejo Nacional de Educación (CNED)}.
+
+\subsection{Ficha Técnica de Descarga}
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|l|X|r|l|}
+\hline
+\textbf{Archivo} & \textbf{URL Oficial CNED} & \textbf{Tamaño} & \textbf{Fecha Descarga} \\
+\hline
+\texttt{Base-INDICES-Matricula} & \url{https://cned.cl/wp-content/uploads/2026/08/Base-INDICES-Matricula-2005-2026.xlsx} & 60,39 MB & 10/10/2026 \\
+\hline
+\texttt{Esquema\_Registro\_Pregrado} & \url{https://cned.cl/wp-content/uploads/2026/08/01_Esquema_Registro_Base_Pregrado.pdf} & 272 KB & 10/10/2026 \\
+\hline
+\texttt{OfertaPregrado2026} & \url{https://cned.cl/wp-content/uploads/2026/01/OfertaPregrado2026.xlsx} & 1,60 MB & 10/10/2026 \\
+\hline
+\end{tabularx}
+\caption{Inventario de fuentes primarias descargadas y citadas.}
+\end{table}
+
+\subsection{Consideraciones Técnicas de Extracción (Web Automation)}
+El servidor perimetral del CNED implementa políticas de seguridad HTTP que bloquean peticiones automatizadas estándar devolviendo un código de estado \texttt{HTTP 403 Forbidden}. Para garantizar la reproducibilidad del script \texttt{01\_download\_data.py}, se configuraron encabezados de navegación realistas que incluyen:
+\begin{itemize}
+    \item \texttt{User-Agent}: Emulación de navegador cliente (\texttt{Mozilla/5.0 Windows NT 10.0}).
+    \item \texttt{Referer}: \texttt{https://cned.cl/bases-de-datos} (verificación de origen requerida por el Gateway de Azure).
+\end{itemize}
+
+% -------------------------------------------------------------
+% SECCION 2: ARQUITECTURA ETL Y PIPELINE
+% -------------------------------------------------------------
+\section{Arquitectura del Pipeline ETL y Reproducibilidad}
+Siguiendo las mejores prácticas impartidas en cátedra sobre Data Warehousing y ETL (Clase 3, 4 y 5), se diseñó un flujo de procesamiento en 4 capas desacopladas:
+
+\begin{enumerate}
+    \item \textbf{Capa Extract (Raw Staging):} Descarga, almacenamiento inmutable y verificación de integridad de las fuentes brutas en \texttt{P\_IN/data\_raw/}.
+    \item \textbf{Capa Transform \& Conform (Staging Area):} Mapeo de esquemas, armonización de nombres de columnas que varían entre años, normalización de textos, homologación de puntajes y cálculo de flags de negocio.
+    \item \textbf{Capa Load / Data Quality:} Exportación de los datos limpios y consolidados en formatos optimizados (\texttt{.parquet} y \texttt{.csv}) en \texttt{P\_IN/data\_processed/}.
+    \item \textbf{Capa Documentation \& Governance:} Generación automatizada de diccionarios de datos técnicos en formato JSON, Markdown y tablas \LaTeX{} (\texttt{P\_IN/docs/}).
+\end{enumerate}
+
+\subsection{Estructura Modular del Código Python}
+\begin{itemize}
+    \item \texttt{01\_download\_data.py}: Descarga automatizada y validada con manejo de sesiones seguras.
+    \item \texttt{02\_audit\_and\_mapping.py}: Perfilamiento de datos, cálculo de distribuciones y detección de nulos.
+    \item \texttt{03\_clean\_and\_transform.py}: Núcleo de transformaciones matemáticas, limpieza y consolidación.
+    \item \texttt{04\_generate\_dictionary.py}: Generador formal de artefactos de gobernanza de datos.
+    \item \texttt{run\_etl.py}: Script maestro de orquestación completa (\textit{One-Click Execution}).
+\end{itemize}
+
+% -------------------------------------------------------------
+% SECCION 3: TRATAMIENTO DE QUIEBRE DE PUNTAJES
+% -------------------------------------------------------------
+\section{Homologación del Quiebre Estructural PSU / PDT / PAES}
+
+\subsection{Diagnóstico Psicométrico del Cambio de Escala}
+A lo largo de la serie histórica 2012--2026, el sistema de admisión a las universidades chilenas administrado por el DEMRE ha experimentado dos transformaciones mayores:
+\begin{enumerate}
+    \item \textbf{Periodo PSU (2012--2020):} Prueba de Selección Universitaria. Escala con media teórica de 500 puntos y desviación estándar de 110, acotada en el intervalo $[150, 850]$.
+    \item \textbf{Periodo PDT (2021--2022):} Prueba de Transición. Mantuvo la escala clásica $[150, 850]$.
+    \item \textbf{Periodo PAES (2023--2026):} Prueba de Acceso a la Educación Superior. Basada en la Teoría de Respuesta al Ítem (TRI), expandió su escala al rango $[100, 1000]$ puntos.
+\end{enumerate}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|c|r|r|r|r|r|}
+\hline
+\textbf{Instrumento} & \textbf{Años} & \textbf{N Registros} & \textbf{Mínimo} & \textbf{Máximo} & \textbf{Media Empírica} & \textbf{Desv. Estándar} \\
+\hline
+\textbf{PSU} & 2012--2020 & 18.364 & 266,0 & 817,0 & 557,3 & 57,4 \\
+\textbf{PDT} & 2021--2022 & 3.927 & 360,0 & 786,0 & 549,6 & 53,8 \\
+\textbf{PAES} & 2023--2026 & 8.264 & 285,0 & 961,0 & \textbf{645,4} & \textbf{84,0} \\
+\hline
+\end{tabular}
+\caption{Evidencia estadística del salto estructural entre instrumentos de admisión.}
+\end{table}
+
+\textbf{Demostración del error de concatenación simple:} Como se observa en la tabla, la media empírica de puntajes pasó de 557,3 a 645,4 puntos (+88,1 puntos). Si se concatenaran las columnas sin tratamiento, un panel de Business Intelligence mostraría erróneamente un supuesto "incremento drástico en la calidad de los postulantes a partir de 2023", cuando en realidad dicho incremento es un artefacto netamente psicométrico derivado de la nueva escala del DEMRE.
+
+\subsection{Formulación Matemática de la Estrategia Dual}
+Para permitir simultáneamente el análisis en valores históricos oficiales y el análisis longitudinal comparativo sin distorsiones, se implementó una estrategia matemática multicapa:
+
+\subsubsection{1. Normalización Min-Max a Escala Estándar $[0, 100]$}
+Transforma cualquier puntaje $X$ a un porcentaje relativo a su rango teórico de medición:
+\begin{equation}
+\text{Puntaje}_{0-100} = 
+\begin{cases}
+\dfrac{X - 150}{850 - 150} \times 100 = \dfrac{X - 150}{700} \times 100, & \text{si Instrumento} \in \{\text{PSU, PDT}\} \\[3mm]
+\dfrac{X - 100}{1000 - 100} \times 100 = \dfrac{X - 100}{900} \times 100, & \text{si Instrumento} = \text{PAES}
+\end{cases}
+\end{equation}
+
+\subsubsection{2. Proyección Homologada a Escala PAES $[100, 1000]$}
+Permite proyectar toda la serie histórica 2012--2022 a la escala moderna vigente:
+\begin{equation}
+\text{Puntaje}_{\text{Equiv\_PAES}} = 
+\begin{cases}
+100 + \left(\dfrac{X_{\text{PSU/PDT}} - 150}{700}\right) \times 900, & \text{para años } \le 2022 \\[3mm]
+X_{\text{PAES}}, & \text{para años } \ge 2023
+\end{cases}
+\end{equation}
+
+\subsubsection{3. Puntaje Estandarizado Anual ($Z$-Score)}
+Permite comparar la selectividad relativa de una carrera respecto a su cohorte anual:
+\begin{equation}
+Z_{i, t} = \frac{X_{i, t} - \mu_t}{\sigma_t}
+\end{equation}
+donde $\mu_t$ y $\sigma_t$ corresponden a la media y desviación estándar de todos los programas con puntaje reportado en el año $t$.
+
+% -------------------------------------------------------------
+% SECCION 4: TRATAMIENTO DE NULOS
+% -------------------------------------------------------------
+\section{Tratamiento Metodológico y Matemático de Datos Nulos}
+
+\subsection{Análisis y Justificación de Nulos en Puntajes ($\approx 80,5\%$ de nulos)}
+La auditoría de datos reveló que el 80,5\% de los registros de la base no reportan puntajes de admisión. El análisis por tipo de institución demostró la causa estructural exacta:
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Tipo de Institución} & \textbf{Total Registros} & \textbf{Registros con Puntaje} & \textbf{\% Cobertura} \\
+\hline
+\textbf{Centro de Formación Técnica (C.F.T.)} & 21.057 & 49 & \textbf{0,2\%} \\
+\textbf{Instituto Profesional (I.P.)} & 46.450 & 56 & \textbf{0,1\%} \\
+\textbf{Universidades (Univ.)} & 46.758 & 22.186 & \textbf{47,4\%} \\
+\hline
+\end{tabular}
+\caption{Cobertura de puntajes según tipo de institución.}
+\end{table}
+
+\textbf{Justificación de Negocio:} En Chile, los CFTs, IPs y un segmento significativo de universidades privadas no adscritas al Sistema de Acceso del MINEDUC \textbf{no exigen rendir pruebas de admisión} para la matrícula (ingreso directo o requisitos basados en NEM/entrevista). Asimismo, los programas vespertinos y de continuidad de estudios universitarios tampoco solicitan puntaje.
+
+\textbf{Demostración de por qué NO imputar con Cero ($0$):}
+\begin{equation}
+\bar{X}_{\text{imputada con 0}} = (0,195 \times 557,3) + (0,805 \times 0) = \mathbf{108,67 \text{ puntos}}
+\end{equation}
+Si los nulos se reemplazaran por cero:
+\begin{enumerate}
+    \item La media nacional caería de 557 a 108 puntos, destruyendo la verosimilitud de cualquier cálculo agregado en SQL o DAX.
+    \item Se inferiría falsamente que los estudiantes técnicos rindieron la prueba y obtuvieron cero puntos, distorsionando la realidad del sistema formativo.
+\end{enumerate}
+\textbf{Solución implementada:} Se preserva estrictamente el valor \texttt{NULL} (que en SQL y DAX es ignorado por funciones de agregación como \texttt{AVERAGE}) y se crea el indicador booleano \texttt{flag\_exige\_prueba\_admision} ($1$ ó $0$).
+
+\subsection{Análisis y Justificación de Nulos en Vacantes ($\approx 25,4\%$ de nulos)}
+Cerca del 25,4\% de los programas no declaran cupos de vacantes fijas en el sistema INDICES, en especial programas con modalidad de admisión abierta o sedes regionales en expansión.
+\begin{itemize}
+    \item \textbf{Preservación de NULL:} Reemplazar por 0 indicaría que el programa cerró su admisión cuando en la práctica registró estudiantes matriculados.
+    \item \textbf{Cálculo de Tasa de Ocupación:} La métrica $\text{Ocupación} = (\text{Matrícula Primer Año} / \text{Vacantes}) \times 100$ se calcula de forma segura y condicionada:
+    \begin{equation}
+    \text{Tasa Ocupación} = 
+    \begin{cases}
+    \left(\dfrac{\text{Matrícula Primer Año}}{\text{Vacantes}}\right) \times 100, & \text{si } \texttt{flag\_vacantes\_declaradas} = 1 \ (\text{Vacantes} > 0) \\[2mm]
+    \texttt{NULL}, & \text{si Vacantes es NULL o } 0
+    \end{cases}
+    \end{equation}
+\end{itemize}
+
+% -------------------------------------------------------------
+% SECCION 5: NORMALIZACION GEOGRAFICA E INSTITUCIONAL
+% -------------------------------------------------------------
+\section{Normalización Geográfica e Institucional}
+
+\subsection{Estandarización Regional y Quiebre de la Región de Ñuble}
+La división político-administrativa de Chile fue normalizada utilizando la codificación oficial de la SUBDERE e INE (16 regiones).
+\begin{tcolorbox}[colback=white, colframe=primaryblue, title=\textbf{Tratamiento del Quiebre Histórico: Creación de la Región de Ñuble (2018)}]
+Mediante la Ley N° 21.033 promulgada en 2017 y en vigencia oficial a partir de septiembre de 2018, se creó la \textbf{Región de Ñuble} (Código 16 / XVI), escindida de la histórica \textbf{Región del Biobío} (Código 08 / VIII).
+\begin{itemize}
+    \item \textbf{Normalización en el Pipeline:} El script asigna el código oficial \texttt{16} a todos los registros identificados como Ñuble.
+    \item \textbf{Flag de Trazabilidad:} Se creó la columna \texttt{flag\_quiebre\_nuble} ($1$ para registros previos a 2018 que operaban bajo Biobío pero pertenecen a la actual Ñuble), asegurando que Persona 2 y Persona 3 puedan realizar cruces temporales precisos con proyecciones del INE o encuestas Casen.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Estandarización de Textos para Cruces Externos}
+Para facilitar el trabajo de Persona 2 (Cruces con mifuturo.cl y SIES) y Persona 3 (Modelado Dimensional), todos los nombres de instituciones, sedes, áreas de conocimiento y carreras genéricas fueron tratados:
+\begin{itemize}
+    \item Eliminación de dobles espacios y caracteres de escape (\texttt{\textbackslash r, \textbackslash n, \textbackslash t}).
+    \item Conversión a mayúsculas consistentes en nombres propios (\texttt{U. DE CHILE}, \texttt{P. U. CATOLICA DE CHILE}).
+    \item Normalización Unicode (remoción de inconsistencias de codificación UTF-8 vs Latin-1).
+\end{itemize}
+
+% -------------------------------------------------------------
+% SECCION 6: DICCIONARIO DE DATOS
+% -------------------------------------------------------------
+\section{Diccionario de Datos y Mapeo de Transformaciones}
+A continuación se presenta el mapeo exhaustivo de variables conforme a la rúbrica del Hito 1:
+
+\input{tabla_diccionario_datos.tex}
+
+% -------------------------------------------------------------
+% SECCION 7: GUIA DE DEFENSA INDIVIDUAL
+% -------------------------------------------------------------
+\section{Guía de Defensa Técnica Individual (15 Puntos)}
+Para garantizar la máxima calificación en la defensa individual, a continuación se detallan las respuestas técnicas fundamentales para el rol de Ingeniero de Datos:
+
+\begin{enumerate}
+    \item \textbf{¿Por qué no se pueden concatenar directamente los puntajes de admisión 2012--2026?}
+    \newline \textit{Respuesta:} Porque en 2023 el DEMRE cambió la escala psicométrica de $[150, 850]$ a $[100, 1000]$ (PAES). Concatenar directamente generaría un salto artificial de $+88$ puntos en las medias a partir de 2023. Por ello se implementó una normalización Min-Max $[0, 100]$ y una proyección equivalente a escala PAES.
+
+    \item \textbf{¿Por qué la base tiene 80,5\% de nulos en puntajes y cómo se justifica no ponerles cero?}
+    \newline \textit{Respuesta:} Porque los CFTs (0,2\% de cobertura) y los IPs (0,1\% de cobertura) no exigen pruebas de admisión. Reemplazar los nulos por cero destruiría la media poblacional a 108 puntos y falsearía el perfil de los alumnos técnicos. Se preserva el \texttt{NULL} y se filtra mediante \texttt{flag\_exige\_prueba\_admision}.
+
+    \item \textbf{¿Cómo se resolvió la integración de los años 2023 a 2026 respetando la rúbrica?}
+    \newline \textit{Respuesta:} Se descargó la base oficial consolidada desde el repositorio público del CNED publicada en agosto de 2026 (\texttt{Base-INDICES-Matricula-2005-2026.xlsx}), extrayendo los 43.946 registros de pregrado oficiales y armonizando las columnas de clasificación (\texttt{Clasificación3} a Acreditación, \texttt{Clasificación4} a Autonomía, \texttt{Clasificación5} a Gratuidad).
+
+    \item \textbf{¿Qué tratamiento se dio a las vacantes nulas (25,4\%)?}
+    \newline \textit{Respuesta:} Corresponden a carreras sin límite estricto de vacantes o con admisión directa. No se rellenan con cero para no simular cierre de cupos; la tasa de ocupación se calcula únicamente cuando $\text{Vacantes} > 0$.
+
+    \item \textbf{¿Cómo se trató el quiebre territorial de la Región de Ñuble?}
+    \newline \textit{Respuesta:} Se codificó bajo el estándar SUBDERE (Código 16) y se incorporó el \texttt{flag\_quiebre\_nuble} para permitir comparaciones longitudinales correctas con fuentes externas como INE y Casen antes y después de 2018.
+\end{enumerate}
+
+\section{Conclusiones y Próximos Pasos (Hito 2)}
+La fase de extracción, limpieza y transformación técnica (Hito 1) ha sido completada satisfactoriamente con 158.211 registros consolidados y gobernados. Los datos limpios se encuentran disponibles en \texttt{P\_IN/data\_processed/} en formatos CSV y Parquet de alto rendimiento.
+
+\textbf{Handoff al Equipo:}
+\begin{itemize}
+    \item \textbf{Persona 2 (Negocio):} Dispone de las variables normalizadas y códigos regionales para el cruce de fuentes externas.
+    \item \textbf{Persona 3 (Arquitectura):} Cuenta con la base homologada y el grano definido para el diseño dimensional (Hito 2).
+    \item \textbf{Persona 5 (Documentación):} Cuenta con la tabla formal del diccionario para su integración en el informe consolidado.
+\end{itemize}
+
+\end{document}

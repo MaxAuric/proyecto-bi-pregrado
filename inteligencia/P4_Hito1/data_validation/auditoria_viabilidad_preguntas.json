@@ -1,0 +1,69 @@
+{
+    "rol": "Persona 4 - Desarrollador BI",
+    "hito": "Hito 1",
+    "total_registros_evaluados": 158211,
+    "viabilidad_general": "100% FACTIBLE Y COMPATIBLE CON POWER BI",
+    "preguntas": {
+        "P1_Equidad_Territorial": {
+            "indicador_principal": "Matrícula 1er año por cada 1.000 habitantes de 15 a 64 años",
+            "fuente_primaria": "CNED Pregrado (matricula_primer_ano_total)",
+            "fuente_externa": "INE Proyecciones de Población (poblacion_15_64)",
+            "llave_cruce": "region_codigo_subdere + ano",
+            "cobertura_cruce": "100% (16 de 16 regiones oficiales, 2012-2026)",
+            "total_filas_resultado": 240,
+            "region_max_2026": {
+                "region": "Región Metropolitana de Santiago",
+                "tasa": 35.49
+            },
+            "region_min_2026": {
+                "region": "Región del Libertador Gral. Bernardo O'Higgins",
+                "tasa": 14.08
+            },
+            "brecha_territorial_ratio": 2.52,
+            "factibilidad_visual_powerbi": {
+                "mapa_coropletico": "FACTIBLE mediante Shape Map (TopoJSON regiones Chile) o Azure Maps",
+                "grafico_barras_ordenadas": "FACTIBLE con orden descendente por tasa y segmentador de año",
+                "riesgo_semiaditividad_dax": "ALTO: La población regional no debe sumarse entre años. Se documenta medida DAX semi-aditiva."
+            }
+        },
+        "P2_Uso_Capacidad": {
+            "indicador_principal": "Tasa de Ocupación de Vacantes = Matrícula 1er Año / Vacantes Declaradas",
+            "filtro_critico": "flag_vacantes_declaradas == 1 AND vacantes > 0",
+            "cobertura_registros_con_vacantes": "120,330 filas (76.06% de la base)",
+            "rango_ocupacion_historica_pct": {
+                "minimo": 80.18,
+                "ano_minimo": 2022,
+                "maximo": 91.06,
+                "ano_maximo": 2014,
+                "cierre_2026": 84.44
+            },
+            "factibilidad_visual_powerbi": {
+                "serie_temporal": "FACTIBLE con gráfico de líneas o área continua 2012-2026",
+                "matriz_calor": "FACTIBLE con objeto visual Matrix y formato condicional por reglas (semáforo)",
+                "tarjetas_kpi": "FACTIBLE mostrando Matrícula 1er Año, Vacantes y % Ocupación Dinámica",
+                "alerta_diseno_dax": "CRÍTICO: Evitar división por cero mediante DIVIDE(..., ..., BLANK()) y aislar flag_vacantes_declaradas = 1."
+            }
+        },
+        "P3_Calidad_Competencia": {
+            "indicadores_principales": [
+                "Porcentaje de matrícula en instituciones acreditadas",
+                "Años de acreditación promedio ponderado por matrícula"
+            ],
+            "fuente_externa": "SIES / MINEDUC (Listados Oficiales IES Vigentes)",
+            "cobertura_temporal": "2018-2026 homogénea (2012-2017 sin listado SIES comparable)",
+            "tasa_cruce_institucional": "98,39% registros CNED con código IES / 99,00% matrícula 1er año",
+            "distribucion_matricula_2026_pct": {
+                "Acreditacion extendida": 6.94,
+                "Acreditada": 89.34,
+                "Bajo tutela": 2.37,
+                "No acreditada": 0.16,
+                "Sin dato de acreditación": 1.19
+            },
+            "factibilidad_visual_powerbi": {
+                "barras_100_apiladas": "FACTIBLE con Eje X: Año, Eje Y: Matrícula %, Leyenda: estado_acreditacion",
+                "dispersion_scatter": "FACTIBLE con Eje X: Años Acreditación, Eje Y: Matrícula 1er Año, Tamaño: Matrícula Total, Leyenda: Tipo Institución",
+                "alerta_ux_ui": "IMPORTANTE: Establecer filtro predeterminado de página en Año >= 2018 para no distorsionar con años pre-SIES."
+            }
+        }
+    }
+}
