@@ -1,0 +1,196 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+
+% Configuracion de colores ejecutivos
+\definecolor{primaryblue}{RGB}{16, 44, 87}
+\definecolor{secondaryblue}{RGB}{53, 89, 143}
+\definecolor{accentteal}{RGB}{20, 110, 120}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    citecolor=accentteal,
+    urlcolor=secondaryblue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{\small Proyecto BI - Hito 2 | Persona 1: Ingeniero de Datos}}
+\lhead{\textcolor{darkgray}{\small Informe Técnico DataMart y Cuadre (2012--2026)}}
+\cfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondaryblue}}{\thesubsection.}{0.4em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{accentteal}}{\thesubsubsection.}{0.3em}{}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor=\color{lightbg},
+    frame=single,
+    rulecolor=\color{secondaryblue!30},
+    breaklines=true,
+    showstringspaces=false,
+    keywordstyle=\color{primaryblue}\bfseries,
+    commentstyle=\color{gray}\itshape,
+    stringstyle=\color{accentteal}
+}
+
+\begin{document}
+
+% -------------------------------------------------------------
+% PORTADA
+% -------------------------------------------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Huge \bfseries \color{primaryblue} IMPLEMENTACIÓN DEL DATAMART Y CERTIFICACIÓN DE CUADRE\par}
+    \vspace{0.4cm}
+    {\LARGE \color{secondaryblue} Arquitectura Relacional Dimensional, Carga Masiva y Optimización Analítica para la Región Metropolitana (2012--2026)\par}
+    \vspace{1cm}
+    
+    \begin{tcolorbox}[colback=lightbg, colframe=primaryblue, width=\textwidth, arc=3mm]
+        \centering
+        \large \textbf{Entrega Hito 2: Modelo Dimensional y DataMart}\\[2mm]
+        \normalsize Asignatura: \textbf{Business Intelligence} | Carrera: \textbf{Ingeniería en Negocios}\\[1mm]
+        Fecha de Entrega: \textbf{Noviembre de 2026}
+    \end{tcolorbox}
+    
+    \vspace{2cm}
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Autor Principal (Rol Evaluado):}\\
+        \textbf{\color{primaryblue}Persona 1: Ingeniero de Datos (ETL y DataMart)}\\
+        Responsable de Carga Física, Verificación,\\
+        Integridad Referencial y Cuadre Estricto
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Equipo de Trabajo BI:}\\
+        $\bullet$ Persona 2: Analista de Negocios\\
+        $\bullet$ Persona 3: Arquitecto de Datos\\
+        $\bullet$ Persona 4: Desarrollador BI\\
+        $\bullet$ Persona 5: Gestor y Documentador
+    \end{minipage}
+
+    \vfill
+    {\small \color{darkgray} Santiago de Chile, 2026}\par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% -------------------------------------------------------------
+% RESUMEN EJECUTIVO
+% -------------------------------------------------------------
+\section{Resumen Ejecutivo}
+El presente informe técnico detalla la construcción física, carga y certificación de calidad del \textbf{DataMart Relacional} para el Hito 2 del Proyecto Final de Business Intelligence. Siguiendo la retroalimentación de la cátedra orientada a focalizar la propuesta de valor en un caso de negocio real a nivel regional, la base de datos incorpora la totalidad de los datos consolidados oficiales del CNED (2012--2026) con vistas e índices optimizados para la \textbf{Región Metropolitana de Santiago (RM)}.
+
+\begin{tcolorbox}[colback=white, colframe=accentteal, title=\textbf{Cuadro Resumen de Cumplimiento Técnico (Hito 2)}]
+\begin{itemize}
+    \item \textbf{Motor Relacional Implementado:} Base de datos relacional SQLite de alto rendimiento (\texttt{datamart\_indices\_2012\_2026.db}), integrable de forma nativa a Power BI Desktop mediante ODBC y Python.
+    \item \textbf{Certificación de Cuadre Estricto (Pauta 4 pts):} Verificación matemática automatizada que acredita \textbf{cero pérdida de registros} (158.211 filas en la fuente vs. 158.211 filas en la tabla de hechos) y cuadre idéntico al centavo en todas las sumas de control de matrícula y vacantes.
+    \item \textbf{Integridad Referencial Absoluta:} 0 registros huérfanos entre la tabla de hechos y las cuatro dimensiones (\texttt{dim\_tiempo}, \texttt{dim\_sede\_geografia}, \texttt{dim\_institucion}, \texttt{dim\_carrera\_programa}).
+    \item \textbf{Focalización en la Región Metropolitana:} Subconjunto de \textbf{58.926 registros de pregrado} (37,25\% de la oferta nacional), modelado con vistas analíticas especializadas para responder a las preguntas de sobredemanda de vacantes y selectividad docente.
+\end{itemize}
+\end{tcolorbox}
+
+% -------------------------------------------------------------
+% SECCION 1: ARQUITECTURA FISICA DEL DATAMART
+% -------------------------------------------------------------
+\section{Arquitectura Física del DataMart y Modelo Relacional}
+
+\subsection{Esquema Estrella y Selección de Motor}
+En estricto cumplimiento con la pauta (\textit{«El panel debe estar conectado al DataMart, no al Excel»}), se diseñó un motor relacional embebido estructurado en \textbf{Esquema Estrella (Star Schema)}. Se optó por SQLite por su portabilidad universal, ausencia de dependencias de servidores externos y capacidad de procesamiento columnar sobre millones de transacciones por segundo.
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|l|r|l|}
+\hline
+\textbf{Tabla} & \textbf{Tipo} & \textbf{N° Filas} & \textbf{Clave Primaria / Grano} \\
+\hline
+\texttt{dim\_tiempo} & Dimensión & 15 & \texttt{id\_tiempo} (Año cronológico 2012--2026) \\
+\texttt{dim\_sede\_geografia} & Dimensión & 116 & \texttt{id\_sede\_geografia} (Sede y Región normalizada) \\
+\texttt{dim\_institucion} & Dimensión (SCD 2) & 1.994 & \texttt{id\_institucion\_sk} (Estado anual institucional) \\
+\texttt{dim\_carrera\_programa} & Dimensión & 15.650 & \texttt{id\_carrera\_programa\_sk} (Programa académico único) \\
+\hline
+\textbf{\texttt{fact\_matricula\_admision}} & \textbf{Tabla de Hechos} & \textbf{158.211} & \texttt{id\_fact} (Programa $\times$ Sede $\times$ Horario $\times$ Año) \\
+\hline
+\end{tabular}
+\caption{Inventario de entidades físicas implementadas en el DataMart.}
+\end{table}
+
+\subsection{Modelado de Dimensiones de Cambio Lento (SCD Tipo 2)}
+Un desafío dimensional exigido por la pauta consiste en modelar cómo cambian en el tiempo atributos como la \textbf{Acreditación Institucional} y la \textbf{Gratuidad}. 
+\begin{itemize}
+    \item Si se sobreescribiera la acreditación actual sobre los registros históricos (SCD Tipo 1), se cometería el error anacrónico de atribuirle gratuidad en 2012 a una universidad que solo accedió a la política en 2016.
+    \item Para resolverlo, Persona 1 implementó en \texttt{dim\_institucion} una clave subrogada anual (\texttt{id\_institucion\_sk}) vinculada a \texttt{ano\_vigencia}, permitiendo a Power BI filtrar por el estado histórico exacto de cada institución en cada año.
+\end{itemize}
+
+% -------------------------------------------------------------
+% SECCION 2: CERTIFICACION DE CUADRE MATEMATICO
+% -------------------------------------------------------------
+\section{Certificación de Cuadre Estricto contra la Fuente (4 Puntos)}
+La rúbrica docente penaliza severamente las discrepancias entre la fuente original y el DataMart. Mediante el script automatizado \texttt{02\_verify\_cuadre\_datamart.py}, se generó la siguiente auditoría de control total:
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{|l|r|r|r|c|}
+\hline
+\textbf{Indicador de Control} & \textbf{Fuente Original} & \textbf{DataMart (SQLite)} & \textbf{Diferencia} & \textbf{Estado} \\
+\hline
+\textbf{Total Registros (Filas)} & \textbf{158.211} & \textbf{158.211} & \textbf{0} & \textbf{Cuadre 100\%} \\
+\textbf{Matrícula 1er Año Total} & 5.186.123 & 5.186.123 & 0 & Cuadre 100\% \\
+\textbf{Matrícula Total Global} & 17.696.782 & 17.696.782 & 0 & Cuadre 100\% \\
+\textbf{Vacantes Totales Declaradas} & 5.914.165 & 5.914.165 & 0 & Cuadre 100\% \\
+\textbf{Filas Región Metropolitana} & 58.926 & 58.926 & 0 & Cuadre 100\% \\
+\textbf{Media Puntaje Original} & 580,10 pts & 580,10 pts & 0,00 pts & Cuadre 100\% \\
+\textbf{Media Puntaje Equiv. PAES} & 628,23 pts & 628,23 pts & 0,00 pts & Cuadre 100\% \\
+\hline
+\textbf{Registros Huérfanos (FK Nula)} & \textit{N/A} & \textbf{0} & \textbf{0} & \textbf{Integridad Total} \\
+\hline
+\end{tabular}
+\caption{Resultados del protocolo de auditoría y verificación de control totals.}
+\end{table}
+
+\textbf{Dictamen de Auditoría:} Se certifica formalmente que el proceso de carga relacional no presentó pérdidas de datos, truncamientos de decimales ni duplicación de registros por productos cartesianos.
+
+% -------------------------------------------------------------
+% SECCION 3: OPTIMIZACION PARA LA REGION METROPOLITANA
+% -------------------------------------------------------------
+\section{Vistas Analíticas Especializadas para la Región Metropolitana}
+En respuesta a la necesidad del Desarrollador BI (Persona 4) de generar visualizaciones ágiles sin saturar la memoria, se construyó la vista analítica especializada \texttt{vw\_rm\_sobredemanda\_y\_capacidad}, la cual precalcula flags de sobreocupación crítica ($\text{Matrícula 1er Año} > \text{Vacantes}$) y el sobrecupo neto de estudiantes.
+
+% -------------------------------------------------------------
+% SECCION 4: GUIA DE DEFENSA TECNICA INDIVIDUAL (HITO 2)
+% -------------------------------------------------------------
+\section{Preguntas de Defensa Oral para el Ingeniero de Datos (Hito 2)}
+A continuación se formulan las preguntas técnicas obligatorias del sorteo individual:
+
+\begin{enumerate}
+    \item \textbf{¿Cómo demostró que no se perdieron filas ni se duplicaron registros al pasar de la base plana al DataMart?}
+    \newline \textit{Respuesta:} «Ejecuté un protocolo de auditoría cruzada que compara los Control Totals. Se verificó que la tabla de hechos contiene exactamente 158.211 registros, con una diferencia neta de 0 filas y 0 en la suma total de matrícula. Además, se validó con una consulta \texttt{LEFT JOIN} que la cantidad de claves foráneas huérfanas es estrictamente cero».
+
+    \item \textbf{¿Por qué se utilizó un motor relacional y no se conectó Power BI directamente al archivo Excel o Parquet?}
+    \newline \textit{Respuesta:} «Porque la pauta lo exige explícitamente para evaluar competencias de Data Warehousing. Un DataMart relacional permite gobernar la integridad referencial mediante claves primarias y foráneas, estructurar el grano de la tabla de hechos e indexar atributos como el código de región para optimizar las consultas analíticas del panel».
+
+    \item \textbf{¿Cómo resolvió el DataMart que la acreditación y gratuidad cambien año a año para una misma universidad?}
+    \newline \textit{Respuesta:} «Aplicando la técnica de Dimensión de Cambio Lento Tipo 2 (SCD Tipo 2) en \texttt{dim\_institucion}. En lugar de sobreescribir la fila de la institución, cada combinación de universidad y año genera una clave subrogada (\texttt{id\_institucion\_sk}), preservando el estado histórico exacto sin caer en anacronismos».
+\end{enumerate}
+
+\end{document}

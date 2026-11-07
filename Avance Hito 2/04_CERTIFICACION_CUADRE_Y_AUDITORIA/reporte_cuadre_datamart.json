@@ -1,0 +1,37 @@
+{
+    "estado_cuadre": "CERTIFICADO_PERFECTO_100_PCT",
+    "total_registros": {
+        "fuente": 158211,
+        "datamart": 158211,
+        "diferencia": 0
+    },
+    "matricula_primer_ano_total": {
+        "fuente": 5186123,
+        "datamart": 5186123,
+        "diferencia": 0
+    },
+    "matricula_total": {
+        "fuente": 17696782,
+        "datamart": 17696782,
+        "diferencia": 0
+    },
+    "vacantes_totales": {
+        "fuente": 5914165,
+        "datamart": 5914165,
+        "diferencia": 0
+    },
+    "registros_region_metropolitana": {
+        "fuente": 58926,
+        "datamart": 58926,
+        "diferencia": 0
+    },
+    "puntaje_promedio_original_media": {
+        "fuente": 580.1,
+        "datamart": 580.1
+    },
+    "puntaje_promedio_equiv_paes_media": {
+        "fuente": 628.23,
+        "datamart": 628.23
+    },
+    "registros_huerfanos_integridad_referencial": 0
+}

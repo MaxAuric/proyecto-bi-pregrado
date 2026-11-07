@@ -20,13 +20,13 @@ venv/
 .env
 
 # 4. Archivos auxiliares de compilación LaTeX (manteniendo el PDF final)
-P_IN/docs/*.aux
-P_IN/docs/*.log
-P_IN/docs/*.out
-P_IN/docs/*.toc
-P_IN/docs/*.fls
-P_IN/docs/*.fdb_latexmk
-P_IN/docs/*.synctex.gz
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
 
 # 5. Archivos del sistema y del IDE
 .DS_Store
