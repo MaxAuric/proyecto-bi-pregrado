@@ -1,0 +1,71 @@
+erDiagram
+    DIM_TIEMPO ||--o{ FACT_MATRICULA_ADMISION : "1 a N (ano)"
+    DIM_SEDE_GEOGRAFIA ||--o{ FACT_MATRICULA_ADMISION : "1 a N (id_sede)"
+    DIM_INSTITUCION ||--o{ FACT_MATRICULA_ADMISION : "1 a N (id_institucion_sk SCD2)"
+    DIM_CARRERA_PROGRAMA ||--o{ FACT_MATRICULA_ADMISION : "1 a N (id_carrera_sk)"
+    DIM_POBLACION_RM ||--o{ FACT_MATRICULA_ADMISION : "1 a N (ano contexto INE)"
+
+    DIM_TIEMPO {
+        int id_tiempo PK "Año cronológico (2012-2026)"
+        int ano "Año calendario de referencia"
+        string periodo_admision "PSU | PDT | PAES"
+        string rango_quinquenio "2012-2016 | 2017-2021 | 2022-2026"
+        int es_pandemia "1 si año in (2020, 2021)"
+        int es_paes "1 si año >= 2023"
+    }
+
+    DIM_SEDE_GEOGRAFIA {
+        int id_sede_geografia PK "Clave subrogada geográfica"
+        string nombre_sede "Sede institucional"
+        string region_codigo_subdere "Código SUBDERE ('13'=RM)"
+        string region_nombre_estandar "Nombre oficial región"
+        string macro_zona "Norte | Centro | RM | Sur | Austral"
+        int es_region_metropolitana "1 si SUBDERE='13'"
+        int flag_quiebre_nuble "1 si Ñuble pre-2018"
+    }
+
+    DIM_INSTITUCION {
+        int id_institucion_sk PK "Surrogate Key SCD Tipo 2"
+        string nombre_institucion "Nombre canónico IES"
+        string tipo_institucion "Universidad | IP | CFT"
+        string acreditacion "Acreditada | No Acreditada (SCD2)"
+        string autonomia "Autónoma | En supervisión (SCD2)"
+        string gratuidad "Adscrita | No Adscrita (SCD2)"
+        int ano_vigencia "Año de vigencia histórica"
+    }
+
+    DIM_CARRERA_PROGRAMA {
+        int id_carrera_programa_sk PK "Surrogate Key de programa"
+        string nombre_programa "Nombre oficial del plan"
+        string carrera_generica "Agrupador nacional genérico"
+        string area_conocimiento "11 áreas oficiales CNED"
+        string tipo_carrera "Profesional c/ Lic | Técnica"
+        string tipo_programa "Plan Regular | Trabajador"
+        string horario "Diurno | Vespertino | A distancia"
+        int duracion_semestres "Duración teórica"
+    }
+
+    DIM_POBLACION_RM {
+        int ano PK "Año calendario (2002-2035)"
+        string region_codigo_subdere "Código '13' (RM)"
+        int poblacion_total "Población total RM (INE)"
+        int poblacion_15_64 "Población laboral 15-64"
+        int est_pob_18_24_rm "Proxy demográfico 18-24 (14%)"
+    }
+
+    FACT_MATRICULA_ADMISION {
+        int id_fact PK "Clave atómica subrogada"
+        int id_tiempo FK "Año de corte"
+        int id_sede_geografia FK "Sede física"
+        int id_institucion_sk FK "Estado IES (SCD 2)"
+        int id_carrera_programa_sk FK "Programa académico"
+        int flag_exige_prueba_admision "1 si exige PSU/PAES"
+        int flag_vacantes_declaradas "1 si vacantes > 0"
+        int es_region_metropolitana "1 si pertenece a RM"
+        int vacantes "Capacidad formal declarada"
+        int matricula_primer_ano_total "Matrícula nueva ingresada"
+        int matricula_total "Matrícula global vigente"
+        float puntaje_promedio_equiv_paes "Promedio escala PAES"
+        float puntaje_corte_ultimo_equiv_paes "Puntaje de corte PAES"
+        float tasa_ocupacion_primer_ano "Ratio Matrícula/Vacantes %"
+    }

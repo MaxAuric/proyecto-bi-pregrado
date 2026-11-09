@@ -1,0 +1,660 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\tcbuselibrary{skins}
+
+% Paleta ejecutiva (coherente con informes anteriores)
+\definecolor{primaryblue}{RGB}{16, 44, 87}
+\definecolor{secondaryblue}{RGB}{53, 89, 143}
+\definecolor{accentteal}{RGB}{20, 110, 120}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+\definecolor{warnred}{RGB}{180, 30, 30}
+\definecolor{okgreen}{RGB}{20, 110, 50}
+
+\hypersetup{colorlinks=true, linkcolor=primaryblue, citecolor=accentteal, urlcolor=secondaryblue}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{\small Proyecto BI -- Hito 2 $|$ Persona 2: Analista de Negocio}}
+\lhead{\textcolor{darkgray}{\small Canvas BI (RM), 3 Preguntas de Negocio y Llaves Externas}}
+\cfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondaryblue}}{\thesubsection.}{0.4em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{accentteal}}{\thesubsubsection.}{0.3em}{}
+
+\lstset{basicstyle=\ttfamily\footnotesize, backgroundcolor=\color{lightbg}, frame=single,
+  rulecolor=\color{secondaryblue!30}, breaklines=true, showstringspaces=false}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\renewcommand{\arraystretch}{1.30}
+
+\begin{document}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% PORTADA
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\Huge \bfseries \color{primaryblue}
+      CANVAS BI REAJUSTADO Y PREGUNTAS DE NEGOCIO\par}
+    \vspace{0.4cm}
+    {\LARGE \color{secondaryblue}
+      Sistema de Inteligencia de Negocios para la Planificación de Capacidad
+      Instalada, Sobredemanda y Selectividad de la Educación Superior\\
+      en la \textbf{Región Metropolitana} (2012--2026)\par}
+    \vspace{1cm}
+
+    \begin{tcolorbox}[colback=lightbg, colframe=primaryblue, width=\textwidth, arc=3mm]
+        \centering
+        \large \textbf{Entrega Hito 2: Modelo Dimensional y DataMart}\\[2mm]
+        \normalsize Asignatura: \textbf{Business Intelligence} $|$
+        Carrera: \textbf{Ingeniería en Negocios}\\[1mm]
+        Fecha de Entrega: \textbf{10 de Noviembre de 2026}
+    \end{tcolorbox}
+
+    \vspace{2cm}
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Autor Principal (Rol Evaluado):}\\
+        \textbf{\color{primaryblue}Persona 2: Analista de Negocio y Fuentes Externas}\\
+        Responsable del Canvas BI, las 3 preguntas de negocio reenfocadas
+        en la RM y las llaves de integración de fuentes externas al DataMart.
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \textbf{Equipo de Trabajo BI:}\\
+        $\bullet$ Persona 1: Ingeniero de Datos (DataMart físico)\\
+        $\bullet$ Persona 3: Arquitecto de Datos (Esquema Estrella)\\
+        $\bullet$ Persona 4: Desarrollador BI (Power BI)\\
+        $\bullet$ Persona 5: Gestor y Documentador
+    \end{minipage}
+
+    \vfill
+    {\small \color{darkgray} Santiago de Chile, Noviembre de 2026}\par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Resumen Ejecutivo}
+\label{sec:resumen}
+
+Este documento presenta los entregables del \textbf{Analista de Negocio (Persona~2)}
+para el \textbf{Hito~2 (Modelo Dimensional y DataMart)}, en respuesta directa al
+\emph{feedback del profesor} recibido tras el Hito~1: focalizar el análisis en
+\textbf{una región específica con un problema real de negocio}, en lugar de
+abarcar todo Chile de forma abstracta.
+
+\begin{tcolorbox}[colback=white, colframe=accentteal,
+    title=\textbf{Cuadro Resumen del Hito 2 (Persona 2)}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Reorientación estratégica:} de «equidad territorial de Chile»
+          a \textbf{Región Metropolitana (RM)}, que concentra $>52\%$ de la
+          matrícula nacional (208.311 registros de 399.015 en 2026).
+    \item \textbf{Canvas BI de 10 bloques} completamente reajustado con foco en
+          la RM, el caso de negocio del quiebre de capacidad instalada y las
+          3 nuevas preguntas.
+    \item \textbf{3 preguntas de negocio formalizadas:}
+          P1~Sobredemanda de vacantes,
+          P2~Selectividad y puntajes PAES,
+          P3~Absorción demográfica (vacantes vs.\ población INE).
+    \item \textbf{Llaves de integración verificadas:} las tablas externas
+          INE y SIES quedan documentadas con sus FK para que Persona~3 las
+          incorpore al DDL del DataMart.
+    \item \textbf{Reproducibilidad:} scripts \texttt{08} y \texttt{09} en
+          \texttt{scripts/} con salidas auditables en \texttt{data\_rm/}.
+\end{itemize}
+\end{tcolorbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Reorientación Estratégica: ¿Por qué la Región Metropolitana?}
+\label{sec:reorientacion}
+
+\subsection{El feedback del profesor y la decisión del equipo}
+
+El profesor identificó tres debilidades en la propuesta original del Hito~1:
+\begin{enumerate}[leftmargin=*]
+    \item La propuesta era \textbf{demasiado amplia y abstracta} («la equidad
+          territorial de todo Chile»): un análisis de 16 regiones produce
+          superficialidad, no profundidad de decisión.
+    \item La analítica de negocios debe \textbf{apoyar una decisión concreta y
+          verificable}, no un diagnóstico general.
+    \item El caso práctico ilustrativo: \emph{«¿Qué significa pasar de 120 a
+          140 matriculados?»} Una carrera con alta demanda (Informática,
+          Ingeniería) que crece en 20 alumnos \textbf{no es solo un número};
+          representa un quiebre operativo: los laboratorios de 30--40 puestos
+          se saturan, se obliga a abrir un paralelo nuevo, contratar docentes
+          adicionales y descalabrar horarios. Esto eleva costos fijos y, si la
+          institución acepta alumnos con menores puntajes para llenar cupos,
+          aumenta la deserción en primer año.
+\end{enumerate}
+
+\subsection{Justificación técnica de la RM}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.5cm}Y@{}}
+\toprule
+Criterio & Razón \\
+\midrule
+Volumen y calidad de datos &
+  La RM concentra $>52\%$ de la matrícula nacional. En 2026 acumula
+  208.311 matriculados de primer año de un total nacional de 399.015.
+  Ofrece el mayor volumen de datos limpios de puntajes y vacantes. \\
+Ecosistema educativo completo &
+  Coexisten universidades del CRUCH, universidades privadas, institutos
+  profesionales (IP) y centros de formación técnica (CFT), permitiendo
+  contrastar selectividad universitaria vs.\ matrícula abierta técnica. \\
+Granularidad de fuentes externas &
+  INE (proyecciones demográficas comunales) y SIES (acreditación,
+  titulación, retención) tienen el mayor detalle en la RM. \\
+Relevancia de negocio &
+  La sobredemanda en Tecnología e Ingeniería de la RM es el caso real
+  que el profesor usó para ilustrar el problema de capacidad instalada. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Canvas BI Reajustado (10 Bloques) — Foco Región Metropolitana}
+\label{sec:canvas}
+
+El Canvas BI fue completamente reescrito para reflejar el nuevo alcance
+(RM), el caso de negocio concreto (planificación de capacidad instalada)
+y las 3 nuevas preguntas de negocio.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{|>{\columncolor{lightbg}}p{3.0cm}|Y|>{\columncolor{lightbg}}p{3.0cm}|Y|}
+\hline
+\textbf{\color{primaryblue}1. Usuarios} &
+  Dirección de Admisión y Planificación de IES en la RM;
+  Subsecretaría de Educación Superior;
+  equipos de política regional. &
+\textbf{\color{primaryblue}6. Fuentes de datos} &
+  \textbf{Interna:} Base CNED/ÍNDICES 2012--2026 (158.211 registros,
+  DataMart de Persona~1).
+  \textbf{Externas:} INE proyecciones demográficas regionales 2002--2035
+  (base Censo 2017); SIES listado IES vigentes 2018--2026 (acreditación,
+  autonomía). \\
+\hline
+\textbf{\color{primaryblue}2. Problema u oportunidad} &
+  Las instituciones de la RM toman decisiones de vacantes con información
+  fragmentada: no observan simultáneamente la presión de demanda,
+  el uso efectivo de vacantes, los puntajes de corte y la presión
+  demográfica. El resultado es sobreocupación silenciosa, apertura
+  no planificada de paralelos y aumento de deserción. &
+\textbf{\color{primaryblue}7. Dimensiones de análisis} &
+  Tiempo (año),
+  Institución (tipo, acreditación SCD Tipo~2),
+  Sede/Comuna RM,
+  Carrera/Programa,
+  Área de Conocimiento,
+  Acreditación (SIES, evolución histórica),
+  Población RM (INE, proxy edad 18--24). \\
+\hline
+\textbf{\color{primaryblue}3. Decisiones que apoya} &
+  (a) Ajustar la oferta de vacantes por carrera y sede para evitar quiebre
+  de capacidad instalada (laboratorios, paralelos, docentes).
+  (b) Monitorear si la selectividad (puntaje de corte) cae al aumentar
+  la demanda.
+  (c) Priorizar territorios/áreas de la RM con saturación frente a
+  instituciones de baja acreditación. &
+\textbf{\color{primaryblue}8. Medidas (aditividad)} &
+  \textbf{Aditivas:} matrícula total, matrícula de primer año, vacantes
+  (pueden sumarse entre dimensiones).
+  \textbf{No aditivas:} puntajes de admisión (son promedios; usar
+  promedio ponderado en DAX, nunca \texttt{SUM}).
+  \textbf{Semi-aditiva:} población INE (aditiva entre regiones/comunas,
+  no entre años porque es stock al 30-jun). \\
+\hline
+\textbf{\color{primaryblue}4. Preguntas de negocio} &
+  \textbf{P1:} ¿Qué áreas y carreras de la RM registran sobreocupación
+  sistemática (matrícula $>$ vacantes) y qué esfuerzo operativo generan?
+  \textbf{P2:} ¿Cómo evolucionan los puntajes de corte ante picos de
+  sobredemanda?
+  \textbf{P3:} ¿La oferta de vacantes RM absorbe a la población en edad
+  de ingreso (18--24~años, INE)? &
+\textbf{\color{primaryblue}9. Visualización prevista} &
+  \textbf{P1:} gráfico de barras apiladas (vacantes vs.\ matrícula por área
+  y año); tabla de programas en sobredemanda con \% de ocupación.
+  \textbf{P2:} línea de puntaje promedio y mínimo por carrera 2012--2026
+  con anotación del quiebre PSU/PAES (2022).
+  \textbf{P3:} línea dual: vacantes RM y población 18--24 estimada INE;
+  KPI de tasa de absorción. \\
+\hline
+\textbf{\color{primaryblue}5. Indicadores (KPI)} &
+  Tasa de ocupación de vacantes RM (\%);
+  N$^{\circ}$ de programas en sobredemanda;
+  Puntaje promedio ponderado de admisión RM;
+  Tasa de absorción 18--24 RM (\%);
+  \% matrícula en IES acreditadas RM. &
+\textbf{\color{primaryblue}10. Riesgos y restricciones} &
+  Matrícula por región de sede (no por domicilio del estudiante).
+  Acreditación sin datos 2012--2017 (NULL, no imputar).
+  Quiebre de instrumento PSU$\to$PAES en 2022 (no comparar puntajes
+  crudos entre ambos períodos sin normalización).
+  4~instituciones sin código SIES verificado.
+  Población 18--24 INE: estimación proxy (14\% de pob.\ 15--64);
+  no hay desglose exacto de ese tramo en el archivo regional. \\
+\hline
+\end{tabularx}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Las 3 Preguntas de Negocio Formalizadas}
+\label{sec:preguntas}
+
+\begin{tcolorbox}[colback=lightbg, colframe=secondaryblue,
+    title=\textbf{Criterio de formalización}]
+Cada pregunta incluye: enunciado preciso, medida principal (con fórmula),
+dimensiones de análisis requeridas, fuente(s) de datos y tipo de aditividad.
+Estos elementos son el insumo directo para que Persona~3 declare el grano
+de la tabla de hechos y Persona~4 implemente las medidas DAX.
+\end{tcolorbox}
+
+\subsection{P1: Presión de Vacantes y Sobredemanda en la RM}
+\label{sec:p1}
+
+\textbf{Enunciado:}
+\begin{quote}
+¿Qué áreas de conocimiento (Tecnología, Salud, Administración, etc.) y carreras
+críticas en la Región Metropolitana presentan tasas de sobreocupación
+($\text{Matrícula Primer Año} > \text{Vacantes declaradas}$) sistemáticas y
+reiteradas en el período 2012--2026, y qué nivel de esfuerzo adicional de
+paralelos e infraestructura docente exige ese quiebre a las instituciones?
+\end{quote}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.2cm}Y@{}}
+\toprule
+Medida principal &
+  $\text{Tasa\_ocupacion} = \dfrac{\text{Matrícula\_1er\_año}}{\text{Vacantes}}
+  \times 100$
+  (solo registros con vacantes declaradas $> 0$) \\[4pt]
+Flag sobredemanda &
+  $\text{sobredemanda} = 1$ si $\text{Matrícula\_1er\_año} > \text{Vacantes}$ \\
+N$^{\circ}$ paralelos estimados &
+  $\text{paralelos} = \lceil \text{Matrícula\_1er\_año} / 35 \rceil$
+  (capacidad estándar de laboratorio) \\
+Tipo de medida &
+  \textbf{Aditiva} (vacantes y matrículas se suman entre dimensiones) \\
+Dimensiones requeridas &
+  \texttt{Dim\_Tiempo} (año),
+  \texttt{Dim\_Area\_Conocimiento},
+  \texttt{Dim\_Carrera\_Programa},
+  \texttt{Dim\_Sede\_RM} (filtro región = RM) \\
+Fuente de datos &
+  Base CNED/ÍNDICES (DataMart interno) \\
+Visualización &
+  Barras agrupadas vacantes vs.\ matrícula por área y año;
+  tabla de programas con \% ocupación $> 100\%$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection{Cifras preliminares P1 (RM)}
+
+Con el filtro aplicado a la base consolidada de Persona~1 y el script
+\texttt{08\_extract\_rm\_data.py}, se calcularon cifras orientativas para
+validar que la señal analítica existe:
+
+\begin{center}
+\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+\textbf{Indicador} & \textbf{2012} & \textbf{2016} & \textbf{2020} & \textbf{2022} & \textbf{2024} & \textbf{2026} \\
+\midrule
+Matrícula 1er año RM & 149.440 & 158.619 & 142.010 & 164.479 & 186.993 & 208.311 \\
+Tasa ocupación RM (\%) & \approx 85 & \approx 87 & \approx 83 & \approx 81 & \approx 83 & \approx 85 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}[leftmargin=*]
+    \item La matrícula de primer año en la RM \textbf{creció un 39\%} entre
+          2012 y 2026 (de 149.440 a 208.311), impulsando la presión sobre
+          la capacidad instalada de las instituciones.
+    \item La tasa de ocupación oscila entre 80--88\%, con episodios de
+          sobredemanda en áreas de Tecnología y Salud.
+\end{itemize}
+
+\subsection{P2: Selectividad y Puntajes de Admisión PAES/PSU en la RM}
+\label{sec:p2}
+
+\textbf{Enunciado:}
+\begin{quote}
+¿Cómo reaccionan los puntajes de corte y los promedios de admisión en la
+Región Metropolitana ante los picos de sobredemanda? ¿Las instituciones más
+demandadas elevan sus requisitos de ingreso para mantener la selectividad,
+o relajan el puntaje mínimo para capturar más matrícula y arancel?
+\end{quote}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.2cm}Y@{}}
+\toprule
+Medida principal &
+  $\text{Puntaje\_prom\_ponderado} =
+    \dfrac{\displaystyle\sum(\text{Matrícula\_1er\_año} \times \text{Puntaje\_promedio})}
+           {\displaystyle\sum \text{Matrícula\_1er\_año}}$
+  (evita el sesgo de instituciones pequeñas con puntajes extremos) \\[4pt]
+Medida secundaria & Puntaje mínimo de corte por carrera \\
+Tipo de medida &
+  \textbf{\color{warnred}NO aditiva}: los puntajes son promedios.
+  En DAX: usar \texttt{AVERAGEX} o medida ponderada. \textbf{NUNCA} \texttt{SUM}. \\
+Dimensiones requeridas &
+  \texttt{Dim\_Tiempo} (año),
+  \texttt{Dim\_Institucion} (tipo, acreditación),
+  \texttt{Dim\_Carrera\_Programa},
+  \texttt{Dim\_Sede\_RM} \\
+Fuente de datos &
+  Base CNED/ÍNDICES (puntajes internos) + SIES (tipo institución) \\
+Alerta quiebre instrumental &
+  \textbf{2022--2023}: cambio de PSU a PDT/PAES. Los puntajes no son
+  comparables sin normalización. Incluir flag \texttt{instrumento\_admision}
+  en la visualización. \\
+Visualización &
+  Línea de puntaje promedio ponderado RM 2012--2026 con banda de
+  mínimo--máximo; anotación vertical en 2022 (quiebre PSU/PAES). \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{P3: Capacidad Regional y Absorción Juvenil (INE)}
+\label{sec:p3}
+
+\textbf{Enunciado:}
+\begin{quote}
+¿La oferta de vacantes de pregrado en la Región Metropolitana es suficiente
+para absorber a la población en edad típica de ingreso (18--24 años, según
+proyecciones INE), o se detecta saturación del sistema frente a instituciones
+con baja acreditación institucional (SIES)?
+\end{quote}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.2cm}Y@{}}
+\toprule
+Medida principal &
+  $\text{Tasa\_absorción}_{RM} =
+    \dfrac{\text{Matrícula\_1er\_año\_RM}}{\text{Pob\_est\_18\text{-}24\_RM}} \times 100$ \\[4pt]
+Medida secundaria &
+  $\text{Vacantes\_RM\_por\_1000\_hab\_{15-64}} =
+    \dfrac{\text{Vacantes\_RM}}{\text{Pob\_15\_64\_RM}} \times 1000$ \\[4pt]
+Tipo de medida &
+  \textbf{Derivada (ratio)}: no es aditiva directamente.
+  Calcular primero los totales, luego dividir. \\
+Dimensiones requeridas &
+  \texttt{Dim\_Tiempo} (año),
+  \texttt{Dim\_Poblacion\_RM} (tabla dimensional INE),
+  \texttt{Dim\_Institucion} (acreditación SIES) \\
+Fuentes de datos &
+  INE proyecciones RM (\texttt{rm\_ext\_ine\_poblacion.csv});
+  SIES acreditación (\texttt{rm\_ext\_sies\_acreditacion.csv}) \\
+Limitación INE &
+  El archivo INE regional no segmenta los 18--24 años directamente.
+  Se usa como \textbf{proxy documentado}: $\text{Pob\_18-24} \approx
+  14\% \times \text{Pob\_15-64}$ (7 años de cada 50). \\
+Visualización &
+  Gráfico de doble eje: línea de vacantes RM (eje izq.) y línea de
+  población estimada 18--24 RM (eje der.); KPI de tasa de absorción. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection{Cifras preliminares P3 (RM)}
+
+\begin{center}
+\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\textbf{Año} & \textbf{Pob.\ 15--64 RM} & \textbf{Est.\ 18--24 RM} &
+\textbf{Mat.\ 1er año RM} & \textbf{Tasa absorc.\ (\%)} \\
+\midrule
+2018 & 5.399.795 & 755.971 & 156.710 & 20,7 \\
+2020 & 5.708.605 & 799.205 & 142.010 & 17,8 \\
+2022 & 5.803.231 & 812.452 & 164.479 & 20,2 \\
+2024 & 5.839.488 & 817.528 & 186.993 & 22,9 \\
+2026 & 5.868.843 & 821.638 & 208.311 & 25,4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+La tasa de absorción \textbf{creció de 20,7\% a 25,4\%} entre 2018 y 2026,
+señal de que el sistema educativo de la RM incorpora a una fracción creciente
+de la cohorte juvenil, lo que eleva la presión sobre la infraestructura
+instalada (P1) y tensiona los puntajes de corte (P2).
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Fuentes Externas: Llaves Listas para el DataMart}
+\label{sec:llaves}
+
+La pauta del Hito~2 exige que las fuentes externas tengan las \textbf{llaves
+(FK) listas para integrarse como dimensiones complementarias} en el DataMart
+construido por Persona~1. Esta sección documenta exactamente esas llaves y
+las tablas de dimensión recomendadas.
+
+\subsection{Fuente 1: INE — Proyecciones de Población RM}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.8cm}Y@{}}
+\toprule
+Tabla externa & \texttt{rm\_ext\_ine\_poblacion.csv}
+  (generada por script~\texttt{08}) \\
+Tabla dimensional propuesta &
+  \texttt{Dim\_Poblacion\_RM} (tabla de dimensión complementaria,
+  cargada al DataMart por Persona~1) \\
+Llave primaria sugerida & \texttt{ano} (entero, 2002--2035) \\
+Llave foránea en Fact &
+  \texttt{Fact\_Matricula\_Admision.ano} $\rightarrow$
+  \texttt{Dim\_Poblacion\_RM.ano} \\
+Columnas clave &
+  \texttt{ano}, \texttt{poblacion\_total}, \texttt{poblacion\_15\_64},
+  \texttt{est\_pob\_18\_24\_rm} (proxy calculado), \texttt{hoja\_ine} \\
+Cobertura temporal & 2012--2026 cubiertos al 100\% \\
+Uso en preguntas & P3 (absorción demográfica) y P1 (vacantes por habitante) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Fuente 2: SIES — Acreditación Histórica de IES}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.8cm}Y@{}}
+\toprule
+Tabla externa & \texttt{rm\_ext\_sies\_acreditacion.csv}
+  (generada por script~\texttt{08}) \\
+Tabla dimensional propuesta &
+  \texttt{Dim\_Institucion} (atributo de acreditación modelado como
+  \textbf{SCD Tipo~2} por Persona~3 y documentado por Persona~5) \\
+Llave compuesta para cruce &
+  \texttt{codigo\_ies} + \texttt{ano\_corte} \\
+Integración al DataMart &
+  Cada fila de la tabla de hechos lleva \texttt{codigo\_ies}; al cruzar
+  con \texttt{Dim\_Institucion} (SCD~2) se obtiene el estado de acreditación
+  \emph{vigente en ese año específico}, sin sobreescribir la historia. \\
+Columnas clave &
+  \texttt{codigo\_ies}, \texttt{tipo\_institucion},
+  \texttt{acreditacion\_norm} \{Acreditada, Extendida, Bajo tutela,
+  No acreditada\},
+  \texttt{anos\_acreditacion}, \texttt{autonomia}, \texttt{ano\_corte} \\
+Cobertura temporal & 2018--2026 (NULL para 2012--2017; \textbf{no imputar}) \\
+Uso en preguntas & P2 (tipo institución y selectividad) y P3 (filtro baja acreditación) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Tabla resumen de llaves FK}
+
+\begin{center}
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Tabla origen} & \textbf{PK origen} & \textbf{Tabla destino (Fact)} & \textbf{FK destino} \\
+\midrule
+\texttt{Dim\_Poblacion\_RM} & \texttt{ano} &
+  \texttt{Fact\_Matricula\_Admision} & \texttt{ano} \\
+\texttt{Dim\_Institucion} (SCD~2) & \texttt{sk\_institucion} &
+  \texttt{Fact\_Matricula\_Admision} & \texttt{sk\_institucion} \\
+\texttt{Dim\_Tiempo} & \texttt{ano} &
+  \texttt{Fact\_Matricula\_Admision} & \texttt{ano} \\
+\texttt{Dim\_Sede\_RM} & \texttt{sk\_sede} &
+  \texttt{Fact\_Matricula\_Admision} & \texttt{sk\_sede} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Reglas de Negocio Críticas para el DataMart}
+\label{sec:reglas}
+
+\begin{tcolorbox}[colback=white, colframe=warnred,
+    title=\textbf{\color{warnred}Advertencias de Integración (Persona 2 $\to$ Personas 3, 4 y 5)}]
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Puntajes: NO son aditivos.} Son promedios. En el DataMart
+          deben almacenarse como valores individuales (puntaje por programa
+          por año). En DAX, usar \texttt{AVERAGEX} ponderado por matrícula,
+          \textbf{nunca} \texttt{SUM(puntaje)}.
+    \item \textbf{Acreditación 2012--2017:} no existe listado SIES comparable.
+          Dejar \texttt{NULL}; no imputar con el valor de 2018.
+    \item \textbf{Quiebre PSU/PAES (2022):} incluir la columna
+          \texttt{instrumento\_admision} $\in$ \{PSU, PDT, PAES\} en la tabla
+          de hechos. Las visualizaciones de P2 deben anotar este quiebre.
+    \item \textbf{Tasa de ocupación:} excluir registros con vacantes = 0 o
+          NULL (programas sin declaración de vacantes). No simular cierres.
+    \item \textbf{Población INE:} stock al 30 de junio; es aditiva entre
+          regiones/comunas pero \textbf{no entre años} (no sumar poblaciones
+          de distintos años).
+    \item \textbf{Matrícula por sede:} los indicadores reflejan la oferta
+          en la región, no el origen del estudiante. Declarar explícitamente
+          en las conclusiones del panel.
+\end{enumerate}
+\end{tcolorbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Coordinación con el Equipo (Hito 2)}
+\label{sec:coordinacion}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.8cm}Y@{}}
+\toprule
+Persona 1 (Ing.\ Datos) &
+  El DataMart ya contiene la vista \texttt{vw\_rm\_sobredemanda\_y\_capacidad}.
+  Para P1 se requiere que esa vista incluya columnas de vacantes declaradas
+  y matrícula de primer año. Se confirma que el cruce usa
+  \texttt{region\_codigo\_subdere = 13}. \\
+Persona 3 (Arq.\ Datos) &
+  Las FK están documentadas en la sección~\ref{sec:llaves}.
+  \texttt{Dim\_Poblacion\_RM} se agrega al esquema estrella como dimensión
+  complementaria; \texttt{Dim\_Institucion} incorpora SCD~Tipo~2 para
+  acreditación (ver columnas en tabla fuente SIES). \\
+Persona 4 (Dev.\ BI) &
+  Las 3 preguntas (sección~\ref{sec:preguntas}) tienen la fórmula DAX
+  requerida. Para P2: medida \texttt{Puntaje\_Prom\_Ponderado\_RM}.
+  Para P3: medida \texttt{Tasa\_Absorcion\_18\_24\_RM}. \\
+Persona 5 (Documentador) &
+  El diccionario de las tablas externas RM está en
+  \texttt{docs/diccionario\_fuentes\_rm\_hito2.md}.
+  Documentar que puntajes son no aditivos (sección~\ref{sec:reglas})
+  y que la acreditación usa SCD~Tipo~2 en \texttt{Dim\_Institucion}. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Limitaciones y Riesgos}
+\label{sec:riesgos}
+
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.5cm}Y@{}}
+\toprule
+Población 18--24 (proxy INE) &
+  El archivo INE regional no publica el desglose exacto de edad 18--24.
+  Se usa el 14\% de la población 15--64 como proxy documentado.
+  Para mayor precisión se requeriría el Censo 2017 desagregado por edad
+  y región. \\
+Puntajes PSU vs.\ PAES &
+  Los puntajes no son comparables entre ambas pruebas sin normalización.
+  El flag \texttt{instrumento\_admision} permite filtrar series homogéneas. \\
+Matrícula por sede &
+  Mide oferta instalada en la RM, no residencia del estudiante. \\
+Acreditación 2012--2017 &
+  Sin listado SIES comparativo. 9 años con NULL estructural. \\
+4 instituciones sin código &
+  CFT ICCE e IP IPEGE sin verificación manual. Representan $<1\%$
+  de matrícula. \\
+INE: proyecciones, no censo &
+  Para 2023--2026 son proyecciones oficiales, no dato censal observado. \\
+\bottomrule
+\end{tabularx}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\appendix
+\section{Reproducibilidad y Archivos Generados}
+
+\begin{lstlisting}
+# Desde el directorio inteligencia/ (raíz del proyecto):
+python "Avance Hito 2/01_PROPUESTA_VALOR_Y_CANVAS_BI_RM/scripts/08_extract_rm_data.py"
+python "Avance Hito 2/01_PROPUESTA_VALOR_Y_CANVAS_BI_RM/scripts/09_validate_rm_keys.py"
+# Informe (requiere LaTeX instalado, dos pasadas para TOC):
+pdflatex -output-directory="Avance Hito 2/01_PROPUESTA_VALOR_Y_CANVAS_BI_RM/docs" \
+         "Avance Hito 2/01_PROPUESTA_VALOR_Y_CANVAS_BI_RM/docs/informe_hito2_persona2.tex"
+\end{lstlisting}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+\textbf{Archivo} & \textbf{Contenido} \\
+\midrule
+\texttt{data\_rm/rm\_base\_consolidada.csv} &
+  Registros de la RM filtrados de la base nacional ($\approx$~52\%) \\
+\texttt{data\_rm/rm\_ext\_ine\_poblacion.csv} &
+  Proyecciones INE para la RM (código SUBDERE = 13), 2002--2035 \\
+\texttt{data\_rm/rm\_ext\_sies\_acreditacion.csv} &
+  SIES acreditación para instituciones con presencia en la RM \\
+\texttt{data\_rm/rm\_kpi\_p1\_sobredemanda.csv} &
+  Tasa de ocupación de vacantes RM por área/año (P1) \\
+\texttt{data\_rm/rm\_kpi\_p2\_puntajes\_paes.csv} &
+  Evolución puntajes promedio y mínimos RM 2012--2026 (P2) \\
+\texttt{data\_rm/rm\_kpi\_p3\_absorcion\_demografica.csv} &
+  Tasa de absorción 18--24 RM vs.\ vacantes y población INE (P3) \\
+\texttt{data\_rm/rm\_llaves\_dimension\_externa.json} &
+  Llaves FK documentadas para integración al DataMart \\
+\texttt{data\_rm/rm\_auditoria\_fuentes.json} &
+  Cuadre de registros RM \\
+\texttt{data\_rm/rm\_validacion\_llaves.json} &
+  Reporte de validación de cruce INE y SIES (script~09) \\
+\texttt{docs/informe\_hito2\_persona2.tex} &
+  Este documento (fuente \LaTeX) \\
+\texttt{docs/diccionario\_fuentes\_rm\_hito2.md} &
+  Diccionario de las tablas externas RM (insumo Persona~5) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\end{document}
+

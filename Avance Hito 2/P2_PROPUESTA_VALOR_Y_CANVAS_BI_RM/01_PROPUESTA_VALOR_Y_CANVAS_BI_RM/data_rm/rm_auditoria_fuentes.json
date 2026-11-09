@@ -1,0 +1,34 @@
+{
+  "registros_base_nacional": 158211,
+  "registros_rm": 58926,
+  "pct_rm_sobre_nacional": 37.25,
+  "anos_cubiertos_rm": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "ine_rm_filas": 34,
+  "sies_rm_filas": 1342,
+  "kpi_p1_filas": 154,
+  "kpi_p2_filas": 15,
+  "kpi_p3_filas": 15,
+  "cuadre_ok": true,
+  "observaciones": [
+    "RM concentra 37.2% de los registros nacionales.",
+    "INE filtrado a código SUBDERE 13 (Metropolitana).",
+    "SIES disponible 2018–2026; NULL para 2012–2017.",
+    "Puntajes: brecha PSU/PAES en 2022–2023."
+  ]
+}
