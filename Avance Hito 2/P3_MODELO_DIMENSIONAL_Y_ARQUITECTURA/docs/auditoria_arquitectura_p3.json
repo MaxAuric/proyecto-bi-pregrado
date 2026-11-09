@@ -3,7 +3,7 @@
     "autor": "Angel Pino (Persona 3)",
     "rol": "Arquitecto de Datos y Modelador Dimensional",
     "hito": "Hito 2 - Modelo Dimensional y DataMart Relacional",
-    "fecha_ejecucion": "2026-11-09 19:43:30",
+    "fecha_ejecucion": "2026-11-09 20:34:44",
     "base_datos": "datamart_indices_2012_2026.db"
   },
   "entidades_fisicas": {
@@ -624,19 +624,19 @@
   },
   "benchmarks_performance_powerbi": {
     "Q1_Filtro_Anio_RM": {
-      "latencia_promedio_ms": 21.07,
+      "latencia_promedio_ms": 24.07,
       "estado": "Excelente (< 50 ms)"
     },
     "Q2_Matriz_Institucion_Area": {
-      "latencia_promedio_ms": 14.24,
+      "latencia_promedio_ms": 14.59,
       "estado": "Excelente (< 50 ms)"
     },
     "Q3_Puntajes_PAES_Por_Carrera": {
-      "latencia_promedio_ms": 7.61,
+      "latencia_promedio_ms": 7.25,
       "estado": "Excelente (< 50 ms)"
     },
     "Q4_Vista_Absorcion_INE": {
-      "latencia_promedio_ms": 29.74,
+      "latencia_promedio_ms": 30.7,
       "estado": "Excelente (< 50 ms)"
     }
   },
