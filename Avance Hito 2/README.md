@@ -54,8 +54,6 @@ Avance Hito 2/
     └── docs/                                      # Documentación e informes técnicos
         ├── informe_hito2_persona3_arquitectura.tex  # Informe formal en LaTeX (estilo ejecutivo)
         ├── informe_hito2_persona3_arquitectura.md   # Informe técnico en Markdown con tablas y fórmulas
-        ├── guia_defensa_oral_persona3.md            # Banco de 10 preguntas y respuestas para la defensa oral (15 pts)
-        ├── reporte_arquitectura_p3.md               # Reporte técnico generado por el script de auditoría
         └── auditoria_arquitectura_p3.json           # Datos estructurados JSON de la auditoría
 ```
 
