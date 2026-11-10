@@ -1,4 +1,4 @@
-# 📋 Resumen Ejecutivo de Feedback y Reorientación Estratégica (Hito 2)
+#  Resumen Ejecutivo de Feedback y Reorientación Estratégica (Hito 2)
 ## Proyecto Final de Business Intelligence — Ingeniería en Negocios
 
 ---
@@ -8,7 +8,7 @@
 
 ---
 
-## 1. 🔍 ¿Qué nos dijo el profesor en el Feedback?
+## 1.  ¿Qué nos dijo el profesor en el Feedback?
 
 El profesor fue sumamente claro y constructivo en tres puntos críticos:
 
@@ -24,7 +24,7 @@ El profesor fue sumamente claro y constructivo en tres puntos críticos:
 
 ---
 
-## 2. 🎯 Nuestra Decisión: Focalización en la Región Metropolitana (RM)
+## 2.  Nuestra Decisión: Focalización en la Región Metropolitana (RM)
 
 Para capitalizar el feedback docente, el equipo reorientará el proyecto hacia la **Región Metropolitana de Santiago (RM)**:
 
@@ -38,7 +38,7 @@ Para capitalizar el feedback docente, el equipo reorientará el proyecto hacia l
 
 ---
 
-## 3. ❓ Las 3 Nuevas Preguntas de Negocio (Reenfocadas en la RM)
+## 3.  Las 3 Nuevas Preguntas de Negocio (Reenfocadas en la RM)
 
 Estas son las tres preguntas que alimentarán el Canvas BI, el DataMart y el Panel final en Power BI:
 
@@ -51,7 +51,7 @@ Estas son las tres preguntas que alimentarán el Canvas BI, el DataMart y el Pan
 
 ---
 
-## 4. 📊 ¿Qué exige la Pauta Oficial para el Hito 2? (10 Puntos)
+## 4.  ¿Qué exige la Pauta Oficial para el Hito 2? (10 Puntos)
 
 El Hito 2 es estrictamente técnico y de modelado dimensional. La pauta califica dos entregables:
 
@@ -62,7 +62,7 @@ El Hito 2 es estrictamente técnico y de modelado dimensional. La pauta califica
 
 ---
 
-## 5. 👥 Asignación de Tareas por Rol para el Hito 2
+## 5.  Asignación de Tareas por Rol para el Hito 2
 
 Para asegurar una calificación sobresaliente y que todos tengan insumos para trabajar, esta es la distribución de responsabilidades:
 
@@ -111,5 +111,5 @@ Para asegurar una calificación sobresaliente y que todos tengan insumos para tr
 
 ---
 
-> 💡 **Nota para el equipo:**  
+>  **Nota para el equipo:**  
 > Este documento resume el plan acordado. La carpeta `Avance Hito 2/` contiene toda la estructura modular ordenada lista para comenzar el desarrollo técnico.

@@ -1,0 +1,63 @@
+{
+    "persona_evaluada": "Persona 4 (Joaquin Aguilera)",
+    "objetivo_hito2": "Modelado de jerarquias para filtros y pruebas de conexion desde Power BI",
+    "estado_general": "Certificado y operativo",
+    "datamart_registros_verificados": 158211,
+    "latencias_ms": {
+        "jerarquia_geografica": 355.81,
+        "jerarquia_institucional": 227.51,
+        "jerarquia_academica": 330.71,
+        "jerarquia_temporal": 150.32,
+        "vista_powerbi_rm": 51.09,
+        "tiempo_promedio_ms": 223.09
+    },
+    "jerarquias_diseñadas": [
+        {
+            "nombre": "Jerarquia geografica",
+            "niveles": [
+                "Macro-zona",
+                "Region estandarizada",
+                "Sede institucional"
+            ],
+            "tabla_origen": "dim_sede_geografia",
+            "drill_down_soporta": "Visualizacion territorial y analisis comparativo RM vs Regiones"
+        },
+        {
+            "nombre": "Jerarquia institucional",
+            "niveles": [
+                "Tipo de institucion (Univ/IP/CFT)",
+                "Nombre institucion",
+                "Sede"
+            ],
+            "tabla_origen": "dim_institucion",
+            "drill_down_soporta": "Segmentacion por subsistema y analisis de capacidad"
+        },
+        {
+            "nombre": "Jerarquia academica",
+            "niveles": [
+                "Area de conocimiento (11)",
+                "Carrera generica (284)",
+                "Nombre programa"
+            ],
+            "tabla_origen": "dim_carrera_programa",
+            "drill_down_soporta": "Analisis de sobredemanda en areas de mayor demanda"
+        },
+        {
+            "nombre": "Jerarquia temporal",
+            "niveles": [
+                "Quinquenio",
+                "Periodo de admision (PSU/PDT/PAES)",
+                "Año cronologico (2012-2026)"
+            ],
+            "tabla_origen": "dim_tiempo",
+            "drill_down_soporta": "Evolucion historica y analisis de cambios metodologicos"
+        }
+    ],
+    "medidas_dax_base_validadas": [
+        "Total Matricula 1er Ano",
+        "Total Vacantes",
+        "Tasa Sobredemanda Ocupacion",
+        "Promedio PAES Homologado Ponderado",
+        "Indice Presion Paralelos (Infraestructura)"
+    ]
+}
