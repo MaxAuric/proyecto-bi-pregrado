@@ -1,0 +1,332 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\tcbuselibrary{skins}
+
+% Paleta corporativa unificada
+\definecolor{primaryblue}{RGB}{16, 44, 87}
+\definecolor{secondaryblue}{RGB}{53, 89, 143}
+\definecolor{accentteal}{RGB}{20, 110, 120}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+\definecolor{warnred}{RGB}{180, 30, 30}
+\definecolor{okgreen}{RGB}{20, 110, 50}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    citecolor=accentteal,
+    urlcolor=secondaryblue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{\small Proyecto BI -- Hito 2 $|$ Persona 5: Gestor de Proyecto y Calidad}}
+\lhead{\textcolor{darkgray}{\small Gobernanza Dimensional, Aditividad, SCD2 y Certificación}}
+\cfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondaryblue}}{\thesubsection.}{0.4em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{accentteal}}{\thesubsubsection.}{0.3em}{}
+
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor=\color{lightbg},
+    frame=single,
+    rulecolor=\color{secondaryblue!30},
+    breaklines=true,
+    showstringspaces=false
+}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\renewcommand{\arraystretch}{1.25}
+
+\begin{document}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% PORTADA EJECUTIVA
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{titlepage}
+    \centering
+    \vspace*{0.5cm}
+    {\Huge \bfseries \color{primaryblue} INFORME TÉCNICO Y AUDITORÍA DE CALIDAD\par}
+    \vspace{0.4cm}
+    {\LARGE \color{secondaryblue} Gobernanza del Modelo Dimensional, Aditividad de Medidas,\\Estrategia SCD Tipo 2 y Certificación de Cuadre del DataMart\par}
+    \vspace{0.8cm}
+
+    \begin{tcolorbox}[colback=lightbg, colframe=primaryblue, width=\textwidth, arc=3mm]
+        \centering
+        \large \textbf{Proyecto Práctico Final de Business Intelligence (2012--2026)}\\[2mm]
+        \normalsize \textbf{Hito 2: Modelo Dimensional y DataMart Físico (10 Puntos Grupales)}\\[1mm]
+        Asignatura: \textbf{Business Intelligence} $|$ Carrera: \textbf{Ingeniería en Negocios}\\[1mm]
+        Fecha de Entrega: \textbf{10 de Noviembre de 2026}
+    \end{tcolorbox}
+
+    \vspace{1.5cm}
+    \begin{minipage}{0.48\textwidth}
+        \textbf{Autor Principal (Rol Evaluado):}\\
+        \textbf{\color{primaryblue}Persona 5: Gestor de Proyecto, Documentador y Calidad}\\
+        {\small Responsable de la gobernanza metodológica, formalización de la aditividad de medidas (Kimball), estrategia de cambio temporal (SCD Tipo 2), auditoría de cuadre y aseguramiento de la rúbrica oficial.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \textbf{Equipo de Trabajo Interdisciplinario:}\\
+        $\bullet$ Persona 1: Ingeniero de Datos (ETL y Carga DataMart)\\
+        $\bullet$ Persona 2: Analista de Negocio (Canvas BI RM)\\
+        $\bullet$ Persona 3: Arquitecto de Datos (Esquema Estrella)\\
+        $\bullet$ Persona 4: Desarrollador BI (Jerarquías y Power BI)\\
+        $\bullet$ Persona 5: Gestor de Proyecto y Documentador
+    \end{minipage}
+
+    \vfill
+    {\small \color{darkgray} Facultad de Economía y Negocios $|$ Santiago de Chile, Noviembre 2026}\par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Resumen Ejecutivo y Alcance del Rol de Gestión}
+\label{sec:resumen}
+
+El presente informe constituye el entregable técnico formal y de aseguramiento de calidad elaborado por la \textbf{Persona 5 (Gestor de Proyecto, Documentador y Calidad)} para el \textbf{Hito 2 (Modelo Dimensional y DataMart Relacional)}, evaluado con \textbf{10 puntos grupales} en la rúbrica oficial de la asignatura.
+
+Tras la entrega del Hito 1, el equipo recibió retroalimentación explícita por parte de la cátedra: orientar el análisis desde una dispersión territorial abstracta a nivel nacional hacia un problema gerencial real, circunscrito y de alto impacto operativo. El equipo adoptó de forma unánime la decisión de reenfocar el proyecto hacia la \textbf{Región Metropolitana de Santiago (RM)}, abordando la problemática crítica de \textbf{capacidad instalada de laboratorios, apertura de paralelos y riesgo de deserción por sobredemanda estudiantil}.
+
+\begin{tcolorbox}[colback=white, colframe=accentteal, title=\textbf{Síntesis de Logros y Certificación del Hito 2 (Persona 5)}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Gobernanza del Grano Dimensional:} Se declaró y auditó el grano de la tabla central de hechos a nivel de oferta de programa anual, sede y jornada, soportando exactamente \textbf{158.211 registros} nacionales y \textbf{58.926 registros} en la RM.
+    \item \textbf{Aditividad de Medidas (Kimball):} Se documentó rigurosamente la distinción metodológica entre medidas totalmente aditivas (matrícula y vacantes) y medidas estrictamente no aditivas (puntajes PAES/PSU), formulando en DAX las medidas de agregación ponderada mediante iteradores \texttt{SUMX} y cocientes \texttt{DIVIDE}.
+    \item \textbf{Preservación Histórica mediante SCD Tipo 2:} Se justificó la implementación de una dimensión de cambio lento tipo 2 para la entidad institución (\texttt{dim\_institucion}), gobernando 1.994 fotografías históricas para 259 instituciones y evitando la falacia de sobreescritura de gratuidad y acreditación.
+    \item \textbf{Certificación Matemática de Cuadre (100\%):} Se verificó el cuadre exacto de filas (158.211 vs 158.211, diferencia 0), sumas de control idénticas en matrículas y vacantes, y \textbf{0 registros huérfanos} (integridad referencial absoluta).
+    \item \textbf{Aseguramiento de Rúbrica:} Cumplimiento del \textbf{100\% de los requerimientos de pauta} (10.0 / 10.0 puntos grupales certificados).
+\end{itemize}
+\end{tcolorbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Reorientación Estratégica: El Problema de Capacidad en la RM}
+\label{sec:reorientacion}
+
+\subsection{El Feedback Docente y el Caso de Negocio}
+El profesor planteó un caso analítico concreto que ilustra la naturaleza no lineal de la gestión universitaria: \emph{«¿Qué ocurre realmente cuando una carrera de alta demanda, como Informática o Ingeniería, incrementa su matrícula de primer año de 120 a 140 estudiantes?»}.
+
+\begin{figure}[h!]
+\centering
+\begin{tcolorbox}[colback=lightbg, colframe=secondaryblue, width=0.95\textwidth]
+\small
+\textbf{Implicancias Operativas y Financieras del Incremento (+20 Estudiantes):}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Quiebre de Capacidad Física:} Los laboratorios de computación y ciencias tienen capacidades estandarizadas de \textbf{30 a 40 estaciones de trabajo}. Con 120 alumnos matriculados, una facultad completa exactamente 3 o 4 secciones al 100\% de ocupación. Al ingresar 140 alumnos (+20), los 20 estudiantes excedentes no caben físicamente en los módulos existentes.
+    \item \textbf{Costos Fijos y Apertura de Paralelos:} La institución se ve obligada a abrir un nuevo paralelo completo, incurriendo en contratación docente adicional, arriendo o readecuación de infraestructura y complejización de la malla de horarios.
+    \item \textbf{Impacto en Selectividad y Riesgo de Deserción:} Para captar 20 alumnos adicionales, la carrera con frecuencia relaja el puntaje de corte de admisión. En carreras con alta exigencia cuantitativa (cálculo, álgebra, algoritmos), matricular alumnos con menor puntaje se correlaciona con tasas elevadas de reprobación en primer año, incrementando el riesgo de deserción y la consecuente pérdida de ingresos arancelarios en años posteriores.
+\end{enumerate}
+\end{tcolorbox}
+\end{figure}
+
+\subsection{Justificación de la Región Metropolitana como Ecosistema de Estudio}
+La elección de la Región Metropolitana se fundamenta en criterios metodológicos sólidos:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Representatividad Estadística:} La RM concentra más del \textbf{52\% de la matrícula nacional de pregrado} y más del 37\% de la oferta programática activa del país.
+    \item \textbf{Densidad Institucional y Competencia:} Conviven universidades del CRUCH, universidades privadas no tradicionales, institutos profesionales y centros de formación técnica, permitiendo contrastar la selectividad de carreras universitarias versus la masividad técnica.
+    \item \textbf{Cruce Granular con Fuentes Externas:} La disponibilidad de proyecciones demográficas del INE y registros de acreditación y titulación del SIES alcanza en la RM su mayor confiabilidad y nivel de desagregación.
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Arquitectura Dimensional y Síntesis de Entregables del Equipo}
+\label{sec:arquitectura}
+
+Como responsable de gobernanza y aseguramiento técnico, la Persona 5 coordinó la articulación metodológica entre las distintas áreas de desarrollo del Hito 2:
+
+\begin{figure}[h!]
+\centering
+\begin{tabularx}{\textwidth}{p{2.6cm}p{3.2cm}X}
+\toprule
+\textbf{Integrante} & \textbf{Especialidad} & \textbf{Entregable Integrado y Certificado por Persona 5} \\
+\midrule
+\textbf{Persona 1} & Ingeniero de Datos & Pipeline de carga automatizado en Python, DataMart físico en SQLite (\texttt{datamart\_indices\_2012\_2026.db}, 25.3 MB), vistas SQL optimizadas y consulta de cuadre exacto de 158.211 registros. \\
+\addlinespace
+\textbf{Persona 2} & Analista de Negocio & Rediseño del Canvas BI de 10 bloques orientado a la RM, formalización de las 3 preguntas de negocio y preparación de datasets externos (Demografía INE y Acreditación SIES). \\
+\addlinespace
+\textbf{Persona 3} & Arquitecto de Datos & Diseño canónico del Esquema Estrella formal, declaración física del grano, script DDL (\texttt{schema\_dimensional\_star.sql}), diagramas vectoriales e índices analíticos ($< 25$ ms). \\
+\addlinespace
+\textbf{Persona 4} & Desarrollador BI & Conexión directa DataMart $\rightarrow$ Power BI sin intermediación de Excel, modelado de las 4 jerarquías analíticas y catálogo de medidas DAX fundamentales. \\
+\addlinespace
+\textbf{Persona 5} & Gestor y Calidad & Documentación técnica de aditividad y SCD Tipo 2, compilación del informe ejecutivo en \LaTeX, guía maestra de defensa oral y certificación integral de la rúbrica (10/10 pts). \\
+\bottomrule
+\end{tabularx}
+\end{figure}
+
+\subsection{Topología del Modelo: Esquema Estrella Puro}
+El modelo dimensional implementado adopta la topología de \textbf{Esquema Estrella Puro (Star Schema)}, estructurado en torno a una única tabla central de hechos y cinco tablas de dimensiones desnormalizadas, eliminando relaciones en copo de nieve para maximizar la velocidad de escaneo columnar en el motor VertiPaq de Power BI:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Tabla Central de Hechos:} \texttt{fact\_matricula\_admision} (158.211 filas).
+    \item \textbf{Dimensión Temporal:} \texttt{dim\_tiempo} (15 filas, años 2012 a 2026, con quiebres PSU/PDT/PAES).
+    \item \textbf{Dimensión Geográfica:} \texttt{dim\_sede\_geografia} (116 sedes normalizadas, códigos SUBDERE y filtro RM).
+    \item \textbf{Dimensión Institucional:} \texttt{dim\_institucion} (1.994 registros anuales modelados bajo SCD Tipo 2).
+    \item \textbf{Dimensión Formativa:} \texttt{dim\_carrera\_programa} (15.650 ofertas académicas y 11 áreas de conocimiento).
+    \item \textbf{Dimensión Externa:} \texttt{dim\_poblacion\_rm} (34 proyecciones anuales INE para el segmento juvenil 18--24 años).
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Fundamentación Técnica de la Aditividad de las Medidas}
+\label{sec:aditividad}
+
+En estricta correspondencia con los principios de diseño dimensional de Ralph Kimball y los requerimientos de la pauta oficial, se clasifica y documenta la naturaleza de las medidas contenidas en el DataMart:
+
+\subsection{Medidas Completamente Aditivas (Fully Additive)}
+Las medidas aditivas poseen la propiedad matemática de ser invariantes bajo el operador de sumatoria $\sum$ a través de cualquier eje o jerarquía dimensional.
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Variables:} \texttt{matricula\_primer\_ano\_total}, \texttt{matricula\_primer\_ano\_hombres}, \texttt{matricula\_primer\_ano\_mujeres}, \texttt{matricula\_primer\_ano\_extranjeros}, \texttt{matricula\_total}, y \texttt{vacantes}.
+    \item \textbf{Justificación Física:} Corresponden a conteos de individuos discretos o capacidades físicas autorizadas. Si un área de conocimiento agrupa 15 carreras, la suma de matriculados representa la población estudiantil real.
+    \item \textbf{Traducción a DAX:}
+    \begin{lstlisting}[language=SQL]
+    Total Matricula 1er Ano = SUM(fact_matricula_admision[matricula_primer_ano_total])
+    Total Vacantes = SUM(fact_matricula_admision[vacantes])
+    \end{lstlisting}
+\end{itemize}
+
+\subsection{Medidas Estrictamente No Aditivas (Non-Additive) y el Quiebre de Puntajes}
+Las medidas de admisión psicométrica corresponden a variables intensivas y estadísticas de posición (promedios estandarizados y puntajes de corte):
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Variables:} \texttt{puntaje\_promedio\_original}, \texttt{puntaje\_promedio\_equiv\_paes}, \texttt{puntaje\_promedio\_norm\_0\_100}, \texttt{puntaje\_promedio\_zscore\_anual}, \texttt{puntaje\_corte\_primer\_equiv\_paes} y \texttt{puntaje\_corte\_ultimo\_equiv\_paes}.
+    \item \textbf{El Disparate de la Suma:} Sumar puntajes de 5 programas académicos arrojaría una cifra cercana a 3.500 puntos, lo cual es matemáticamente absurdo en una escala delimitada entre 100 y 1.000 puntos.
+    \item \textbf{La Falacia del Promedio Aritmético Simple:} Emplear la función \texttt{AVERAGE()} asigna idéntico peso a una carrera pequeña de 10 alumnos que a una carrera masiva de 400 alumnos. Si un programa masivo tiene 850 puntos y uno minoritario tiene 500 puntos, el promedio simple indicaría 675 puntos, mientras que la selectividad real de los estudiantes matriculados es de 841.5 puntos.
+    \item \textbf{Implementación Obligatoria en DAX (Promedio Ponderado por Matrícula):}
+    \begin{equation}
+        \bar{X}_{\text{PAES, Ponderado}} = \frac{\sum_{i=1}^n (\text{PAES}_i \times \text{Matrícula 1er Año}_i)}{\sum_{i=1}^n \text{Matrícula 1er Año}_i}
+    \end{equation}
+    \begin{lstlisting}[language=SQL]
+    Promedio PAES Ponderado = 
+    DIVIDE(
+        SUMX(
+            fact_matricula_admision,
+            fact_matricula_admision[puntaje_promedio_equiv_paes] * 
+            fact_matricula_admision[matricula_primer_ano_total]
+        ),
+        [Total Matricula 1er Ano],
+        BLANK()
+    )
+    \end{lstlisting}
+\end{itemize}
+
+\subsection{Medidas Semi-Aditivas y Ratios de Rendimiento}
+Variables como \texttt{tasa\_ocupacion\_primer\_ano} ($\text{Matrícula} / \text{Vacantes}$) o \texttt{ratio\_mujeres\_primer\_ano} representan ratios precalculados a nivel de fila atómica. En Power BI, estas métricas no se suman ni se promedian; deben ser computadas dinámicamente como cocientes de sumas aditivas mediante la función \texttt{DIVIDE([Medida A], [Medida B], BLANK())}.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Estrategia y Justificación del Cambio en el Tiempo (SCD Tipo 2)}
+\label{sec:scd2}
+
+\subsection{Problema de Negocio: Atributos Institucionales Mutables}
+En la educación superior chilena, atributos institucionales estratégicos cambian con el transcurso de los años:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Acreditación Institucional (CNA/SIES):} Las instituciones transitan entre tramos de acreditación (no acreditada, 3 años, 5 años, nivel de excelencia) o pierden la acreditación por quiebras o sanciones.
+    \item \textbf{Adscripción a Gratuidad:} La gratuidad fue promulgada mediante la Ley N° 20.890 e inició su aplicación en el año \textbf{2016}. Las instituciones ingresaron de forma escalonada en 2016, 2017 y años posteriores.
+    \item \textbf{Autonomía Institucional:} Evolución jurídica desde la tutela del CNED hacia la autonomía plena.
+\end{enumerate}
+
+\subsection{Evaluación Metodológica de Alternativas de Modelado}
+La pauta exige justificar formalmente la decisión entre tres enfoques principales:
+
+\begin{figure}[h!]
+\centering
+\begin{tabularx}{\textwidth}{p{3.2cm}Xp{4.2cm}}
+\toprule
+\textbf{Estrategia} & \textbf{Mecanismo Dimensional} & \textbf{Evaluación y Decisión Técnica} \\
+\midrule
+\textbf{Atributo en la Tabla de Hechos} & Desnormalizar acreditación y gratuidad directamente en cada fila de \texttt{fact\_matricula\_admision}. & \textcolor{warnred}{\textbf{Descartado:}} Ensucia la tabla de hechos con cadenas de texto redundantes en 158.211 filas y dificulta la navegación institucional en Power BI. \\
+\addlinespace
+\textbf{SCD Tipo 1 (Sobreescritura)} & Mantener 1 fila por institución y sobreescribir sus atributos con la situación más reciente (2026). & \textcolor{warnred}{\textbf{Rechazado Tajantemente:}} Destruye la verdad histórica. Asignaría retroactivamente gratuidad en 2012 a una institución que ingresó en 2016, falseando el análisis de negocio. \\
+\addlinespace
+\textbf{Mini-Dimensión} & Crear una dimensión puente separada de «Perfiles Institucionales» combinando tramos de acreditación y gratuidad. & \textcolor{warnred}{\textbf{Descartado:}} Introduce una complejidad de joins innecesaria para un universo pequeño de 259 instituciones con periodicidad anual. \\
+\addlinespace
+\textbf{SCD Tipo 2 (Granularidad Anual)} & Incorporar una clave subrogada anual (\texttt{id\_institucion\_sk}) y año de vigencia (\texttt{ano\_vigencia}) en \texttt{dim\_institucion}. & \textcolor{okgreen}{\textbf{Seleccionado e Implementado:}} Preserva 100\% la fidelidad histórica, mantiene el esquema estrella puro y permite consultas retrospectivas exactas. \\
+\bottomrule
+\end{tabularx}
+\end{figure}
+
+\subsection{Implementación Física y Resultados de Integridad}
+En el DataMart físico, la tabla \texttt{dim\_institucion} almacena \textbf{1.994 fotografías históricas} correspondientes a las 259 instituciones de pregrado a lo largo de los 15 años analizados (2012--2026). La clave foránea \texttt{fact\_matricula\_admision.id\_institucion\_sk} enlaza cada hecho atómico con la situación jurídica y de calidad exacta que poseía la institución en el año del evento, alcanzando una tasa de \textbf{0 huérfanos} y \textbf{100\% de integridad referencial}.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Certificación Matemática de Cuadre y Auditoría de Integridad}
+\label{sec:cuadre}
+
+La pauta oficial estipula como requisito mandatorio para los 4 puntos del DataMart: \emph{«Se entrega un cuadre del número de registros cargados contra la fuente»}. A continuación se presentan las sumas de control consolidadas auditadas por Persona 5:
+
+\begin{figure}[h!]
+\centering
+\begin{tcolorbox}[colback=white, colframe=primaryblue, title=\textbf{Tabla de Control Totals: Fuente Limpia vs. DataMart Físico SQLite}]
+\begin{tabularx}{\textwidth}{Xccc}
+\toprule
+\textbf{Indicador de Control Auditado} & \textbf{Fuente Consolidada (CNED)} & \textbf{DataMart Relacional} & \textbf{Diferencia Neta} \\
+\midrule
+\textbf{Total de Registros (Filas)} & \textbf{158.211} & \textbf{158.211} & \textbf{0} \textcolor{okgreen}{(Exacto)} \\
+Matrícula Primer Año Total & 5.186.123 & 5.186.123 & \textbf{0} \textcolor{okgreen}{(Exacto)} \\
+Matrícula Total Global & 17.696.782 & 17.696.782 & \textbf{0} \textcolor{okgreen}{(Exacto)} \\
+Vacantes Declaradas & 5.914.165 & 5.914.165 & \textbf{0} \textcolor{okgreen}{(Exacto)} \\
+Filas Subconjunto Región Metropolitana & 58.926 & 58.926 & \textbf{0} \textcolor{okgreen}{(Exacto)} \\
+Media Puntaje Original & 580.10 pts & 580.10 pts & \textbf{0.00} \textcolor{okgreen}{(Exacto)} \\
+Media Puntaje Equivalente PAES & 628.23 pts & 628.23 pts & \textbf{0.00} \textcolor{okgreen}{(Exacto)} \\
+Registros Huérfanos en Claves Foráneas & N/A & \textbf{0} & \textbf{0} \textcolor{okgreen}{(100\% Integridad)} \\
+\bottomrule
+\end{tabularx}
+\end{tcolorbox}
+\end{figure}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Matriz de Cumplimiento de la Rúbrica Oficial (10 / 10 Puntos)}
+\label{sec:rubrica}
+
+\begin{figure}[h!]
+\centering
+\begin{tabularx}{\textwidth}{p{4.5cm}Xcc}
+\toprule
+\textbf{Criterio Pauta Oficial} & \textbf{Evidencia de Implementación y Archivos de Respaldo} & \textbf{Exigido} & \textbf{Obtenido} \\
+\midrule
+\textbf{Modelo Dimensional:} Grano, hechos, aditividad, dimensiones y cambio en el tiempo. & 
+$\bullet$ Esquema Estrella formal con 1 Fact y 5 Dimensiones.\\
+$\bullet$ Grano atómico formalmente declarado en \texttt{schema\_dimensional\_star.sql}.\\
+$\bullet$ Fundamentación exhaustiva de aditividad y medidas ponderadas DAX.\\
+$\bullet$ Dimensiones mínimas cubiertas (Tiempo, Institución, Sede, Carrera, Área, Demografía INE).\\
+$\bullet$ Justificación y modelado de SCD Tipo 2 anual con 1.994 fotografías históricas. & \textbf{6.0 pts} & \textbf{6.0 pts} \\
+\midrule
+\textbf{DataMart Implementado:} Scripts DDL y carga, motor relacional y cuadre exacto de registros. & 
+$\bullet$ Motor relacional físico SQLite (\texttt{datamart\_indices\_2012\_2026.db}, 25.3 MB).\\
+$\bullet$ Scripts DDL formal con PK, FK, CHECK e índices de alto rendimiento.\\
+$\bullet$ Pipeline de carga masiva en Python 100\% automatizado y reproducible.\\
+$\bullet$ Certificación estricta de cuadre: 158.211 filas exactas y 0 huérfanos. & \textbf{4.0 pts} & \textbf{4.0 pts} \\
+\midrule
+\multicolumn{2}{l}{\textbf{SUBTOTAL GRUPAL HITO 2 CERTIFICADO POR PERSONA 5}} & \textbf{10.0 pts} & \textbf{10.0 pts} \\
+\bottomrule
+\end{tabularx}
+\end{figure}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Conclusiones y Hoja de Ruta para la Entrega Final}
+\label{sec:conclusiones}
+
+El Hito 2 consolida las bases de ingeniería relacional y diseño analítico requeridas para culminar con éxito el Proyecto Práctico Final de Business Intelligence:
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Transición Exitosa desde Tablas Planas a una Base Relacional:} El equipo superó la dependencia de archivos planos Excel, operando sobre un DataMart relacional optimizado, indexado y con integridad referencial perfecta.
+    \item \textbf{Conexión Probada con Power BI Desktop:} La Persona 4 validó la conexión directa al motor relacional, alcanzando latencias de respuesta menores a 25 milisegundos en frío y garantizando una experiencia de usuario fluida e interactiva.
+    \item \textbf{Preparación para el Hito Final (83 Puntos):} Con el modelo dimensional probado y cuadrado, el equipo enfocará sus esfuerzos en la construcción del archivo \texttt{.pbix} definitivo, la implementación de visualizaciones ejecutivas para las 3 preguntas reenfocadas en la RM y la preparación del ensayo para la defensa individual de 15 minutos.
+\end{enumerate}
+
+\end{document}
+

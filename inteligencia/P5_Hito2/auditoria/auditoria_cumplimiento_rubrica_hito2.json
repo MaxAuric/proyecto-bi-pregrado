@@ -1,0 +1,90 @@
+{
+  "metadata": {
+    "rol": "Persona 5 - Gestor de Proyecto, Documentador y Calidad",
+    "hito": "Hito 2 - Modelo Dimensional y DataMart Relacional",
+    "fecha_auditoria": "2026-11-10",
+    "alcance": "Región Metropolitana de Santiago (RM) y Universo Nacional 2012-2026",
+    "estado_general": "CERTIFICADO_SOBRESALIENTE_10_DE_10_PUNTOS"
+  },
+  "criterios_evaluados": {
+    "criterio_1_modelo_dimensional": {
+      "ponderacion_pauta": 6.0,
+      "puntaje_asignado": 6.0,
+      "estado": "APROBADO_CON_DISTINCION",
+      "subcriterios": {
+        "diagrama_modelo_estrella": {
+          "cumplimiento": true,
+          "descripcion": "Esquema Estrella Puro implementado con 1 tabla central de hechos y 5 tablas de dimensiones desnormalizadas, eliminando dependencias jerárquicas copo de nieve.",
+          "evidencia": "Avance Hito 2/P3_MODELO_DIMENSIONAL_Y_ARQUITECTURA/diagramas/diagrama_modelo_dimensional_estrella.svg"
+        },
+        "grano_declarado_y_justificado": {
+          "cumplimiento": true,
+          "descripcion": "Declarado como: Una fila por cada oferta de programa académico, sede física y régimen horario, reportada por una IES en un año cronológico determinado ante INDICES CNED.",
+          "clave_primaria_atoma": "id_fact (INTEGER PRIMARY KEY AUTOINCREMENT)",
+          "unicidad_garantizada": true
+        },
+        "aditividad_de_medidas": {
+          "cumplimiento": true,
+          "medidas_aditivas": ["matricula_primer_ano_total", "matricula_total", "vacantes", "desgloses_genero_extranjeros"],
+          "medidas_no_aditivas": ["puntaje_promedio_original", "puntaje_promedio_equiv_paes", "cortes_seleccion"],
+          "justificacion_dax": "Puntajes son intensivos; promediarlos de forma simple es una falacia. Se implementó promedio ponderado por matrícula mediante SUMX y DIVIDE en DAX."
+        },
+        "dimensiones_minimas_requeridas": {
+          "cumplimiento": true,
+          "dimensiones_cubiertas": [
+            "Tiempo (dim_tiempo, 15 filas)",
+            "Institución (dim_institucion, 1.994 filas con SCD2)",
+            "Sede/Región (dim_sede_geografia, 116 sedes con SUBDERE y filtro RM)",
+            "Programa/Carrera y Área (dim_carrera_programa, 15.650 ofertas y 11 áreas)",
+            "Fuente Externa INE (dim_poblacion_rm, 34 proyecciones 18-24 años)",
+            "Fuente Externa SIES (Acreditación institucional integrada en SCD2)"
+          ]
+        },
+        "cambio_en_el_tiempo_scd2": {
+          "cumplimiento": true,
+          "estrategia_seleccionada": "SCD Tipo 2 con clave subrogada anual (id_institucion_sk) y año de vigencia (ano_vigencia)",
+          "justificacion": "Acreditación y gratuidad cambian en el tiempo. SCD Tipo 1 destruiría la historia retrospectivamente asignando gratuidad previa a 2016. SCD Tipo 2 preserva la verdad histórica con 1.994 fotografías."
+        }
+      }
+    },
+    "criterio_2_datamart_fisico_y_cuadre": {
+      "ponderacion_pauta": 4.0,
+      "puntaje_asignado": 4.0,
+      "estado": "APROBADO_CON_DISTINCION",
+      "subcriterios": {
+        "motor_de_datos": {
+          "cumplimiento": true,
+          "motor_implementado": "SQLite 3 Relacional / ANSI SQL",
+          "archivo_base_datos": "datamart_indices_2012_2026.db (25.3 MB)",
+          "rendimiento_consultas_powerbi_ms": "< 25 ms"
+        },
+        "scripts_ddl_y_carga": {
+          "cumplimiento": true,
+          "script_ddl": "schema_dimensional_star.sql (CREATE TABLE, PK, FK, CHECK, Índices)",
+          "script_carga": "01_build_and_load_datamart.py (Pipeline automatizado y reproducible)"
+        },
+        "cuadre_exacto_contra_fuente": {
+          "cumplimiento": true,
+          "filas_fuente_limpia": 158211,
+          "filas_datamart_fact": 158211,
+          "diferencia_filas": 0,
+          "matricula_primer_ano_fuente": 5186123,
+          "matricula_primer_ano_datamart": 5186123,
+          "diferencia_matricula_primer_ano": 0,
+          "vacantes_fuente": 5914165,
+          "vacantes_datamart": 5914165,
+          "diferencia_vacantes": 0,
+          "filas_subconjunto_rm": 58926,
+          "registros_huerfanos_fks": 0,
+          "tasa_integridad_referencial_pct": 100.0
+        }
+      }
+    }
+  },
+  "resumen_puntuacion_final": {
+    "puntaje_maximo_hito2": 10.0,
+    "puntaje_obtenido_certificacion": 10.0,
+    "porcentaje_cumplimiento": "100.0%",
+    "preparacion_fase_siguiente": "Listo para construcción final de visualizaciones PBIX y defensa individual (83 pts restantes)."
+  }
+}

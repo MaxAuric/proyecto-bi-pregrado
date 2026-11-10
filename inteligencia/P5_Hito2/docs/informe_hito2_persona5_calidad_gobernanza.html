@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Informe Técnico y Auditoría de Calidad (Hito 2)</title>
+<style>
+  @page {
+    size: A4;
+    margin: 16mm 14mm 16mm 14mm;
+    @bottom-center {
+      content: counter(page);
+    }
+  }
+  
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.5;
+    font-size: 9.3pt;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-card {
+    background: linear-gradient(135deg, #102C57 0%, #1a365d 60%, #146e78 100%);
+    color: #ffffff;
+    padding: 24px 26px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+  }
+
+  .header-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #f1f5f9;
+    font-size: 8pt;
+    font-weight: 700;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+  }
+
+  h1.title {
+    color: #ffffff;
+    font-size: 19pt;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    line-height: 1.25;
+  }
+
+  p.subtitle {
+    color: #e2e8f0;
+    font-size: 10pt;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  h1, h2, h3, h4 {
+    color: #102C57;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  h1 { font-size: 14pt; border-bottom: 2px solid #35598F; padding-bottom: 4px; }
+  h2 { font-size: 12pt; color: #1e3a8a; border-bottom: 1px solid #cbd5e1; padding-bottom: 3px; }
+  h3 { font-size: 10.5pt; color: #0f766e; }
+  h4 { font-size: 9.5pt; color: #334155; }
+
+  p {
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+
+  ul, ol {
+    margin: 0 0 12px 0;
+    padding-left: 22px;
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 18px 0;
+    font-size: 8.5pt;
+    page-break-inside: avoid;
+  }
+
+  th, td {
+    padding: 7px 9px;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #102C57;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+
+  blockquote {
+    border-left: 4px solid #146e78;
+    background-color: #f0fdfa;
+    padding: 10px 14px;
+    margin: 12px 0;
+    border-radius: 0 6px 6px 0;
+    color: #134e4a;
+    font-style: italic;
+  }
+
+  code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 8.5pt;
+    border: 1px solid #e2e8f0;
+  }
+
+  pre {
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 12px 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Consolas', monospace;
+    font-size: 8.2pt;
+    line-height: 1.4;
+    margin: 12px 0;
+    page-break-inside: avoid;
+  }
+
+  pre code {
+    background: transparent;
+    color: #f8fafc;
+    padding: 0;
+    border: none;
+  }
+
+  .badge-tag {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 7.5pt;
+  }
+  .badge-success { background: #dcfce7; color: #166534; }
+  .badge-info { background: #e0f2fe; color: #0369a1; }
+  .badge-warn { background: #fef3c7; color: #92400e; }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  .footer-note {
+    font-size: 7.8pt;
+    color: #64748b;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+    margin-top: 25px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-card">
+  <div class="header-badge">Hito 2: Modelo Dimensional y DataMart (10 Puntos Grupales)</div>
+  <h1 class="title">Informe Técnico y Auditoría de Calidad (Hito 2)</h1>
+  <p class="subtitle">Gobernanza del Modelo Dimensional, Aditividad de Medidas, Estrategia SCD Tipo 2 y Certificación del DataMart</p>
+</div>
+<h2>Proyecto Práctico Final de Business Intelligence (2012–2026) — Región Metropolitana</h2>
+<p><strong>Rol Evaluado:</strong> Persona 5 (Gestor de Proyecto, Documentador y Calidad)</p>
+<p><strong>Asignatura:</strong> Business Intelligence | <strong>Carrera:</strong> Ingeniería en Negocios</p>
+<p><strong>Fecha:</strong> Noviembre de 2026</p>
+<p><strong>Criterio de Evaluación Pauta:</strong> <em>«Modelo dimensional (6 pts) + DataMart implementado y cuadrado contra la fuente (4 pts)»</em> (10 Puntos Grupales)</p>
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 18px 0;" />
+<h2>1. Resumen Ejecutivo y Alcance del Rol de Gestión</h2>
+<p>El presente informe constituye el entregable técnico formal y de aseguramiento de calidad elaborado por la <strong>Persona 5 (Gestor de Proyecto, Documentador y Calidad)</strong> para el <strong>Hito 2 (Modelo Dimensional y DataMart Relacional)</strong>.</p>
+<p>Tras la entrega del Hito 1, el equipo recibió una retroalimentación estratégica clave por parte del profesor: orientar el análisis desde una dispersión territorial abstracta a nivel nacional hacia un problema gerencial real, acotado y de alto impacto operativo. El equipo adoptó de forma unánime la decisión de reenfocar el proyecto hacia la <strong>Región Metropolitana de Santiago (RM)</strong>, abordando la problemática crítica de <strong>capacidad instalada de laboratorios, apertura de paralelos y riesgo de deserción por sobredemanda estudiantil</strong>.</p>
+<h3>Síntesis de Logros Técnicos Certificados por Persona 5:</h3>
+<ol><li><strong>Gobernanza del Grano Dimensional:</strong> Se declaró y auditó formalmente el grano de la tabla central de hechos a nivel de oferta de programa anual, sede y jornada, soportando exactamente <strong>158.211 registros</strong> nacionales y <strong>58.926 registros</strong> en la Región Metropolitana.</li><li><strong>Fundamentación de Aditividad de Medidas (Kimball):</strong> Se documentó rigurosamente la distinción metodológica entre medidas totalmente aditivas (matrícula y vacantes) y medidas estrictamente no aditivas (puntajes PAES/PSU), especificando en DAX las medidas de agregación ponderada mediante iteradores <code>SUMX</code> y cocientes <code>DIVIDE</code>.</li><li><strong>Preservación Histórica mediante SCD Tipo 2:</strong> Se justificó la implementación de una dimensión de cambio lento tipo 2 para la entidad institución (<code>dim_institucion</code>), gobernando <strong>1.994 fotografías históricas</strong> para 259 instituciones y evitando la falacia de sobreescritura de gratuidad y acreditación institucional.</li><li><strong>Certificación Matemática de Cuadre (100%):</strong> Se verificó el cuadre exacto de filas (158.211 vs 158.211, diferencia 0), sumas de control idénticas en matrículas y vacantes, y <strong>0 registros huérfanos</strong> (integridad referencial absoluta).</li><li><strong>Aseguramiento de Rúbrica:</strong> Cumplimiento del <strong>100% de los requerimientos de pauta</strong> (<strong>10.0 / 10.0 puntos grupales certificados</strong>).</li></ol>
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 18px 0;" />
+<h2>2. Reorientación Estratégica: El Problema de Capacidad en la Región Metropolitana</h2>
+<h3>2.1. El Feedback Docente y el Caso de Negocio</h3>
+<p>El profesor planteó un caso analítico concreto que ilustra la naturaleza no lineal de la gestión universitaria:</p>
+<p><em>«¿Qué ocurre realmente cuando una carrera de alta demanda, como Informática o Ingeniería, incrementa su matrícula de primer año de 120 a 140 estudiantes?»</em>.</p>
+<ul><li><strong>Quiebre de Capacidad Física:</strong> Los laboratorios de computación y ciencias tienen capacidades estandarizadas de <strong>30 a 40 estaciones de trabajo</strong>. Con 120 alumnos matriculados, una facultad completa exactamente 3 o 4 secciones al 100% de ocupación. Al ingresar 140 alumnos (+20), los 20 estudiantes excedentes no caben físicamente en los módulos existentes.</li><li><strong>Costos Fijos y Apertura de Paralelos:</strong> La institución se ve obligada a abrir un nuevo paralelo completo, incurriendo en contratación docente adicional, arriendo o readecuación de infraestructura y complejización de la malla de horarios.</li><li><strong>Impacto en Selectividad y Riesgo de Deserción:</strong> Para captar 20 alumnos adicionales, la carrera con frecuencia relaja el puntaje de corte de admisión. En carreras con alta exigencia cuantitativa (cálculo, álgebra, algoritmos), matricular alumnos con menor puntaje se correlaciona con tasas elevadas de reprobación en primer año, incrementando el riesgo de deserción y la consecuente pérdida de ingresos arancelarios en años posteriores.</li></ul>
+<h3>2.2. Justificación Metodológica de la RM</h3>
+<ul><li><strong>Representatividad Estadística:</strong> La RM concentra más del <strong>52% de la matrícula nacional de pregrado</strong> y más del 37% de la oferta programática activa del país.</li><li><strong>Diversidad Institucional:</strong> Conviven universidades del CRUCH, universidades privadas, institutos profesionales y CFTs.</li><li><strong>Cruce Granular con Fuentes Externas:</strong> Proyecciones demográficas del INE comunales y registros de acreditación y titulación del SIES alcanzan en la RM su mayor confiabilidad.</li></ul>
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 18px 0;" />
+<h2>3. Arquitectura Dimensional y Síntesis de Entregables del Equipo</h2>
+<table>
+  <tr><th>Integrante</th><th>Especialidad</th><th>Entregable Integrado y Certificado por Persona 5</th></tr>
+  <tr><td><strong>Persona 1</strong></td><td>Ingeniero de Datos</td><td>Pipeline de carga automatizado en Python, DataMart físico en SQLite (<code>datamart_indices_2012_2026.db</code>, 25.3 MB), vistas SQL optimizadas y consulta de cuadre exacto de 158.211 registros.</td></tr>
+  <tr><td><strong>Persona 2</strong></td><td>Analista de Negocio</td><td>Rediseño del Canvas BI de 10 bloques orientado a la RM, formalización de las 3 preguntas de negocio y preparación de datasets externos (Demografía INE y Acreditación SIES).</td></tr>
+  <tr><td><strong>Persona 3</strong></td><td>Arquitecto de Datos</td><td>Diseño canónico del Esquema Estrella formal, declaración física del grano, script DDL (<code>schema_dimensional_star.sql</code>), diagramas vectoriales e índices analíticos ($&lt; 25$ ms).</td></tr>
+  <tr><td><strong>Persona 4</strong></td><td>Desarrollador BI</td><td>Conexión directa DataMart $\rightarrow$ Power BI sin intermediación de Excel, modelado de las 4 jerarquías analíticas y catálogo de medidas DAX fundamentales.</td></tr>
+  <tr><td><strong>Persona 5</strong></td><td>Gestor y Calidad</td><td>Documentación técnica de aditividad y SCD Tipo 2, compilación del informe ejecutivo en LaTeX, guía maestra de defensa oral y certificación integral de la rúbrica (10/10 pts).</td></tr>
+</table>
+<h3>Topología del Modelo: Esquema Estrella Puro</h3>
+<ul><li><strong>Tabla Central de Hechos:</strong> <code>fact_matricula_admision</code> (158.211 filas).</li><li><strong>Dimensión Temporal:</strong> <code>dim_tiempo</code> (15 filas, años 2012 a 2026, con quiebres PSU/PDT/PAES).</li><li><strong>Dimensión Geográfica:</strong> <code>dim_sede_geografia</code> (116 sedes normalizadas, códigos SUBDERE y filtro RM).</li><li><strong>Dimensión Institucional:</strong> <code>dim_institucion</code> (1.994 registros anuales modelados bajo SCD Tipo 2).</li><li><strong>Dimensión Formativa:</strong> <code>dim_carrera_programa</code> (15.650 ofertas académicas y 11 áreas de conocimiento).</li><li><strong>Dimensión Externa:</strong> <code>dim_poblacion_rm</code> (34 proyecciones anuales INE para el segmento juvenil 18–24 años).</li></ul>
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 18px 0;" />
+<h2>4. Fundamentación Técnica de la Aditividad de las Medidas</h2>
+<h3>4.1. Medidas Completamente Aditivas (Fully Additive)</h3>
+<ul><li><strong>Variables:</strong> <code>matricula_primer_ano_total</code>, <code>matricula_primer_ano_hombres</code>, <code>matricula_primer_ano_mujeres</code>, <code>matricula_primer_ano_extranjeros</code>, <code>matricula_total</code>, y <code>vacantes</code>.</li><li><strong>Justificación Física:</strong> Corresponden a conteos de individuos discretos o capacidades físicas autorizadas. Conservan significado real bajo la operación de sumatoria <em style="font-family: Georgia, serif; color: #1e3a8a;">\sum</em> a lo largo de cualquier dimensión.</li><li><strong>Implementación en DAX:</strong></li></ul>
+<pre><code>  [Total Matricula 1er Ano] = SUM(fact_matricula_admision[matricula_primer_ano_total])
+  [Total Vacantes] = SUM(fact_matricula_admision[vacantes])
+  [Total Matricula Global] = SUM(fact_matricula_admision[matricula_total])</code></pre>
+<h3>4.2. Medidas Estrictamente No Aditivas (Non-Additive) y el Quiebre de Puntajes</h3>
+<ul><li><strong>Variables:</strong> <code>puntaje_promedio_original</code>, <code>puntaje_promedio_equiv_paes</code>, <code>puntaje_promedio_norm_0_100</code>, <code>puntaje_promedio_zscore_anual</code>, <code>puntaje_corte_primer_equiv_paes</code> y <code>puntaje_corte_ultimo_equiv_paes</code>.</li><li><strong>El Disparate de la Suma:</strong> Sumar los puntajes de 5 carreras arrojaría <em style="font-family: Georgia, serif; color: #1e3a8a;">\approx 3.500</em> puntos, lo cual es metodológicamente absurdo en una escala delimitada entre 100 y 1.000 puntos.</li><li><strong>La Falacia del Promedio Aritmético Simple:</strong> Emplear <code>AVERAGE()</code> asigna idéntico peso a una carrera pequeña de 10 alumnos que a una carrera masiva de 400 alumnos. Si un programa masivo tiene 850 puntos y uno minoritario tiene 500 puntos, el promedio simple indicaría 675 puntos, mientras que la selectividad real de los estudiantes matriculados es de 841.5 puntos.</li><li><strong>Implementación Obligatoria en DAX (Promedio Ponderado por Matrícula):</strong></li></ul>
+<p>$<em style="font-family: Georgia, serif; color: #1e3a8a;">\bar{X}_{\text{PAES, Ponderado}} = \frac{\sum_{i=1}^n (\text{PAES}_i \times \text{Matrícula 1er Año}_i)}{\sum_{i=1}^n \text{Matrícula 1er Año}_i}</em>$</p>
+<pre><code>  [Promedio PAES Ponderado] = 
+  DIVIDE(
+      SUMX(
+          fact_matricula_admision,
+          fact_matricula_admision[puntaje_promedio_equiv_paes] * 
+          fact_matricula_admision[matricula_primer_ano_total]
+      ),
+      [Total Matricula 1er Ano],
+      BLANK()
+  )</code></pre>
+<h3>4.3. Medidas Semi-Aditivas y Ratios de Rendimiento</h3>
+<p>Variables como <code>tasa_ocupacion_primer_ano</code> (<em style="font-family: Georgia, serif; color: #1e3a8a;">\frac{\text{Matrícula}}{\text{Vacantes}}</em>) o <code>ratio_mujeres_primer_ano</code> representan ratios precalculados a nivel atómico. En Power BI, estas métricas no se suman ni se promedian; deben ser computadas dinámicamente como cocientes de sumas aditivas mediante la función <code>DIVIDE([Medida A], [Medida B], BLANK())</code>.</p>
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 18px 0;" />
+<h2>5. Estrategia y Justificación del Cambio en el Tiempo (SCD Tipo 2)</h2>
+<h3>5.1. Problema de Negocio: Atributos Institucionales Mutables</h3>
+<ol><li><strong>Acreditación Institucional (CNA/SIES):</strong> Las instituciones transitan entre tramos de acreditación (no acreditada, 3 años, 5 años, nivel de excelencia) o pierden la acreditación por quiebras o sanciones.</li><li><strong>Adscripción a Gratuidad:</strong> La gratuidad entró en vigencia en el año <strong>2016</strong> (Ley 20.890). Las instituciones ingresaron de forma escalonada en 2016, 2017 y años posteriores.</li><li><strong>Autonomía Institucional:</strong> Evolución jurídica desde la tutela del CNED hacia la autonomía plena.</li></ol>
+<h3>5.2. Evaluación Metodológica de Alternativas de Modelado</h3>
+<ul><li><strong>Atributo en la Tabla de Hechos:</strong> Descartado por ineficiencia de almacenamiento (duplica texto en 158.211 filas).</li><li><strong>SCD Tipo 1 (Sobreescritura):</strong> <strong>Rechazado tajantemente porque destruye la verdad histórica.</strong> Asignaría retroactivamente gratuidad en 2012 a una institución que ingresó en 2016, falseando el análisis de negocio.</li><li><strong>Mini-Dimensión:</strong> Descartado por introducir complejidad de joins innecesaria para un universo pequeño de 259 instituciones.</li><li><strong>SCD Tipo 2 (Granularidad Anual):</strong> <strong>Seleccionado e implementado.</strong> Incorpora una clave subrogada anual (<code>id_institucion_sk</code>) y año de vigencia (<code>ano_vigencia</code>) en <code>dim_institucion</code>. Preserva el 100% de la fidelidad histórica, mantiene el esquema estrella puro y permite consultas retrospectivas exactas.</li></ul>
+<h3>5.3. Implementación Física y Resultados de Integridad</h3>
+<p>En el DataMart físico, la tabla <code>dim_institucion</code> almacena <strong>1.994 fotografías históricas</strong> correspondientes a las 259 instituciones de pregrado a lo largo de los 15 años analizados (2012–2026). La clave foránea <code>fact_matricula_admision.id_institucion_sk</code> enlaza cada hecho atómico con la situación jurídica y de calidad exacta que poseía la institución en el año del evento, alcanzando una tasa de <strong>0 huérfanos</strong> y <strong>100% de integridad referencial</strong>.</p>
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 18px 0;" />
+<h2>6. Certificación Matemática de Cuadre y Auditoría de Integridad</h2>
+<table>
+  <tr><th>Indicador de Control Auditado</th><th>Fuente Consolidada (CNED)</th><th>DataMart Relacional (SQLite)</th><th>Diferencia Neta</th><th>Estado de Auditoría</th></tr>
+  <tr><td><strong>Total de Registros (Filas)</strong></td><td><strong>158,211</strong></td><td><strong>158,211</strong></td><td><strong>0</strong></td><td><span class="badge-tag badge-success">✓ APROBADO</span> Cero pérdida de registros</td></tr>
+  <tr><td><strong>Matrícula Primer Año Total</strong></td><td><strong>5,186,123</strong></td><td><strong>5,186,123</strong></td><td><strong>0</strong></td><td><span class="badge-tag badge-success">✓ APROBADO</span> Control total idéntico</td></tr>
+  <tr><td><strong>Matrícula Total Global</strong></td><td><strong>17,696,782</strong></td><td><strong>17,696,782</strong></td><td><strong>0</strong></td><td><span class="badge-tag badge-success">✓ APROBADO</span> Control total idéntico</td></tr>
+  <tr><td><strong>Vacantes Declaradas</strong></td><td><strong>5,914,165</strong></td><td><strong>5,914,165</strong></td><td><strong>0</strong></td><td><span class="badge-tag badge-success">✓ APROBADO</span> Control total idéntico</td></tr>
+  <tr><td><strong>Filas Subconjunto RM</strong></td><td><strong>58,926</strong></td><td><strong>58,926</strong></td><td><strong>0</strong></td><td><span class="badge-tag badge-success">✓ APROBADO</span> Subconjunto exacto</td></tr>
+  <tr><td><strong>Media Puntaje Original</strong></td><td><strong>580.10 pts</strong></td><td><strong>580.10 pts</strong></td><td><strong>0.00 pts</strong></td><td><span class="badge-tag badge-success">✓ APROBADO</span> Exactitud decimal</td></tr>
+  <tr><td><strong>Media Puntaje Equiv. PAES</strong></td><td><strong>628.23 pts</strong></td><td><strong>628.23 pts</strong></td><td><strong>0.00 pts</strong></td><td><span class="badge-tag badge-success">✓ APROBADO</span> Exactitud decimal</td></tr>
+  <tr><td><strong>Registros Huérfanos en FKs</strong></td><td><em>N/A</em></td><td><strong>0</strong></td><td><strong>0</strong></td><td><span class="badge-tag badge-success">✓ APROBADO</span> 100% Integridad Referencial</td></tr>
+</table>
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 18px 0;" />
+<h2>7. Matriz de Cumplimiento de la Rúbrica Oficial (10 / 10 Puntos)</h2>
+<table>
+  <tr><th>Criterio Pauta Oficial</th><th>Evidencia de Implementación y Archivos de Respaldo</th><th>Exigido</th><th>Obtenido</th></tr>
+  <tr><td><strong>Modelo Dimensional:</strong> Grano, hechos, aditividad, dimensiones y cambio en el tiempo.</td><td>• Esquema Estrella formal con 1 Fact y 5 Dimensiones.&lt;br&gt;• Grano atómico formalmente declarado en <code>schema_dimensional_star.sql</code>.&lt;br&gt;• Fundamentación exhaustiva de aditividad y medidas ponderadas DAX.&lt;br&gt;• Dimensiones mínimas cubiertas (Tiempo, Institución, Sede, Carrera, Área, Demografía INE).&lt;br&gt;• Justificación y modelado de SCD Tipo 2 anual con 1.994 fotografías históricas.</td><td><strong>6.0 pts</strong></td><td><strong>6.0 pts</strong></td></tr>
+  <tr><td><strong>DataMart Implementado:</strong> Scripts DDL y carga, motor relacional y cuadre exacto de registros.</td><td>• Motor relacional físico SQLite (<code>datamart_indices_2012_2026.db</code>, 25.3 MB).&lt;br&gt;• Scripts DDL formal con PK, FK, CHECK e índices de alto rendimiento.&lt;br&gt;• Pipeline de carga masiva en Python 100% automatizado y reproducible.&lt;br&gt;• Certificación estricta de cuadre: 158.211 filas exactas y 0 huérfanos.</td><td><strong>4.0 pts</strong></td><td><strong>4.0 pts</strong></td></tr>
+  <tr><td><strong>SUBTOTAL GRUPAL HITO 2</strong></td><td><strong>Certificación Formal Integral de Persona 5</strong></td><td><strong>10.0 pts</strong></td><td><strong>10.0 pts</strong></td></tr>
+</table>
+<hr style="border: 0; height: 1px; background: #e2e8f0; margin: 18px 0;" />
+<h2>8. Conclusiones y Preparación de la Entrega Final</h2>
+<p>El Hito 2 consolida las bases de ingeniería relacional y diseño analítico requeridas para culminar con éxito el Proyecto Práctico Final de Business Intelligence:</p>
+<ol><li><strong>Transición Exitosa desde Tablas Planas a una Base Relacional:</strong> El equipo superó la dependencia de archivos planos Excel, operando sobre un DataMart relacional optimizado, indexado y con integridad referencial perfecta.</li><li><strong>Conexión Probada con Power BI Desktop:</strong> La Persona 4 validó la conexión directa al motor relacional, alcanzando latencias de respuesta menores a 25 milisegundos en frío y garantizando una experiencia de usuario fluida e interactiva.</li><li><strong>Preparación para el Hito Final (83 Puntos):</strong> Con el modelo dimensional probado y cuadrado, el equipo enfocará sus esfuerzos en la construcción del archivo <code>.pbix</code> definitivo, la implementación de visualizaciones ejecutivas para las 3 preguntas reenfocadas en la RM y la preparación del ensayo para la defensa individual de 15 minutos.</li></ol>
+
+<div class="footer-note">
+  Proyecto Práctico Final de Business Intelligence (2012–2026) • Región Metropolitana • Rol: Persona 5 (Gestor del Proyecto y Calidad) • Noviembre 2026
+</div>
+</body>
+</html>

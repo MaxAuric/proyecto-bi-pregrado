@@ -67,6 +67,20 @@ Avance Hito 2/
         ├── modelado_jerarquias_y_filtros_p4.md    # Especificación exhaustiva de las 4 jerarquías
         ├── protocolo_pruebas_conexion_datamart_p4.md # Protocolo de pruebas de conexión
         └── certificacion_conexion_jerarquias_p4.json # Certificación y benchmarks estructurados
+
+└── P5_GESTOR_DOCUMENTACION_Y_CALIDAD/         # Entregables de Persona 5: Gestor de Proyecto, Documentador y Calidad
+    ├── README.md                                  # Guía del módulo y matriz de certificación
+    ├── docs/                                      # Informes técnicos, justificaciones y guías de defensa
+    │   ├── informe_hito2_persona5_calidad_gobernanza.pdf # Informe técnico formal en PDF (compilado)
+    │   ├── informe_hito2_persona5_calidad_gobernanza.tex # Código fuente LaTeX del informe de calidad
+    │   ├── informe_hito2_persona5_calidad_gobernanza.md  # Informe técnico en Markdown
+    │   ├── documentacion_tecnica_aditividad_y_scd2.md    # Fundamentación formal de Kimball y SCD2
+    │   └── Guia_Estudio_Defensa_Hito2_BI.pdf             # Guía maestra de estudio para presentar y defender
+    ├── auditoria/                                 # Matrices de evaluación y certificación oficial
+    │   ├── matriz_certificacion_hito2.md                 # Matriz de cumplimiento ítem por ítem
+    │   └── auditoria_cumplimiento_rubrica_hito2.json     # Datos estructurados JSON de la rúbrica (10/10)
+    └── scripts/                                   # Pipeline automatizado de calidad y compilación
+        └── 12_audit_and_generate_p5_hito2.js             # Generador de reportes, PDFs y auditoría integral
 ```
 
 ---
@@ -90,6 +104,10 @@ Todo el pipeline es 100% reproducible y automatizado:
 4. **Regenerar Diagramas Vectoriales del Esquema Estrella (Persona 3):**
    ```bash
    python "Avance Hito 2/P3_MODELO_DIMENSIONAL_Y_ARQUITECTURA/scripts/generate_star_diagram.py"
+   ```
+5. **Auditar la Gobernanza, Certificar Rúbrica y Generar PDFs (Persona 5):**
+   ```bash
+   node "Avance Hito 2/P5_GESTOR_DOCUMENTACION_Y_CALIDAD/scripts/12_audit_and_generate_p5_hito2.js"
    ```
 
 ---
