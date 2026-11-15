@@ -1,0 +1,1299 @@
+﻿ano,codigo_ies_sies,nombre_institucion,tipo_institucion,tramo_acreditacion_sies,gratuidad,ofertas_activas_rm,vacantes_totales_rm,matricula_primer_ano_rm,matricula_total_rm,secciones_lab_planificadas_rm,secciones_lab_reales_rm,secciones_extra_sobrecupo_rm,tasa_ocupacion_rm_pct,cuota_mercado_rm_pct,puntaje_paes_ponderado_rm
+2012,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),238,14915,14333,41512,550,524,18,91.05,8.673,
+2012,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),88,7885,7182,27009,268,246,24,84.86,5.643,628.13
+2012,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),65,4597,5507,26927,152,179,25,119.8,5.626,787.54
+2012,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),156,9850,9850,23127,353,353,0,100.0,4.832,
+2012,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),45,3974,4988,22695,131,166,35,124.93,4.742,791.96
+2012,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),189,5835,5501,19923,251,245,11,93.56,4.163,492.38
+2012,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),93,4808,4800,19755,182,177,27,99.83,4.128,713.47
+2012,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),132,10316,8738,19200,354,317,21,84.32,4.012,
+2012,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),168,5772,5681,13816,217,220,20,98.54,2.887,
+2012,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),33,2800,2600,12926,95,88,0,92.86,2.701,704.29
+2012,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),59,3020,2964,11850,109,107,9,98.56,2.476,661.16
+2012,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),54,2850,3326,11148,103,119,6,119.24,2.329,586.69
+2012,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),103,2656,2307,10951,98,90,5,89.77,2.288,
+2012,155.0,I.P. LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),32,4960,3790,10950,158,122,0,76.41,2.288,
+2012,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),87,2605,2046,10266,103,99,7,81.71,2.145,
+2012,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),42,0,2387,8674,0,87,0,,1.812,586.88
+2012,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),23,1395,1805,7693,49,62,13,123.96,1.607,711.0
+2012,221.0,C.F.T. DUOC UC,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),50,3164,2998,7571,99,98,5,94.75,1.582,
+2012,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),28,2360,2266,7168,80,78,7,92.51,1.498,619.25
+2012,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),37,2135,1506,7151,73,58,1,81.69,1.494,592.56
+2012,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),47,2234,1713,7143,84,72,3,76.68,1.492,622.2
+2012,29.0,U. UCINF,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),52,3144,2894,6706,108,104,1,92.05,1.401,563.77
+2012,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),47,2949,2467,6314,100,90,6,97.07,1.319,
+2012,126.0,I.P. LA ARAUCANA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),87,3220,2007,5898,118,98,12,74.93,1.232,
+2012,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),24,892,1212,5652,32,43,11,135.87,1.181,761.8
+2012,374.0,C.F.T. ICEL,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),63,5900,3716,5543,194,139,0,62.98,1.158,
+2012,47.0,U. DEL PACÍFICO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),48,1460,1160,5042,52,51,2,79.45,1.053,562.17
+2012,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),31,1565,1449,4878,59,60,2,92.59,1.019,667.62
+2012,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),26,1290,988,4754,46,42,1,76.59,0.993,591.89
+2012,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),9,1180,1247,4742,35,39,4,107.7,0.991,749.89
+2012,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),33,1515,1244,4626,52,50,5,82.11,0.967,525.59
+2012,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),17,860,1278,4455,30,44,5,143.5,0.931,711.71
+2012,17.0,U. SEK,Universidad,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),35,1560,1436,4430,57,58,6,92.05,0.926,
+2012,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),25,1039,925,4213,38,36,0,87.18,0.88,680.92
+2012,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),20,1135,1146,4059,40,41,2,100.97,0.848,666.07
+2012,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),26,1126,958,4003,42,37,5,85.08,0.836,
+2012,25.0,U. IBEROAMERICANA DE CIENCIAS Y TECNOLOGÍA,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),27,723,604,3960,33,31,1,83.54,0.827,559.4
+2012,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),49,2195,1058,3755,77,49,0,69.73,0.785,591.41
+2012,106.0,I.P. PROVIDENCIA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),58,2345,1230,3604,87,69,4,61.16,0.753,
+2012,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),36,1960,1784,3432,76,69,12,91.02,0.717,
+2012,390.0,C.F.T. INSTITUTO TECNOLÓGICO DE CHILE,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),29,2265,1520,3260,80,54,1,67.11,0.681,
+2012,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),31,980,722,3227,38,35,2,73.67,0.674,600.82
+2012,116.0,I.P. SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),45,1197,1072,2922,45,45,5,100.3,0.611,
+2012,218.0,C.F.T. ENAC,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),16,1000,1007,2800,36,33,7,100.7,0.585,
+2012,40.0,U. DE ARTE Y CIENCIAS SOCIALES ARCIS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),33,1310,1017,2531,50,43,2,77.63,0.529,534.63
+2012,,C.F.T. SIMÓN BOLIVAR,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),29,1410,815,2425,49,32,2,57.8,0.507,485.71
+2012,27.0,U. DEL MAR,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),15,580,506,2215,21,22,8,61.4,0.463,514.43
+2012,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),58,2950,1030,2214,117,57,0,41.44,0.463,
+2012,1.0,U. GABRIELA MISTRAL,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),23,830,675,2152,30,31,2,67.38,0.45,
+2012,,C.F.T. LA ARAUCANA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),31,980,1077,2131,37,44,7,104.71,0.445,
+2012,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),18,625,713,2091,26,28,5,83.24,0.437,599.2
+2012,,C.F.T. LOS LEONES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),9,1175,876,1991,38,29,0,74.55,0.416,
+2012,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),23,950,592,1868,35,29,1,60.54,0.39,
+2012,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),25,1289,1080,1852,45,40,0,83.79,0.387,
+2012,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),8,355,356,1756,12,15,3,113.31,0.367,669.51
+2012,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),14,664,727,1729,22,25,6,104.83,0.361,
+2012,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),24,910,827,1551,32,36,5,90.88,0.324,
+2012,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),19,710,553,1458,28,26,1,77.02,0.305,
+2012,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),2,430,450,1426,13,14,1,104.65,0.298,525.57
+2012,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),21,660,539,1392,26,22,0,74.81,0.291,
+2012,117.0,I.P. IACC,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),15,735,453,1339,31,21,1,61.63,0.28,
+2012,,I.P. IPEGE,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),28,600,699,1265,24,32,0,93.64,0.264,
+2012,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),18,1090,1035,1238,40,39,0,94.95,0.259,
+2012,,C.F.T. MAGNOS,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),14,1412,643,1118,46,23,0,49.28,0.234,
+2012,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),4,60,286,1019,2,10,1,89.71,0.213,596.05
+2012,68.0,U. MIGUEL DE CERVANTES,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),13,505,370,1000,18,16,0,73.27,0.209,
+2012,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),19,255,198,999,15,16,0,82.37,0.209,
+2012,183.0,I.P. CARLOS CASANUEVA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),15,290,472,975,14,19,5,162.76,0.204,
+2012,162.0,I.P. CIISA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),8,350,368,886,13,15,2,105.14,0.185,
+2012,137.0,I.P. EATRI,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),9,330,311,665,14,14,1,94.24,0.139,
+2012,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),5,500,234,585,15,10,0,46.8,0.122,
+2012,,C.F.T. ICCE,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),38,820,348,516,40,41,0,57.54,0.108,
+2012,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),8,400,199,484,16,10,1,48.98,0.101,
+2012,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,270,163,483,9,8,1,58.37,0.101,586.75
+2012,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),7,216,220,426,8,9,1,101.85,0.089,
+2012,651.0,U. CHILENO-BRITÁNICA DE CULTURA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,130,93,379,7,4,0,71.54,0.079,596.94
+2012,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,200,160,352,6,6,0,80.0,0.074,569.8
+2012,131.0,I.P. DE CIENCIAS Y ARTES INCA-CEA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),25,505,148,334,19,14,0,26.43,0.07,
+2012,328.0,C.F.T. INST. SUPERIOR DE ESTUDIOS JURÍDICOS CANON,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,0,96,321,0,4,0,,0.067,
+2012,709.0,I.P. CHILENO NORTEAMERICANO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,360,128,294,12,6,0,35.56,0.061,
+2012,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,160,102,286,7,4,0,63.75,0.06,
+2012,,C.F.T. FONTANAR,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,160,95,251,7,5,0,59.38,0.052,
+2012,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),8,240,110,241,8,6,0,45.83,0.05,
+2012,,C.F.T. ESPERANZA JOVEN,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),4,120,106,209,4,5,2,88.33,0.044,
+2012,170.0,I.P. CS. DE LA COMPUTACIÓN ACUARIO DATA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,330,52,184,11,4,0,15.76,0.038,
+2012,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),10,175,84,173,7,7,0,37.33,0.036,
+2012,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,90,68,170,3,2,0,75.56,0.036,
+2012,,C.F.T. INSEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,306,78,168,11,6,0,26.72,0.035,
+2012,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,80,82,148,4,4,0,102.5,0.031,
+2012,148.0,I.P. HOGAR CATEQUÍSTICO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,40,22,142,2,1,0,55.0,0.03,524.29
+2012,307.0,C.F.T. ESTUDIO PROFESOR VALERO,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,100,83,136,4,4,0,83.0,0.028,
+2012,,C.F.T. CROWNLIET,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),4,86,60,134,4,4,0,69.77,0.028,
+2012,498.0,C.F.T. PROANDES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,300,132,133,12,7,0,41.29,0.028,
+2012,,C.F.T. ESC. DE INTÉRPRETES INCENI,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,40,39,115,2,2,0,97.5,0.024,
+2012,427.0,C.F.T. DE EST. SUP.Y CAPACITACIÓN PROFESIONAL LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,300,0,100,10,0,0,0.0,0.021,
+2012,,U. LA ARAUCANA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,180,98,98,6,6,0,54.44,0.02,
+2012,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,35,37,96,1,2,1,105.71,0.02,
+2012,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),2,130,92,94,4,3,0,90.18,0.02,673.77
+2012,534.0,C.F.T. ACCIOMA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),8,120,65,93,6,7,0,54.17,0.019,
+2012,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,80,43,93,4,2,0,53.75,0.019,
+2012,229.0,C.F.T. CENTRO DE ENS. ALTA COSTURA PAULINA DIARD,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,55,39,82,2,2,0,70.91,0.017,
+2012,165.0,I.P. DE LOS LAGOS,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,200,43,66,10,5,0,24.58,0.014,
+2012,119.0,I.P. ALEMÁN WILHELM VON HUMBOLDT,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,40,17,62,2,2,0,42.5,0.013,652.03
+2012,,C.F.T. DIEGO PORTALES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,0,0,56,0,0,0,58.24,0.012,
+2012,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,45,24,44,3,3,0,53.33,0.009,
+2012,133.0,I.P. ENAC,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,0,0,25,0,0,0,,0.005,
+2012,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,0,0,20,0,0,0,,0.004,
+2012,22.0,U. DE VIÑA DEL MAR,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),1,0,0,10,0,0,0,95.04,0.002,579.63
+2013,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),336,18599,18401,48446,682,684,35,95.59,9.635,
+2013,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),221,11984,12279,30065,437,461,42,103.72,5.98,
+2013,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),92,8411,7651,28555,281,263,15,86.98,5.679,625.44
+2013,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),67,4670,5573,27363,155,187,31,119.34,5.442,785.0
+2013,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),50,4269,5017,23153,143,169,27,116.26,4.605,785.25
+2013,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),235,0,7152,22125,0,319,0,,4.4,496.18
+2013,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),105,4496,4665,21356,170,180,16,103.76,4.247,702.7
+2013,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),139,9328,7675,18904,325,290,12,85.33,3.76,
+2013,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),163,6263,6434,14367,235,248,26,101.17,2.857,
+2013,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),34,2946,2799,13377,99,97,4,95.01,2.661,703.39
+2013,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),61,2615,3133,12788,92,116,3,109.61,2.543,653.08
+2013,155.0,I.P. LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),41,4829,4143,11535,154,134,9,83.88,2.294,
+2013,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),95,2635,2603,11357,98,103,8,99.34,2.259,
+2013,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),66,3437,2817,11102,118,108,5,83.82,2.208,596.07
+2013,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),86,2326,2410,10891,100,102,8,99.06,2.166,
+2013,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),37,0,1819,9034,0,65,0,,1.797,583.04
+2013,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),31,2410,2224,8294,82,78,11,91.14,1.65,608.24
+2013,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),23,1470,1911,8166,51,66,14,127.36,1.624,710.71
+2013,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),74,3779,4237,7921,134,151,23,106.61,1.575,
+2013,221.0,C.F.T. DUOC UC,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),50,3197,3164,7718,113,111,2,98.97,1.535,
+2013,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),35,1960,2021,7635,69,71,8,96.94,1.519,582.82
+2013,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),54,1962,1860,7065,70,71,3,94.8,1.405,614.97
+2013,126.0,I.P. LA ARAUCANA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),100,3635,3047,6593,132,123,19,80.23,1.311,
+2013,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),24,1315,1344,5885,46,49,3,102.21,1.17,754.41
+2013,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),12,1175,1276,5420,37,39,3,109.07,1.078,743.26
+2013,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),31,1670,1657,5356,62,63,3,99.22,1.065,667.07
+2013,47.0,U. DEL PACÍFICO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),47,1378,1187,4909,51,50,4,86.14,0.976,537.43
+2013,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),28,1255,1304,4791,45,51,7,103.9,0.953,585.12
+2013,29.0,U. UCINF,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),49,3038,707,4781,104,43,0,23.27,0.951,555.29
+2013,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),24,1088,1164,4685,41,47,6,106.99,0.932,653.47
+2013,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),19,870,1116,4623,32,40,6,109.47,0.919,688.82
+2013,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),28,1065,1075,4592,38,41,4,99.63,0.913,682.46
+2013,17.0,U. SEK,Universidad,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),42,1770,1011,4479,65,43,0,57.12,0.891,
+2013,374.0,C.F.T. ICEL,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),63,8285,2447,4317,268,94,1,29.54,0.859,
+2013,106.0,I.P. PROVIDENCIA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),60,3030,1538,4052,112,68,1,45.4,0.806,
+2013,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),33,1108,379,3908,39,20,0,34.21,0.777,464.11
+2013,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),26,990,1000,3773,38,41,2,101.01,0.75,
+2013,116.0,I.P. SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),70,1262,1662,3602,55,70,16,113.52,0.716,
+2013,25.0,U. IBEROAMERICANA DE CIENCIAS Y TECNOLOGÍA,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),30,970,619,3385,43,36,0,63.81,0.673,557.89
+2013,390.0,C.F.T. INSTITUTO TECNOLÓGICO DE CHILE,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),34,2444,1905,3348,86,72,0,77.95,0.666,
+2013,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),32,829,688,3283,35,32,0,82.99,0.653,593.93
+2013,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),22,1450,1442,3127,54,51,10,99.45,0.622,
+2013,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),33,1795,794,2797,65,34,1,44.23,0.556,
+2013,40.0,U. DE ARTE Y CIENCIAS SOCIALES ARCIS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),33,1055,880,2679,41,38,2,83.41,0.533,
+2013,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),36,360,315,2599,15,15,0,86.99,0.517,
+2013,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),50,1060,135,2526,40,23,0,27.32,0.502,593.74
+2013,117.0,I.P. IACC,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),17,1115,1206,2293,37,43,9,108.16,0.456,
+2013,,C.F.T. LA ARAUCANA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),32,1525,1156,2052,54,46,2,75.12,0.408,
+2013,1.0,U. GABRIELA MISTRAL,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),24,1116,541,1949,39,29,0,40.99,0.388,603.81
+2013,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),15,504,606,1862,21,26,6,103.6,0.37,
+2013,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),30,895,853,1801,36,36,0,95.31,0.358,
+2013,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),27,1235,872,1795,44,33,1,70.61,0.357,
+2013,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),9,325,337,1738,11,12,2,105.15,0.346,670.55
+2013,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),73,1709,714,1698,78,58,0,61.13,0.338,
+2013,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),23,1235,1067,1673,49,40,2,86.4,0.333,
+2013,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),22,600,566,1616,20,27,10,98.61,0.321,594.64
+2013,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),14,680,668,1601,22,23,4,98.24,0.318,
+2013,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),19,665,656,1528,26,28,5,98.71,0.304,
+2013,,C.F.T. SIMÓN BOLIVAR,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),25,0,655,1509,0,27,0,,0.3,
+2013,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),2,470,486,1493,14,14,0,103.4,0.297,575.88
+2013,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),25,705,490,1363,26,21,0,72.05,0.271,562.86
+2013,162.0,I.P. CIISA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),12,580,609,1195,23,23,4,105.0,0.238,
+2013,,I.P. IPEGE,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),36,660,524,1106,24,22,0,73.31,0.22,
+2013,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),4,0,341,1014,0,12,0,250.54,0.202,708.45
+2013,,C.F.T. LOS LEONES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),9,745,0,997,24,0,0,0.0,0.198,
+2013,68.0,U. MIGUEL DE CERVANTES,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),13,490,211,956,18,12,0,43.06,0.19,
+2013,183.0,I.P. CARLOS CASANUEVA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),12,255,481,932,12,19,7,188.63,0.185,
+2013,,C.F.T. MAGNOS,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),13,994,403,852,36,15,0,42.76,0.169,
+2013,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),18,320,118,781,15,7,0,54.76,0.155,
+2013,137.0,I.P. EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),9,360,346,650,15,15,1,96.11,0.129,
+2013,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),6,600,238,590,18,10,0,39.67,0.117,
+2013,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,400,166,537,14,8,0,45.76,0.107,
+2013,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),7,237,188,499,10,9,0,78.25,0.099,605.11
+2013,16.0,U. LA REPÚBLICA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,0,0,447,0,0,0,1603.51,0.089,
+2013,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,189,188,419,8,8,0,99.47,0.083,
+2013,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,250,156,387,9,6,0,62.4,0.077,584.4
+2013,651.0,U. CHILENO-BRITÁNICA DE CULTURA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,115,102,369,5,4,0,88.7,0.073,592.77
+2013,709.0,I.P. CHILENO NORTEAMERICANO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,200,166,351,9,7,0,83.0,0.07,
+2013,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),5,260,266,344,8,10,2,102.05,0.068,667.66
+2013,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,160,120,308,7,5,1,75.0,0.061,
+2013,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),12,265,246,293,12,13,1,88.52,0.058,
+2013,,C.F.T. ICCE,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),14,410,7,284,20,2,0,11.67,0.056,
+2013,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),8,180,94,251,6,4,0,52.22,0.05,
+2013,,C.F.T. FONTANAR,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),7,240,85,234,9,5,0,35.42,0.047,
+2013,131.0,I.P. DE CIENCIAS Y ARTES INCA-CEA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),24,390,43,216,18,8,0,11.03,0.043,
+2013,170.0,I.P. CS. DE LA COMPUTACIÓN ACUARIO DATA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,300,50,186,10,5,0,16.67,0.037,
+2013,498.0,C.F.T. PROANDES,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),7,175,100,185,7,5,0,88.5,0.037,
+2013,,U. LA ARAUCANA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,180,125,168,6,6,0,69.44,0.033,
+2013,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,120,73,163,5,4,0,60.83,0.032,437.44
+2013,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,90,48,163,3,2,0,53.33,0.032,
+2013,165.0,I.P. DE LOS LAGOS,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),8,100,91,140,5,7,0,43.44,0.028,
+2013,,C.F.T. INSEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),7,336,73,140,12,7,0,25.76,0.028,
+2013,307.0,C.F.T. ESTUDIO PROFESOR VALERO,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,110,78,125,4,4,0,70.91,0.025,
+2013,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,80,57,123,4,3,0,71.25,0.024,
+2013,148.0,I.P. HOGAR CATEQUÍSTICO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,40,24,116,2,2,0,60.0,0.023,
+2013,,C.F.T. CROWNLIET,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),4,76,28,108,4,2,0,36.84,0.021,
+2013,,C.F.T. ESC. DE INTÉRPRETES INCENI,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,70,30,105,3,2,0,42.86,0.021,
+2013,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,35,35,104,1,1,0,100.0,0.021,
+2013,534.0,C.F.T. ACCIOMA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),7,29,34,82,4,5,0,117.24,0.016,
+2013,229.0,C.F.T. CENTRO DE ENS. ALTA COSTURA PAULINA DIARD,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,55,40,62,2,2,0,72.73,0.012,
+2013,119.0,I.P. ALEMÁN WILHELM VON HUMBOLDT,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,20,13,51,1,1,0,65.0,0.01,627.14
+2013,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),4,60,22,41,4,4,0,36.67,0.008,
+2013,743.0,I.P. DE ARTES ESCENICAS KAREN CONNOLLY,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,20,10,10,1,1,0,50.0,0.002,
+2013,133.0,I.P. ENAC,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,0,0,9,0,0,0,,0.002,
+2014,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),387,20367,19364,54110,747,716,0,93.37,10.384,
+2014,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),253,13553,13570,33752,483,494,36,100.09,6.477,
+2014,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),97,7607,8058,29473,253,278,40,104.37,5.656,622.25
+2014,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),67,4744,5928,28176,157,196,37,124.96,5.407,776.2
+2014,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),48,4275,5135,24350,143,171,29,119.54,4.673,785.14
+2014,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),101,4246,5177,21230,163,191,41,121.93,4.074,688.38
+2014,19.0,U. DE LAS AMÉRICAS,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),229,0,4363,19927,0,244,0,,3.824,
+2014,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),148,7943,5869,16599,278,232,7,80.96,3.185,
+2014,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),192,6956,7431,15871,259,281,27,101.83,3.046,
+2014,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),35,2957,2860,13993,99,94,2,96.72,2.685,706.82
+2014,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),63,3528,3725,13889,128,131,15,106.44,2.665,654.33
+2014,155.0,I.P. LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),88,5940,5737,13114,215,203,3,93.75,2.517,
+2014,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),91,2895,2717,11595,106,105,7,88.27,2.225,
+2014,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),125,2962,2778,11308,117,117,8,93.24,2.17,
+2014,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),61,2622,2730,11080,96,104,16,100.73,2.126,593.43
+2014,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),30,2522,2307,9100,88,82,0,89.27,1.746,614.42
+2014,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),38,0,1729,8599,0,66,0,,1.65,588.24
+2014,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),24,1208,1987,8492,44,67,23,146.8,1.63,684.68
+2014,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),76,4091,3864,8353,145,141,9,93.41,1.603,
+2014,221.0,C.F.T. DUOC UC,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),47,3266,3180,7843,112,111,0,97.37,1.505,
+2014,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),36,2099,1710,7442,75,64,1,83.26,1.428,581.88
+2014,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),54,1860,1953,7007,65,72,1,105.0,1.345,621.23
+2014,126.0,I.P. LA ARAUCANA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),97,2885,2378,6603,91,106,20,85.97,1.267,
+2014,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),27,1177,1510,6332,46,55,11,128.29,1.215,750.19
+2014,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),35,1911,1641,5332,73,69,5,85.87,1.023,666.7
+2014,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),12,1165,1219,5292,35,37,2,102.91,1.016,747.46
+2014,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),24,916,1185,5270,35,47,7,129.37,1.011,648.32
+2014,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),30,1415,1324,4942,54,50,3,93.57,0.948,574.55
+2014,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),74,430,733,4870,29,33,4,148.66,0.935,
+2014,47.0,U. DEL PACÍFICO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),48,1320,1224,4750,49,53,6,92.73,0.912,
+2014,374.0,C.F.T. ICEL,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),61,3900,3365,4717,138,122,0,86.28,0.905,
+2014,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),20,862,890,4517,28,33,0,104.67,0.867,683.88
+2014,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),26,1070,1044,4471,37,39,4,97.57,0.858,683.86
+2014,390.0,C.F.T. INSTITUTO TECNOLÓGICO DE CHILE,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),41,2535,2317,4345,88,84,7,91.4,0.834,
+2014,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),33,1450,1238,4225,55,49,2,85.38,0.811,556.87
+2014,117.0,I.P. IACC,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),18,0,2096,4047,0,68,0,,0.777,
+2014,116.0,I.P. SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),74,1700,1596,3973,66,68,4,90.92,0.762,
+2014,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),40,1095,730,3838,42,36,2,66.67,0.737,
+2014,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),27,1143,1181,3633,47,47,0,103.32,0.697,
+2014,106.0,I.P. PROVIDENCIA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),58,2676,1069,3612,92,57,2,24.14,0.693,
+2014,29.0,U. UCINF,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),47,790,341,3595,47,30,0,43.16,0.69,
+2014,25.0,U. IBEROAMERICANA DE CIENCIAS Y TECNOLOGÍA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),32,980,335,3273,40,18,0,34.18,0.628,
+2014,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),24,1430,1287,3162,53,46,7,90.0,0.607,
+2014,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),31,809,688,3104,34,30,0,85.04,0.596,600.15
+2014,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),77,550,1107,2936,42,51,11,201.27,0.563,
+2014,40.0,U. DE ARTE Y CIENCIAS SOCIALES ARCIS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),30,1095,820,2910,46,38,1,74.89,0.558,
+2014,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),47,652,263,2318,26,22,0,49.24,0.445,566.29
+2014,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),18,375,813,2255,15,29,10,154.16,0.433,643.09
+2014,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),23,997,931,2112,37,36,3,95.84,0.405,
+2014,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),19,1208,1034,1954,41,39,2,85.6,0.375,
+2014,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),25,1000,812,1872,45,33,0,81.2,0.359,
+2014,,C.F.T. SIMÓN BOLIVAR,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),26,0,1192,1843,0,44,0,,0.354,
+2014,,C.F.T. LA ARAUCANA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),33,1255,894,1831,43,39,2,63.31,0.351,
+2014,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),10,355,324,1674,12,12,1,103.94,0.321,667.84
+2014,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),32,705,598,1636,30,31,0,84.82,0.314,
+2014,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),2,450,437,1583,14,14,0,97.11,0.304,
+2014,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),18,645,635,1575,23,26,4,93.38,0.302,
+2014,1.0,U. GABRIELA MISTRAL,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),24,515,239,1528,19,18,0,35.68,0.293,630.17
+2014,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),73,1752,306,1433,78,29,0,43.17,0.275,
+2014,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),24,426,485,1234,24,24,1,82.55,0.237,
+2014,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),13,680,511,1228,23,19,1,75.15,0.236,
+2014,162.0,I.P. CIISA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),13,800,489,1174,27,21,0,61.12,0.225,
+2014,183.0,I.P. CARLOS CASANUEVA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),15,300,540,1145,15,20,6,180.0,0.22,
+2014,68.0,U. MIGUEL DE CERVANTES,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),14,390,194,942,16,12,0,49.74,0.181,
+2014,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),18,0,317,900,0,15,0,,0.173,
+2014,,I.P. IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),36,1195,309,862,43,13,0,46.68,0.165,
+2014,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),3,0,216,828,0,8,0,230.35,0.159,594.21
+2014,,C.F.T. LOS LEONES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),9,360,340,767,14,13,0,94.44,0.147,
+2014,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),6,360,358,739,13,12,0,99.44,0.142,
+2014,137.0,I.P. EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),9,330,373,734,14,17,3,113.03,0.141,
+2014,16.0,U. LA REPÚBLICA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,0,200,679,0,10,0,310.89,0.13,
+2014,498.0,C.F.T. PROANDES,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),17,570,236,625,19,12,0,64.36,0.12,
+2014,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),7,300,238,555,11,10,0,84.32,0.107,602.71
+2014,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,300,146,552,11,7,0,50.67,0.106,
+2014,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),15,345,348,506,14,14,0,100.87,0.097,
+2014,,C.F.T. MAGNOS,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),10,450,178,482,16,8,0,47.29,0.092,
+2014,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),5,180,160,462,7,6,0,100.16,0.089,672.13
+2014,651.0,U. CHILENO-BRITÁNICA DE CULTURA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,170,139,422,8,7,0,81.76,0.081,581.87
+2014,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,160,147,419,7,6,1,91.88,0.08,
+2014,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,275,134,383,10,6,0,48.73,0.074,600.21
+2014,709.0,I.P. CHILENO NORTEAMERICANO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,240,170,355,10,7,0,70.83,0.068,
+2014,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,140,125,308,7,7,0,89.29,0.059,
+2014,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),7,165,116,260,6,5,0,70.3,0.05,
+2014,,U. LA ARAUCANA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,180,137,235,6,8,2,76.11,0.045,
+2014,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,90,88,188,3,3,0,97.78,0.036,
+2014,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,75,62,146,3,3,0,82.67,0.028,
+2014,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,60,59,139,2,3,1,98.33,0.027,
+2014,307.0,C.F.T. ESTUDIO PROFESOR VALERO,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,100,68,138,4,4,0,68.0,0.026,
+2014,131.0,I.P. DE CIENCIAS Y ARTES INCA-CEA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),19,25,25,124,1,2,0,100.0,0.024,
+2014,,C.F.T. FONTANAR,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),6,0,0,114,0,0,0,,0.022,
+2014,148.0,I.P. HOGAR CATEQUÍSTICO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,20,12,110,1,1,0,60.0,0.021,
+2014,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,35,31,105,1,1,0,88.57,0.02,
+2014,165.0,I.P. DE LOS LAGOS,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),8,45,12,102,2,2,0,72.19,0.02,
+2014,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,0,0,91,0,0,0,85.86,0.017,
+2014,534.0,C.F.T. ACCIOMA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),7,0,40,83,0,5,0,,0.016,
+2014,,C.F.T. CROWNLIET,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,0,0,71,0,0,0,,0.014,
+2014,229.0,C.F.T. CENTRO DE ENS. ALTA COSTURA PAULINA DIARD,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,55,43,70,2,2,0,78.18,0.013,
+2014,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),4,60,27,50,4,4,0,45.0,0.01,
+2014,119.0,I.P. ALEMÁN WILHELM VON HUMBOLDT,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,40,18,48,2,1,0,45.0,0.009,622.0
+2014,782.0,C.F.T. FINNING,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,20,20,20,1,1,0,98.33,0.004,
+2014,743.0,I.P. DE ARTES ESCENICAS KAREN CONNOLLY,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,20,11,18,1,1,0,55.0,0.003,
+2014,,C.F.T. DIEGO PORTALES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,0,0,4,0,0,0,,0.001,
+2015,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),420,20456,19690,60281,750,728,0,95.3,11.356,
+2015,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),283,13509,12782,36776,493,484,33,94.2,6.928,
+2015,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),71,4877,6239,29301,162,204,37,127.93,5.52,774.76
+2015,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),96,7191,6731,28898,247,240,16,95.33,5.444,618.63
+2015,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),50,4408,5283,25118,147,172,27,119.07,4.732,785.25
+2015,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),99,4242,5624,21982,154,207,46,132.58,4.141,691.38
+2015,19.0,U. DE LAS AMÉRICAS,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),203,0,3682,17565,0,192,0,,3.309,465.11
+2015,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),193,7546,7361,16857,275,283,22,94.76,3.176,
+2015,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),167,6080,5923,15062,229,240,26,92.95,2.838,
+2015,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),64,2655,3708,14359,93,136,16,132.51,2.705,655.12
+2015,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),35,2973,2895,14061,101,99,2,97.38,2.649,709.81
+2015,155.0,I.P. LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),101,7564,6147,13650,267,221,19,81.4,2.572,
+2015,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),130,3039,2995,11984,121,131,13,95.14,2.258,
+2015,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),86,2820,2649,11827,105,102,4,89.07,2.228,
+2015,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),67,2571,2629,11058,95,100,10,100.58,2.083,598.12
+2015,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),32,2280,2243,9422,79,75,3,101.21,1.775,620.15
+2015,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),78,4336,4025,9006,157,144,7,95.16,1.697,
+2015,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),23,1254,2057,8703,44,71,27,151.33,1.64,680.2
+2015,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),39,0,1701,8379,0,66,0,,1.579,589.35
+2015,126.0,I.P. LA ARAUCANA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),127,4515,3412,8137,174,147,18,77.84,1.533,
+2015,221.0,C.F.T. DUOC UC,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),45,3166,3025,7801,109,106,0,95.55,1.47,
+2015,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),36,1899,1923,7577,70,70,5,98.24,1.427,579.93
+2015,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),44,2035,2180,7564,71,74,3,107.13,1.425,629.36
+2015,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),88,1492,1360,7043,51,71,3,90.85,1.327,
+2015,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),26,1011,1536,6606,39,55,17,151.93,1.244,749.79
+2015,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),27,1249,1469,5741,49,55,8,117.61,1.082,644.12
+2015,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),36,1665,1876,5726,66,73,8,112.67,1.079,663.8
+2015,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),13,3540,1229,5706,106,38,4,35.28,1.075,740.51
+2015,117.0,I.P. IACC,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),21,0,2594,5657,0,82,0,,1.066,
+2015,374.0,C.F.T. ICEL,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),61,3655,2834,5521,132,108,0,77.54,1.04,
+2015,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),29,1130,1090,5200,44,47,7,96.46,0.98,560.75
+2015,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),33,1700,1344,4707,62,51,1,79.06,0.887,533.32
+2015,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),25,1115,1180,4675,38,43,5,105.83,0.881,679.4
+2015,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),20,875,1026,4479,30,37,1,123.68,0.844,691.65
+2015,116.0,I.P. SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),76,1890,1623,4294,73,64,9,84.27,0.809,
+2015,47.0,U. DEL PACÍFICO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),46,775,726,4055,40,37,2,93.68,0.764,
+2015,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),29,2131,1387,3632,72,52,5,65.09,0.684,
+2015,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),45,953,671,3624,41,32,0,70.41,0.683,
+2015,390.0,C.F.T. INSTITUTO TECNOLÓGICO DE CHILE,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),42,3150,1697,3506,105,67,0,53.87,0.66,
+2015,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),36,1535,1362,3258,57,54,7,88.73,0.614,
+2015,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),28,865,953,3213,34,38,5,110.17,0.605,594.64
+2015,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),80,1930,1129,2942,73,53,1,58.5,0.554,
+2015,25.0,U. IBEROAMERICANA DE CIENCIAS Y TECNOLOGÍA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),38,975,448,2900,38,27,1,45.95,0.546,482.6
+2015,29.0,U. UCINF,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),47,870,288,2847,39,14,0,33.1,0.536,497.13
+2015,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),24,1147,1029,2496,41,38,1,85.84,0.47,541.24
+2015,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),18,195,807,2187,7,33,1,154.99,0.412,592.28
+2015,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),30,1232,1078,2154,50,43,7,87.5,0.406,
+2015,106.0,I.P. PROVIDENCIA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),50,0,550,2148,0,29,0,,0.405,
+2015,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),20,1120,867,1975,42,35,1,77.41,0.372,
+2015,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),47,592,197,1881,30,19,0,51.67,0.354,566.92
+2015,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),31,931,874,1783,35,35,0,93.88,0.336,
+2015,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),22,615,707,1703,23,30,7,112.0,0.321,
+2015,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),10,315,340,1651,10,11,1,105.71,0.311,662.76
+2015,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),2,400,414,1629,12,12,0,103.5,0.307,
+2015,498.0,C.F.T. PROANDES,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),23,690,1040,1413,23,36,12,116.06,0.266,
+2015,183.0,I.P. CARLOS CASANUEVA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),17,400,705,1328,17,26,10,176.25,0.25,
+2015,162.0,I.P. CIISA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),13,720,442,1188,26,19,0,61.39,0.224,
+2015,40.0,U. DE ARTE Y CIENCIAS SOCIALES ARCIS,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),30,1015,6,1079,41,5,0,0.59,0.203,
+2015,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),23,700,431,1053,27,22,1,61.42,0.198,
+2015,1.0,U. GABRIELA MISTRAL,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),19,195,139,991,10,11,0,71.28,0.187,595.63
+2015,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),54,575,308,982,29,26,1,65.92,0.185,
+2015,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),11,426,362,970,15,14,0,84.98,0.183,
+2015,68.0,U. MIGUEL DE CERVANTES,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),11,320,274,953,13,12,0,85.62,0.18,
+2015,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),16,1500,579,944,46,24,1,32.8,0.178,
+2015,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),3,0,316,924,0,11,0,235.06,0.174,597.19
+2015,,I.P. IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),21,845,464,883,29,19,1,60.53,0.166,
+2015,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),6,345,358,817,12,15,3,103.77,0.154,
+2015,137.0,I.P. EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Aplica (Pre-Ley de Gratuidad 2016),9,330,336,779,14,15,1,101.82,0.147,
+2015,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Aplica (Pre-Ley de Gratuidad 2016),7,330,273,632,13,11,0,84.36,0.119,639.78
+2015,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),14,390,275,626,16,14,0,70.51,0.118,
+2015,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),No Aplica (Pre-Ley de Gratuidad 2016),5,180,180,595,7,7,0,99.19,0.112,677.13
+2015,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,300,121,541,11,7,0,43.19,0.102,
+2015,651.0,U. CHILENO-BRITÁNICA DE CULTURA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,165,132,437,8,7,0,80.0,0.082,579.59
+2015,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,275,135,403,10,6,0,49.09,0.076,
+2015,,U. LA ARAUCANA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,210,231,390,8,9,1,110.0,0.073,
+2015,,C.F.T. LOS LEONES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),9,0,0,350,0,0,0,,0.066,
+2015,709.0,I.P. CHILENO NORTEAMERICANO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),6,265,140,337,10,7,0,52.83,0.063,
+2015,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,160,88,266,7,3,0,55.0,0.05,
+2015,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),4,180,107,230,6,5,0,59.44,0.043,
+2015,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,160,81,215,5,4,0,50.62,0.041,
+2015,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,90,90,206,3,3,0,100.0,0.039,
+2015,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,50,50,129,2,2,0,100.0,0.024,
+2015,307.0,C.F.T. ESTUDIO PROFESOR VALERO,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,100,54,123,4,4,0,54.0,0.023,
+2015,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),5,100,29,108,5,5,0,29.0,0.02,
+2015,16.0,U. LA REPÚBLICA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,150,37,104,6,3,0,46.83,0.02,
+2015,165.0,I.P. DE LOS LAGOS,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),7,0,0,85,0,0,0,57.13,0.016,
+2015,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,0,0,70,0,0,0,,0.013,
+2015,229.0,C.F.T. CENTRO DE ENS. ALTA COSTURA PAULINA DIARD,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,55,40,67,2,2,0,72.73,0.013,
+2015,148.0,I.P. HOGAR CATEQUÍSTICO,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,0,0,62,0,0,0,,0.012,
+2015,131.0,I.P. DE CIENCIAS Y ARTES INCA-CEA,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),13,60,0,55,2,0,0,0.0,0.01,
+2015,119.0,I.P. ALEMÁN WILHELM VON HUMBOLDT,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),2,40,11,46,2,1,0,27.5,0.009,676.0
+2015,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),4,41,17,40,4,3,0,41.46,0.008,
+2015,782.0,C.F.T. FINNING,Centro de Formación Técnica,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,20,20,36,1,1,0,88.33,0.007,
+2015,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),3,0,0,27,0,0,0,76.04,0.005,
+2015,743.0,I.P. DE ARTES ESCENICAS KAREN CONNOLLY,Instituto Profesional,4. No Acreditada (0 años),No Aplica (Pre-Ley de Gratuidad 2016),1,20,13,25,1,1,0,65.0,0.005,
+2016,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,474,24011,22544,66481,873,832,0,93.18,12.287,
+2016,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,304,13845,13315,38026,483,495,23,95.38,7.028,
+2016,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,73,4956,6229,30173,164,206,37,125.69,5.576,763.83
+2016,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,97,7847,7203,28067,269,255,10,92.51,5.187,618.52
+2016,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,53,4399,5467,26472,145,181,29,123.93,4.892,784.08
+2016,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,103,4731,4655,21230,172,173,16,98.39,3.924,690.31
+2016,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,191,4777,4304,16314,197,192,6,88.73,3.015,
+2016,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,181,7036,7112,16271,276,274,20,104.54,3.007,
+2016,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,67,4145,3750,15350,145,135,9,91.56,2.837,652.97
+2016,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,168,0,5544,15203,0,236,0,,2.81,
+2016,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,34,2983,3221,14491,101,105,4,107.98,2.678,718.34
+2016,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,137,2940,2863,12544,124,118,4,98.72,2.318,
+2016,155.0,I.P. LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,78,6400,5215,12231,213,182,18,81.48,2.26,
+2016,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,79,2733,2225,11472,101,88,4,90.89,2.12,
+2016,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,69,2624,2317,10412,98,87,5,91.86,1.924,600.54
+2016,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,33,2261,2309,9680,75,80,7,101.13,1.789,626.03
+2016,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,47,2486,2650,9454,93,100,0,104.63,1.747,593.13
+2016,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,73,4256,4246,9346,150,154,11,97.76,1.727,
+2016,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,23,1269,1951,9005,45,66,23,140.45,1.664,685.32
+2016,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,47,2075,2373,8338,70,82,9,114.36,1.541,627.39
+2016,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,85,2765,1769,7893,97,70,0,68.37,1.459,
+2016,126.0,I.P. LA ARAUCANA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,137,3890,2101,7790,151,99,12,56.36,1.44,
+2016,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,38,2025,1858,7622,71,71,4,97.13,1.409,576.59
+2016,117.0,I.P. IACC,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,28,0,3737,7120,0,121,0,,1.316,
+2016,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,28,1585,1565,7056,57,58,2,98.74,1.304,748.69
+2016,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,36,1710,2118,6355,67,77,12,123.86,1.174,658.37
+2016,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,27,1336,1690,6266,48,61,13,126.5,1.158,648.94
+2016,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,12,3540,1326,6114,106,41,7,38.09,1.13,741.1
+2016,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,44,1680,1885,5735,58,66,8,112.2,1.06,
+2016,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,29,1280,1497,5692,50,55,6,116.95,1.052,561.08
+2016,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,35,1940,1415,5217,70,54,2,72.94,0.964,542.01
+2016,221.0,C.F.T. DUOC UC,Centro de Formación Técnica,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,44,0,0,4733,0,0,0,,0.875,
+2016,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,19,852,1105,4685,29,42,5,126.33,0.866,682.2
+2016,374.0,C.F.T. ICEL,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,54,4120,1881,4683,144,75,1,45.66,0.865,
+2016,116.0,I.P. SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,78,1985,1747,4562,75,78,9,92.51,0.843,
+2016,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,22,1115,1068,4545,38,38,4,95.78,0.84,670.06
+2016,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,31,1980,1636,4021,69,60,6,82.63,0.743,
+2016,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,41,1480,1859,3765,54,74,20,125.61,0.696,
+2016,47.0,U. DEL PACÍFICO,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,42,1060,775,3506,40,37,0,73.11,0.648,559.87
+2016,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,31,858,773,3302,36,36,2,90.09,0.61,605.49
+2016,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,86,1595,1004,2951,63,49,2,62.95,0.545,
+2016,106.0,I.P. PROVIDENCIA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,54,6100,1093,2889,183,44,7,9.15,0.534,
+2016,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,22,1305,938,2586,46,35,1,71.37,0.478,
+2016,25.0,U. IBEROAMERICANA DE CIENCIAS Y TECNOLOGÍA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,35,920,454,2498,34,23,4,49.35,0.462,
+2016,390.0,C.F.T. INSTITUTO TECNOLÓGICO DE CHILE,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,43,1918,841,2296,72,39,0,43.85,0.424,
+2016,29.0,U. UCINF,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,45,460,278,2099,18,19,1,60.43,0.388,
+2016,498.0,C.F.T. PROANDES,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,33,1740,1506,2058,57,58,8,84.84,0.38,
+2016,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,15,796,799,2057,29,28,1,97.35,0.38,591.25
+2016,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,24,1275,824,1922,42,31,2,64.63,0.355,
+2016,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,33,984,911,1892,36,37,1,92.58,0.35,
+2016,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,19,1034,1000,1847,37,38,4,96.71,0.341,
+2016,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,45,430,307,1769,18,19,0,89.72,0.327,582.95
+2016,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,9,385,406,1708,13,14,1,107.66,0.316,660.71
+2016,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,24,980,657,1680,36,27,1,60.23,0.31,
+2016,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,2,400,417,1669,12,12,0,104.25,0.308,
+2016,183.0,I.P. CARLOS CASANUEVA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,17,760,404,1228,26,16,0,53.16,0.227,
+2016,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,13,380,406,1136,14,13,3,106.84,0.21,
+2016,162.0,I.P. CIISA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,16,580,343,1077,23,16,0,59.14,0.199,
+2016,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,6,380,418,1016,11,16,5,110.0,0.188,
+2016,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,14,340,370,947,11,13,2,88.99,0.175,593.32
+2016,,I.P. IPEGE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,26,735,486,918,28,26,1,77.57,0.17,
+2016,68.0,U. MIGUEL DE CERVANTES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,12,290,224,913,12,11,1,77.24,0.169,
+2016,40.0,U. DE ARTE Y CIENCIAS SOCIALES ARCIS,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,33,0,32,878,0,11,0,,0.162,
+2016,1.0,U. GABRIELA MISTRAL,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,21,345,169,847,14,13,1,48.99,0.157,557.05
+2016,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,14,350,229,825,14,14,1,66.97,0.152,
+2016,137.0,I.P. EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,9,350,361,822,14,16,2,103.14,0.152,
+2016,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,14,230,557,819,10,26,10,242.17,0.151,
+2016,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,7,300,303,756,13,11,0,95.79,0.14,
+2016,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,18,685,301,720,26,16,0,54.34,0.133,
+2016,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,8,215,104,645,10,7,0,104.15,0.119,679.51
+2016,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,150,83,510,5,6,1,55.33,0.094,
+2016,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,268,120,496,10,6,0,50.71,0.092,
+2016,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,27,310,104,465,17,6,0,64.0,0.086,
+2016,16.0,U. LA REPÚBLICA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,225,84,451,10,4,0,40.75,0.083,
+2016,651.0,U. CHILENO-BRITÁNICA DE CULTURA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,150,120,416,8,6,0,80.0,0.077,588.73
+2016,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,275,129,406,10,6,0,46.91,0.075,
+2016,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,160,106,268,7,4,1,66.25,0.05,
+2016,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,120,138,265,4,4,0,115.0,0.049,
+2016,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,180,76,189,6,5,0,42.22,0.035,
+2016,709.0,I.P. CHILENO NORTEAMERICANO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,0,0,164,0,0,0,,0.03,
+2016,,C.F.T. LOS LEONES,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,0,0,155,0,0,0,,0.029,
+2016,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,50,52,141,2,2,0,104.0,0.026,530.71
+2016,307.0,C.F.T. ESTUDIO PROFESOR VALERO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,95,69,130,4,4,0,72.63,0.024,
+2016,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,26,26,96,1,1,0,100.0,0.018,
+2016,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,0,0,58,0,0,0,,0.011,
+2016,229.0,C.F.T. CENTRO DE ENS. ALTA COSTURA PAULINA DIARD,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,55,28,54,2,1,0,50.91,0.01,
+2016,782.0,C.F.T. FINNING,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,20,14,44,1,1,0,81.67,0.008,
+2016,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,45,26,42,3,3,0,57.78,0.008,
+2016,743.0,I.P. DE ARTES ESCENICAS KAREN CONNOLLY,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,20,4,16,1,1,0,20.0,0.003,
+2016,131.0,I.P. DE CIENCIAS Y ARTES INCA-CEA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,0,0,14,0,0,0,,0.003,
+2016,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,0,0,11,0,0,0,60.46,0.002,
+2016,119.0,I.P. ALEMÁN WILHELM VON HUMBOLDT,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,0,0,8,0,0,0,,0.001,
+2017,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,479,23122,22622,69444,844,834,0,98.23,12.872,
+2017,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,325,13925,12692,37650,511,497,41,95.62,6.979,
+2017,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,73,5040,6357,30796,166,209,38,126.13,5.708,771.5
+2017,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,97,8200,6492,27783,277,232,10,78.81,5.15,622.13
+2017,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,50,4473,5532,26410,146,183,29,123.1,4.895,784.3
+2017,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,99,4787,5012,21741,174,189,26,104.7,4.03,687.16
+2017,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,185,6178,5144,16523,233,207,13,83.09,3.063,
+2017,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,181,7506,7693,16098,279,290,27,104.71,2.984,
+2017,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,33,3137,3219,15095,103,106,6,102.61,2.798,715.35
+2017,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,62,4079,3353,14874,141,124,4,83.57,2.757,648.89
+2017,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,171,5749,5242,14541,214,208,18,94.1,2.695,
+2017,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,140,3199,2902,12986,128,127,10,96.78,2.407,
+2017,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,80,2328,2399,11584,92,95,6,104.71,2.147,
+2017,155.0,I.P. LOS LEONES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,82,10500,2976,10930,350,111,2,24.55,2.026,
+2017,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,64,2510,2605,10567,91,102,8,105.92,1.959,594.15
+2017,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,44,2890,2904,10496,102,106,7,99.77,1.946,602.01
+2017,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,49,2390,2392,10135,86,91,11,103.98,1.879,639.9
+2017,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,68,4293,3863,9462,156,139,1,94.36,1.754,
+2017,117.0,I.P. IACC,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,31,4749,4626,9344,154,144,14,97.41,1.732,
+2017,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,24,1494,1979,9137,53,68,16,123.39,1.694,687.7
+2017,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,56,4115,1966,8410,135,73,1,52.36,1.559,
+2017,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,46,2125,2164,8401,71,75,7,101.84,1.557,617.41
+2017,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,29,1596,1643,7380,58,61,3,102.94,1.368,744.13
+2017,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,38,1850,1560,7142,70,60,1,91.92,1.324,577.25
+2017,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,27,1690,1647,6607,62,61,3,97.46,1.225,648.91
+2017,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,34,1739,2015,6594,67,74,8,115.87,1.222,655.36
+2017,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,50,1160,1668,6260,45,60,4,143.79,1.16,485.71
+2017,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,29,1665,1456,6101,65,56,0,87.45,1.131,589.67
+2017,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,14,3940,1300,5973,119,40,6,34.4,1.107,739.02
+2017,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,36,1805,1395,5516,68,53,0,77.29,1.022,559.91
+2017,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,19,1120,1161,4999,38,41,6,102.65,0.927,686.48
+2017,126.0,I.P. LA ARAUCANA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,145,2480,804,4826,99,59,4,30.69,0.895,
+2017,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,22,1125,1122,4699,39,41,3,99.73,0.871,663.93
+2017,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,46,1980,2371,4573,76,90,18,119.75,0.848,
+2017,116.0,I.P. SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,60,1765,1504,4358,67,64,4,94.15,0.808,
+2017,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,32,1140,1799,4183,46,67,11,157.81,0.775,
+2017,47.0,U. DEL PACÍFICO,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,39,1003,828,3214,38,37,1,82.55,0.596,
+2017,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,28,870,770,3066,37,37,1,88.51,0.568,600.49
+2017,374.0,C.F.T. ICEL,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,54,4200,908,3049,150,37,0,21.62,0.565,
+2017,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,69,1100,902,3009,44,42,1,82.0,0.558,
+2017,106.0,I.P. PROVIDENCIA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,73,10250,1538,2965,302,62,0,16.18,0.55,
+2017,25.0,U. IBEROAMERICANA DE CIENCIAS Y TECNOLOGÍA,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,28,820,608,2518,30,29,5,74.15,0.467,
+2017,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,23,1145,753,2375,40,33,4,68.68,0.44,
+2017,498.0,C.F.T. PROANDES,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,38,1950,1148,2300,64,43,1,61.81,0.426,
+2017,221.0,C.F.T. DUOC UC,Centro de Formación Técnica,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,42,0,0,2194,0,0,0,,0.407,
+2017,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,25,990,1085,2139,36,42,6,101.75,0.396,
+2017,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,29,990,802,1938,34,32,3,81.01,0.359,
+2017,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,14,947,727,1937,34,25,0,95.89,0.359,587.42
+2017,390.0,C.F.T. INSTITUTO TECNOLÓGICO DE CHILE,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,42,1680,542,1830,61,23,0,32.26,0.339,
+2017,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,25,1350,533,1777,45,19,2,39.48,0.329,
+2017,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,2,400,421,1746,12,13,1,105.25,0.324,
+2017,1.0,U. GABRIELA MISTRAL,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,31,845,1222,1737,33,54,12,144.62,0.322,550.47
+2017,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,9,385,397,1666,13,14,1,109.37,0.309,659.71
+2017,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,41,445,282,1526,20,17,1,80.56,0.283,591.46
+2017,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,14,1020,911,1421,35,34,0,89.31,0.263,
+2017,183.0,I.P. CARLOS CASANUEVA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,19,742,565,1305,28,23,2,76.15,0.242,
+2017,162.0,I.P. CIISA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,18,545,547,1204,21,25,4,100.37,0.223,
+2017,68.0,U. MIGUEL DE CERVANTES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,13,310,311,1065,13,14,2,100.32,0.197,
+2017,,I.P. IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,26,720,541,1062,29,28,3,93.78,0.197,
+2017,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,6,335,350,983,10,13,3,104.48,0.182,
+2017,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,7,345,349,977,11,11,0,101.16,0.181,
+2017,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,13,395,262,826,13,10,0,88.65,0.153,593.51
+2017,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,7,345,300,788,14,12,0,88.24,0.146,
+2017,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,10,510,255,781,19,14,1,58.45,0.145,
+2017,137.0,I.P. EATRI,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,9,350,263,749,14,12,0,75.14,0.139,
+2017,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,8,205,108,701,9,8,0,95.64,0.13,678.01
+2017,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,18,640,309,701,32,19,0,48.25,0.13,
+2017,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,7,425,233,566,15,9,0,54.82,0.105,
+2017,16.0,U. LA REPÚBLICA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,180,88,462,8,6,0,46.79,0.086,
+2017,651.0,U. CHILENO-BRITÁNICA DE CULTURA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,125,124,439,7,6,1,99.2,0.081,612.92
+2017,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,288,111,434,12,6,0,44.44,0.08,
+2017,29.0,U. UCINF,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,32,0,0,427,0,0,0,,0.079,
+2017,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,225,132,417,8,5,0,58.67,0.077,
+2017,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,100,114,262,4,4,1,114.0,0.049,
+2017,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,14,300,138,213,9,5,0,32.24,0.039,
+2017,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,130,90,205,4,3,0,69.23,0.038,
+2017,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,180,68,163,6,4,0,37.78,0.03,
+2017,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,60,44,154,2,2,0,73.33,0.029,499.86
+2017,307.0,C.F.T. ESTUDIO PROFESOR VALERO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,110,58,123,4,3,0,52.73,0.023,
+2017,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,30,26,86,1,1,0,86.67,0.016,
+2017,709.0,I.P. CHILENO NORTEAMERICANO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,0,0,74,0,0,0,,0.014,
+2017,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,8,1600,29,60,48,6,0,1.81,0.011,
+2017,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,80,20,51,4,4,0,25.0,0.009,
+2017,229.0,C.F.T. CENTRO DE ENS. ALTA COSTURA PAULINA DIARD,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,45,33,48,2,1,0,73.33,0.009,
+2017,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,45,21,44,3,3,0,46.67,0.008,
+2017,782.0,C.F.T. FINNING,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,42,0,0,0,,0.008,
+2017,743.0,I.P. DE ARTES ESCENICAS KAREN CONNOLLY,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,20,16,31,1,1,0,80.0,0.006,
+2017,427.0,C.F.T. DE EST. SUP.Y CAPACITACIÓN PROFESIONAL LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,25,13,13,1,1,0,69.68,0.002,
+2017,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,4,0,0,0,78.48,0.001,
+2017,119.0,I.P. ALEMÁN WILHELM VON HUMBOLDT,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,0,0,2,0,0,0,,0.0,
+2018,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,520,24360,23555,74830,873,866,40,97.05,13.743,
+2018,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,370,16121,13307,36374,592,523,24,85.61,6.68,
+2018,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,74,5363,6696,32170,177,218,36,124.86,5.908,774.29
+2018,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,102,9458,6754,27484,309,240,8,70.19,5.048,616.37
+2018,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,52,4837,5799,27104,159,190,33,119.85,4.978,785.23
+2018,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,101,4952,5729,21981,186,208,38,115.69,4.037,692.85
+2018,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,177,8084,7914,16531,289,301,20,100.03,3.036,
+2018,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,179,5026,4407,15667,185,177,11,83.35,2.877,500.82
+2018,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,33,3315,3365,15435,110,112,4,101.51,2.835,709.15
+2018,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,149,5203,5421,15110,192,206,25,103.37,2.775,
+2018,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,68,3473,2646,14323,124,106,9,78.42,2.631,648.64
+2018,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,140,3311,2697,12447,128,127,3,83.57,2.286,
+2018,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,72,2663,2707,11983,99,105,6,100.21,2.201,
+2018,117.0,I.P. IACC,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,33,4765,5754,11694,149,180,35,120.76,2.148,
+2018,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,57,3617,3035,11417,125,117,6,88.28,2.097,630.77
+2018,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,42,2865,3027,11379,101,105,7,102.47,2.09,
+2018,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,66,3310,2878,10783,119,107,6,88.67,1.98,596.72
+2018,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,47,2752,2772,10099,95,96,11,93.37,1.855,
+2018,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,23,1433,1964,9465,50,69,21,119.63,1.738,690.38
+2018,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,73,4070,3659,9139,143,134,4,91.65,1.678,
+2018,155.0,I.P. LOS LEONES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,87,13050,2967,8968,435,110,1,19.2,1.647,
+2018,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,2145,2297,8830,71,82,13,107.09,1.622,623.84
+2018,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,34,1636,1593,7655,61,59,1,97.37,1.406,748.2
+2018,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,28,1824,1827,7258,66,65,4,100.16,1.333,638.13
+2018,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,34,1830,2008,6897,70,74,9,109.73,1.267,658.26
+2018,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,36,1675,1443,6852,61,53,0,87.68,1.258,579.8
+2018,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,13,4295,1063,6728,129,33,0,25.57,1.236,741.24
+2018,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,29,255,1571,6432,18,60,25,616.08,1.181,578.44
+2018,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,37,1605,1559,6089,56,57,4,97.13,1.118,547.1
+2018,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,37,1325,1227,5999,44,41,13,92.6,1.102,
+2018,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,49,2460,2778,5728,93,102,12,112.93,1.052,
+2018,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,23,1235,1357,5380,42,46,7,104.95,0.988,684.66
+2018,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,53,1673,1696,4575,66,74,6,101.37,0.84,
+2018,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,22,1125,1253,4415,40,45,5,111.38,0.811,669.64
+2018,116.0,I.P. SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,58,1505,1585,4194,58,68,5,99.03,0.77,
+2018,106.0,I.P. PROVIDENCIA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,40,0,1462,3199,0,54,0,2618.18,0.588,
+2018,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,25,3750,1348,3054,125,42,24,35.95,0.561,
+2018,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,20,895,931,2778,31,34,6,104.02,0.51,
+2018,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,56,1205,829,2769,48,42,2,68.8,0.509,
+2018,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,28,915,868,2719,35,37,4,94.86,0.499,603.8
+2018,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,25,1245,1167,2593,42,40,2,90.09,0.476,
+2018,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,19,1040,1166,2586,35,42,15,120.73,0.475,
+2018,47.0,U. DEL PACÍFICO,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,36,497,268,2339,22,17,0,53.92,0.43,
+2018,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,14,790,657,1843,27,26,1,103.34,0.338,589.09
+2018,498.0,C.F.T. PROANDES,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,33,1050,514,1834,35,21,3,45.95,0.337,
+2018,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,2,400,397,1813,13,13,0,99.25,0.333,
+2018,1.0,U. GABRIELA MISTRAL,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,28,760,416,1729,31,21,2,54.74,0.318,548.86
+2018,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,8,385,340,1712,13,12,1,107.96,0.314,656.35
+2018,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,28,625,518,1668,29,26,2,82.88,0.306,
+2018,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,31,205,596,1369,9,32,0,290.73,0.251,
+2018,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,33,500,298,1346,22,14,0,70.0,0.247,607.01
+2018,126.0,I.P. LA ARAUCANA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,108,0,0,1243,0,0,0,,0.228,
+2018,,I.P. IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,27,711,644,1211,28,30,4,89.96,0.222,
+2018,374.0,C.F.T. ICEL,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,38,1825,0,1159,68,0,0,0.0,0.213,
+2018,162.0,I.P. CIISA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,22,705,420,1088,28,21,0,59.57,0.2,
+2018,25.0,U. IBEROAMERICANA DE CIENCIAS Y TECNOLOGÍA,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,29,675,0,1085,30,0,0,0.0,0.199,
+2018,68.0,U. MIGUEL DE CERVANTES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,12,310,301,1075,12,13,1,97.1,0.197,
+2018,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,350,335,948,10,13,3,95.71,0.174,
+2018,390.0,C.F.T. INSTITUTO TECNOLÓGICO DE CHILE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,40,635,206,897,29,12,0,32.44,0.165,
+2018,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,12,420,250,843,15,10,0,59.52,0.155,
+2018,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,7,331,278,807,13,13,1,81.71,0.148,
+2018,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,11,330,297,786,10,11,1,89.71,0.144,592.82
+2018,183.0,I.P. CARLOS CASANUEVA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,18,655,0,741,25,0,0,0.0,0.136,
+2018,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,8,195,144,738,8,8,0,98.84,0.136,671.55
+2018,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,22,245,166,717,14,14,0,82.45,0.132,
+2018,137.0,I.P. EATRI,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,9,350,198,615,14,11,0,56.57,0.113,
+2018,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,252,142,453,10,6,0,44.89,0.083,
+2018,16.0,U. LA REPÚBLICA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,7,150,77,428,6,4,0,80.0,0.079,
+2018,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,225,111,383,8,4,0,49.33,0.07,
+2018,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,9,270,221,332,9,10,3,64.17,0.061,
+2018,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,13,360,145,320,12,9,0,61.78,0.059,
+2018,651.0,U. CHILENO-BRITÁNICA DE CULTURA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,0,0,295,0,0,0,,0.054,
+2018,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,120,185,292,4,6,2,154.17,0.054,
+2018,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,8,1600,49,223,48,7,0,3.06,0.041,
+2018,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,120,103,222,4,3,0,85.83,0.041,
+2018,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,120,80,181,4,4,0,66.67,0.033,
+2018,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,55,45,154,2,2,0,81.82,0.028,
+2018,307.0,C.F.T. ESTUDIO PROFESOR VALERO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,105,63,130,4,3,0,60.0,0.024,
+2018,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,40,39,88,2,2,0,97.5,0.016,
+2018,229.0,C.F.T. CENTRO DE ENS. ALTA COSTURA PAULINA DIARD,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,44,44,74,2,2,0,100.0,0.014,
+2018,534.0,C.F.T. ACCIOMA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,45,16,38,3,3,0,35.56,0.007,
+2018,743.0,I.P. DE ARTES ESCENICAS KAREN CONNOLLY,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,20,16,38,1,1,0,80.0,0.007,
+2018,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,0,19,37,0,3,0,,0.007,
+2018,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,42,31,31,4,4,0,73.81,0.006,
+2018,709.0,I.P. CHILENO NORTEAMERICANO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,0,0,25,0,0,0,,0.005,
+2018,782.0,C.F.T. FINNING,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,21,0,0,0,,0.004,
+2018,427.0,C.F.T. DE EST. SUP.Y CAPACITACIÓN PROFESIONAL LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,8,0,0,0,141.43,0.001,
+2018,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,2,0,0,0,82.82,0.0,
+2019,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,534,25130,24419,78683,901,881,17,97.36,14.25,
+2019,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,421,15695,14876,39458,620,568,69,90.23,7.146,
+2019,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,74,5465,6698,33518,180,220,39,122.56,6.07,766.33
+2019,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,96,9812,8057,28154,313,269,26,78.13,5.099,618.6
+2019,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,54,5093,5786,28024,167,190,28,113.28,5.075,779.17
+2019,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,122,4769,6183,22514,185,222,50,129.65,4.077,683.65
+2019,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,182,8259,7795,16588,294,295,26,102.14,3.004,
+2019,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,175,6920,4720,16337,244,195,4,66.21,2.959,493.91
+2019,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,33,3347,3421,15924,110,113,3,102.21,2.884,699.41
+2019,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,63,3263,2918,14265,119,111,7,89.03,2.583,638.9
+2019,117.0,I.P. IACC,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,36,7262,6268,13597,222,196,6,86.31,2.462,
+2019,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,79,3164,3528,12867,118,129,13,107.72,2.33,
+2019,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,67,5100,4129,12717,167,143,5,81.68,2.303,
+2019,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,42,2565,3294,12604,91,116,25,116.06,2.283,601.97
+2019,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,134,5695,2452,11975,216,116,1,48.85,2.169,
+2019,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,55,3069,3017,11805,114,113,14,95.44,2.138,626.41
+2019,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,65,3880,2576,10598,135,99,2,71.77,1.919,593.24
+2019,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,146,2834,1574,10462,113,87,1,63.86,1.895,
+2019,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,24,1736,1948,9972,61,68,13,105.35,1.806,682.48
+2019,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,70,3860,3702,8905,136,135,4,95.72,1.613,
+2019,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,41,2060,1872,8590,68,69,6,90.87,1.556,616.46
+2019,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,33,1635,1612,7936,59,57,1,98.59,1.437,744.02
+2019,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,28,1859,1792,7640,65,64,4,96.4,1.384,634.02
+2019,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,56,3130,3433,7282,117,125,10,109.68,1.319,
+2019,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,34,1848,1987,7117,68,73,11,107.52,1.289,654.84
+2019,155.0,I.P. LOS LEONES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,83,2810,2829,7009,109,111,9,100.68,1.269,
+2019,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,1826,1673,6863,66,62,0,91.62,1.243,583.8
+2019,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,37,1515,1406,6711,56,55,3,94.04,1.215,573.28
+2019,106.0,I.P. PROVIDENCIA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,31,2420,1919,6491,81,71,3,79.3,1.176,
+2019,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,15,4295,1243,6344,129,38,5,32.51,1.149,734.83
+2019,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,35,1880,1205,5980,67,46,4,64.1,1.083,566.99
+2019,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,26,1340,1595,5843,45,54,10,99.93,1.058,694.53
+2019,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,22,1130,1092,4806,40,42,3,96.64,0.87,
+2019,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,38,490,305,4362,20,19,0,62.24,0.79,
+2019,116.0,I.P. SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,57,1615,1735,4349,62,67,5,101.09,0.788,
+2019,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,46,1465,1465,3897,61,61,0,100.0,0.706,
+2019,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,33,1056,1003,3449,41,42,5,94.98,0.625,580.06
+2019,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,23,1274,1252,2946,45,43,2,90.44,0.534,
+2019,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,20,1394,1245,2876,46,41,2,92.18,0.521,
+2019,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,19,0,0,2649,0,0,0,,0.48,
+2019,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,52,1175,899,2602,47,42,1,76.51,0.471,
+2019,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,2,360,393,1793,12,12,1,109.17,0.325,
+2019,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,8,275,297,1635,9,10,1,107.72,0.296,653.21
+2019,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,13,663,492,1572,24,19,1,99.82,0.285,590.84
+2019,498.0,C.F.T. PROANDES,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,30,900,636,1474,30,28,2,70.98,0.267,
+2019,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,15,900,779,1456,31,29,1,86.56,0.264,
+2019,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,27,805,554,1379,30,25,0,68.82,0.25,
+2019,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,32,755,740,1331,32,37,6,98.01,0.241,
+2019,,I.P. IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,31,738,635,1298,34,31,3,82.15,0.235,
+2019,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,25,420,322,1259,16,16,0,72.99,0.228,595.56
+2019,1.0,U. GABRIELA MISTRAL,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,29,360,87,1232,17,8,0,24.17,0.223,541.62
+2019,68.0,U. MIGUEL DE CERVANTES,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,11,390,295,1127,15,13,0,75.64,0.204,
+2019,162.0,I.P. CIISA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,28,765,426,1096,32,25,0,55.69,0.198,
+2019,,C.F.T. ICCE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,17,385,584,1074,13,25,1,138.65,0.195,
+2019,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,345,331,947,10,12,2,95.94,0.172,
+2019,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,7,310,261,810,12,11,0,82.34,0.147,
+2019,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,17,480,297,720,16,15,0,61.88,0.13,
+2019,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,7,185,144,716,8,8,0,95.73,0.13,671.34
+2019,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,11,195,177,716,7,7,2,86.95,0.13,588.95
+2019,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,18,450,228,658,15,17,2,45.26,0.119,
+2019,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,16,1090,386,635,36,21,2,26.81,0.115,
+2019,137.0,I.P. EATRI,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,11,340,235,578,12,11,0,69.12,0.105,
+2019,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,4,162,156,489,7,6,0,89.05,0.089,
+2019,183.0,I.P. CARLOS CASANUEVA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,15,670,0,487,25,0,0,0.0,0.088,
+2019,312.0,C.F.T. CENCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,8,320,420,420,16,15,4,131.25,0.076,
+2019,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,190,152,406,7,6,0,80.0,0.074,
+2019,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,300,227,374,9,8,0,75.67,0.068,
+2019,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,10,600,5,308,20,2,0,18.01,0.056,
+2019,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,120,114,267,4,4,0,95.0,0.048,
+2019,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,7,1400,69,199,42,7,0,4.93,0.036,
+2019,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,150,71,180,5,4,0,47.33,0.033,
+2019,390.0,C.F.T. INSTITUTO TECNOLÓGICO DE CHILE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,10,300,0,166,10,0,0,0.0,0.03,
+2019,126.0,I.P. LA ARAUCANA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,42,0,0,129,0,0,0,,0.023,
+2019,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,50,47,112,2,2,0,94.0,0.02,
+2019,307.0,C.F.T. ESTUDIO PROFESOR VALERO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,105,50,104,4,3,0,47.62,0.019,
+2019,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,35,27,100,1,1,0,77.14,0.018,
+2019,229.0,C.F.T. CENTRO DE ENS. ALTA COSTURA PAULINA DIARD,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,45,37,76,2,2,0,82.22,0.014,
+2019,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,45,25,42,3,3,0,55.56,0.008,
+2019,743.0,I.P. DE ARTES ESCENICAS KAREN CONNOLLY,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,20,7,36,1,1,0,35.0,0.007,
+2019,534.0,C.F.T. ACCIOMA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,45,14,33,3,1,0,31.11,0.006,
+2019,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,60,23,23,3,3,0,38.33,0.004,
+2019,427.0,C.F.T. DE EST. SUP.Y CAPACITACIÓN PROFESIONAL LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,4,0,0,0,148.46,0.001,
+2020,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,543,23595,22526,76755,847,827,26,95.21,14.44,
+2020,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,485,19264,12028,36313,683,516,7,70.43,6.832,
+2020,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,73,5327,6359,33267,174,207,35,119.37,6.259,755.94
+2020,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,57,5053,5894,28729,167,195,28,116.12,5.405,774.31
+2020,20.0,U. ANDRÉS BELLO,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,101,8986,6951,27465,288,245,11,83.61,5.167,620.48
+2020,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,147,5378,5572,21543,197,220,24,103.61,4.053,676.39
+2020,3.0,U. DIEGO PORTALES,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,32,3501,3291,15913,114,110,1,94.0,2.994,685.28
+2020,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,162,4720,4260,15831,187,177,10,88.14,2.978,492.25
+2020,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,70,6040,4263,15736,191,152,6,70.67,2.96,
+2020,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,174,8575,6330,14364,302,250,7,80.52,2.702,
+2020,117.0,I.P. IACC,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,40,6486,6085,14231,201,192,11,93.82,2.677,
+2020,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,75,3384,3067,14157,123,118,14,91.62,2.663,642.12
+2020,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,45,2681,2835,13470,97,100,6,101.66,2.534,594.62
+2020,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,92,3830,3439,13024,140,135,7,92.04,2.45,
+2020,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,60,2930,2856,12158,108,113,16,95.07,2.287,633.41
+2020,45.0,U. DEL DESARROLLO,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,25,1906,2130,10397,64,73,12,106.1,1.956,690.21
+2020,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,73,4152,1753,9275,145,82,0,48.41,1.745,593.27
+2020,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,2110,2035,8969,69,75,12,96.45,1.687,590.57
+2020,123.0,I.P. DE CHILE,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,123,3791,1536,8644,149,88,0,44.69,1.626,
+2020,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,60,3681,3612,8370,131,128,10,98.13,1.575,
+2020,34.0,U. DE LOS ANDES,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,38,1627,1711,8284,58,59,1,105.16,1.558,751.86
+2020,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,28,1801,1817,8017,63,66,6,100.89,1.508,623.41
+2020,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,70,3980,3184,7894,140,121,3,78.7,1.485,
+2020,23.0,U. ADOLFO IBÁÑEZ,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,15,4275,1259,7227,129,38,5,34.57,1.36,739.72
+2020,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,123,305,266,7192,14,19,0,105.61,1.353,
+2020,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,1924,1580,7099,70,62,0,82.12,1.336,577.38
+2020,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,34,1876,1910,7043,70,72,9,101.81,1.325,647.12
+2020,106.0,I.P. PROVIDENCIA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,38,7440,2555,6910,230,90,0,34.34,1.3,
+2020,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,29,1580,1812,6187,56,64,14,112.83,1.164,676.67
+2020,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,39,1727,1092,6060,63,47,1,63.23,1.14,581.97
+2020,13.0,U. SANTO TOMÁS,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,37,1513,1006,5847,57,44,0,80.57,1.1,572.09
+2020,155.0,I.P. LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,70,2320,1318,4471,90,59,0,56.81,0.841,
+2020,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,42,1869,1365,4412,71,60,2,73.03,0.83,
+2020,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,3. Básica (1 a 3 años),Adscrita a Gratuidad,22,1115,899,4312,40,37,1,80.63,0.811,654.1
+2020,116.0,I.P. SANTO TOMÁS,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,58,1863,1453,3913,73,66,1,79.41,0.736,
+2020,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,49,1660,1949,3422,63,72,14,104.92,0.644,
+2020,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,34,986,988,3283,38,40,2,100.2,0.618,586.11
+2020,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,20,1269,1083,3060,42,39,0,85.01,0.576,
+2020,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,16,1395,806,2838,46,27,0,70.59,0.534,
+2020,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,34,465,309,2735,20,16,1,66.45,0.515,
+2020,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,2,380,357,1535,12,12,1,93.95,0.289,
+2020,312.0,C.F.T. CENCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,23,0,581,1518,0,25,0,,0.286,
+2020,72.0,U. DE VALPARAÍSO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,6,285,199,1498,10,8,0,95.54,0.282,650.63
+2020,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,23,1017,729,1435,41,31,0,71.68,0.27,
+2020,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,32,615,382,1220,28,32,0,62.11,0.23,
+2020,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,13,570,304,1141,21,12,0,84.97,0.215,583.46
+2020,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,21,377,334,1136,15,15,2,83.39,0.214,528.48
+2020,68.0,U. MIGUEL DE CERVANTES,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,12,560,279,1083,22,15,0,49.82,0.204,
+2020,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,18,175,7,1000,6,4,0,4.0,0.188,
+2020,162.0,I.P. CIISA,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,31,740,409,981,33,25,1,55.27,0.185,
+2020,,I.P. IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,30,338,374,945,19,20,1,94.04,0.178,
+2020,1.0,U. GABRIELA MISTRAL,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,28,180,73,911,9,9,0,40.56,0.171,506.69
+2020,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,19,280,302,901,13,15,3,88.35,0.17,
+2020,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,6,335,275,819,10,10,0,82.09,0.154,
+2020,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,7,165,129,684,8,7,0,96.48,0.129,669.1
+2020,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,16,590,239,674,20,14,0,40.51,0.127,
+2020,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,24,620,179,620,22,12,0,28.87,0.117,
+2020,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,310,250,573,12,10,0,75.58,0.108,
+2020,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,7,170,120,558,6,6,1,84.1,0.105,595.61
+2020,137.0,I.P. EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,11,340,230,499,12,10,0,67.65,0.094,
+2020,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,4,165,115,455,6,6,0,71.15,0.086,
+2020,16.0,U. LA REPÚBLICA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,150,124,369,6,6,1,67.04,0.069,
+2020,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,240,156,362,8,5,0,65.0,0.068,
+2020,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,11,410,118,362,13,12,0,26.07,0.068,
+2020,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,140,97,315,5,5,0,69.29,0.059,
+2020,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,120,111,208,4,4,0,92.5,0.039,
+2020,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,7,210,47,183,7,4,0,31.81,0.034,
+2020,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,120,44,134,4,4,0,36.67,0.025,
+2020,170.0,I.P. CS. DE LA COMPUTACIÓN ACUARIO DATA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,80,18,127,6,3,0,22.5,0.024,
+2020,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,110,42,108,4,2,0,38.18,0.02,
+2020,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,7,0,54,70,0,7,0,,0.013,
+2020,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,45,33,56,3,3,0,73.33,0.011,
+2020,912.0,C.F.T. ESTATAL METROPOLITANO,Centro de Formación Técnica,4. No Acreditada (0 años),Adscrita a Gratuidad,1,50,55,55,2,2,0,110.0,0.01,
+2020,767.0,I.P. VERTICAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,52,0,0,0,,0.01,
+2020,236.0,C.F.T. CENTRO TECNOLÓGICO SUPERIOR INFOMED,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,20,14,39,1,1,0,70.0,0.007,
+2020,743.0,I.P. DE ARTES ESCENICAS KAREN CONNOLLY,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,12,8,34,1,1,0,66.67,0.006,
+2020,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,31,0,0,0,,0.006,
+2020,534.0,C.F.T. ACCIOMA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,40,21,21,2,1,0,52.5,0.004,
+2020,,C.F.T. ICCE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,60,17,17,3,3,0,40.0,0.003,
+2021,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,520,23869,20852,71964,875,779,22,86.69,12.789,
+2021,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,510,16540,15224,39577,698,613,109,73.68,7.033,
+2021,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,73,5374,6195,35383,177,204,32,115.28,6.288,752.04
+2021,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,57,5206,5918,30394,172,197,27,113.24,5.401,761.36
+2021,20.0,U. ANDRÉS BELLO,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,103,9634,8337,30348,308,277,37,81.98,5.393,609.18
+2021,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,155,5805,5240,23834,208,198,16,90.27,4.235,615.96
+2021,117.0,I.P. IACC,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,40,6330,10091,20690,194,308,114,159.42,3.677,
+2021,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,73,9110,5586,19956,287,192,1,62.76,3.546,
+2021,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,153,6063,4842,17776,227,192,13,77.32,3.159,494.98
+2021,3.0,U. DIEGO PORTALES,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,32,3398,2824,16444,113,96,0,83.11,2.922,671.86
+2021,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,78,3807,2979,15980,137,115,15,82.49,2.84,633.84
+2021,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,45,2970,3183,14975,104,113,12,100.32,2.661,588.82
+2021,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,147,3725,3679,13922,149,163,23,100.62,2.474,
+2021,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,216,6380,5427,13081,228,221,15,84.13,2.325,
+2021,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,61,3105,3579,12873,111,129,23,112.44,2.288,614.34
+2021,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,25,1995,1977,10929,67,70,12,93.95,1.942,681.43
+2021,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,38,2115,1632,9136,69,61,6,77.16,1.624,578.94
+2021,218.0,C.F.T. ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,55,3720,3624,8934,133,130,18,97.42,1.588,
+2021,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,76,2695,1843,8798,98,80,7,72.88,1.563,575.21
+2021,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,60,3423,3771,8784,121,142,19,103.02,1.561,
+2021,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,28,1811,1927,8456,63,69,10,106.41,1.503,610.91
+2021,34.0,U. DE LOS ANDES,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,35,1083,1782,8336,43,65,14,164.54,1.481,737.45
+2021,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,141,3435,2403,8335,169,109,10,63.18,1.481,
+2021,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,29,1840,1976,7556,60,70,13,79.88,1.343,674.76
+2021,106.0,I.P. PROVIDENCIA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,32,2560,2560,7445,96,90,19,100.0,1.323,
+2021,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,16,4275,1230,7237,129,37,4,33.19,1.286,724.47
+2021,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,35,1917,1640,7054,71,64,4,85.55,1.254,636.03
+2021,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,41,1275,1237,6819,51,50,2,97.02,1.212,570.07
+2021,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,39,1535,1081,6790,56,45,2,70.42,1.207,561.45
+2021,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,40,1461,1117,5941,54,48,2,83.77,1.056,562.53
+2021,155.0,I.P. LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,70,0,2979,5577,0,111,0,,0.991,
+2021,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,46,1770,1847,5192,68,70,8,104.35,0.923,
+2021,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,123,0,0,4651,0,0,0,,0.827,
+2021,116.0,I.P. SANTO TOMÁS,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,60,1955,1797,4387,77,73,6,83.28,0.78,
+2021,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,3. Básica (1 a 3 años),Adscrita a Gratuidad,22,1155,727,4358,41,33,1,62.94,0.774,618.69
+2021,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,54,1530,1506,3799,53,54,8,98.43,0.675,
+2021,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,36,1339,1005,3529,49,46,1,75.06,0.627,569.21
+2021,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,22,1090,1066,3433,35,36,2,90.95,0.61,
+2021,103.0,I.P. GUILLERMO SUBERCASEAUX,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,16,1065,806,3054,36,33,2,77.34,0.543,
+2021,312.0,C.F.T. CENCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,20,120,1678,2050,4,58,2,1398.33,0.364,
+2021,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,41,865,446,1923,35,23,5,51.56,0.342,
+2021,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,470,487,1706,15,15,0,103.62,0.303,
+2021,72.0,U. DE VALPARAÍSO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,6,285,154,1343,10,7,0,88.68,0.239,648.75
+2021,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,22,555,473,1332,23,19,2,91.27,0.237,
+2021,,C.F.T. ICCE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,20,1260,889,1276,44,34,2,71.03,0.227,
+2021,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,30,750,622,1275,30,37,7,82.93,0.227,
+2021,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,32,800,475,1188,32,28,2,59.38,0.211,
+2021,162.0,I.P. CIISA,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,31,595,424,1105,24,25,6,71.26,0.196,
+2021,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,12,470,338,1101,19,13,1,87.22,0.196,569.72
+2021,68.0,U. MIGUEL DE CERVANTES,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,13,430,243,1078,17,13,0,56.51,0.192,
+2021,1.0,U. GABRIELA MISTRAL,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,44,649,392,1075,31,27,1,60.4,0.191,593.4
+2021,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,19,270,120,1058,9,8,1,19.05,0.188,
+2021,,I.P. IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,34,941,383,987,39,20,4,58.38,0.175,
+2021,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,6,335,286,832,10,11,1,85.37,0.148,
+2021,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,15,600,352,749,20,18,0,58.67,0.133,
+2021,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,315,195,709,12,10,0,56.75,0.126,
+2021,137.0,I.P. EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,11,310,279,647,11,11,0,90.0,0.115,
+2021,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,7,125,66,636,7,6,0,92.6,0.113,654.19
+2021,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,16,533,530,530,21,24,6,110.95,0.094,
+2021,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,11,240,60,518,7,2,0,25.0,0.092,
+2021,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,18,1200,334,517,42,16,0,27.83,0.092,
+2021,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,4,230,113,480,8,6,0,42.44,0.085,
+2021,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,6,150,74,464,5,5,0,82.95,0.082,593.21
+2021,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,160,144,439,7,7,1,90.0,0.078,
+2021,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,225,202,425,8,9,1,89.78,0.076,
+2021,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,19,500,127,347,17,18,0,40.91,0.062,
+2021,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,120,123,283,4,4,0,102.5,0.05,
+2021,382.0,C.F.T. ALPES,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,180,50,153,6,4,0,27.78,0.027,
+2021,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,90,111,152,3,4,2,64.1,0.027,
+2021,912.0,C.F.T. ESTATAL METROPOLITANO,Centro de Formación Técnica,4. No Acreditada (0 años),Adscrita a Gratuidad,4,140,94,118,4,4,0,67.14,0.021,
+2021,170.0,I.P. CS. DE LA COMPUTACIÓN ACUARIO DATA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,6,140,85,103,7,7,0,60.71,0.018,
+2021,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,105,44,103,3,2,0,41.9,0.018,
+2021,236.0,C.F.T. CENTRO TECNOLÓGICO SUPERIOR INFOMED,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,30,29,64,1,1,0,96.67,0.011,
+2021,427.0,C.F.T. DE EST. SUP.Y CAPACITACIÓN PROFESIONAL LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,60,64,64,2,2,0,66.94,0.011,
+2021,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,45,25,53,3,3,0,55.56,0.009,
+2021,492.0,C.F.T. CEITEC,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,7,0,0,50,0,0,0,,0.009,
+2021,534.0,C.F.T. ACCIOMA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,50,31,45,2,1,0,62.0,0.008,
+2021,591.0,C.F.T. DE LA INDUSTRIA GRÁFICA O C.F.T. INGRAF,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,0,0,10,0,0,0,,0.002,
+2021,79.0,U. DE ATACAMA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,50,0,7,2,0,0,59.02,0.001,595.49
+2022,111.0,I.P. DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,508,25190,21538,69675,937,809,7,85.33,11.92,
+2022,143.0,I.P. AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,542,21621,16809,45099,916,656,76,74.0,7.715,
+2022,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,66,5501,6392,33590,182,210,34,116.2,5.746,752.19
+2022,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,102,10144,9185,31589,327,305,45,86.59,5.404,610.84
+2022,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,64,5287,5806,30855,175,195,26,109.0,5.278,764.43
+2022,152.0,I.P. LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,67,17174,8187,26804,515,265,5,47.78,4.585,
+2022,117.0,I.P. IACC,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,42,12360,10186,25569,370,309,7,82.41,4.374,
+2022,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,159,5800,4898,24327,211,191,10,84.45,4.162,648.29
+2022,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,145,6515,5129,19252,229,198,17,75.49,3.294,553.04
+2022,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,90,3704,4000,16774,127,146,19,108.91,2.87,634.28
+2022,3.0,U. DIEGO PORTALES,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,34,3363,3034,16021,114,103,0,90.22,2.741,671.76
+2022,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,45,2965,2921,15125,104,104,4,97.74,2.587,570.02
+2022,100.0,I.P. INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,178,4008,3863,15113,162,167,14,97.92,2.585,
+2022,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,76,4718,4292,14495,170,159,15,87.31,2.48,612.04
+2022,430.0,C.F.T. INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,236,7725,5590,12281,278,243,14,76.03,2.101,
+2022,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,25,2020,2036,10931,68,70,9,95.69,1.87,685.04
+2022,106.0,I.P. PROVIDENCIA,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,36,13156,3833,9589,395,126,0,29.13,1.64,
+2022,260.0,C.F.T. SANTO TOMÁS,Centro de Formación Técnica,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,57,3682,3609,8943,135,135,3,98.08,1.53,
+2022,123.0,I.P. DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,139,4065,3454,8860,158,135,20,84.3,1.516,
+2022,218.0,C.F.T. ENAC,Centro de Formación Técnica,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,55,3500,3233,8634,126,117,19,92.37,1.477,
+2022,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,80,3080,1748,8563,113,85,3,64.45,1.465,575.47
+2022,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,30,1564,1456,8535,51,58,10,93.09,1.46,585.42
+2022,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,27,1890,1928,8482,65,68,8,102.01,1.451,614.8
+2022,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,33,1080,1646,8313,44,58,14,152.41,1.422,747.28
+2022,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,30,1721,1714,8159,62,60,7,99.98,1.396,662.65
+2022,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,15,4795,1263,7633,141,38,6,29.01,1.306,727.4
+2022,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,38,1935,1716,7095,74,67,4,88.68,1.214,607.25
+2022,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,39,1360,1265,6918,54,51,2,93.01,1.183,576.65
+2022,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,47,2335,1989,6308,87,75,5,85.18,1.079,
+2022,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,39,1480,1033,6159,55,43,3,69.8,1.054,564.87
+2022,155.0,I.P. LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,62,4179,2896,6101,156,105,0,69.3,1.044,
+2022,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,1478,1590,5992,54,60,7,108.75,1.025,565.59
+2022,312.0,C.F.T. CENCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,22,1780,1042,4747,59,37,6,58.54,0.812,
+2022,116.0,I.P. SANTO TOMÁS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,59,2005,1903,4675,82,80,4,96.13,0.8,
+2022,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,3. Básica (1 a 3 años),Adscrita a Gratuidad,22,1155,611,3925,41,28,0,52.9,0.671,632.86
+2022,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,41,1729,1018,3602,64,48,0,58.88,0.616,577.6
+2022,144.0,I.P. DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,12,1062,990,3105,34,34,2,92.95,0.531,
+2022,132.0,I.P. ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,45,1900,1243,2960,61,44,2,65.42,0.506,
+2022,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,110,0,0,2395,0,0,0,,0.41,
+2022,17.0,U. SEK,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,44,1450,993,2251,54,41,2,68.48,0.385,
+2022,104.0,I.P. ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,430,405,1763,14,12,0,94.19,0.302,
+2022,1.0,U. GABRIELA MISTRAL,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,42,1262,686,1674,47,35,4,54.36,0.286,581.07
+2022,426.0,C.F.T. ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,31,775,608,1638,31,36,7,78.45,0.28,
+2022,9.0,U. DEL ALBA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,21,600,586,1570,25,24,4,94.13,0.269,
+2022,171.0,I.P. ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,37,825,479,1474,33,33,1,58.06,0.252,
+2022,,I.P. IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,41,495,735,1466,26,33,11,115.94,0.251,
+2022,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,17,1010,502,1384,34,22,1,69.26,0.237,
+2022,,C.F.T. ICCE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,20,1230,808,1380,45,35,5,64.15,0.236,
+2022,72.0,U. DE VALPARAÍSO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,6,285,160,1152,10,7,0,88.37,0.197,649.02
+2022,162.0,I.P. CIISA,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,28,905,310,1038,37,20,0,34.25,0.178,
+2022,68.0,U. MIGUEL DE CERVANTES,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,13,370,130,977,15,10,0,35.14,0.167,512.29
+2022,193.0,I.P. INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,6,335,335,859,10,12,2,100.0,0.147,
+2022,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,15,400,266,825,15,11,1,83.88,0.141,568.88
+2022,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,12,0,0,766,0,0,0,,0.131,
+2022,435.0,C.F.T. DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,17,561,316,758,24,15,0,56.33,0.13,
+2022,137.0,I.P. EATRI,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,12,385,291,693,13,12,1,75.58,0.119,
+2022,129.0,I.P. ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,310,209,691,12,9,1,60.75,0.118,
+2022,120.0,I.P. DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,23,990,189,619,33,19,0,28.93,0.106,
+2022,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,7,145,100,572,7,7,0,90.54,0.098,656.53
+2022,701.0,C.F.T. MANPOWER,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,18,840,171,571,28,14,0,20.36,0.098,
+2022,108.0,I.P. CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,10,724,249,557,26,12,0,34.39,0.095,
+2022,676.0,I.P. INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,4,180,135,462,7,7,0,63.82,0.079,
+2022,693.0,I.P. PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,140,142,425,6,6,1,101.43,0.073,
+2022,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,5,110,53,371,5,4,0,82.34,0.063,576.31
+2022,730.0,C.F.T. ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,240,182,367,8,7,1,75.83,0.063,
+2022,176.0,I.P. DEL VALLE CENTRAL,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,40,125,314,4,4,2,109.67,0.054,
+2022,382.0,C.F.T. ALPES,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,4,180,69,171,6,5,0,38.33,0.029,
+2022,912.0,C.F.T. ESTATAL METROPOLITANO,Centro de Formación Técnica,4. No Acreditada (0 años),Adscrita a Gratuidad,9,345,61,124,11,9,0,17.68,0.021,
+2022,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,240,0,110,7,0,0,0.0,0.019,
+2022,714.0,I.P. ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,121,34,105,4,1,0,28.1,0.018,
+2022,427.0,C.F.T. DE EST. SUP.Y CAPACITACIÓN PROFESIONAL LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,70,54,87,3,2,0,70.83,0.015,
+2022,241.0,C.F.T. INSTITUTO SUPERIOR ALEMÁN DE COMERCIO INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,78,38,58,4,4,0,48.72,0.01,
+2022,236.0,C.F.T. CENTRO TECNOLÓGICO SUPERIOR INFOMED,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,0,0,45,0,0,0,,0.008,
+2022,170.0,I.P. CS. DE LA COMPUTACIÓN ACUARIO DATA,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,3,80,5,21,4,3,0,6.25,0.004,
+2022,79.0,U. DE ATACAMA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,0,0,7,0,0,0,96.99,0.001,595.49
+2022,534.0,C.F.T. ACCIOMA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,60,7,7,2,1,0,11.67,0.001,
+2023,111.0,IP DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,585,26204,23489,72037,982,915,34,88.77,11.546,
+2023,143.0,IP AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,593,23044,15767,45688,954,678,30,63.9,7.323,
+2023,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,76,5599,6852,37149,185,221,39,122.38,5.954,783.84
+2023,117.0,IP IACC,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,50,15240,13121,35863,453,398,24,86.1,5.748,
+2023,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,106,13803,10433,33534,432,345,13,78.39,5.375,633.17
+2023,152.0,IP LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,81,11979,8839,32575,365,282,20,74.07,5.221,
+2023,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,68,5564,6666,30317,184,223,40,119.58,4.859,803.21
+2023,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,147,5596,5342,23659,200,204,20,95.46,3.792,667.06
+2023,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,163,7770,6027,20484,267,217,15,79.84,3.283,551.9
+2023,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,98,4267,3998,17447,153,150,10,97.46,2.796,655.35
+2023,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,40,3962,3963,16869,131,129,6,100.03,2.704,662.62
+2023,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,88,5990,5826,16740,207,208,30,100.34,2.683,616.6
+2023,100.0,IP INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,206,4316,3966,16347,189,183,6,94.39,2.62,
+2023,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,45,2895,3019,14883,106,109,6,103.74,2.385,614.93
+2023,106.0,IP PROVIDENCIA,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,47,16199,6394,12385,489,201,0,39.47,1.985,
+2023,430.0,CFT INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,243,6090,5758,11926,251,261,24,103.44,1.911,
+2023,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,30,2480,2978,11916,83,98,18,121.68,1.91,703.57
+2023,123.0,IP DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,138,4658,3065,9839,185,130,5,76.06,1.577,
+2023,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,44,1758,2215,8994,64,81,18,126.0,1.442,782.54
+2023,260.0,CFT SANTO TOMÁS,Centro de Formación Técnica,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,55,3598,3615,8983,131,133,6,100.3,1.44,
+2023,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,81,2932,2323,8717,107,94,8,83.81,1.397,575.21
+2023,218.0,CFT ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,61,3585,3713,8717,126,135,24,103.57,1.397,
+2023,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,32,1990,2135,8634,70,77,10,107.29,1.384,619.19
+2023,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,29,1700,1824,8206,60,62,11,110.14,1.315,691.98
+2023,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,36,1590,1684,8041,52,63,13,105.91,1.289,594.49
+2023,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,18,5070,1430,7949,155,44,6,33.83,1.274,749.37
+2023,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,45,1703,1381,7634,61,53,5,81.09,1.224,605.02
+2023,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,39,1977,2027,7282,75,79,10,102.53,1.167,609.63
+2023,155.0,IP LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,59,3729,2969,6985,136,108,3,79.62,1.12,
+2023,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,45,2395,1966,6467,89,77,5,82.09,1.037,
+2023,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,41,1531,1529,6214,57,60,4,104.88,0.996,605.12
+2023,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,43,1525,1411,6092,55,52,2,92.52,0.976,572.68
+2023,116.0,IP SANTO TOMÁS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,62,2246,2189,5220,90,90,6,99.95,0.837,
+2023,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,48,1620,1357,4154,62,58,7,83.77,0.666,575.98
+2023,312.0,CFT CENCO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,35,3585,959,4118,118,36,0,26.75,0.66,
+2023,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,22,1065,821,3730,39,34,1,77.09,0.598,618.91
+2023,144.0,IP DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,11,1123,936,3117,35,33,1,84.67,0.5,
+2023,17.0,U. SEK,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,37,1530,1047,2658,55,40,5,68.43,0.426,
+2023,1.0,U. GABRIELA MISTRAL,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,53,1558,1043,2655,57,52,4,66.94,0.426,583.66
+2023,,IP IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,51,940,856,1906,47,37,6,82.97,0.305,
+2023,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,23,1200,371,1873,42,14,0,60.5,0.3,
+2023,104.0,IP ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,415,422,1782,12,13,1,101.69,0.286,
+2023,9.0,U. DEL ALBA,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,20,660,518,1639,27,20,1,90.29,0.263,
+2023,171.0,IP ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,47,1175,559,1591,47,49,2,47.57,0.255,
+2023,426.0,CFT ESCUELA DE COMERCIO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,31,750,575,1509,30,36,6,76.67,0.242,
+2023,103.0,IP GUILLERMO SUBERCASEAUX,Instituto Profesional,4. No Acreditada (0 años),Adscrita a Gratuidad,15,0,0,1436,0,0,0,,0.23,
+2023,,CFT ICCE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,24,1950,0,1325,65,0,0,0.0,0.212,
+2023,162.0,IP SAN SEBASTIÁN,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,18,750,364,1142,31,16,2,48.53,0.183,
+2023,132.0,IP ESUCOMEX,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,40,0,0,1094,0,0,0,,0.175,
+2023,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,97,51,0,1078,4,0,0,0.0,0.173,
+2023,68.0,U. MIGUEL DE CERVANTES,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,15,415,304,1055,17,17,3,73.25,0.169,570.33
+2023,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,5,285,205,1025,10,9,1,97.97,0.164,644.8
+2023,193.0,IP INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,8,395,337,902,12,12,0,85.32,0.145,
+2023,120.0,IP DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,16,560,271,860,16,18,2,49.58,0.138,
+2023,728.0,ESCUELA MILITAR DEL GENERAL BERNARDO O'HIGGINS,Institución de las Fuerzas Armadas y de Orden,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,1,240,241,779,7,7,0,100.42,0.125,680.0
+2023,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,14,335,247,725,12,11,0,96.03,0.116,572.66
+2023,137.0,IP EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,9,360,309,709,12,12,0,85.83,0.114,
+2023,129.0,IP ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,7,320,221,655,12,10,0,61.46,0.105,
+2023,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,19,0,0,604,0,0,0,,0.097,
+2023,435.0,CFT DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,14,1070,407,594,37,16,0,38.04,0.095,
+2023,701.0,CFT MANPOWER,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,14,530,263,547,21,13,0,49.62,0.088,
+2023,108.0,IP CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,14,515,282,545,20,15,1,54.76,0.087,
+2023,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,7,80,75,493,6,6,0,109.55,0.079,675.17
+2023,676.0,IP INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,4,160,114,450,6,5,0,64.29,0.072,
+2023,16.0,U. LA REPÚBLICA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,17,130,56,425,7,7,0,43.08,0.068,
+2023,693.0,IP PROJAZZ,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,170,134,416,8,7,0,78.82,0.067,
+2023,427.0,CFT LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,185,157,352,8,7,0,74.32,0.056,
+2023,912.0,CFTE METROPOLITANO,Centro de Formación Técnica,4. No Acreditada (0 años),Adscrita a Gratuidad,19,220,253,325,19,22,3,115.0,0.052,
+2023,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,6,135,43,301,5,4,0,85.29,0.048,588.33
+2023,730.0,CFT ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,3,171,255,300,6,8,3,149.12,0.048,
+2023,741.0,ESCUELA DE AVIACIÓN,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,90,90,283,3,3,0,100.0,0.045,
+2023,382.0,CFT ALPES,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,5,210,76,200,7,6,0,36.19,0.032,
+2023,968.0,ACADEMIA DE CIENCIAS POLICIALES DE CARABINEROS DE CHILE,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,3,87,97,195,4,5,0,111.49,0.031,
+2023,673.0,ESCUELA DE INVESTIGACIONES POLICIALES,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,180,180,184,6,6,0,100.0,0.029,603.0
+2023,966.0,ACADEMIA POLITÉCNICA AERONÁUTICA,Institución de las Fuerzas Armadas y de Orden,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,39,39,100,5,5,0,100.0,0.016,
+2023,714.0,IP ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,103,25,94,3,1,0,24.27,0.015,
+2023,241.0,CFT INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,60,32,68,4,4,0,53.33,0.011,
+2023,534.0,CFT ASISTE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,110,51,61,5,4,0,46.36,0.01,
+2023,48.0,U. LOS LEONES,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,0,0,39,0,0,0,,0.006,
+2023,674.0,ACADEMIA NAC. EST. POLÍTICOS Y ESTRATÉGICOS ANEPE,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,25,22,22,1,1,0,88.0,0.004,
+2023,79.0,U. DE ATACAMA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,0,0,7,0,0,0,133.15,0.001,589.58
+2024,111.0,IP DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,570,27039,23790,75557,991,896,16,87.18,11.774,
+2024,143.0,IP AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,587,19158,12173,42612,859,570,9,65.34,6.64,
+2024,152.0,IP LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,90,15147,12182,40489,466,380,34,80.43,6.309,
+2024,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,73,5486,6905,37259,184,224,41,125.87,5.806,802.62
+2024,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,106,12876,11029,35065,410,360,44,84.2,5.464,646.17
+2024,117.0,IP IACC,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,53,16300,10539,32095,482,320,0,64.66,5.001,
+2024,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,63,5785,6999,31501,193,232,41,121.11,4.909,817.5
+2024,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,155,7844,7195,22675,260,248,27,91.98,3.533,562.46
+2024,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,141,4808,4728,22630,177,183,18,98.34,3.526,690.5
+2024,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,78,4298,6190,18646,151,213,61,126.12,2.906,647.19
+2024,100.0,IP INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,216,4353,4044,17925,183,178,9,91.9,2.793,
+2024,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,91,4307,4093,17765,153,146,13,98.8,2.768,668.77
+2024,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,40,4191,4180,17274,137,137,6,99.74,2.692,693.26
+2024,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,47,2870,3101,14656,104,109,9,100.39,2.284,628.42
+2024,106.0,IP PROVIDENCIA,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,81,35097,7661,14122,1042,245,3,21.83,2.201,
+2024,430.0,CFT INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,260,8276,7896,13918,312,322,29,90.18,2.169,
+2024,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,33,3390,2839,12527,111,97,6,79.28,1.952,716.99
+2024,123.0,IP DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,135,5004,3297,11293,195,132,8,76.39,1.76,
+2024,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,80,2975,2925,9357,109,110,11,95.94,1.458,602.8
+2024,260.0,CFT SANTO TOMÁS,Centro de Formación Técnica,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,57,3790,3699,9142,139,132,3,96.62,1.425,
+2024,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,43,1816,2277,9053,69,84,17,125.39,1.411,803.46
+2024,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,29,1885,2090,8809,67,74,9,110.88,1.373,638.97
+2024,218.0,CFT ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,64,3815,3802,8494,137,140,19,99.66,1.324,
+2024,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,32,1240,1442,8209,42,51,10,113.05,1.279,764.58
+2024,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,37,1740,1705,7934,57,63,9,97.99,1.236,612.94
+2024,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,45,2207,2111,7525,85,87,10,95.65,1.173,623.44
+2024,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,21,4860,1431,7506,150,44,3,34.51,1.17,764.0
+2024,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,1746,1413,7092,61,53,5,80.93,1.105,608.22
+2024,116.0,IP SANTO TOMÁS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,65,2962,2771,6676,114,111,5,98.35,1.04,
+2024,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,60,2365,1862,6651,90,73,3,78.73,1.036,
+2024,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,1557,1516,6128,57,58,3,98.94,0.955,621.02
+2024,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,32,1999,1426,5994,68,55,0,71.34,0.934,549.17
+2024,312.0,CFT CENCO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,37,3630,696,4778,121,28,1,19.17,0.745,
+2024,155.0,IP LOS LEONES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,56,3769,714,4456,138,45,0,18.94,0.694,
+2024,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,46,1526,1126,4182,61,48,3,73.79,0.652,582.25
+2024,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,23,1105,842,3759,41,36,3,76.2,0.586,630.31
+2024,1.0,U. GABRIELA MISTRAL,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,49,1852,1143,3630,67,51,8,61.72,0.566,593.33
+2024,171.0,IP ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,51,1275,2608,3293,51,99,51,204.55,0.513,
+2024,144.0,IP DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,18,1138,964,3170,38,34,0,83.17,0.494,
+2024,17.0,U. SEK,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,42,1675,1233,3051,57,48,5,73.61,0.475,
+2024,9.0,U. DEL ALBA,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,19,720,911,2569,29,33,9,107.18,0.4,
+2024,,IP IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,58,1145,909,2065,46,47,10,79.28,0.322,
+2024,104.0,IP ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,420,418,1803,13,13,0,99.52,0.281,
+2024,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,23,357,134,1664,14,4,0,40.61,0.259,
+2024,162.0,IP SAN SEBASTIÁN,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,25,835,698,1455,36,36,4,83.59,0.227,
+2024,,CFT ICCE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,17,640,384,1413,21,15,0,60.0,0.22,
+2024,68.0,U. MIGUEL DE CERVANTES,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,12,405,458,1184,16,18,4,113.09,0.185,
+2024,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,5,240,249,981,8,8,1,105.75,0.153,657.66
+2024,193.0,IP INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,8,430,326,911,15,14,0,75.81,0.142,
+2024,728.0,ESCUELA MILITAR DEL GENERAL BERNARDO O'HIGGINS,Institución de las Fuerzas Armadas y de Orden,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,1,240,240,771,7,7,0,100.0,0.12,710.0
+2024,137.0,IP EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,10,415,285,752,14,13,1,68.67,0.117,
+2024,129.0,IP ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,7,350,500,735,13,18,5,128.86,0.115,
+2024,103.0,IP GUILLERMO SUBERCASEAUX,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,12,0,0,697,0,0,0,,0.109,
+2024,701.0,CFT MANPOWER,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,13,635,416,643,23,18,2,65.51,0.1,
+2024,671.0,ESC. DE ESPECIALIDADES SGTO 1º ADOLFO MENADIER ROJAS,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,19,446,365,626,26,11,4,81.84,0.098,
+2024,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,12,255,189,538,9,8,0,94.0,0.084,587.04
+2024,108.0,IP CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,16,615,170,508,24,14,2,27.64,0.079,
+2024,435.0,CFT DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,12,730,265,499,28,13,0,36.3,0.078,
+2024,426.0,CFT ESCUELA DE COMERCIO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,27,675,0,454,27,0,0,0.0,0.071,
+2024,120.0,IP DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,14,490,197,441,14,13,3,40.43,0.069,
+2024,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,7,80,67,410,6,6,0,106.24,0.064,693.26
+2024,693.0,IP PROJAZZ,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,4,160,160,404,8,5,0,100.0,0.063,
+2024,676.0,IP INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,240,112,396,9,5,0,46.84,0.062,
+2024,427.0,CFT LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,5,180,156,365,8,7,0,76.67,0.057,
+2024,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,47,0,0,325,0,0,0,,0.051,
+2024,741.0,ESCUELA DE AVIACIÓN,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,95,96,303,3,3,0,101.05,0.047,
+2024,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,18,0,0,298,0,0,0,,0.046,
+2024,534.0,CFT ASISTE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,125,111,270,4,4,0,88.8,0.042,
+2024,730.0,CFT ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,3,170,75,260,5,4,0,44.12,0.041,
+2024,912.0,CFTE METROPOLITANO,Centro de Formación Técnica,4. No Acreditada (0 años),Adscrita a Gratuidad,12,275,132,238,14,9,0,48.0,0.037,
+2024,968.0,ACADEMIA DE CIENCIAS POLICIALES DE CARABINEROS DE CHILE,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,3,98,105,208,5,5,0,107.14,0.032,
+2024,382.0,CFT ALPES,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,6,210,58,190,7,5,0,27.62,0.03,
+2024,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,4,0,0,147,0,0,0,88.06,0.023,599.09
+2024,966.0,ACADEMIA POLITÉCNICA AERONÁUTICA,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,5,0,37,96,0,5,0,,0.015,
+2024,241.0,CFT INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,70,43,68,4,4,0,61.43,0.011,
+2024,714.0,IP ESCUELA DE CINE DE CHILE,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,1,60,15,44,2,1,0,25.0,0.007,
+2024,959.0,CFT ACADEMIA CHILENA DE YOGA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,90,40,40,3,2,0,44.44,0.006,
+2024,79.0,U. DE ATACAMA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,1,30,11,29,1,1,0,72.12,0.005,614.54
+2024,674.0,ACADEMIA NAC. EST. POLÍTICOS Y ESTRATÉGICOS ANEPE,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,25,19,19,1,1,0,76.0,0.003,
+2024,236.0,CFT CENTRO TECNOLÓGICO SUPERIOR INFOMED,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,40,5,17,2,1,0,12.5,0.003,
+2025,111.0,IP DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,589,26613,23854,78543,983,886,16,88.8,11.681,
+2025,152.0,IP LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,95,14987,15139,49900,461,462,66,101.01,7.421,
+2025,143.0,IP AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,582,14941,12015,39152,764,568,48,71.33,5.823,
+2025,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,115,14536,12426,37961,456,399,35,84.26,5.645,650.57
+2025,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,80,5658,7209,37616,192,236,46,127.41,5.594,802.96
+2025,117.0,IP IACC,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,53,15100,11032,32951,448,333,22,73.06,4.9,
+2025,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,63,5787,7000,32020,192,227,36,120.44,4.762,825.02
+2025,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,170,8979,7703,26046,303,261,7,85.11,3.873,568.07
+2025,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,145,5433,5583,22774,202,218,32,102.76,3.387,708.77
+2025,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,96,6065,6174,20361,198,206,38,95.76,3.028,637.76
+2025,100.0,IP INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,228,4555,4591,19454,193,202,19,97.8,2.893,
+2025,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,103,5882,4500,18215,201,168,15,81.81,2.709,670.47
+2025,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,41,4410,4422,18155,143,145,6,100.27,2.7,703.83
+2025,430.0,CFT INACAP,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,253,8484,8667,15764,329,350,41,98.08,2.344,
+2025,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,47,2985,3162,15081,110,108,4,98.84,2.243,630.15
+2025,106.0,IP PROVIDENCIA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,46,21070,6501,14341,623,208,5,30.85,2.133,
+2025,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,37,3370,2911,13107,112,103,9,82.1,1.949,719.37
+2025,123.0,IP DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,118,5359,3351,12772,196,129,9,73.93,1.899,
+2025,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,71,2937,3035,10350,104,116,18,103.67,1.539,604.74
+2025,260.0,CFT SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,58,4100,3912,9547,150,142,5,98.35,1.42,
+2025,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,42,1830,2247,9115,68,81,16,122.79,1.356,796.72
+2025,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,33,1840,2136,8979,62,76,16,116.09,1.335,645.68
+2025,218.0,CFT ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,67,4229,4087,8890,150,143,22,96.64,1.322,
+2025,116.0,IP SANTO TOMÁS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,78,4187,3162,8442,160,123,2,91.0,1.255,
+2025,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,39,1760,1888,8373,63,67,12,102.24,1.245,737.31
+2025,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,2152,2071,8161,72,76,10,96.24,1.214,625.02
+2025,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,51,2433,2244,7864,96,94,10,92.23,1.17,617.68
+2025,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,24,5010,1617,7715,155,51,5,37.47,1.147,793.31
+2025,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,1676,1477,7565,62,57,7,88.13,1.125,608.34
+2025,171.0,IP ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,63,1575,3466,7100,63,127,73,220.06,1.056,
+2025,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,60,2410,1250,6616,91,50,2,51.87,0.984,
+2025,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,42,1578,1650,6453,59,62,6,102.56,0.96,609.72
+2025,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,30,2206,1525,5873,75,55,3,69.13,0.873,558.47
+2025,312.0,CFT CENCO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,35,3145,1012,4518,105,42,1,32.18,0.672,
+2025,1.0,U. GABRIELA MISTRAL,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,39,1525,852,4297,55,41,8,55.87,0.639,583.58
+2025,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,48,1268,1111,4136,53,47,7,87.62,0.615,573.24
+2025,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,26,1340,1115,3970,49,45,3,83.21,0.59,618.49
+2025,155.0,IP LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,54,3769,981,3116,138,49,0,26.03,0.463,
+2025,9.0,U. DEL ALBA,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,18,783,748,3084,31,28,6,86.47,0.459,728.61
+2025,17.0,U. SEK,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,44,1715,628,2628,59,28,1,36.62,0.391,
+2025,162.0,IP SAN SEBASTIÁN,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,34,1202,1522,2371,44,61,18,126.62,0.353,
+2025,,IP IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,56,2432,1817,2130,91,85,0,55.96,0.317,
+2025,144.0,IP DE ARTES Y COMUNICACIÓN ARCOS,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,12,0,0,1963,0,0,0,,0.292,
+2025,104.0,IP ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,425,412,1865,13,13,0,96.94,0.277,
+2025,68.0,U. MIGUEL DE CERVANTES,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,18,405,403,1206,16,16,2,99.51,0.179,
+2025,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,19,410,0,1069,17,0,0,36.09,0.159,
+2025,701.0,CFT MANPOWER,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,9,615,249,1007,21,13,0,40.49,0.15,
+2025,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,5,240,253,974,8,9,2,108.73,0.145,659.32
+2025,912.0,CFTE METROPOLITANO,Centro de Formación Técnica,4. No Acreditada (0 años),Adscrita a Gratuidad,30,963,524,885,42,25,2,54.41,0.132,
+2025,129.0,IP ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,10,485,229,841,18,10,0,45.79,0.125,
+2025,193.0,IP INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,7,400,250,837,14,10,0,62.5,0.124,
+2025,671.0,ESC. DE ESPECIALIDADES SGTO 1º ADOLFO MENADIER ROJAS,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,17,812,730,730,33,30,0,89.9,0.109,
+2025,137.0,IP EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,18,400,267,723,14,13,0,66.75,0.108,
+2025,675.0,ESCUELA TÉCNICA AERONAUTICA,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,200,313,525,6,11,2,156.5,0.078,
+2025,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,12,240,237,500,9,9,1,101.74,0.074,598.17
+2025,676.0,IP INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,7,260,91,371,9,4,0,35.79,0.055,
+2025,435.0,CFT DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,10,630,193,370,23,10,0,30.63,0.055,
+2025,693.0,IP PROJAZZ,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,5,175,151,350,8,6,0,86.29,0.052,
+2025,108.0,IP CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,16,285,87,329,14,9,0,30.53,0.049,
+2025,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,7,30,28,304,4,4,0,105.1,0.045,685.25
+2025,120.0,IP DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,16,0,0,288,0,0,0,,0.043,
+2025,741.0,ESCUELA DE AVIACIÓN,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,70,76,274,2,3,1,108.57,0.041,819.0
+2025,427.0,CFT LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,180,131,269,8,6,0,69.59,0.04,
+2025,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,19,0,0,255,0,0,0,,0.038,
+2025,968.0,ACADEMIA DE CIENCIAS POLICIALES DE CARABINEROS DE CHILE,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,4,102,105,230,6,6,0,102.94,0.034,
+2025,730.0,CFT ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,4,185,67,211,6,4,0,36.22,0.031,
+2025,382.0,CFT ALPES,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,7,210,74,191,7,5,0,35.24,0.028,
+2025,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,4,0,0,87,0,0,0,89.59,0.013,602.45
+2025,959.0,CFT ACADEMIA CHILENA DE YOGA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,90,46,83,3,2,0,51.11,0.012,
+2025,241.0,CFT INSALCO,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,50,43,77,4,4,0,86.0,0.011,
+2025,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,20,0,0,57,0,0,0,,0.008,
+2025,79.0,U. DE ATACAMA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,1,35,11,28,1,1,0,67.7,0.004,619.54
+2025,674.0,ACADEMIA NAC. EST. POLÍTICOS Y ESTRATÉGICOS ANEPE,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,25,17,17,1,1,0,68.0,0.003,
+2026,111.0,IP DUOC UC,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,648,26886,27513,88169,973,988,52,101.03,12.44,
+2026,152.0,IP LATINOAMERICANO DE COMERCIO EXTERIOR,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,83,22780,18101,58356,674,546,39,79.46,8.234,
+2026,20.0,U. ANDRÉS BELLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,120,16059,13944,41610,504,449,51,82.86,5.871,657.88
+2026,143.0,IP AIEP,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,593,15970,13274,40722,818,548,75,62.98,5.746,
+2026,100.0,IP INACAP,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,463,13015,12912,36612,539,528,29,95.75,5.166,
+2026,70.0,U. DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,78,5656,7568,35714,195,246,54,133.8,5.039,813.24
+2026,117.0,IP IACC,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,48,14904,12226,35299,445,371,21,82.03,4.98,
+2026,86.0,PONTIFICIA U. CATÓLICA DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,63,5854,6970,33020,194,227,36,117.89,4.659,832.16
+2026,19.0,U. DE LAS AMÉRICAS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,149,8732,7846,27815,292,272,29,89.72,3.924,567.7
+2026,71.0,U. DE SANTIAGO DE CHILE,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,145,5324,5815,23088,196,218,37,109.22,3.258,720.61
+2026,39.0,U. SAN SEBASTIÁN,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,96,7637,5799,20910,247,197,8,74.9,2.95,653.54
+2026,3.0,U. DIEGO PORTALES,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,43,4631,4650,19263,149,151,6,100.41,2.718,717.74
+2026,10.0,U. MAYOR,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,97,4572,4638,18913,163,168,21,103.73,2.668,664.06
+2026,31.0,U. AUTÓNOMA DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,49,3205,3238,15524,113,114,6,92.13,2.19,630.93
+2026,45.0,U. DEL DESARROLLO,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,41,3435,3099,14106,113,108,13,83.54,1.99,726.69
+2026,123.0,IP DE CHILE,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,118,3759,3341,13244,140,132,9,93.0,1.869,
+2026,4.0,U. CENTRAL DE CHILE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,68,3148,3111,11605,113,118,11,100.23,1.637,613.85
+2026,106.0,IP PROVIDENCIA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,52,20001,4482,11069,597,155,2,22.41,1.562,
+2026,116.0,IP SANTO TOMÁS,Instituto Profesional,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,75,4599,3397,10455,167,115,3,78.5,1.475,
+2026,260.0,CFT SANTO TOMÁS,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,59,4608,4421,10343,166,157,14,95.2,1.459,
+2026,34.0,U. DE LOS ANDES,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,43,1846,2318,9363,69,84,18,125.57,1.321,806.04
+2026,2.0,U. FINIS TERRAE,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,38,1942,2196,9307,68,81,13,113.08,1.313,658.42
+2026,218.0,CFT ENAC,Centro de Formación Técnica,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,74,4092,3817,8826,146,141,20,93.28,1.245,
+2026,85.0,U. TECNOLÓGICA METROPOLITANA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,37,2132,2340,8712,76,83,10,109.76,1.229,648.47
+2026,69.0,U. ALBERTO HURTADO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,53,2493,2418,8432,99,95,9,96.99,1.19,639.04
+2026,88.0,U. TÉCNICA FEDERICO SANTA MARÍA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,41,1647,1860,8388,55,69,14,107.69,1.183,807.48
+2026,171.0,IP ESCUELA DE COMERCIO DE SANTIAGO,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,65,3430,3528,8361,126,119,9,102.86,1.18,
+2026,23.0,U. ADOLFO IBÁÑEZ,Universidad,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,24,5025,1651,7946,154,51,5,38.46,1.121,808.88
+2026,50.0,U. BERNARDO O`HIGGINS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,37,1598,1515,7647,58,54,1,94.81,1.079,617.98
+2026,13.0,U. SANTO TOMÁS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,40,2095,1279,7287,74,47,1,85.89,1.028,603.32
+2026,,IP IPEGE,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,46,7530,4232,7129,237,144,19,52.08,1.006,
+2026,42.0,U. CATÓLICA CARDENAL RAÚL SILVA HENRÍQUEZ,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,38,2020,1792,6211,70,68,6,88.71,0.876,566.62
+2026,26.0,"U. DE ARTES, CIENCIAS Y COMUNICACIÓN UNIACC",Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,58,2330,1104,6181,83,46,0,47.38,0.872,
+2026,1.0,U. GABRIELA MISTRAL,Universidad,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,36,1595,1009,4663,57,47,9,63.26,0.658,573.66
+2026,82.0,U. METROPOLITANA DE CIENCIAS DE LA EDUCACIÓN,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,27,1320,1216,4278,47,47,2,92.12,0.604,638.69
+2026,312.0,CFT CENCO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,32,3710,1338,4182,119,54,1,36.06,0.59,
+2026,11.0,U. ACADEMIA DE HUMANISMO CRISTIANO,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,53,1309,1156,4146,55,50,2,88.31,0.585,580.65
+2026,9.0,U. DEL ALBA,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,16,830,615,3466,30,24,4,78.26,0.489,593.12
+2026,155.0,IP LOS LEONES,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,47,2223,1123,2550,82,56,2,50.52,0.36,
+2026,17.0,U. SEK,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,36,1445,727,2476,49,33,1,50.31,0.349,
+2026,104.0,IP ESC. DE CONTADORES AUDITORES DE STGO.,Instituto Profesional,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,2,420,411,1845,13,12,0,97.86,0.26,
+2026,912.0,CFTE METROPOLITANO,Centro de Formación Técnica,4. No Acreditada (0 años),Adscrita a Gratuidad,57,1774,948,1502,60,50,4,53.44,0.212,
+2026,701.0,CFT MANPOWER,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,13,745,382,1204,26,17,0,51.28,0.17,
+2026,68.0,U. MIGUEL DE CERVANTES,Universidad,3. Básica (1 a 3 años),No Adscrita a Gratuidad,18,430,402,1175,17,18,4,93.49,0.166,
+2026,72.0,U. DE VALPARAÍSO,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,6,280,306,1034,10,10,2,108.3,0.146,660.81
+2026,129.0,IP ESCUELA MODERNA DE MÚSICA,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,10,263,220,766,10,9,0,82.17,0.108,
+2026,193.0,IP INSTITUTO NACIONAL DEL FÚTBOL,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,7,288,181,710,13,8,0,62.85,0.1,
+2026,137.0,IP EATRI,Instituto Profesional,3. Básica (1 a 3 años),No Adscrita a Gratuidad,18,380,177,598,14,12,0,46.58,0.084,
+2026,81.0,U. ARTURO PRAT,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,12,271,293,557,11,10,1,103.79,0.079,607.35
+2026,46.0,U. DE ACONCAGUA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,14,0,0,476,0,0,0,,0.067,
+2026,693.0,IP PROJAZZ,Instituto Profesional,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,5,220,163,420,10,7,0,74.09,0.059,
+2026,675.0,ESCUELA TÉCNICA AERONAUTICA,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,300,354,354,10,12,0,118.0,0.05,
+2026,435.0,CFT DEL MEDIO AMBIENTE,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,10,750,245,353,25,12,0,32.67,0.05,
+2026,676.0,IP INTERNACIONAL DE ARTES CULINARIAS Y SERVICIOS,Instituto Profesional,1. Excelencia (6 a 7 años),No Adscrita a Gratuidad,3,240,89,342,8,4,0,40.56,0.048,
+2026,741.0,ESCUELA DE AVIACIÓN,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,70,74,281,2,3,1,105.71,0.04,847.0
+2026,78.0,U. DE TALCA,Universidad,1. Excelencia (6 a 7 años),Adscrita a Gratuidad,7,25,12,261,3,3,0,101.26,0.037,704.92
+2026,968.0,ACADEMIA DE CIENCIAS POLICIALES DE CARABINEROS DE CHILE,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,4,120,120,223,6,6,0,100.0,0.031,
+2026,427.0,CFT LAPLACE,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,4,180,71,218,8,3,0,41.16,0.031,
+2026,120.0,IP DIEGO PORTALES,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,14,0,0,199,0,0,0,,0.028,
+2026,382.0,CFT ALPES,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,7,240,75,197,8,5,0,31.25,0.028,
+2026,730.0,CFT ESCUELA CULINARIA FRANCESA,Centro de Formación Técnica,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,6,185,87,189,7,5,0,47.03,0.027,
+2026,108.0,IP CHILENO BRITÁNICO,Instituto Profesional,4. No Acreditada (0 años),No Adscrita a Gratuidad,12,250,39,120,13,7,0,15.6,0.017,
+2026,7.0,U. BOLIVARIANA,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,14,0,0,99,0,0,0,,0.014,
+2026,241.0,CFT INSALCO,Centro de Formación Técnica,3. Básica (1 a 3 años),No Adscrita a Gratuidad,4,50,41,83,4,4,0,82.0,0.012,
+2026,959.0,CFT ACADEMIA CHILENA DE YOGA,Centro de Formación Técnica,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,90,21,82,3,2,0,23.33,0.012,
+2026,84.0,U. DE LOS LAGOS,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,4,0,0,34,0,0,0,78.76,0.005,619.09
+2026,79.0,U. DE ATACAMA,Universidad,2. Avanzada (4 a 5 años),Adscrita a Gratuidad,1,35,11,28,1,1,0,67.25,0.004,619.54
+2026,54.0,U. TECNOLÓGICA DE CHILE INACAP,Universidad,4. No Acreditada (0 años),No Adscrita a Gratuidad,2,0,0,10,0,0,0,,0.001,
+2026,674.0,ACADEMIA NAC. EST. POLÍTICOS Y ESTRATÉGICOS ANEPE,Institución de las Fuerzas Armadas y de Orden,2. Avanzada (4 a 5 años),No Adscrita a Gratuidad,1,25,10,10,1,1,0,40.0,0.001,

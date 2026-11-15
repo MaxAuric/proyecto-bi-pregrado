@@ -1,12 +1,20 @@
 {
-    "estado_cuadre": "CERTIFICADO_100_PCT_CON_TASAS_Y_KPIS",
-    "filas_nacional": 158211,
-    "filas_region_metropolitana": 58926,
+    "estado_cuadre": "CERTIFICADO_100_PCT_CON_TASAS_KPIS_Y_BUENAS_PRACTICAS_DW",
+    "filas_totales_fuente_nacional": 158211,
+    "filas_datamart_region_metropolitana": 58926,
     "dimensiones_rm": {
         "dim_tiempo_ine_rm": 15,
-        "dim_sede_geografia_rm": 22,
-        "dim_institucion_sies_rm": 1298,
-        "dim_carrera_programa_rm": 5108
+        "dim_sede_geografia": 22,
+        "dim_institucion_sies": 1298,
+        "dim_carrera_programa": 5184,
+        "agg_resumen_anual_institucion_rm": 1298,
+        "puente_institucion_sies": 259
+    },
+    "auditoria_fuentes_externas": {
+        "fuente_1_ine_rm": "100.0% de coincidencia en los 15 años (2012-2026) por llave (ano, region=13)",
+        "fuente_2_sies_acreditacion_rm_filas_cruzadas": 57892,
+        "fuente_2_sies_tasa_coincidencia_filas_rm_pct": 98.25,
+        "tratamiento_no_cruzados_sies": "Instituciones cerradas antes de 2018 o escuelas matrices FF.AA. sin código SIES vigente se conservan mediante LEFT JOIN e imputan años de acreditación según su estado histórico en CNED (0 años si No Acreditada)."
     },
     "totales_control_rm": {
         "matricula_primer_ano_rm": 2488186,
