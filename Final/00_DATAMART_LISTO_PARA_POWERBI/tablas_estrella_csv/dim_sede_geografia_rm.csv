@@ -1,0 +1,23 @@
+﻿id_sede_geografia,nombre_sede,region_codigo_subdere,region_numero_romano,region_nombre_estandar,macro_zona,es_region_metropolitana,estado_territorial,tasa_ocupacion_historica_sede_pct,tasa_sobredemanda_sede_pct,participacion_matricula_rm_sede_pct
+1,SANTIAGO,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),86.61,32.64,75.011
+28,LAS CONDES,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),95.46,22.39,12.072
+36,PROVIDENCIA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),90.39,31.26,6.571
+42,VITACURA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),84.83,28.07,1.293
+43,PUENTE ALTO,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),94.61,39.73,0.654
+45,RENCA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),94.72,38.68,2.389
+47,SEDE VIRTUAL ONLINE,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),31.75,8.89,1.031
+55,PEÑALOLÉN,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),80.45,23.16,0.146
+56,LO BARNECHEA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),50.98,6.15,0.081
+57,ÑUÑOA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),53.33,0.0,0.003
+58,COLINA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),64.05,15.62,0.022
+65,BUIN,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),52.05,9.79,0.08
+87,SAN BERNARDO,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),23.98,0.0,0.001
+88,MELIPILLA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),80.67,20.16,0.26
+94,QUILICURA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),91.91,26.09,0.015
+95,MAIPÚ,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),87.24,15.38,0.026
+99,ONLINE,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),265.27,92.31,0.042
+101,PROVIDENCIA (SEDE ONLINE),13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),64.77,20.0,0.154
+102,VIRTUAL,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),61.03,5.56,0.124
+103,BELLAVISTA,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),83.86,11.11,0.019
+113,EL BOSQUE,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),194.87,0.0,0.002
+114,ESTACIÓN CENTRAL,13,RM,Región Metropolitana de Santiago,Región Metropolitana,1,Región Metropolitana (Foco Estudio),100.0,0.0,0.002

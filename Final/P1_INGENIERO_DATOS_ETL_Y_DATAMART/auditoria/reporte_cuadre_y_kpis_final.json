@@ -1,0 +1,18 @@
+{
+    "estado_cuadre": "CERTIFICADO_100_PCT_CON_TASAS_Y_KPIS",
+    "filas_nacional": 158211,
+    "filas_region_metropolitana": 58926,
+    "dimensiones_rm": {
+        "dim_tiempo_ine_rm": 15,
+        "dim_sede_geografia_rm": 22,
+        "dim_institucion_sies_rm": 1298,
+        "dim_carrera_programa_rm": 5108
+    },
+    "totales_control_rm": {
+        "matricula_primer_ano_rm": 2488186,
+        "matricula_total_rm": 8536191,
+        "vacantes_rm": 2907448,
+        "ofertas_con_sobredemanda_rm": 13995,
+        "secciones_extra_laboratorio_rm": 7529
+    }
+}
