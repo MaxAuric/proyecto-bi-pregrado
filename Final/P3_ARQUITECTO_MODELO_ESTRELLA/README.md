@@ -19,11 +19,10 @@ Final/P3_ARQUITECTO_MODELO_ESTRELLA/
 │   ├── diagrama_modelo_dimensional_estrella_rm.png   # Render de alta definición (300 DPI) para informe y slides
 │   └── diagrama_modelo_dimensional_estrella_rm.mmd   # Código fuente Mermaid para previsualización directa en Markdown
 │
-├── docs/                                             # Informes formales, catálogo técnico y guías de defensa
+├── docs/                                             # Informes formales y catálogo técnico
 │   ├── informe_final_persona3_arquitectura.md        # Sección técnica completa de Persona 3 para el Informe Final (Markdown)
 │   ├── informe_final_persona3_arquitectura.tex       # Código fuente LaTeX con diseño ejecutivo para consolidación de P5
-│   ├── diccionario_tecnico_tasas_kpis_rm.md          # Catálogo maestro de tablas, columnas, fórmulas, aditividad y DAX
-│   └── guion_defensa_oral_y_slides_p3.md             # Guion de exposición (Slides 6-7) y banco de 10 preguntas para la defensa oral (15 pts)
+│   └── diccionario_tecnico_tasas_kpis_rm.md          # Catálogo maestro de tablas, columnas, fórmulas, aditividad y DAX
 │
 ├── scripts/                                          # Scripts reproducibles de automatización y certificación
 │   ├── generate_star_diagram_rm.py                   # Generador programático de diagramas SVG, PNG y Mermaid
