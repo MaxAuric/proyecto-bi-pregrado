@@ -1,0 +1,607 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multirow}
+\tcbuselibrary{skins,breakable}
+
+% Paleta de colores
+\definecolor{primaryblue}{RGB}{16, 44, 87}
+\definecolor{secondaryblue}{RGB}{53, 89, 143}
+\definecolor{accentteal}{RGB}{20, 110, 120}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+\definecolor{warnred}{RGB}{180, 30, 30}
+\definecolor{okgreen}{RGB}{20, 110, 50}
+\definecolor{warnorange}{RGB}{200, 100, 20}
+
+\hypersetup{colorlinks=true, linkcolor=primaryblue, citecolor=accentteal, urlcolor=secondaryblue}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{\small Entrega Final BI $|$ Persona 2: Analista de Negocio RM}}
+\lhead{\textcolor{darkgray}{\small Propuesta de Valor, Canvas BI y Análisis de KPIs — Región Metropolitana}}
+\cfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondaryblue}}{\thesubsection.}{0.4em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{accentteal}}{\thesubsubsection.}{0.3em}{}
+
+\lstset{basicstyle=\ttfamily\footnotesize, backgroundcolor=\color{lightbg}, frame=single,
+  rulecolor=\color{secondaryblue!30}, breaklines=true, showstringspaces=false}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\renewcommand{\arraystretch}{1.30}
+
+\begin{document}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{titlepage}
+    \centering
+    \vspace*{0.8cm}
+    {\Huge\bfseries\color{primaryblue}
+      PROPUESTA DE VALOR, CANVAS BI Y ANÁLISIS DE KPIs\par}
+    \vspace{0.4cm}
+    {\LARGE\color{secondaryblue}
+      Sistema de Inteligencia de Negocios para la Planificación de Capacidad
+      Instalada, Sobredemanda y Selectividad de la Educación Superior\\[4pt]
+      \textbf{Región Metropolitana de Santiago} (2012--2026)\par}
+    \vspace{0.9cm}
+
+    \begin{tcolorbox}[colback=lightbg, colframe=primaryblue, width=\textwidth, arc=3mm]
+        \centering
+        \large\textbf{Entrega Final: Dashboard Power BI + Informe Ejecutivo + Defensa}\\[2mm]
+        \normalsize Asignatura: \textbf{Business Intelligence} $|$
+        Carrera: \textbf{Ingeniería en Negocios}\\[1mm]
+        Fecha: \textbf{18 de Noviembre de 2026}
+    \end{tcolorbox}
+
+    \vspace{1.5cm}
+    \begin{minipage}{0.47\textwidth}
+        \textbf{Autor del Rol Evaluado:}\\
+        \textbf{\color{primaryblue}Persona 2: Analista de Negocio RM}\\[2pt]
+        \small Responsable de la propuesta de valor, el Canvas BI de 10 bloques enfocado
+        100\% en la Región Metropolitana, la traducción de cada KPI a decisiones de
+        negocio concretas y el análisis del caso de saturación de laboratorios
+        (caso 120 $\rightarrow$ 140 alumnos).
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.47\textwidth}
+        \textbf{Equipo:}\\
+        $\bullet$ Persona 1: Ingeniero de Datos (ETL y DataMart)\\
+        $\bullet$ Persona 3: Arquitecto del Modelo Estrella\\
+        $\bullet$ Persona 4: Desarrollador Power BI y DAX\\
+        $\bullet$ Persona 5: Gestor, Informe Final y PPT
+    \end{minipage}
+
+    \vspace{1cm}
+    \begin{tcolorbox}[colback=white, colframe=accentteal, arc=2mm]
+      \centering\small
+      \textbf{Cifras oficiales auditadas:} \textbf{58.926} registros históricos RM (2012--2026) $|$
+      \textbf{69} IES activas en Santiago 2026 (\textbf{35} Universidades, \textbf{19} Institutos
+      Profesionales, \textbf{11} CFT, \textbf{4} FF.AA.) $|$
+      \textbf{164} instituciones históricas totales
+    \end{tcolorbox}
+
+    \vfill
+    {\small\color{darkgray} Santiago de Chile, Noviembre de 2026}\par
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Resumen Ejecutivo del Rol}
+\label{sec:resumen}
+
+Este documento es el entregable de la \textbf{Persona 2 (Analista de Negocio)} para
+la Entrega Final. Resume el problema de negocio en la Región Metropolitana (RM),
+el Canvas BI de 10 bloques actualizado y la forma en que \textbf{cada tasa y KPI
+del DataMart tributa a una decisión real} de las instituciones de educación
+superior (IES) de Santiago.
+
+\begin{tcolorbox}[colback=white, colframe=accentteal, breakable,
+    title=\textbf{Respuesta al Feedback del Profesor (Hito 2)}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{«Mejorar el uso de tasas / Los KPI se calculan de alguna forma»:}
+          se demuestra en este documento cómo cada tasa tiene fórmula algebraica
+          explícita, umbral de decisión y acción concreta asociada.
+    \item \textbf{«Las medidas tributan a sus propuestas de valor»:}
+          las 3 preguntas de negocio (sobredemanda, selectividad, absorción)
+          quedan conectadas one-to-one con los KPIs del DataMart.
+    \item \textbf{«Foco 100\% Región Metropolitana»:}
+          todos los análisis, cifras y visualizaciones en este informe corresponden
+          exclusivamente a los \textbf{58.926 registros de la RM (2012--2026)}.
+\end{itemize}
+\end{tcolorbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Problema de Negocio: El Quiebre de Capacidad Instalada en la RM}
+\label{sec:problema}
+
+\subsection{¿A quién sirve este sistema?}
+
+El sistema de BI está diseñado para dos tipos de usuarios en la RM:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Dirección de Admisión y Planificación IES:} necesita decidir
+          cuántas vacantes abrir por carrera y sede en Santiago para el año siguiente,
+          sin sobrepasar la capacidad instalada de laboratorios y aulas.
+    \item \textbf{Subsecretaría de Educación Superior / CNED:}
+          necesita monitorear que la oferta de vacantes de pregrado en la RM sea
+          suficiente para absorber a la cohorte juvenil (18--24 años, proyección INE)
+          sin saturar el sistema con instituciones de baja acreditación.
+\end{itemize}
+
+\subsection{El caso concreto del quiebre operativo: de 120 a 140 matriculados}
+\label{subsec:caso120}
+
+El profesor ilustró el problema de fondo con un caso real que nuestro DataMart
+modela explícitamente mediante las columnas \texttt{secciones\_lab\_planificadas\_35},
+\texttt{secciones\_lab\_reales\_35}, \texttt{secciones\_extra\_por\_sobrecupo} y
+\texttt{tasa\_saturacion\_lab\_35\_pct} en \texttt{fact\_matricula\_admision}:
+
+\begin{tcolorbox}[colback=lightbg, colframe=primaryblue, breakable,
+    title=\textbf{Caso: Ingeniería Civil Industrial en la RM (módulo laboratorio = 35 puestos)}]
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Situación inicial (120 vacantes):}
+          \[\text{Secciones planificadas} = \left\lceil \frac{120}{35} \right\rceil = 4
+          \quad \Rightarrow \quad \text{Capacidad máxima} = 4 \times 35 = 140\text{ puestos}.\]
+          Con 120 matriculados, la tasa de saturación es
+          $\frac{120}{140} = 85{,}7\%$. Holgura: 20 puestos.
+    \item \textbf{Situación de sobredemanda (140 matriculados):}
+          \[\text{Secciones reales} = \left\lceil \frac{140}{35} \right\rceil = 4
+          \quad \Rightarrow \quad \text{Saturación} = \frac{140}{140} = 100{,}0\%.\]
+          \textbf{Cero holgura.} Un alumno repitente no tiene puesto físico. \texttt{secciones\_extra\_por\_sobrecupo} = 0 (justo al límite).
+    \item \textbf{Un alumno más (141 matriculados):}
+          \[\text{Secciones reales} = \left\lceil \frac{141}{35} \right\rceil = 5
+          \quad \Rightarrow \quad \text{Secciones extra} = 5 - 4 = 1.\]
+          La institución debe abrir un 5to paralelo: $+25\%$ de costo fijo
+          (docente, sala, insumos) para atender a \textbf{1 alumno adicional}.
+    \item \textbf{Impacto en cadena:}
+          si la institución acepta alumnos con menores puntajes para llenar el cupo,
+          la heterogeneidad de la sala aumenta (medida por
+          \texttt{tasa\_heterogeneidad\_paes\_pct}), sube la probabilidad de
+          reprobación en primer año y crece la deserción en segundo año.
+\end{enumerate}
+\end{tcolorbox}
+
+\noindent
+En 2026, la RM registra \textbf{674 secciones de laboratorio extra por sobrecupo}
+(suma de \texttt{secciones\_extra\_por\_sobrecupo} sobre los 58.926 registros),
+evidenciando que el problema no es un caso puntual sino un patrón estructural
+del sistema educativo de Santiago.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Canvas BI de 10 Bloques — Región Metropolitana de Santiago}
+\label{sec:canvas}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{|>{\columncolor{lightbg}}p{3.0cm}|Y|>{\columncolor{lightbg}}p{3.0cm}|Y|}
+\hline
+\textbf{\color{primaryblue}1. Usuarios} &
+  \textbf{Interno:} Dirección de Admisión y Planificación de IES en la RM
+  (35 universidades, 19 IP, 11 CFT, 4 FF.AA.).
+  \textbf{Externo:} Subsecretaría de Educación Superior, CNED, equipos de
+  política regional de Santiago. &
+\textbf{\color{primaryblue}6. Fuentes de datos} &
+  \textbf{Interna:} Base CNED/ÍNDICES 2012--2026 (58.926 registros RM,
+  DataMart de Persona 1).
+  \textbf{Externa 1:} INE Proyecciones Demográficas RM 2002--2035
+  (integrada en \texttt{dim\_tiempo\_ine\_rm}).
+  \textbf{Externa 2:} SIES/CNA Acreditación IES 2018--2026
+  (integrada en \texttt{dim\_institucion\_sies}). \\
+\hline
+\textbf{\color{primaryblue}2. Problema u oportunidad} &
+  Las IES de la RM deciden su oferta de vacantes sin observar simultáneamente:
+  (a) la presión real de demanda vs.\ su capacidad instalada de laboratorios,
+  (b) la evolución de la selectividad (puntaje PAES) ante esa presión y
+  (c) si la cohorte juvenil de Santiago está siendo absorbida por el sistema
+  o hay saturación demográfica. El resultado es sobreocupación silenciosa,
+  apertura no planificada de paralelos y aumento de deserción. &
+\textbf{\color{primaryblue}7. Dimensiones de análisis} &
+  \texttt{dim\_tiempo\_ine\_rm} (Año 2012--2026 + INE)\\
+  \texttt{dim\_institucion\_sies} (Institución + SIES SCD~2)\\
+  \texttt{dim\_sede\_geografia} (Sede/Comuna RM)\\
+  \texttt{dim\_carrera\_programa} (Carrera $\rightarrow$ Área $\rightarrow$ Programa) \\
+\hline
+\textbf{\color{primaryblue}3. Decisiones que apoya} &
+  (a) Ajustar vacantes por carrera y sede RM para no sobrepasar umbral de
+  saturación de laboratorios (módulo 35).
+  (b) Monitorear si la selectividad (puntaje PAES de corte) cae ante picos
+  de demanda y cuándo activar programas de nivelación.
+  (c) Priorizar sedes y áreas con saturación frente a instituciones de baja
+  acreditación SIES. &
+\textbf{\color{primaryblue}8. Medidas (aditividad)} &
+  \textbf{Aditivas:} Matrícula, Vacantes, Secciones de laboratorio.
+  \textbf{No aditivas (algebraicas):} Tasas de ocupación, sobredemanda,
+  saturación, absorción (recalcular con \texttt{DIVIDE()} en DAX, nunca
+  promediar tasas entre filas).
+  \textbf{No aditivas (holísticas):} Puntajes PAES (usar promedio ponderado
+  por matrícula, \textbf{nunca} \texttt{SUM}). \\
+\hline
+\textbf{\color{primaryblue}4. Preguntas de negocio} &
+  \textbf{P1:} ¿Qué carreras y áreas de la RM presentan sobredemanda
+  crítica y cuántas secciones extra de laboratorio generan?
+  \textbf{P2:} ¿Cómo evolucionan los puntajes PAES de corte ante los picos
+  de sobredemanda en la RM?
+  \textbf{P3:} ¿La oferta de vacantes RM absorbe a la cohorte juvenil de
+  18--24 años (INE) o hay saturación demográfica frente a IES de baja
+  acreditación? &
+\textbf{\color{primaryblue}9. Visualización prevista} &
+  \textbf{P1:} Barras apiladas vacantes vs.\ matrícula por área RM; mapa de
+  calor de saturación de laboratorio por carrera.
+  \textbf{P2:} Línea de puntaje PAES promedio ponderado 2012--2026; anotación
+  de quiebre PSU/PAES (2022).
+  \textbf{P3:} Doble eje (vacantes RM + población 18--24 INE); KPI de tasa
+  de absorción y tasa de cobertura bruta RM. \\
+\hline
+\textbf{\color{primaryblue}5. Indicadores (KPI)} &
+  Tasa de Ocupación de Vacantes RM (\%);
+  Secciones Extra por Sobrecupo;
+  Tasa de Saturación Laboratorio Base 35 (\%);
+  Puntaje PAES Ponderado RM;
+  Tasa de Absorción Juvenil INE RM (\%);
+  Tasa de Cobertura Bruta RM (\%);
+  \% IES en Cuadrante Líder (posicionamiento competitivo). &
+\textbf{\color{primaryblue}10. Riesgos y restricciones} &
+  Matrícula por región de sede (no domicilio del alumno).
+  Acreditación SIES: NULL 2012--2017 (sin datos previos).
+  Quiebre PSU~$\to$~PAES (2022): usar \texttt{puntaje\_promedio\_equiv\_paes}
+  para series continuas, nunca el puntaje original crudo.
+  Proxy INE 18--24: estimación del 14\% de población 15--64 RM.
+  Nulos en vacantes ($\approx$25\%): gobernados con
+  \texttt{flag\_vacantes\_declaradas}. \\
+\hline
+\end{tabularx}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Las 3 Preguntas de Negocio con sus KPIs}
+\label{sec:preguntas}
+
+\subsection{P1: Presión de Demanda y Sobreocupación de Vacantes en Carreras Críticas RM}
+
+\textbf{Enunciado:}
+\begin{quote}
+¿Qué áreas de conocimiento y carreras críticas en la Región Metropolitana
+presentan tasas de sobreocupación ($\text{Matrícula 1er Año} > \text{Vacantes}$)
+sistemáticas y reiteradas entre 2012--2026, y cuántos paralelos adicionales de
+laboratorio (módulo 35 puestos) obliga a abrir ese sobrecupo a las instituciones?
+\end{quote}
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.5cm}Y@{}}
+\toprule
+Medida principal &
+  $\text{Tasa\_Ocupación} = \dfrac{\text{matricula\_primer\_ano\_total}}{\text{vacantes}} \times 100$
+  (solo filas con \texttt{flag\_vacantes\_declaradas = 1}) \\[6pt]
+Medida de saturación &
+  $\text{Tasa\_Saturación\_Lab} = \dfrac{\text{matricula\_primer\_ano\_total}}
+    {\text{secciones\_lab\_planificadas\_35} \times 35} \times 100$ \\[6pt]
+Medida de impacto operativo &
+  $\text{Secciones\_Extra} = \max\!\bigl(0,\,\lceil\text{mat}/35\rceil - \lceil\text{vac}/35\rceil\bigr)$ \\[4pt]
+Tipo &
+  \textbf{Aditivas} (vacantes, matrículas, secciones se suman entre filas).
+  Tasas: algebraicas, recalcular con \texttt{DIVIDE()} en DAX. \\
+Columnas DataMart &
+  \texttt{fact}: \texttt{vacantes}, \texttt{matricula\_primer\_ano\_total},
+  \texttt{secciones\_lab\_planificadas\_35}, \texttt{secciones\_lab\_reales\_35},
+  \texttt{secciones\_extra\_por\_sobrecupo}, \texttt{tasa\_saturacion\_lab\_35\_pct},
+  \texttt{flag\_sobredemanda\_critica}.
+  \texttt{dim\_carrera\_programa}: \texttt{tasa\_presion\_lab\_base35\_prog\_pct},
+  \texttt{clasificacion\_presion\_capacidad}. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection{Cifras reales P1 — RM 2026}
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Área RM 2026} & \textbf{Vacantes} & \textbf{Mat.\ 1er Año} &
+\textbf{Ocupación (\%)} & \textbf{Sec.\ Extra} \\
+\midrule
+FF.AA., Orden y Seguridad    &    515 &    558 & \textcolor{warnred}{\textbf{108,3\%}} &   1 \\
+Ciencias                     &  3.361 &  3.207 & \textcolor{warnred}{\textbf{95,4\%}}  &  16 \\
+Salud                        & 28.967 & 27.333 & \textcolor{warnred}{\textbf{94,4\%}}  & 101 \\
+Agricultura/Veterinaria      &  5.092 &  4.613 & \textcolor{warnorange}{\textbf{90,6\%}} &  12 \\
+Derecho                      &  6.468 &  5.768 & \textcolor{warnorange}{\textbf{89,2\%}} &  16 \\
+Tecnología                   & 87.053 & 74.844 & \textcolor{warnorange}{\textbf{86,0\%}} & \textbf{268} \\
+Ciencias Sociales            & 21.007 & 16.298 & 77,6\% &  55 \\
+Administración y Comercio    & 63.129 & 48.832 & 77,4\% & 127 \\
+Arte y Arquitectura          & 12.764 &  9.410 & 73,7\% &  24 \\
+Humanidades                  &  2.179 &  1.576 & 72,3\% &   3 \\
+Educación                    & 22.483 & 15.872 & 70,6\% &  51 \\
+\midrule
+\textbf{Total RM 2026} & \textbf{253.018} & \textbf{208.311} & \textbf{82,3\%} & \textbf{674} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}[leftmargin=*]
+  \item En 2026 se requirieron \textbf{674 secciones extra de laboratorio} en la RM,
+        representando un costo fijo adicional no presupuestado para las IES.
+  \item \textbf{1.232 programas académicos} registraron sobredemanda crítica en 2026
+        (el máximo histórico de la serie 2012--2026).
+  \item Área Tecnología lidera en volumen de secciones extra dado su alto número de
+        programas STEM con laboratorios intensivos.
+\end{itemize}
+
+\subsection{P2: Evolución de Puntajes de Corte y Selectividad Institucional en la RM}
+
+\textbf{Enunciado:}
+\begin{quote}
+¿Cómo reaccionan los puntajes de corte y los promedios de admisión PAES en la
+Región Metropolitana ante los picos de sobredemanda? ¿Las IES más demandadas
+elevan su selectividad para mantener la calidad académica, o relajan el
+puntaje mínimo para capturar más matrícula y arancel?
+\end{quote}
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.5cm}Y@{}}
+\toprule
+Medida principal (DAX) &
+  $\text{Puntaje\_PAES\_Ponderado} =
+    \dfrac{\displaystyle\sum \texttt{puntaje\_promedio\_equiv\_paes} \times \texttt{matricula\_primer\_ano\_total}}
+           {\displaystyle\sum \texttt{matricula\_primer\_ano\_total}}$
+  (filtro: \texttt{flag\_exige\_prueba\_admision = 1}) \\[6pt]
+Medida de dispersión &
+  $\text{Tasa\_Heterogeneidad} =
+    \dfrac{\texttt{brecha\_dispersa\_max\_min\_paes}}{\texttt{puntaje\_promedio\_equiv\_paes}} \times 100$ \\[4pt]
+\textbf{\color{warnred}CRÍTICO: No aditiva} &
+  Los puntajes son \textbf{promedios, no sumas}. En DAX usar siempre
+  \texttt{SUMX()} sobre la tabla filtrada, \textbf{NUNCA} \texttt{SUM(puntaje)}
+  ni \texttt{AVERAGE()} directo (sesga hacia IES pequeñas). \\
+Alerta escala &
+  Columna \texttt{puntaje\_promedio\_equiv\_paes} ya está en escala PAES
+  (100--1.000) para toda la serie 2012--2026. No mezclar con
+  \texttt{puntaje\_promedio\_original} (PSU 150--850 hasta 2021). \\
+Columnas DataMart &
+  \texttt{fact}: \texttt{puntaje\_promedio\_equiv\_paes},
+  \texttt{puntaje\_corte\_ultimo\_equiv\_paes},
+  \texttt{brecha\_dispersa\_max\_min\_paes},
+  \texttt{tasa\_heterogeneidad\_paes\_pct},
+  \texttt{flag\_exige\_prueba\_admision}.
+  \texttt{dim\_tiempo\_ine\_rm}: \texttt{es\_paes} (flag 0/1 del instrumento). \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection{Cifras reales P2 — Evolución puntaje PAES promedio RM}
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Año} & \textbf{Puntaje Prom.\ PAES (eq.)} &
+\textbf{Ocupación RM (\%)} & \textbf{Interpretación} \\
+\midrule
+2012 & (PSU equiv.\ $\approx$570) & 89,0\% & Alta selectividad, alta demanda \\
+2017 & (PSU equiv.\ $\approx$560) & 81,1\% & Relajación ante baja de demanda \\
+2020 & 623,9 & 80,5\% & Pandemia: caída matrícula \\
+2022 & 628,6 & 76,4\% & Quiebre PSU $\to$ PAES \\
+2023 & 635,7 & 79,9\% & Recuperación post-pandemia \\
+2024 & 662,3 & 75,1\% & Puntajes suben pero ocupación baja \\
+2025 & 666,2 & 82,3\% & Reequilibrio \\
+2026 & \textbf{675,8} & \textbf{82,3\%} & Selectividad en máximo histórico RM \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}[leftmargin=*]
+  \item El puntaje PAES promedio ponderado RM \textbf{sube sostenidamente desde 2022},
+        en sentido contrario a lo que podría esperarse: incluso con más matrícula,
+        las IES líderes elevan sus umbrales de ingreso.
+  \item La columna \texttt{brecha\_corte\_vs\_media\_rm\_paes} permite identificar
+        si una institución específica está por encima o por debajo del promedio RM,
+        apoyando decisiones de posicionamiento competitivo.
+\end{itemize}
+
+\subsection{P3: Retención, Absorción Demográfica y Saturación del Sistema RM (INE)}
+
+\textbf{Enunciado:}
+\begin{quote}
+¿La oferta de vacantes de pregrado en la Región Metropolitana es suficiente para
+absorber a la cohorte juvenil (18--24 años, proyecciones INE), o se detecta
+saturación frente a instituciones con baja acreditación SIES? ¿Qué tasa de
+retención aparente muestran los programas con alta sobredemanda?
+\end{quote}
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.5cm}Y@{}}
+\toprule
+Tasa de Absorción Juvenil &
+  $\texttt{tasa\_absorcion\_juvenil\_rm\_pct} =
+    \dfrac{\text{Matrícula 1er Año RM}_t}{\texttt{poblacion\_joven\_18\_24\_rm}_t} \times 100$ \\[6pt]
+Tasa de Cobertura Bruta &
+  $\texttt{tasa\_cobertura\_bruta\_rm\_pct} =
+    \dfrac{\text{Matrícula Total RM}_t}{\texttt{poblacion\_joven\_18\_24\_rm}_t} \times 100$ \\[6pt]
+Tasa de Retención Aparente &
+  $\texttt{tasa\_retencion\_aparente\_pct} =
+    \dfrac{\texttt{matricula\_total} - \texttt{matricula\_primer\_ano\_total}}
+           {\texttt{matricula\_total}} \times 100$ \\[4pt]
+Tipo &
+  Ratios derivados: calcular siempre desde los totales (aditivos), nunca
+  promediar tasas entre filas. \\
+Fuente externa INE &
+  \texttt{dim\_tiempo\_ine\_rm.poblacion\_joven\_18\_24\_rm} (integrada desde
+  INE proyecciones RM; proxy 14\% de \texttt{poblacion\_15\_64\_rm}). \\
+Columnas DataMart &
+  \texttt{dim\_tiempo\_ine\_rm}: \texttt{tasa\_absorcion\_juvenil\_rm\_pct},
+  \texttt{tasa\_cobertura\_bruta\_rm\_pct}, \texttt{tasa\_oferta\_vacantes\_1000\_jovenes\_rm}.
+  \texttt{fact}: \texttt{tasa\_renovacion\_primer\_ano\_pct},
+  \texttt{tasa\_retencion\_aparente\_pct}. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsubsection{Cifras reales P3 — Absorción y Cobertura RM}
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Año} & \textbf{Absorción Juvenil (\%)} &
+\textbf{Cobertura Bruta (\%)} & \textbf{Oferta/1.000 jóvenes} \\
+\midrule
+2012 & 21,6\% & 69,1\% & 242,5 \\
+2018 & 20,7\% & 72,0\% & 241,0 \\
+2020 & 17,8\% & 66,5\% & 220,7 \quad (pandemia) \\
+2022 & 20,2\% & 72,0\% & 264,9 \\
+2024 & 22,9\% & 78,5\% & 304,8 \\
+2025 & 24,0\% & 82,0\% & 291,8 \\
+\textbf{2026} & \textbf{25,4\%} & \textbf{86,3\%} & \textbf{307,9} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{itemize}[leftmargin=*]
+  \item La \textbf{tasa de cobertura bruta RM llegó al 86,3\% en 2026}, superando el
+        umbral del 80\% señalado en bibliografía como indicador de saturación demográfica
+        estructural: crecer en Santiago ya no depende de demanda nueva sino de captura
+        de cuota de mercado entre IES o mejora de retención.
+  \item La \textbf{tasa de absorción juvenil (25,4\%)} refleja que 1 de cada 4 jóvenes
+        de la RM entre 18--24 años ingresa a primer año de educación superior, lo que
+        presiona la capacidad instalada (P1) y tensiona los puntajes de corte (P2).
+  \item El posicionamiento competitivo 2026 muestra que \textbf{30 IES son «Líderes
+        Acreditadas con Alta Demanda ($\geq$85\%)»}, mientras \textbf{18 se encuentran
+        en la categoría «Crítica: Baja Acreditación y Subocupación»}, lo que representa
+        un riesgo sistémico para la absorción de matrícula con calidad en la RM.
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Mapa de KPIs: Cómo Cada Tasa Tributa a una Decisión}
+\label{sec:kpis}
+
+\begin{tcolorbox}[colback=lightbg, colframe=secondaryblue, breakable,
+    title=\textbf{Respuesta directa al feedback: «¿Y las medidas tributan a sus propuestas de valor?»}]
+Cada KPI del DataMart va acompañado de un umbral de decisión y una acción concreta.
+El Dashboard de Power BI usa estos umbrales para colorear las tarjetas y filtros.
+\end{tcolorbox}
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{4.3cm}YY@{}}
+\toprule
+\textbf{KPI / Tasa} & \textbf{Umbral de decisión} & \textbf{Acción concreta en la RM} \\
+\midrule
+\texttt{tasa\_saturacion\_lab\_35\_pct} &
+  $\geq$100\%: zona roja; $\geq$85\%: zona naranja &
+  Abrir sección extra de laboratorio; ajustar vacantes \\
+\texttt{secciones\_extra\_por\_sobrecupo} &
+  $\geq$1: costo operativo adicional &
+  Presupuestar docente y espacio físico para paralelo adicional \\
+\texttt{tasa\_ocupacion\_primer\_ano} &
+  $<$75\%: capacidad ociosa; $\geq$100\%: sobrecupo &
+  Revisar oferta de vacantes hacia arriba o hacia abajo \\
+\texttt{tasa\_absorcion\_juvenil\_rm\_pct} &
+  Tendencia $\nearrow$: mayor presión sobre sistema &
+  Incrementar vacantes o mejorar retención de cohortes superiores \\
+\texttt{tasa\_cobertura\_bruta\_rm\_pct} &
+  $\geq$80\%: mercado saturado demográficamente &
+  Competir por cuota de mercado vs.\ otras IES, no por demanda nueva \\
+\texttt{posicionamiento\_competitivo\_rm} &
+  Cuadrante 4 «Crítica»: riesgo sistémico &
+  Intervención regulatoria CNED / plan de mejora institucional \\
+\texttt{score\_calidad\_sies\_pct} &
+  $<$57\% ($<$4 años): acreditación insuficiente &
+  Restricción de nuevas vacantes hasta elevar estándar SIES \\
+\texttt{puntaje\_PAES\_corte\_ponderado} &
+  Tendencia $\searrow$ con ocupación $\nearrow$: relajación selectividad &
+  Activar programa de nivelación académica 1er año \\
+\texttt{tasa\_heterogeneidad\_paes\_pct} &
+  $\geq$30\%: alta dispersión en sala de clases &
+  Evaluar asignaturas de nivelación diferenciada \\
+\texttt{cuota\_mercado\_matricula\_rm\_pct} &
+  Declive sostenido ($>$3 años): pérdida competitiva &
+  Revisar portafolio de programas y estrategia de admisión RM \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Reglas de Negocio Críticas para el Equipo}
+\label{sec:reglas}
+
+\begin{tcolorbox}[colback=white, colframe=warnred, breakable,
+    title=\textbf{\color{warnred}Reglas de Uso Obligatorio — Informe, Dashboard y Defensa Oral}]
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Puntajes PAES $\neq$ aditivos:} en DAX usar siempre
+          \texttt{DIVIDE(SUMX(filtrado, puntaje * mat), SUMX(filtrado, mat))}.
+          Nunca \texttt{SUM(puntaje\_promedio\_equiv\_paes)}.
+    \item \textbf{Tasas $\neq$ promediables:} la tasa de ocupación del dashboard
+          se recalcula siempre como $\Sigma\text{mat} / \Sigma\text{vac}$ desde los
+          totales, no como \texttt{AVERAGE(tasa\_ocupacion\_primer\_ano)}.
+    \item \textbf{Acreditación 2012--2017:} NULL estructural. No imputar.
+          Filtrar las visualizaciones de selectividad SIES a 2018--2026.
+    \item \textbf{Vacantes nulas:} siempre filtrar con
+          \texttt{flag\_vacantes\_declaradas = 1} antes de calcular ocupación.
+    \item \textbf{Matrícula por sede, no por domicilio:} declarar explícitamente
+          en las diapositivas y en el informe que los indicadores miden oferta
+          de la RM, no residencia del estudiante.
+    \item \textbf{Quiebre PSU/PAES (2022):} toda serie de puntajes en el dashboard
+          debe usar \texttt{puntaje\_promedio\_equiv\_paes} y anotar verticalmente
+          el quiebre con la columna \texttt{dim\_tiempo\_ine\_rm.es\_paes}.
+\end{enumerate}
+\end{tcolorbox}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Coordinación con el Equipo (Entrega Final)}
+\label{sec:coordinacion}
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{3.0cm}Y@{}}
+\toprule
+Persona 1 (Ing.\ Datos) &
+  El DataMart en \texttt{Final/00\_DATAMART\_LISTO\_PARA\_POWERBI/} ya contiene
+  todas las tablas y tasas necesarias para este análisis. Los nombres de columnas
+  de este informe coinciden exactamente con los del \texttt{.xlsx} y el \texttt{.db}. \\
+Persona 3 (Arq.) &
+  El Esquema Estrella debe reflejar las claves foráneas documentadas en la
+  Sección~\ref{sec:canvas} (bloque 7). La aditividad de cada medida está
+  declarada en la Sección~\ref{sec:kpis}. \\
+Persona 4 (Dev.\ BI) &
+  Las medidas DAX para P1, P2 y P3 están en
+  \texttt{lo nuevo/02\_CATALOGO\_NUEVAS\_TASAS\_KPIS\_Y\_DAX\_RM.md}.
+  Los umbrales de colores para las tarjetas KPI están en
+  Sección~\ref{sec:kpis} de este informe. \\
+Persona 5 (Doc.) &
+  La \textbf{Sección 1 del Informe Ejecutivo Final} corresponde a este documento.
+  Usar las cifras de la tabla de Sección~\ref{sec:preguntas} y el
+  mapa de KPIs de Sección~\ref{sec:kpis} para las conclusiones. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\appendix
+\section{Reproducibilidad y Archivos Entregados}
+
+\begin{center}\small
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+\textbf{Archivo} & \textbf{Contenido} \\
+\midrule
+\texttt{docs/informe\_final\_persona2\_negocio\_rm.tex} & Este documento (fuente \LaTeX) \\
+\texttt{docs/canvas\_bi\_rm\_10\_bloques.md} & Canvas BI de 10 bloques en Markdown \\
+\texttt{docs/analisis\_kpis\_negocio\_rm.md} & Mapa de KPIs con umbrales y decisiones \\
+\texttt{scripts/analisis\_negocio\_rm.py} & Script Python que extrae cifras reales del DataMart para este informe \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\end{document}

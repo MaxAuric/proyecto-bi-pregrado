@@ -1,0 +1,32 @@
+**feedback dado por el profe en el Hito 2, la carpeta `Final/` en el repositorio con la parte de Ingeniería de Datos y DataMart (Persona 1) 100% actualizada para la Entrega Final del miércoles 18.**
+
+Aquí va el resumen claro de lo que corrigió el profe, lo que ya dejé subido en `Final/` y lo que le toca a cada uno para cerrar el **Dashboard Power BI**, el **Informe Ejecutivo Final** y la **PPT de 15 minutos**:
+
+### 1. Enfoque 100% en la Región Metropolitana de Santiago (RM)
+- Para que no haya ninguna contradicción entre el discurso y los números, el DataMart final está **100% filtrado y enfocado en la Región Metropolitana de Santiago (`region_codigo_subdere == '13'`)**.
+- **Números oficiales de Santiago para usar en el Informe, el Dashboard y la PPT:**
+  - **58.926** registros históricos de oferta académica en la RM (2012–2026).
+  - **69 instituciones activas en Santiago en 2026** (**35 Universidades**, **19 Institutos Profesionales**, **11 Centros de Formación Técnica** y **4 de las FF.AA.**; y 164 instituciones históricas en los 15 años).
+
+### 2. Qué significa el feedback del profe y qué ya dejé listo en `Final/00_DATAMART_LISTO_PARA_POWERBI/`
+1. **"Transformación no terminada / No podría hacerlo del CSV directo porque había datos desordenados y con script se ordenaron":**
+   - El profe se refería a que en las tablas `dim` todavía aparecían abreviaturas (`Univ.`, `I.P.`, `C.F.T.`), lo cual en la *Clase 4 de DW (pág. 62)* dice que no debe ocurrir, y faltaba meter el INE y SIES directo en las dimensiones.
+   - **Ya lo corregí en Python:** todas las dimensiones tienen nombres completos (`Universidad`, `Instituto Profesional`, `Centro de Formación Técnica`) y las 2 fuentes externas (**INE RM** y **SIES Acreditación**) ya están integradas dentro de `dim_tiempo_ine_rm` y `dim_institucion_sies`.
+2. **"Importación de una tabla en Excel a Power BI es menos tiempo / Y de Python se exporta":**
+   - En vez de correr scripts de Python dentro de Power BI (que era lento), mi script de Python ahora procesa todo y **exporta directo el archivo `Final/00_DATAMART_LISTO_PARA_POWERBI/DataMart_Estrella_RM_PowerBI.xlsx`** (además del `.db` SQLite).
+   - **Para Persona 4:** solo tienes que abrir Power BI $\rightarrow$ *Obtener datos de Excel* $\rightarrow$ seleccionar `DataMart_Estrella_RM_PowerBI.xlsx` y cargar las hojas del modelo estrella (`dim_tiempo_ine_rm`, `dim_sede_geografia`, `dim_institucion_sies`, `dim_carrera_programa`, `fact_matricula_admision`, más la tabla agregada `agg_resumen_institucion_rm`). Carga en 2 segundos y tiene exactamente los mismos nombres de columnas que la base SQLite `.db`.
+3. **"Mejorar y ver el uso de tasas / Los KPI se calculan de alguna forma / Y las medidas tributan a sus propuestas de valor / Faltan más tasas y KPI en las tablas `dim`":**
+   - El profe quiere ver **tasas (%) y umbrales de decisión**, no solo conteos brutos, y además verificamos que se cumplan todas las reglas de `Clase 4 - DW.pdf` (pág. 62–63): cero columnas de texto `VARCHAR` en la tabla de hechos, cero abreviaturas (`Univ.`, `I.P.`, `C.F.T.`, `F.F.A.A.`, `M/`) y cero prefijos `(a)`, `(b)`, `(c)` en las dimensiones.
+   - **Ya agregué nuevas tasas y KPIs tanto en las tablas `dim_*` como en `fact_matricula_admision`:**
+     - **En `dim_tiempo_ine_rm`:** Tasa de absorción de 1er año sobre jóvenes de 18–24 años en Santiago (`tasa_absorcion_juvenil_rm_pct`), Tasa de cobertura bruta RM (`tasa_cobertura_bruta_rm_pct`), Tasa de oferta de vacantes por 1.000 jóvenes (`tasa_oferta_vacantes_1000_jovenes_rm`), Tasa de ocupación anual de vacantes RM (`tasa_ocupacion_anual_rm_pct`) y Variación interanual (%).
+     - **En `dim_institucion_sies`:** Años y tramo de acreditación SIES, Score de calidad SIES (`score_calidad_sies_pct`), Cuota de mercado en Santiago (`cuota_mercado_matricula_rm_pct`), Tasa de ocupación institucional (`tasa_ocupacion_inst_anual_pct`), Tasa de permanencia de cohortes superiores (`tasa_permanencia_cohortes_sup_pct`) y **Posicionamiento Competitivo RM** (`posicionamiento_competitivo_rm`, 4 cuadrantes de decisión).
+     - **En `dim_sede_geografia` y `dim_carrera_programa`:** Participación por sede en Santiago (`participacion_matricula_rm_sede_pct`), Tasa de ocupación de sede (`tasa_ocupacion_historica_sede_pct`), Nivel de saturación de sede (`nivel_saturacion_sede`) y **Tasa de presión de laboratorios base 35 alumnos (`tasa_presion_lab_base35_prog_pct`)**.
+     - **En `fact_matricula_admision`:** Tasa de ocupación de vacantes (`tasa_ocupacion_primer_ano`), Tasa de sobredemanda (`tasa_sobredemanda_oferta_pct`), Tasa de renovación y retención aparente (`tasa_renovacion_primer_ano_pct`, `tasa_retencion_aparente_pct`), **Tasa de saturación de laboratorios módulo 35 alumnos (`tasa_saturacion_lab_35_pct`)** y **Secciones extra por sobrecupo (`secciones_extra_por_sobrecupo`)** (que responde directo al ejemplo del profe de pasar de **120 a 140 alumnos**).
+
+### 3. Qué debe hacer cada rol ahora en su carpeta de `Final/` (según el PDF de División de Trabajo actualizado)
+- **Persona 2 (`Final/P2_ANALISTA_NEGOCIO_RM/`):** Actualizar el análisis de la Propuesta de Valor y Canvas BI enfocándose 100% en Santiago, explicando cómo cada tasa nueva permite tomar decisiones (ej. caso de laboratorios de 35 puestos cuando una carrera pasa de 120 a 140 matriculados, absorción juvenil INE RM y acreditación SIES).
+- **Persona 3 (`Final/P3_ARQUITECTO_MODELO_ESTRELLA/`):** Actualizar el diagrama del Esquema Estrella RM y el diccionario de datos con las nuevas tasas en `dim_*` y `fact_matricula_rm`, explicando por qué las tasas se recalculan con `DIVIDE()` al agregar.
+- **Persona 4 (`Final/P4_DESARROLLADOR_POWERBI_Y_DAX/`):** Conectar el `.pbix` al nuevo `DataMart_Estrella_RM_PowerBI.xlsx`, copiar las medidas DAX que dejé listas en el catálogo (todas con `DIVIDE()`) y armar las 3 vistas del Dashboard de Santiago (sin abreviaturas en los filtros).
+- **Persona 5 (`Final/P5_INFORME_FINAL_Y_PPT_15MIN/`):** Consolidar el **Informe Ejecutivo Final (PDF)** y armar la **Presentación PPT (12–15 slides para los 15 minutos, 3 min por persona)** destacando que todo el proyecto está centrado en la Región Metropolitana de Santiago.
+
+Les adjunto el **PDF actualizado de la división de trabajo** y el **catálogo con las fórmulas de todas las nuevas tasas y medidas DAX** para que todos usemos exactamente los mismos nombres y números. ¡Hagan `git pull` para bajar la carpeta `Final/`!

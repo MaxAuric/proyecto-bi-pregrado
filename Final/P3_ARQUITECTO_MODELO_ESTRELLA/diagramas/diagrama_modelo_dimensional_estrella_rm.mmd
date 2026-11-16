@@ -1,0 +1,133 @@
+erDiagram
+    %% =========================================================================
+    %% ESQUEMA ESTRELLA FORMAL ENRIQUECIDO — REGIÓN METROPOLITANA (2012-2026)
+    %% Autor: Persona 3 (Angel Pino) — Cumplimiento Clase 4 DW y Feedback Hito 2
+    %% =========================================================================
+
+    DIM_TIEMPO_INE_RM ||--o{ FACT_MATRICULA_ADMISION : "1 a N (id_tiempo)"
+    DIM_SEDE_GEOGRAFIA ||--o{ FACT_MATRICULA_ADMISION : "1 a N (id_sede_geografia)"
+    DIM_INSTITUCION_SIES ||--o{ FACT_MATRICULA_ADMISION : "1 a N (id_institucion_sk SCD2)"
+    DIM_CARRERA_PROGRAMA ||--o{ FACT_MATRICULA_ADMISION : "1 a N (id_carrera_programa_sk)"
+    DIM_INSTITUCION_SIES ||--o{ AGG_RESUMEN_ANUAL_INSTITUCION_RM : "1 a N (Optimizacion OLAP)"
+    PUENTE_INSTITUCION_SIES ||--o{ DIM_INSTITUCION_SIES : "Gobernanza CNED-SIES"
+
+    DIM_TIEMPO_INE_RM {
+        int id_tiempo PK "Año cronológico (2012-2026)"
+        int ano "Año calendario"
+        string periodo_admision "PSU (2012-20) | PDT (2021-22) | PAES (2023-26)"
+        string rango_quinquenio "2012-2016 | 2017-2021 | 2022-2026"
+        string estado_sanitario "Pre-Pandemia | COVID-19 | Post-Pandemia"
+        int es_paes "1 si >= 2023 (Escala 100-1000)"
+        int poblacion_total_rm "Población total RM (INE)"
+        int poblacion_15_64_rm "Población 15 a 64 años RM (INE)"
+        int poblacion_joven_18_24_rm "Población 18 a 24 años RM (INE)"
+        float tasa_absorcion_juvenil_rm_pct "Matrícula 1er Año / Pob 18-24 RM %"
+        float tasa_cobertura_bruta_rm_pct "Matrícula Total / Pob 18-24 RM %"
+        float tasa_oferta_vacantes_1000_jovenes_rm "Vacantes por cada 1.000 jóvenes"
+        float tasa_ocupacion_anual_rm_pct "Ocupación de vacantes anual RM %"
+        float tasa_crecimiento_matricula_rm_yoy_pct "Crecimiento anual matrícula %"
+    }
+
+    DIM_SEDE_GEOGRAFIA {
+        int id_sede_geografia PK "Surrogate Key sede"
+        string nombre_sede "Comuna o sede en Santiago"
+        string region_codigo_subdere "Código SUBDERE ('13' = RM)"
+        string region_nombre_estandar "Región Metropolitana de Santiago"
+        string macro_zona "Región Metropolitana de Santiago"
+        int es_region_metropolitana "1 = 100% Santiago"
+        float tasa_ocupacion_historica_sede_pct "Ocupación histórica sede %"
+        float tasa_sobredemanda_sede_pct "Ofertas con sobrecupo en sede %"
+        float participacion_matricula_rm_sede_pct "Cuota de matrícula de la sede %"
+        string nivel_saturacion_sede "1. Saturada | 2. Equilibrio | 3. Ociosa"
+    }
+
+    DIM_INSTITUCION_SIES {
+        int id_institucion_sk PK "Surrogate Key SCD Tipo 2 (1.298 fotos)"
+        int codigo_ies_sies "Código oficial SIES / MINEDUC"
+        string nombre_institucion "Nombre canónico de la institución"
+        string tipo_institucion "Universidad | IP | CFT | FF.AA."
+        string subtipo_institucion "Sin prefijos regulatorios ni abreviaturas"
+        string acreditacion_cned "Institución Acreditada / No Acreditada"
+        float anos_acreditacion_sies "Años acreditados CNA/SIES (0 a 7)"
+        float score_calidad_sies_pct "Score oficial de calidad (0% a 100%)"
+        string tramo_acreditacion_sies "Excelencia | Avanzada | Básica | No Acred"
+        string autonomia "Autónoma / En supervisión"
+        string gratuidad "Adscrita / No Adscrita / No Aplica"
+        int ano_vigencia "Año fotografía histórica (SCD Tipo 2)"
+        float tasa_ocupacion_inst_anual_pct "Ocupación anual institucional %"
+        float tasa_programas_sobredemanda_inst_pct "Carreras con sobrecupo %"
+        float cuota_mercado_matricula_rm_pct "Market Share matrícula RM %"
+        float tasa_permanencia_cohortes_sup_pct "Retención de cursos superiores %"
+        string posicionamiento_competitivo_rm "Cuadrante Calidad vs Demanda"
+    }
+
+    DIM_CARRERA_PROGRAMA {
+        int id_carrera_programa_sk PK "Surrogate Key del programa (5.184 filas)"
+        string nombre_programa "Plan de estudios curricular"
+        string carrera_generica "Agrupador genérico oficial CNED"
+        string area_conocimiento "11 áreas CNED (sin abreviaturas)"
+        string es_area_stem "STEM vs Otras Áreas"
+        string tipo_carrera "Profesional c/ Lic | Técnica Superior"
+        string tipo_programa "Plan Regular | Trabajadores"
+        string horario "Diurno | Vespertino | A Distancia"
+        string titulo "Título profesional / técnico"
+        string grado_academico "Sin abreviatura M/ (con Mención en)"
+        int duracion_semestres "Duración teórica formal"
+        float tasa_ocupacion_historica_prog_pct "Ocupación acumulada programa %"
+        float tasa_frecuencia_sobredemanda_prog_pct "Años con sobrecupo %"
+        float tasa_presion_lab_base35_prog_pct "Presión módulos lab base 35 %"
+        string clasificacion_presion_capacidad "Sobredemanda | Óptima | Subutilizada"
+    }
+
+    FACT_MATRICULA_ADMISION {
+        int id_fact PK "Clave primaria atómica subrogada"
+        int id_tiempo FK "Año de corte (FK dim_tiempo_ine_rm)"
+        int id_sede_geografia FK "Sede física (FK dim_sede_geografia)"
+        int id_institucion_sk FK "Estado IES (FK dim_institucion_sies SCD2)"
+        int id_carrera_programa_sk FK "Programa (FK dim_carrera_programa)"
+        int es_region_metropolitana "Flag 1 = Región Metropolitana"
+        int flag_exige_prueba_admision "Flag 1 = Prueba válida reportada"
+        int flag_vacantes_declaradas "Flag 1 = Vacantes > 0"
+        int flag_sobredemanda_critica "Flag 1 = Matrícula > Vacantes"
+        int codigo_estado_ocupacion "1=Sobrecupo, 2=Óptima, 3=Subcupo, 4=Sin vac."
+        int vacantes "Capacidad declarada (Aditiva)"
+        int matricula_primer_ano_total "Matrícula nueva (Aditiva)"
+        int matricula_total "Matrícula total vigente (Aditiva)"
+        int mat_primer_ano_hombres "Matrícula 1er año hombres (Aditiva)"
+        int mat_primer_ano_mujeres "Matrícula 1er año mujeres (Aditiva)"
+        int sobrecupo_neto_alumnos "Alumnos en sobrecupo (Aditiva)"
+        int vacantes_ociosas_netas "Cupos ociosos no llenados (Aditiva)"
+        int secciones_lab_planificadas_35 "Secciones lab de 35 presupuestadas"
+        int secciones_lab_reales_35 "Secciones lab de 35 requeridas"
+        int secciones_extra_por_sobrecupo "Paralelos extra forzados por sobrecupo"
+        float tasa_saturacion_lab_35_pct "Matrícula / (Secciones * 35) %"
+        float puntaje_promedio_equiv_paes "Puntaje promedio PAES (No Aditiva)"
+        float puntaje_corte_ultimo_equiv_paes "Puntaje corte PAES (No Aditiva)"
+        float tasa_ocupacion_primer_ano "Matrícula / Vacantes % (No Aditiva)"
+        float tasa_sobredemanda_oferta_pct "Sobrecupo porcentual % (No Aditiva)"
+        float tasa_renovacion_primer_ano_pct "Matrícula 1er Año / Total % (No Aditiva)"
+        float tasa_retencion_aparente_pct "Permanencia superior % (No Aditiva)"
+        float brecha_dispersa_max_min_paes "Máx PAES - Mín PAES (Heterogeneidad)"
+        float tasa_heterogeneidad_paes_pct "Brecha / Promedio PAES %"
+    }
+
+    AGG_RESUMEN_ANUAL_INSTITUCION_RM {
+        int ano PK "Año de agregación"
+        string nombre_institucion PK "Institución resumida"
+        string tipo_institucion "Tipo IES"
+        string tramo_acreditacion_sies "Tramo SIES"
+        int vacantes_totales_rm "Suma vacantes en Santiago"
+        int matricula_primer_ano_rm "Suma matrícula nueva en Santiago"
+        int matricula_total_rm "Suma matrícula total en Santiago"
+        int secciones_extra_sobrecupo_rm "Suma secciones extra lab"
+        float tasa_ocupacion_rm_pct "Ocupación agregada IES %"
+        float cuota_mercado_rm_pct "Market share anual IES %"
+    }
+
+    PUENTE_INSTITUCION_SIES {
+        string nombre_institucion_cned PK "Nombre original en INDICES CNED"
+        int codigo_ies_sies "Código oficial SIES"
+        string nombre_institucion_sies "Nombre canónico en SIES"
+        string metodo_cruce "Directo | Homologado"
+        string estado_cruce "Auditado y Certificado"
+    }

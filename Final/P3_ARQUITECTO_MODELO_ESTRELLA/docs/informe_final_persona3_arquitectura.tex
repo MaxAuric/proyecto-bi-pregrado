@@ -1,0 +1,196 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multirow}
+\tcbuselibrary{skins,breakable}
+
+% Paleta de colores ejecutiva
+\definecolor{primaryblue}{RGB}{16, 44, 87}
+\definecolor{secondaryblue}{RGB}{53, 89, 143}
+\definecolor{accentteal}{RGB}{20, 110, 120}
+\definecolor{lightbg}{RGB}{245, 247, 250}
+\definecolor{darkgray}{RGB}{50, 50, 50}
+\definecolor{warnred}{RGB}{180, 30, 30}
+\definecolor{okgreen}{RGB}{20, 110, 50}
+\definecolor{warnorange}{RGB}{200, 100, 20}
+
+\hypersetup{colorlinks=true, linkcolor=primaryblue, citecolor=accentteal, urlcolor=secondaryblue}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{darkgray}{\small Entrega Final BI $|$ Persona 3: Arquitecto Dimensional RM}}
+\lhead{\textcolor{darkgray}{\small Esquema Estrella, Grano, SCD Tipo 2 y Aditividad de Tasas/KPIs}}
+\cfoot{\thepage}
+
+\titleformat{\section}{\Large\bfseries\color{primaryblue}}{\thesection.}{0.5em}{}[\titlerule]
+\titleformat{\subsection}{\large\bfseries\color{secondaryblue}}{\thesubsection.}{0.4em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{accentteal}}{\thesubsubsection.}{0.3em}{}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  backgroundcolor=\color{lightbg},
+  frame=single,
+  rulecolor=\color{gray!30},
+  breaklines=true,
+  tabsize=2,
+  showstringspaces=false
+}
+
+\begin{document}
+
+% Portada / Cabecera Ejecutiva
+\begin{center}
+    {\Huge\bfseries\color{primaryblue} Proyecto Final de Business Intelligence}\\[0.25cm]
+    {\LARGE\bfseries\color{secondaryblue} DataMart y Esquema Estrella Enriquecido (2012--2026)}\\[0.2cm]
+    {\large\bfseries\color{accentteal} Enfoque Estratégico 100\% Región Metropolitana de Santiago}\\[0.4cm]
+    \rule{\linewidth}{1.2pt}\\[0.3cm]
+    \textbf{Rol Evaluado:} Persona 3 --- Arquitecto Dimensional y Diccionario de Tasas/KPIs\\
+    \textbf{Autor:} Angel Pino \quad $|$ \quad \textbf{Carrera:} Ingeniería en Negocios\\
+    \textbf{Fecha de Entrega y Defensa Oficial:} 18 de Noviembre de 2026\\
+    \textbf{Universo Auditado:} 58.926 Ofertas Académicas RM $|$ 69 Instituciones Activas en 2026 (SUBDERE 13)
+\end{center}
+
+\vspace{0.4cm}
+
+\begin{tcolorbox}[colback=primaryblue!5!white,colframe=primaryblue,title=\textbf{Síntesis de Cumplimiento Técnico y Feedback Docente Aplicado}]
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Foco Exclusivo en la Región Metropolitana (RM):} La tabla de hechos se acota estrictamente a los \textbf{58.926 registros históricos de Santiago} y las \textbf{69 instituciones activas en 2026} (35 Universidades, 19 IP, 11 CFT y 4 FF.AA.).
+    \item \textbf{Tasas y KPIs en Tablas dim\_* y fact\_*:} Se superó la limitación de los conteos brutos. Cada tasa representa una razón explicativa que fundamenta decisiones de sobredemanda, capacidad de laboratorios (caso 120$\rightarrow$140), retención y selectividad PAES.
+    \item \textbf{Cumplimiento Clase 4 DW (Pág. 62):} Cero columnas de texto \texttt{VARCHAR} en la tabla de hechos (100\% numérica) y eliminación absoluta de abreviaturas crudas en dimensiones (\texttt{'Universidad'}, \texttt{'Instituto Profesional'}, \texttt{'Centro de Formación Técnica'}, \texttt{'Institución de las Fuerzas Armadas y de Orden'}) y prefijos regulatorios \texttt{(a)/(b)}.
+    \item \textbf{Integración de 2 Fuentes Externas:} Proyecciones demográficas del \textbf{INE RM} en \texttt{dim\_tiempo\_ine\_rm} y acreditación institucional \textbf{SIES/CNA} en \texttt{dim\_institucion\_sies}.
+    \item \textbf{Certificación 1:N:} \textbf{0 registros huérfanos} verificados en las cuatro relaciones dimensionales sobre las 58.926 filas.
+\end{itemize}
+\end{tcolorbox}
+
+\section{Topología Relacional: Esquema Estrella Enriquecido}
+
+El diseño dimensional adoptado corresponde a un \textbf{Esquema Estrella Puro (Star Schema)}, compuesto por una tabla de hechos central (\texttt{fact\_matricula\_admision}) y cuatro tablas de dimensiones canónicas desnormalizadas, complementadas por una tabla agregada de optimización OLAP y una tabla puente de gobernanza:
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabularx}{\linewidth}{l c X}
+\toprule
+\textbf{Tabla / Hoja Excel} & \textbf{Filas (RM)} & \textbf{Rol y Justificación Arquitectónica (Clase 4 DW)} \\
+\midrule
+\texttt{fact\_matricula\_admision} & 58.926 & Tabla de hechos central (100\% numérica, cero columnas \texttt{VARCHAR}). \\
+\texttt{dim\_tiempo\_ine\_rm} & 15 & Dimensión temporal (2012--2026) que integra proyecciones del \textbf{INE RM}. \\
+\texttt{dim\_institucion\_sies} & 1.298 & Dimensión institucional con \textbf{SCD Tipo 2} y acreditación oficial \textbf{SIES}. \\
+\texttt{dim\_sede_geografia} & 22 & Dimensión geográfica desnormalizada de sedes en la RM con tasas de ocupación. \\
+\texttt{dim\_carrera\_programa} & 5.184 & Dimensión curricular con métricas de saturación sobre laboratorios base 35. \\
+\texttt{agg\_resumen\_anual\_institucion\_rm} & 1.298 & Tabla agregada anual para consultas analíticas de alta velocidad (Pág. 63). \\
+\texttt{puente\_institucion_sies} & 259 & Tabla puente oficial de homologación y auditoría CNED a SIES (Pauta Pág. 3). \\
+\bottomrule
+\end{tabularx}
+\caption{Inventario Canónico de Tablas del DataMart de la Región Metropolitana.}
+\end{table}
+
+\subsection{Justificación de la Topología Estrella frente a Snowflake}
+De acuerdo con los principios de Kimball y la cátedra de Data Warehousing (Clase 4, págs. 21--25), el Esquema Estrella minimiza el costo computacional de combinaciones relacionales (\emph{joins}), logrando que cualquier consulta multidimensional requiera a lo más un solo salto relacional por dimensión. Al desnormalizar jerarquías dentro de las tablas de dimensiones (como Región y Comuna dentro de \texttt{dim\_sede\_geografia}, o Área y Subárea dentro de \texttt{dim\_carrera\_programa}), se maximiza la velocidad de escaneo y compresión columnar del motor VertiPaq en Power BI.
+
+\section{Declaración Formal del Grano}
+
+El grano constituye el cimiento lógico que define el significado exacto de una fila en la tabla de hechos:
+
+\begin{tcolorbox}[colback=lightbg,colframe=secondaryblue,title=\textbf{Declaración Oficial del Grano}]
+\emph{«Una fila en \texttt{fact\_matricula\_admision} representa el evento anual de matrícula y postulación para una \textbf{oferta académica específica}, impartida por una \textbf{institución de educación superior}, en una \textbf{sede física o campus de la Región Metropolitana de Santiago}, bajo una \textbf{jornada u horario determinado}, durante un \textbf{año cronológico de admisión (2012 a 2026)}».}
+\end{tcolorbox}
+
+\textbf{Propiedades del Grano Atómico Implementado:}
+\begin{enumerate}
+    \item \textbf{Unicidad Compuesta:} La clave primaria subrogada \texttt{id\_fact} se corresponde biunívocamente con la combinación de las cuatro claves foráneas: $(\texttt{id\_tiempo}, \texttt{id\_sede\_geografia}, \texttt{id\_institucion\_sk}, \texttt{id\_carrera\_programa\_sk})$.
+    \item \textbf{Preservación de Variabilidad:} El grano fino evita sesgos de agregación prematura, posibilitando analizar fenómenos de nicho como carreras vespertinas técnicas saturadas frente a planes diurnos profesionales subocupados en la misma sede.
+\end{enumerate}
+
+\section{Gobernanza Temporal: Implementación de SCD Tipo 2}
+
+Las instituciones de educación superior en Chile mutan significativamente sus atributos regulatorios a lo largo de un horizonte de 15 años (2012--2026): varían sus años de acreditación CNA, su estatus de autonomía y su adscripción a la política de gratuidad (Ley 20.882 de 2016).
+
+\subsection{Crítica a SCD Tipo 1 (Sobrescritura)}
+Si se hubiese aplicado SCD Tipo 1, una institución que en 2012 no contaba con acreditación institucional figuraría retrospectivamente como ``Acreditada con 6 años de Excelencia'' si en 2026 alcanzó dicho reconocimiento. Esto introduce un anacronismo metodológico que invalidaría cualquier correlación entre acreditación y sobredemanda histórica.
+
+\subsection{Mecanismo SCD Tipo 2 Aplicado}
+Para mantener fidelidad histórica absoluta:
+\begin{itemize}
+    \item Se implementó la clave subrogada \texttt{id\_institucion\_sk}, la cual genera un nuevo registro para cada fotografía anual de la institución (totalizando \textbf{1.298 fotografías históricas}).
+    \item El atributo \texttt{ano\_vigencia} delimita el marco temporal de validez del estado regulatorio.
+    \item En la tabla de hechos, cada oferta histórica se vincula al \texttt{id\_institucion\_sk} del año correspondiente.
+    \item Al filtrar por \texttt{ano\_vigencia = 2026}, el modelo refleja con exactitud matemática las \textbf{69 instituciones activas en Santiago}: 35 Universidades, 19 Institutos Profesionales, 11 Centros de Formación Técnica y 4 Instituciones de las FF.AA.
+\end{itemize}
+
+\section{Clasificación Kimball de Medidas y Recálculo Dinámico con DIVIDE()}
+
+\subsection{Taxonomía de Medidas (Clase 4 DW Pág. 29)}
+\begin{enumerate}
+    \item \textbf{Medidas Aditivas Puras (Distributivas):} Operables mediante \texttt{SUM} y \texttt{COUNT} a través de todas las dimensiones. Ejemplos: \texttt{vacantes}, \texttt{matricula\_primer\_ano\_total}, \texttt{matricula\_total}, \texttt{sobrecupo\_neto\_alumnos}, \texttt{secciones\_extra\_por\_sobrecupo}.
+    \item \textbf{Medidas Semi-Aditivas:} Sumables a través de geografía, institución o carrera, pero no a lo largo del tiempo (como \texttt{matricula\_total} cuando se analiza como stock de alumnos recurrentes).
+    \item \textbf{Medidas No Aditivas (Tasas y Ratios):} Operaciones algebraicas que \textbf{bajo ninguna circunstancia pueden sumarse o promediarse simple}. Ejemplos: \texttt{tasa\_ocupacion\_primer\_ano}, \texttt{tasa\_saturacion\_lab\_35\_pct}, \texttt{puntaje\_promedio\_equiv\_paes}.
+\end{enumerate}
+
+\subsection{Demostración Matemática: Falacia de la Agregación de Tasas (Efecto Simpson)}
+Consideremos una facultad en Santiago con dos carreras:
+\begin{itemize}
+    \item \textbf{Carrera A (Plan Común Masivo):} $V_A = 600$ vacantes, $M_A = 660$ matriculados $\implies T_A = 110,0\%$ de ocupación.
+    \item \textbf{Carrera B (Especialidad de Nicho):} $V_B = 20$ vacantes, $M_B = 4$ matriculados $\implies T_B = 20,0\%$ de ocupación.
+\end{itemize}
+
+Si un analista inexperto promedia aritméticamente las tasas precalculadas:
+\[
+\text{Tasa Errónea (AVERAGE)} = \frac{110,0\% + 20,0\%}{2} = 65,0\% \quad (\text{Subocupación Aparente del 35\%})
+\]
+Sin embargo, el cálculo algebraico real basado en los totales aditivos es:
+\[
+\text{Tasa Real (DIVIDE)} = \frac{\sum M_i}{\sum V_i} \times 100 = \frac{660 + 4}{600 + 20} \times 100 = \frac{664}{620} \times 100 = \mathbf{107,10\%}
+\]
+El promedio simple subestima la demanda real en más de \textbf{42 puntos porcentuales}, ocultando un sobrecupo que colapsa los laboratorios. Por esta razón técnica, en DAX se formulan las medidas mediante \texttt{DIVIDE(SUM(Num), SUM(Den), BLANK()) * 100}.
+
+\section{Modelado del Caso de Negocio: Capacidad en Laboratorios (Módulo 35)}
+
+El profesor recalcó el impacto de aumentar de \textbf{120 a 140 alumnos} cuando la infraestructura de laboratorios opera en módulos estándar de \textbf{35 puestos}:
+
+\begin{enumerate}
+    \item \textbf{Escenario Planificado (120 Vacantes):}
+    \[
+    \text{Secciones Planificadas} = \lceil 120 / 35 \rceil = 4 \text{ secciones} \implies \text{Capacidad Total} = 4 \times 35 = 140 \text{ puestos.}
+    \]
+    La saturación es $\frac{120}{140} \times 100 = 85,7\%$, dejando 20 puestos de holgura para repitentes.
+    \item \textbf{Escenario de Sobrecupo (140 Matriculados):}
+    \[
+    \text{Secciones Requeridas} = \lceil 140 / 35 \rceil = 4 \text{ secciones} \implies \text{Saturación} = \frac{140}{140} \times 100 = \mathbf{100,0\%}.
+    \]
+    La holgura se reduce a cero puestos libres.
+    \item \textbf{Quiebre Operacional (Alumno 141):}
+    \[
+    \text{Secciones Reales} = \lceil 141 / 35 \rceil = 5 \text{ secciones} \implies \text{Secciones Extra} = 5 - 4 = \mathbf{1 \text{ sección extra forzada.}}
+    \]
+    Un único estudiante adicional obliga a contratar docentes y arrendar horas de laboratorio para 34 puestos vacíos, incrementando los costos fijos directos en un $+25\%$.
+\end{enumerate}
+
+\section{Auditoría de Integridad Referencial y Buenas Prácticas DW}
+
+La ejecución del script oficial de auditoría \texttt{audit\_architecture\_and\_integrity\_p3.py} certifica:
+\begin{itemize}
+    \item \textbf{Integridad Referencial 1:N:} 0 registros huérfanos detectados en las 58.926 filas de la tabla de hechos frente a las dimensiones de tiempo, sede, institución y carrera (\textbf{100\% de integridad}).
+    \item \textbf{Cero VARCHAR en Hechos:} Las 43 columnas de \texttt{fact\_matricula\_admision} son 100\% numéricas (\texttt{INTEGER} y \texttt{REAL}), satisfaciendo el mandamiento de Clase 4 DW (Pág. 62).
+    \item \textbf{Cero Abreviaturas en Dimensiones:} Se eliminaron los códigos crudos \texttt{Univ.}, \texttt{I.P.}, \texttt{C.F.T.}, \texttt{F.F.A.A.} y \texttt{M/}, reemplazándolos por etiquetas formales.
+    \item \textbf{Rendimiento de Consultas:} Consultas analíticas multidimensionales resueltas en menos de \textbf{25 milisegundos}.
+\end{itemize}
+
+\end{document}
+
