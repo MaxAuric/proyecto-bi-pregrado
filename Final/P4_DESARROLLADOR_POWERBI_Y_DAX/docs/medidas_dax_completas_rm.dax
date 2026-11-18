@@ -1,0 +1,431 @@
+// ============================================================================
+// MEDIDAS DAX OFICIALES - ENTREGA FINAL BI (REGION METROPOLITANA DE SANTIAGO)
+// Nombres 100% compatibles con DataMart_Estrella_RM_PowerBI.xlsx y datamart_estrella_rm_final.db
+// Desarrollador BI: Persona 4 (Joaquin Aguilera)
+// Fecha: 18 de Noviembre de 2026
+// ============================================================================
+
+// IMPORTANTE: Todas las tasas y promedios usan DIVIDE() para evitar division por cero
+// y respetan la aditividad declarada en el modelo dimensional (Clase 4 DW Pag. 29, 62-63)
+// Las medidas aditivas puras usan SUM. Las tasas/KPIs usan DIVIDE con ponderacion correcta.
+
+// ============================================================================
+// 1. MEDIDAS ADITIVAS PURAS (CONTEOS BASE)
+// ============================================================================
+
+Matricula 1er Ano RM =
+SUM(fact_matricula_admision[matricula_primer_ano_total])
+
+Matricula Total RM =
+SUM(fact_matricula_admision[matricula_total])
+
+Vacantes Ofrecidas RM =
+SUM(fact_matricula_admision[vacantes])
+
+Sobrecupo Neto Alumnos RM =
+SUM(fact_matricula_admision[sobrecupo_neto_alumnos])
+
+Vacantes Ociosas Netas RM =
+SUM(fact_matricula_admision[vacantes_ociosas_netas])
+
+Matricula 1er Ano Hombres RM =
+SUM(fact_matricula_admision[matricula_primer_ano_hombres])
+
+Matricula 1er Ano Mujeres RM =
+SUM(fact_matricula_admision[matricula_primer_ano_mujeres])
+
+Matricula 1er Ano Extranjeros RM =
+SUM(fact_matricula_admision[matricula_primer_ano_extranjeros])
+
+// ============================================================================
+// 2. TASAS ALGEBRAICAS DE OCUPACION Y SOBREDEMANDA (CON DIVIDE)
+// ============================================================================
+
+Tasa Ocupacion Vacantes RM (%) =
+VAR Numerador =
+    CALCULATE(
+        SUM(fact_matricula_admision[matricula_primer_ano_total]),
+        fact_matricula_admision[flag_vacantes_declaradas] = 1
+    )
+VAR Denominador =
+    CALCULATE(
+        SUM(fact_matricula_admision[vacantes]),
+        fact_matricula_admision[flag_vacantes_declaradas] = 1
+    )
+RETURN
+    DIVIDE(Numerador, Denominador, BLANK()) * 100
+
+Tasa Sobredemanda RM (%) =
+VAR Ocupacion = [Tasa Ocupacion Vacantes RM (%)]
+RETURN
+    IF(ISBLANK(Ocupacion), BLANK(), MAX(0, Ocupacion - 100))
+
+// Tasa de ocupacion solo para ofertas que declaran vacantes (filtrado por flag_vacantes_declaradas)
+Tasa Ocupacion Solo Con Vacantes (%) =
+VAR TablaFiltrada =
+    FILTER(
+        fact_matricula_admision,
+        fact_matricula_admision[flag_vacantes_declaradas] = 1 && fact_matricula_admision[vacantes] > 0
+    )
+RETURN
+    DIVIDE(
+        SUMX(TablaFiltrada, fact_matricula_admision[matricula_primer_ano_total]),
+        SUMX(TablaFiltrada, fact_matricula_admision[vacantes]),
+        BLANK()
+    ) * 100
+
+// ============================================================================
+// 3. KPIs DE CAPACIDAD DE LABORATORIOS (CASO 120 A 140 ALUMNOS, MODULO 35 PUESTOS)
+// ============================================================================
+
+Secciones Lab Planificadas Base 35 =
+SUM(fact_matricula_admision[secciones_lab_planificadas_35])
+
+Secciones Lab Reales Requeridas Base 35 =
+SUM(fact_matricula_admision[secciones_lab_reales_35])
+
+Secciones Lab Extra por Sobrecupo =
+SUM(fact_matricula_admision[secciones_extra_por_sobrecupo])
+
+Tasa Saturacion Laboratorios RM (%) =
+VAR Numerador =
+    CALCULATE(
+        SUM(fact_matricula_admision[matricula_primer_ano_total]),
+        fact_matricula_admision[secciones_lab_planificadas_35] > 0
+    )
+VAR Denominador =
+    CALCULATE(
+        SUM(fact_matricula_admision[secciones_lab_planificadas_35]) * 35,
+        fact_matricula_admision[secciones_lab_planificadas_35] > 0
+    )
+RETURN
+    DIVIDE(Numerador, Denominador, BLANK()) * 100
+
+// KPI critico: Holgura de laboratorio (cuantos cupos libres quedan en modulos de 35)
+Holgura Laboratorios 35 Puestos =
+[Secciones Lab Planificadas Base 35] * 35 - [Matricula 1er Ano RM]
+
+// KPI: Porcentaje de ofertas que requieren secciones extra de laboratorio
+Pct Ofertas Con Secciones Extra =
+DIVIDE(
+    CALCULATE(
+        COUNTROWS(fact_matricula_admision),
+        fact_matricula_admision[secciones_extra_por_sobrecupo] > 0
+    ),
+    COUNTROWS(fact_matricula_admision),
+    BLANK()
+) * 100
+
+// ============================================================================
+// 4. TASAS DE RENOVACION Y RETENCION ESTRUCTURAL
+// ============================================================================
+
+Tasa Renovacion Cohorte RM (%) =
+DIVIDE([Matricula 1er Ano RM], [Matricula Total RM], BLANK()) * 100
+
+Tasa Retencion Aparente RM (%) =
+DIVIDE([Matricula Total RM] - [Matricula 1er Ano RM], [Matricula Total RM], BLANK()) * 100
+
+// Tasa de renovacion por institucion (para analisis de competitividad)
+Tasa Renovacion Por Institucion (%) =
+DIVIDE(
+    CALCULATE([Matricula 1er Ano RM], ALLEXCEPT(fact_matricula_admision, dim_institucion_sies[id_institucion_sk])),
+    CALCULATE([Matricula Total RM], ALLEXCEPT(fact_matricula_admision, dim_institucion_sies[id_institucion_sk])),
+    BLANK()
+) * 100
+
+// ============================================================================
+// 5. KPIs DE SELECTIVIDAD PONDERADA Y HETEROGENEIDAD PAES (ESCALA 100-1000)
+// ============================================================================
+
+// Puntaje PAES promedio ponderado por matricula de 1er ano (solo ofertas que exigen prueba)
+Puntaje PAES Promedio Ponderado RM =
+VAR TablaValida =
+    FILTER(
+        fact_matricula_admision,
+        fact_matricula_admision[flag_exige_prueba_admision] = 1
+        && NOT(ISBLANK(fact_matricula_admision[puntaje_promedio_equiv_paes]))
+    )
+RETURN
+    DIVIDE(
+        SUMX(TablaValida, fact_matricula_admision[puntaje_promedio_equiv_paes] * fact_matricula_admision[matricula_primer_ano_total]),
+        SUMX(TablaValida, fact_matricula_admision[matricula_primer_ano_total]),
+        BLANK()
+    )
+
+// Puntaje PAES de corte ponderado (ultimo matriculado)
+Puntaje PAES Corte Ponderado RM =
+VAR TablaValida =
+    FILTER(
+        fact_matricula_admision,
+        NOT(ISBLANK(fact_matricula_admision[puntaje_corte_ultimo_equiv_paes]))
+        && fact_matricula_admision[matricula_primer_ano_total] > 0
+    )
+RETURN
+    DIVIDE(
+        SUMX(TablaValida, fact_matricula_admision[puntaje_corte_ultimo_equiv_paes] * fact_matricula_admision[matricula_primer_ano_total]),
+        SUMX(TablaValida, fact_matricula_admision[matricula_primer_ano_total]),
+        BLANK()
+    )
+
+// Tasa de heterogeneidad PAES (dispersion dentro de la oferta)
+Tasa Heterogeneidad PAES Promedio (%) =
+AVERAGE(fact_matricula_admision[tasa_heterogeneidad_paes_pct])
+
+// Brecha PAES maxima vs minima en la oferta
+Brecha PAES Max Min Promedio =
+AVERAGE(fact_matricula_admision[brecha_dispersa_max_min_paes])
+
+// Brecha corte vs media RM (selectividad relativa)
+Brecha Corte Vs Media RM PAES =
+AVERAGE(fact_matricula_admision[brecha_corte_vs_media_rm_paes])
+
+// Indice de presion selectiva (KPI compuesto: ocupacion * puntaje / 600)
+Indice Presion Selectiva KPI =
+AVERAGE(fact_matricula_admision[indice_presion_selectiva_kpi])
+
+// ============================================================================
+// 6. TASAS DE CUOTA DE MERCADO Y DEMOGRAFIA JUVENIL INE RM
+// ============================================================================
+
+Cuota Mercado Matricula RM (%) =
+VAR MatriculaTotalRM =
+    CALCULATE(
+        [Matricula Total RM],
+        ALL(dim_institucion_sies),
+        ALL(dim_sede_geografia),
+        ALL(dim_carrera_programa)
+    )
+RETURN
+    DIVIDE([Matricula Total RM], MatriculaTotalRM, 0) * 100
+
+// Tasa de absorcion juvenil INE RM (matricula 1er ano / poblacion joven 18-24 RM)
+Tasa Absorcion Juvenil INE RM (%) =
+DIVIDE(
+    [Matricula 1er Ano RM],
+    AVERAGE(dim_tiempo_ine_rm[poblacion_joven_18_24_rm]),
+    BLANK()
+) * 100
+
+// Tasa de cobertura bruta RM (matricula total / poblacion joven 18-24 RM)
+Tasa Cobertura Bruta INE RM (%) =
+DIVIDE(
+    [Matricula Total RM],
+    AVERAGE(dim_tiempo_ine_rm[poblacion_joven_18_24_rm]),
+    BLANK()
+) * 100
+
+// Tasa de oferta de vacantes por 1000 jovenes
+Tasa Oferta Vacantes 1000 Jovenes RM =
+DIVIDE(
+    [Vacantes Ofrecidas RM],
+    AVERAGE(dim_tiempo_ine_rm[poblacion_joven_18_24_rm]),
+    BLANK()
+) * 1000
+
+// Variacion interanual matricula 1er ano
+Variacion Interanual Matricula 1er Ano (%) =
+VAR MatriculaActual = [Matricula 1er Ano RM]
+VAR MatriculaAnterior =
+    CALCULATE(
+        [Matricula 1er Ano RM],
+        PREVIOUSYEAR(dim_tiempo_ine_rm[ano])
+    )
+RETURN
+    DIVIDE(MatriculaActual - MatriculaAnterior, MatriculaAnterior, BLANK()) * 100
+
+// ============================================================================
+// 7. KPIs DE GENERO Y EXTRANJEROS
+// ============================================================================
+
+Ratio Mujeres 1er Ano (%) =
+DIVIDE([Matricula 1er Ano Mujeres RM], [Matricula 1er Ano RM], BLANK()) * 100
+
+Ratio Mujeres Total (%) =
+DIVIDE(
+    SUM(fact_matricula_admision[matricula_total_mujeres]),
+    [Matricula Total RM],
+    BLANK()
+) * 100
+
+Ratio Extranjeros 1er Ano (%) =
+DIVIDE([Matricula 1er Ano Extranjeros RM], [Matricula 1er Ano RM], BLANK()) * 100
+
+Ratio Extranjeros Total (%) =
+DIVIDE(
+    SUM(fact_matricula_admision[matricula_total_extranjeros]),
+    [Matricula Total RM],
+    BLANK()
+) * 100
+
+// ============================================================================
+// 8. MEDIDAS DE CONTEO PARA FILTROS Y SEGMENTADORES
+// ============================================================================
+
+Cantidad Ofertas Academicas =
+COUNTROWS(fact_matricula_admision)
+
+Cantidad Instituciones =
+DISTINCTCOUNT(dim_institucion_sies[id_institucion_sk])
+
+Cantidad Sedes =
+DISTINCTCOUNT(dim_sede_geografia[id_sede_geografia])
+
+Cantidad Carreras =
+DISTINCTCOUNT(dim_carrera_programa[id_carrera_programa_sk])
+
+Cantidad Anos =
+DISTINCTCOUNT(dim_tiempo_ine_rm[ano])
+
+// ============================================================================
+// 9. MEDIDAS CON FILTROS ESPECIFICOS PARA VISUALIZACIONES
+// ============================================================================
+
+// Matricula solo en ofertas que exigen prueba de admision
+Matricula 1er Ano Con Prueba =
+CALCULATE(
+    [Matricula 1er Ano RM],
+    fact_matricula_admision[flag_exige_prueba_admision] = 1
+)
+
+// Matricula solo en instituciones acreditadas
+Matricula 1er Ano Acreditadas =
+CALCULATE(
+    [Matricula 1er Ano RM],
+    dim_institucion_sies[tramo_acreditacion_sies] IN {"1. Excelencia (6 a 7 anos)", "2. Avanzada (4 a 5 anos)", "3. Basica (1 a 3 anos)"}
+)
+
+// Matricula por tipo de institucion
+Matricula 1er Ano Universidades =
+CALCULATE(
+    [Matricula 1er Ano RM],
+    dim_institucion_sies[tipo_institucion] = "Universidad"
+)
+
+Matricula 1er Ano IP =
+CALCULATE(
+    [Matricula 1er Ano RM],
+    dim_institucion_sies[tipo_institucion] = "Instituto Profesional"
+)
+
+Matricula 1er Ano CFT =
+CALCULATE(
+    [Matricula 1er Ano RM],
+    dim_institucion_sies[tipo_institucion] = "Centro de Formacion Tecnica"
+)
+
+Matricula 1er Ano FF.AA. =
+CALCULATE(
+    [Matricula 1er Ano RM],
+    dim_institucion_sies[tipo_institucion] = "Institucion de las FF.AA. y Orden"
+)
+
+// ============================================================================
+// 10. MEDIDAS DE SEMAFOROS DE DECISION (UMBRALES)
+// ============================================================================
+
+// Semaforo ocupacion vacantes: Verde >=95%, Amarillo 80-95%, Rojo <80%
+Semaforo Ocupacion Vacantes =
+VAR Ocupacion = [Tasa Ocupacion Vacantes RM (%)]
+RETURN
+    SWITCH(
+        TRUE(),
+        ISBLANK(Ocupacion), "Sin Datos",
+        Ocupacion >= 95, "1. Verde (Saturado >=95%)",
+        Ocupacion >= 80, "2. Amarillo (Equilibrio 80-95%)",
+        "3. Rojo (Subocupado <80%)"
+    )
+
+// Semaforo saturacion laboratorios: Verde >=100%, Amarillo 85-100%, Rojo <85%
+Semaforo Saturacion Laboratorios =
+VAR Saturacion = [Tasa Saturacion Laboratorios RM (%)]
+RETURN
+    SWITCH(
+        TRUE(),
+        ISBLANK(Saturacion), "Sin Datos",
+        Saturacion >= 100, "1. Critico (>=100% - Cero Holgura)",
+        Saturacion >= 85, "2. Alerta (85-100% - Poca Holgura)",
+        "3. Normal (<85% - Con Holgura)"
+    )
+
+// Semaforo posicionamiento competitivo institucional
+Semaforo Posicionamiento Competitivo =
+SELECTEDVALUE(dim_institucion_sies[posicionamiento_competitivo_rm], "Seleccionar Institucion")
+
+// Semaforo nivel saturacion sede
+Semaforo Nivel Saturacion Sede =
+SELECTEDVALUE(dim_sede_geografia[nivel_saturacion_sede], "Seleccionar Sede")
+
+// Semaforo clasificacion presion capacidad programa
+Semaforo Presion Capacidad Programa =
+SELECTEDVALUE(dim_carrera_programa[clasificacion_presion_capacidad], "Seleccionar Programa")
+
+// ============================================================================
+// 11. MEDIDAS DE TENDENCIA TEMPORAL
+// ============================================================================
+
+// Matricula 1er ano ano actual vs anterior
+Matricula 1er Ano Ano Anterior =
+CALCULATE(
+    [Matricula 1er Ano RM],
+    PREVIOUSYEAR(dim_tiempo_ine_rm[ano])
+)
+
+// Tasa ocupacion ano anterior
+Tasa Ocupacion Ano Anterior =
+CALCULATE(
+    [Tasa Ocupacion Vacantes RM (%)],
+    PREVIOUSYEAR(dim_tiempo_ine_rm[ano])
+)
+
+// Crecimiento matricula interanual
+Crecimiento Matricula Interanual =
+[Matricula 1er Ano RM] - [Matricula 1er Ano Ano Anterior]
+
+// ============================================================================
+// 12. MEDIDAS PARA TABLA AGREGADA ANUAL POR INSTITUCION
+// ============================================================================
+
+Ofertas Activas RM =
+SUM(agg_resumen_institucion_rm[ofertas_activas_rm])
+
+Vacantes Totales RM Agregado =
+SUM(agg_resumen_institucion_rm[vacantes_totales_rm])
+
+Matricula 1er Ano RM Agregado =
+SUM(agg_resumen_institucion_rm[matricula_primer_ano_rm])
+
+Matricula Total RM Agregado =
+SUM(agg_resumen_institucion_rm[matricula_total_rm])
+
+Tasa Ocupacion RM Agregado (%) =
+DIVIDE(
+    [Matricula 1er Ano RM Agregado],
+    [Vacantes Totales RM Agregado],
+    BLANK()
+) * 100
+
+Cuota Mercado RM Agregado (%) =
+SUM(agg_resumen_institucion_rm[cuota_mercado_rm_pct])
+
+Puntaje PAES Ponderado RM Agregado =
+AVERAGE(agg_resumen_institucion_rm[puntaje_paes_ponderado_rm])
+
+Secciones Lab Planificadas RM Agregado =
+SUM(agg_resumen_institucion_rm[secciones_lab_planificadas_rm])
+
+Secciones Lab Reales RM Agregado =
+SUM(agg_resumen_institucion_rm[secciones_lab_reales_rm])
+
+Secciones Extra Sobrecupo RM Agregado =
+SUM(agg_resumen_institucion_rm[secciones_extra_sobrecupo_rm])
+
+// ============================================================================
+// NOTAS DE IMPLEMENTACION PARA PERSONA 4
+// ============================================================================
+// 1. Copiar este bloque completo en Power BI Desktop: Modelado -> Nueva Medida
+// 2. Crear una tabla "Medidas DAX RM" (Enter Data -> Nombre: Medidas DAX RM -> Load)
+// 3. Pegar cada medida en la tabla Medidas DAX RM
+// 4. Configurar formato: Porcentaje para tasas (2 decimales), Entero para conteos, Decimal para puntajes
+// 5. Agrupar medidas en carpetas: "Conteos Base", "Tasas Ocupacion", "Laboratorios", "Selectividad PAES", "Demografia INE", "Semaforos", "Tendencias"
+// 6. Verificar que todos los nombres de columnas coincidan exactamente con DataMart_Estrella_RM_PowerBI.xlsx
