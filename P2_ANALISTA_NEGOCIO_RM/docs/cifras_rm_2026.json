@@ -1,0 +1,298 @@
+{
+  "fecha_extraccion": "2026-11-23T20:25:15",
+  "cifras_globales_rm_2026": {
+    "total_registros_rm": 58926,
+    "registros_2026": 4193,
+    "vacantes_rm_2026": 253018.0,
+    "matricula_1er_ano_rm_2026": 208311.0,
+    "matricula_total_rm_2026": 708758.0,
+    "secciones_extra_sobrecupo_2026": 674.0,
+    "programas_sobredemanda_critica_2026": 1232,
+    "poblacion_joven_18_24_rm_2026_ine": 821638,
+    "tasa_ocupacion_anual_rm_2026_pct": 82.33,
+    "tasa_absorcion_juvenil_rm_2026_pct": 25.35,
+    "tasa_cobertura_bruta_rm_2026_pct": 86.26,
+    "oferta_vacantes_1000_jovenes_2026": 307.94,
+    "paes_promedio_ponderado_rm_2026": 675.82,
+    "retencion_aparente_rm_2026_pct": 70.61,
+    "crecimiento_matricula_yoy_2026_pct": 5.86
+  },
+  "areas_conocimiento_rm_2026": [
+    {
+      "area_conocimiento": "Fuerzas Armadas, Orden y Seguridad",
+      "vacantes": 515.0,
+      "mat1": 558,
+      "ocupacion_pct": 108.3,
+      "sec_extra": 1.0
+    },
+    {
+      "area_conocimiento": "Ciencias",
+      "vacantes": 3361.0,
+      "mat1": 3207,
+      "ocupacion_pct": 95.4,
+      "sec_extra": 16.0
+    },
+    {
+      "area_conocimiento": "Salud",
+      "vacantes": 28967.0,
+      "mat1": 27333,
+      "ocupacion_pct": 94.4,
+      "sec_extra": 101.0
+    },
+    {
+      "area_conocimiento": "Agricultura, Silvicultura, Pesca y Veterinaria",
+      "vacantes": 5092.0,
+      "mat1": 4613,
+      "ocupacion_pct": 90.6,
+      "sec_extra": 12.0
+    },
+    {
+      "area_conocimiento": "Derecho",
+      "vacantes": 6468.0,
+      "mat1": 5768,
+      "ocupacion_pct": 89.2,
+      "sec_extra": 16.0
+    },
+    {
+      "area_conocimiento": "Tecnología",
+      "vacantes": 87053.0,
+      "mat1": 74844,
+      "ocupacion_pct": 86.0,
+      "sec_extra": 268.0
+    },
+    {
+      "area_conocimiento": "Ciencias Sociales",
+      "vacantes": 21007.0,
+      "mat1": 16298,
+      "ocupacion_pct": 77.6,
+      "sec_extra": 55.0
+    },
+    {
+      "area_conocimiento": "Administración y Comercio",
+      "vacantes": 63129.0,
+      "mat1": 48832,
+      "ocupacion_pct": 77.4,
+      "sec_extra": 127.0
+    },
+    {
+      "area_conocimiento": "Arte y Arquitectura",
+      "vacantes": 12764.0,
+      "mat1": 9410,
+      "ocupacion_pct": 73.7,
+      "sec_extra": 24.0
+    },
+    {
+      "area_conocimiento": "Humanidades",
+      "vacantes": 2179.0,
+      "mat1": 1576,
+      "ocupacion_pct": 72.3,
+      "sec_extra": 3.0
+    },
+    {
+      "area_conocimiento": "Educación",
+      "vacantes": 22483.0,
+      "mat1": 15872,
+      "ocupacion_pct": 70.6,
+      "sec_extra": 51.0
+    }
+  ],
+  "evolucion_paes_ocupacion_rm": [
+    {
+      "ano": 2012,
+      "paes_ponderado": 657.7,
+      "ocupacion_pct": 89.01,
+      "es_paes": 0
+    },
+    {
+      "ano": 2013,
+      "paes_ponderado": 671.4,
+      "ocupacion_pct": 92.91,
+      "es_paes": 0
+    },
+    {
+      "ano": 2014,
+      "paes_ponderado": 679.3,
+      "ocupacion_pct": 100.81,
+      "es_paes": 0
+    },
+    {
+      "ano": 2015,
+      "paes_ponderado": 666.2,
+      "ocupacion_pct": 98.5,
+      "es_paes": 0
+    },
+    {
+      "ano": 2016,
+      "paes_ponderado": 676.2,
+      "ocupacion_pct": 93.64,
+      "es_paes": 0
+    },
+    {
+      "ano": 2017,
+      "paes_ponderado": 674.5,
+      "ocupacion_pct": 81.13,
+      "es_paes": 0
+    },
+    {
+      "ano": 2018,
+      "paes_ponderado": 669.6,
+      "ocupacion_pct": 86.02,
+      "es_paes": 0
+    },
+    {
+      "ano": 2019,
+      "paes_ponderado": 661.2,
+      "ocupacion_pct": 88.71,
+      "es_paes": 0
+    },
+    {
+      "ano": 2020,
+      "paes_ponderado": 660.5,
+      "ocupacion_pct": 80.5,
+      "es_paes": 0
+    },
+    {
+      "ano": 2021,
+      "paes_ponderado": 646.3,
+      "ocupacion_pct": 91.38,
+      "es_paes": 0
+    },
+    {
+      "ano": 2022,
+      "paes_ponderado": 658.7,
+      "ocupacion_pct": 76.42,
+      "es_paes": 0
+    },
+    {
+      "ano": 2023,
+      "paes_ponderado": 669.6,
+      "ocupacion_pct": 79.87,
+      "es_paes": 1
+    },
+    {
+      "ano": 2024,
+      "paes_ponderado": 690.5,
+      "ocupacion_pct": 75.05,
+      "es_paes": 1
+    },
+    {
+      "ano": 2025,
+      "paes_ponderado": 693.8,
+      "ocupacion_pct": 82.25,
+      "es_paes": 1
+    },
+    {
+      "ano": 2026,
+      "paes_ponderado": 703.6,
+      "ocupacion_pct": 82.33,
+      "es_paes": 1
+    }
+  ],
+  "tasas_demograficas_anuales_rm": [
+    {
+      "id_tiempo": 2012,
+      "tasa_absorcion_juvenil_rm_pct": 21.59,
+      "tasa_cobertura_bruta_rm_pct": 69.14,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 242.53,
+      "tasa_ocupacion_anual_rm_pct": 89.01
+    },
+    {
+      "id_tiempo": 2013,
+      "tasa_absorcion_juvenil_rm_pct": 22.24,
+      "tasa_cobertura_bruta_rm_pct": 71.89,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 239.43,
+      "tasa_ocupacion_anual_rm_pct": 92.91
+    },
+    {
+      "id_tiempo": 2014,
+      "tasa_absorcion_juvenil_rm_pct": 22.51,
+      "tasa_cobertura_bruta_rm_pct": 73.74,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 223.32,
+      "tasa_ocupacion_anual_rm_pct": 100.81
+    },
+    {
+      "id_tiempo": 2015,
+      "tasa_absorcion_juvenil_rm_pct": 22.06,
+      "tasa_cobertura_bruta_rm_pct": 74.37,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 224.0,
+      "tasa_ocupacion_anual_rm_pct": 98.5
+    },
+    {
+      "id_tiempo": 2016,
+      "tasa_absorcion_juvenil_rm_pct": 21.98,
+      "tasa_cobertura_bruta_rm_pct": 74.98,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 234.73,
+      "tasa_ocupacion_anual_rm_pct": 93.64
+    },
+    {
+      "id_tiempo": 2017,
+      "tasa_absorcion_juvenil_rm_pct": 21.14,
+      "tasa_cobertura_bruta_rm_pct": 73.34,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 260.52,
+      "tasa_ocupacion_anual_rm_pct": 81.13
+    },
+    {
+      "id_tiempo": 2018,
+      "tasa_absorcion_juvenil_rm_pct": 20.73,
+      "tasa_cobertura_bruta_rm_pct": 72.03,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 240.99,
+      "tasa_ocupacion_anual_rm_pct": 86.02
+    },
+    {
+      "id_tiempo": 2019,
+      "tasa_absorcion_juvenil_rm_pct": 20.39,
+      "tasa_cobertura_bruta_rm_pct": 70.96,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 229.87,
+      "tasa_ocupacion_anual_rm_pct": 88.71
+    },
+    {
+      "id_tiempo": 2020,
+      "tasa_absorcion_juvenil_rm_pct": 17.77,
+      "tasa_cobertura_bruta_rm_pct": 66.51,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 220.72,
+      "tasa_ocupacion_anual_rm_pct": 80.5
+    },
+    {
+      "id_tiempo": 2021,
+      "tasa_absorcion_juvenil_rm_pct": 19.29,
+      "tasa_cobertura_bruta_rm_pct": 69.58,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 211.14,
+      "tasa_ocupacion_anual_rm_pct": 91.38
+    },
+    {
+      "id_tiempo": 2022,
+      "tasa_absorcion_juvenil_rm_pct": 20.24,
+      "tasa_cobertura_bruta_rm_pct": 71.95,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 264.92,
+      "tasa_ocupacion_anual_rm_pct": 76.42
+    },
+    {
+      "id_tiempo": 2023,
+      "tasa_absorcion_juvenil_rm_pct": 22.39,
+      "tasa_cobertura_bruta_rm_pct": 76.55,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 280.38,
+      "tasa_ocupacion_anual_rm_pct": 79.87
+    },
+    {
+      "id_tiempo": 2024,
+      "tasa_absorcion_juvenil_rm_pct": 22.87,
+      "tasa_cobertura_bruta_rm_pct": 78.5,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 304.76,
+      "tasa_ocupacion_anual_rm_pct": 75.05
+    },
+    {
+      "id_tiempo": 2025,
+      "tasa_absorcion_juvenil_rm_pct": 24.0,
+      "tasa_cobertura_bruta_rm_pct": 82.02,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 291.82,
+      "tasa_ocupacion_anual_rm_pct": 82.25
+    },
+    {
+      "id_tiempo": 2026,
+      "tasa_absorcion_juvenil_rm_pct": 25.35,
+      "tasa_cobertura_bruta_rm_pct": 86.26,
+      "tasa_oferta_vacantes_1000_jovenes_rm": 307.94,
+      "tasa_ocupacion_anual_rm_pct": 82.33
+    }
+  ]
+}
